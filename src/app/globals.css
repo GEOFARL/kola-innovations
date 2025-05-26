@@ -32,8 +32,6 @@
   --color-notification-error: #d92d20;
 }
 
-@import 'tailwindcss';
-
 @layer utilities {
   .h1 {
     @apply font-bold text-[54px] leading-[120%] tracking-[-1.5px] font-[Montserrat,sans-serif];
