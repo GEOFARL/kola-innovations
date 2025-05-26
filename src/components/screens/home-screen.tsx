@@ -1,4 +1,6 @@
 import GiftIcon from '@/assets/icons/gift.svg';
+import Link from 'next/link';
+import Button from '@/components/ui/button/button';
 
 const HomeScreen: React.FC = () => {
   return (
@@ -9,12 +11,11 @@ const HomeScreen: React.FC = () => {
         Вітаємо! Це тестовий лендінг з Tailwind CSS. <GiftIcon />
       </p>
 
-      <a
-        href="/login"
-        className="inline-block text-[16px] font-semibold leading-[150%] bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
-      >
-        Увійти
-      </a>
+      <Link href="/login">
+        <Button variant="primary" size="md" color="red">
+          Увійти
+        </Button>
+      </Link>
     </div>
   );
 };
