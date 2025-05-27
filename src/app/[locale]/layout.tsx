@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { notFound } from 'next/navigation';
 import './globals.css';
+import Header from '@/components/layouts/header';
 
 export const metadata: Metadata = {
   title: 'Kola Innovations',
@@ -24,9 +25,7 @@ const RootLayout = async ({ children, params }: Props) => {
   return (
     <html lang={locale}>
       <body className="bg-gray-50 text-gray-900 min-h-screen">
-        <header className="bg-blue-600 text-white px-6 py-4 text-xl font-bold shadow">
-          Kola Innovations
-        </header>
+        <Header locale={locale} />
         <main className="p-6">
           <NextIntlClientProvider>{children}</NextIntlClientProvider>
         </main>
