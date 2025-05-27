@@ -1,0 +1,7 @@
+{
+  "landing": {
+    "title": "Home Page",
+    "description": "Welcome! This is a test landing with Tailwind CSS.",
+    "login": "Log In"
+  }
+}
