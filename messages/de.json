@@ -1,0 +1,22 @@
+{
+  "landing": {
+    "title": "Startseite",
+    "description": "Willkommen! Dies ist eine Test-Landingpage mit Tailwind CSS.",
+    "login": "Anmelden"
+  },
+  "common": {
+    "auth": {
+      "login": "Anmelden",
+      "signup": "Registrieren"
+    },
+    "actions": {
+      "search": "Suchen"
+    },
+    "nav": {
+      "findTalent": "Talente finden",
+      "findWork": "Arbeit finden",
+      "mentorship": "Mentorship",
+      "more": "Mehr"
+    }
+  }
+}

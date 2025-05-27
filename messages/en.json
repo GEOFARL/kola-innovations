@@ -3,5 +3,20 @@
     "title": "Home Page",
     "description": "Welcome! This is a test landing with Tailwind CSS.",
     "login": "Log In"
+  },
+  "common": {
+    "auth": {
+      "login": "Log In",
+      "signup": "Sign Up"
+    },
+    "actions": {
+      "search": "Search"
+    },
+    "nav": {
+      "findTalent": "Find Talent",
+      "findWork": "Find Work",
+      "mentorship": "Mentorship",
+      "more": "More"
+    }
   }
 }
