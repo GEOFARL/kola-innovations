@@ -1,4 +1,7 @@
+'use client';
+
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import StarIcon from '@/assets/icons/star.svg';
 import heroCircle from '@/assets/images/hero-circle.png';
 import Button from '@/components/ui/button/button';
@@ -7,6 +10,8 @@ import HeroSearchBox from './hero-search-box';
 import HeroStatBubble from './hero-stat-bubble';
 
 const HeroSection: React.FC = () => {
+  const t = useTranslations('landing.hero');
+
   return (
     <section>
       <MaxWidthWrapper className="relative flex justify-between py-20">
@@ -18,17 +23,14 @@ const HeroSection: React.FC = () => {
               className="rounded-full flex gap-2 h-[40px] px-3 py-2"
             >
               <StarIcon />
-              Explore Opportunities
+              {t('exploreOpportunities')}
             </Button>
           </header>
 
-          <h1 className="h1 mb-6">Your Gateway to Creative Jobs and Talent</h1>
+          <h1 className="h1 mb-6">{t('headline')}</h1>
 
           <div className="border-l-[2px] border-primary mb-12">
-            <p className="h6-rg text-dark-700 ml-4">
-              Explore diverse career opportunities or hire skilled experts
-              across creative and professional fields
-            </p>
+            <p className="h6-rg text-dark-700 ml-4">{t('subtext')}</p>
           </div>
 
           <HeroSearchBox />

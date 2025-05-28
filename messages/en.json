@@ -2,7 +2,28 @@
   "landing": {
     "title": "Home Page",
     "description": "Welcome! This is a test landing with Tailwind CSS.",
-    "login": "Log In"
+    "login": "Log In",
+    "hero": {
+      "exploreOpportunities": "Explore Opportunities",
+      "headline": "Your Gateway to Creative Jobs and Talent",
+      "subtext": "Explore diverse career opportunities or hire skilled experts across creative and professional fields",
+      "explore": "Explore",
+      "tabs": {
+        "jobs": "Jobs",
+        "professionals": "Professionals"
+      },
+      "search": {
+        "category": "Job Category",
+        "keywords": "Keywords or Title",
+        "value": {
+          "category": "Musician",
+          "keywords": "Composer, Audio Engineer"
+        }
+      },
+      "bubble": {
+        "label": "Talents found their dream job!"
+      }
+    }
   },
   "common": {
     "auth": {

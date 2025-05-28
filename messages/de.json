@@ -2,7 +2,28 @@
   "landing": {
     "title": "Startseite",
     "description": "Willkommen! Dies ist eine Test-Landingpage mit Tailwind CSS.",
-    "login": "Anmelden"
+    "login": "Anmelden",
+    "hero": {
+      "exploreOpportunities": "Möglichkeiten entdecken",
+      "headline": "Ihr Einstieg in kreative Jobs und Talente",
+      "subtext": "Entdecken Sie vielfältige Karrieremöglichkeiten oder stellen Sie qualifizierte Experten ein",
+      "explore": "Entdecken",
+      "tabs": {
+        "jobs": "Jobs",
+        "professionals": "Fachkräfte"
+      },
+      "search": {
+        "category": "Berufskategorie",
+        "keywords": "Stichworte oder Titel",
+        "value": {
+          "category": "Musiker",
+          "keywords": "Komponist, Audioingenieur"
+        }
+      },
+      "bubble": {
+        "label": "Talente haben ihren Traumjob gefunden!"
+      }
+    }
   },
   "common": {
     "auth": {
