@@ -23,6 +23,32 @@
       "bubble": {
         "label": "Talents found their dream job!"
       }
+    },
+    "stats": {
+      "tagline": "Lorem Ipsum",
+      "headline": "Unlock your true potential and Discover a world of opportunities that align with your skills, interests, and Aspirations",
+      "items": {
+        "opportunities": {
+          "value": "400K",
+          "title": "Opportunities",
+          "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in"
+        },
+        "connections": {
+          "value": "5K",
+          "title": "Connections",
+          "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in"
+        },
+        "hired": {
+          "value": "2K",
+          "title": "Professionals hired",
+          "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in"
+        },
+        "mentors": {
+          "value": "100",
+          "title": "Mentors",
+          "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in"
+        }
+      }
     }
   },
   "common": {

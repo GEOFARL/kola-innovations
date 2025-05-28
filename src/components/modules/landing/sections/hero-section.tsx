@@ -6,8 +6,8 @@ import StarIcon from '@/assets/icons/star.svg';
 import heroCircle from '@/assets/images/hero-circle.png';
 import Button from '@/components/ui/button/button';
 import MaxWidthWrapper from '@/components/utils/max-width-wrapper';
-import HeroSearchBox from './hero-search-box';
-import HeroStatBubble from './hero-stat-bubble';
+import HeroSearchBox from '../hero/hero-search-box';
+import HeroStatBubble from '../hero/hero-stat-bubble';
 
 const HeroSection: React.FC = () => {
   const t = useTranslations('landing.hero');

@@ -23,6 +23,32 @@
       "bubble": {
         "label": "Talente haben ihren Traumjob gefunden!"
       }
+    },
+    "stats": {
+      "tagline": "Lorem Ipsum",
+      "headline": "Entfalte dein wahres Potenzial und entdecke eine Welt voller Chancen, die zu deinen Fähigkeiten, Interessen und Zielen passen",
+      "items": {
+        "opportunities": {
+          "value": "400K",
+          "title": "Chancen",
+          "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in"
+        },
+        "connections": {
+          "value": "5K",
+          "title": "Verbindungen",
+          "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in"
+        },
+        "hired": {
+          "value": "2K",
+          "title": "Eingestellte Fachkräfte",
+          "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in"
+        },
+        "mentors": {
+          "value": "100",
+          "title": "Mentoren",
+          "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in"
+        }
+      }
     }
   },
   "common": {
