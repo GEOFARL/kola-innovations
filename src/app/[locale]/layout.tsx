@@ -24,7 +24,9 @@ const RootLayout = async ({ children, params }: Props) => {
   return (
     <html lang={locale}>
       <NextIntlClientProvider>
-        <body className="min-h-screen flex flex-col">{children}</body>
+        <body className="min-h-screen font-[Montserrat,sans-serif] flex flex-col">
+          {children}
+        </body>
       </NextIntlClientProvider>
     </html>
   );
