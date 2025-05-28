@@ -49,6 +49,9 @@
           "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in"
         }
       }
+    },
+    "trustedCompanies": {
+      "label": "Vertrauenswürdige Unternehmen"
     }
   },
   "common": {
