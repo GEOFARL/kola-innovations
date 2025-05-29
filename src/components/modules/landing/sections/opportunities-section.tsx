@@ -8,126 +8,107 @@ import tikTokLogo from '@/assets/images/logos/tik-tok.png';
 import artistLogo from '@/assets/images/logos/artist.png';
 import photographyLogo from '@/assets/images/logos/photography.png';
 import graphicDesignLogo from '@/assets/images/logos/graphic-design.png';
-import eventPlanner from '@/assets/images/logos/event-planner.png';
+import eventPlannerLogo from '@/assets/images/logos/event-planner.png';
 import Button from '@/components/ui/button/button';
 import MaxWidthWrapper from '@/components/utils/max-width-wrapper';
 import { Bookmark, Search } from 'lucide-react';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
+import type { StaticImageData } from 'next/image';
 
-const jobData = [
-  {
-    title: 'Audio Engineers',
-    company: 'Tiktok',
-    description:
-      'Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus...',
-    location: 'Pickering, ON',
-    type: 'In-office',
-    logo: tikTokLogo,
-  },
-  {
-    title: 'Musician',
-    company: 'Cafe',
-    description:
-      'Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus...',
-    location: 'Pickering, ON',
-    type: 'In-office',
-    logo: tikTokLogo,
-    featured: true,
-  },
-  {
-    title: 'Graphic Designer',
-    company: 'BlueOptima',
-    description: 'Interdum donec laoreet malesuada a gravida vivamus tempor...',
-    location: 'Brampton, ON',
-    type: 'Full-Time',
-    logo: graphicDesignLogo,
-  },
-  {
-    title: 'Artist',
-    company: 'ACP Studio',
-    description: 'Interdum donec laoreet malesuada a gravida vivamus tempor...',
-    location: 'Toronto, Canada',
-    type: 'Contract',
-    logo: artistLogo,
-  },
-  {
-    title: 'Photography',
-    company: 'JK Photo Studio',
-    description: 'Interdum donec laoreet malesuada a gravida vivamus tempor...',
-    location: 'Montreal, QC',
-    type: 'Remote',
-    logo: photographyLogo,
-  },
-  {
-    title: 'Event Planner',
-    company: 'ChargePoint',
-    description: 'Interdum donec laoreet malesuada a gravida vivamus tempor...',
-    location: 'Pickering, ON',
-    type: 'Hybrid',
-    logo: eventPlanner,
-  },
-];
+type CompanyName =
+  | 'Tiktok'
+  | 'Cafe'
+  | 'BlueOptima'
+  | 'ACP Studio'
+  | 'JK Photo Studio'
+  | 'ChargePoint';
+
+interface Job {
+  title: string;
+  company: CompanyName;
+  description: string;
+  location: string;
+  type: string;
+  featured?: boolean;
+}
+
+const jobLogos: Record<CompanyName, StaticImageData> = {
+  Tiktok: tikTokLogo,
+  Cafe: tikTokLogo,
+  BlueOptima: graphicDesignLogo,
+  'ACP Studio': artistLogo,
+  'JK Photo Studio': photographyLogo,
+  ChargePoint: eventPlannerLogo,
+};
 
 const OpportunitiesSection: React.FC = () => {
+  const t = useTranslations('landing.jobs');
+  const rawJobs = t.raw('list') as Job[];
+
+  const jobs: (Job & { logo: StaticImageData })[] = rawJobs.map((job) => ({
+    ...job,
+    logo: jobLogos[job.company],
+  }));
+
   return (
     <MaxWidthWrapper className="py-35">
-      <SectionHeader />
-      <SectionFilters />
-      <JobGrid jobs={jobData} />
-      <SectionFooterActions />
+      <SectionHeader t={t} />
+      <SectionFilters t={t} />
+      <JobGrid jobs={jobs} t={t} />
+      <SectionFooterActions t={t} />
     </MaxWidthWrapper>
   );
 };
 
-export default OpportunitiesSection;
-
-const SectionHeader = () => (
+const SectionHeader = ({ t }: { t: ReturnType<typeof useTranslations> }) => (
   <div className="text-center max-w-[951px] mx-auto mb-16">
-    <p className="text-primary caption mb-3">Lorem Ipsum</p>
-    <h2 className="h2 text-dark-900 mb-4">
-      Explore and find Opportunities/Talents
-    </h2>
-    <p className="h6-md text-dark-700 max-w-[708px] mx-auto">
-      Malesuada cursus nec tincidunt consectetur aenean velit. Pharetra orci
-      volutpat donec sit diam pulvinar lobortis donec euismod.
-    </p>
+    <p className="text-primary caption mb-3">{t('tagline')}</p>
+    <h2 className="h2 text-dark-900 mb-4">{t('headline')}</h2>
+    <p className="h6-md text-dark-700 max-w-[708px] mx-auto">{t('subtext')}</p>
   </div>
 );
 
-const SectionFilters = () => (
+const SectionFilters = ({ t }: { t: ReturnType<typeof useTranslations> }) => (
   <div className="flex justify-between items-center mb-10">
     <div className="flex gap-3 items-center">
       <button className="px-4 py-2 bg-primary text-white rounded-full small-1">
-        Popular Jobs
+        {t('tabs.jobs')}
       </button>
       <button className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full small-1-md">
-        Popular Talents
+        {t('tabs.professionals')}
       </button>
     </div>
     <div className="flex items-center gap-4 w-full max-w-md">
-      <SearchBar />
+      <SearchBar t={t} />
     </div>
   </div>
 );
 
-const SearchBar = () => (
+const SearchBar = ({ t }: { t: ReturnType<typeof useTranslations> }) => (
   <div className="relative w-full flex items-center rounded-full border-[1px] border-dark-200">
     <Search className="absolute left-3 top-2.5 w-4 h-4 text-dark-900" />
     <input
       type="text"
-      placeholder="Search"
+      placeholder={t('search.keywords')}
       className="w-full pl-9 pr-4 py-2 rounded-full small-1-rg text-dark-900 focus:outline-none"
     />
     <button className="flex items-center gap-2 px-4 py-2 rounded-full small-1-rg text-dark-900">
-      Location <ArrowDown />
+      {t('search.category')} <ArrowDown />
     </button>
   </div>
 );
 
-const JobGrid = ({ jobs }: { jobs: typeof jobData }) => (
+const JobGrid = ({
+  jobs,
+  t,
+}: {
+  jobs: (Job & { logo: StaticImageData })[];
+  t: ReturnType<typeof useTranslations>;
+}) => (
   <div className="grid md:grid-cols-3 gap-6">
     {jobs.map((job, index) => (
-      <JobCard key={index} {...job} />
+      <JobCard key={index} {...job} t={t} />
     ))}
   </div>
 );
@@ -139,7 +120,8 @@ const JobCard = ({
   location,
   type,
   logo,
-}: (typeof jobData)[number]) => (
+  t,
+}: Job & { logo: StaticImageData; t: ReturnType<typeof useTranslations> }) => (
   <div className="group cursor-pointer transition-all duration-200 border border-dark-100 hover:border-transparent rounded-xl p-4 relative ">
     <div className="relative flex justify-between items-center gap-3 mb-4">
       <Image src={logo} alt={company} width={48} height={48} />
@@ -152,14 +134,16 @@ const JobCard = ({
           color="black"
           className="group-hover:bg-primary group-hover:text-white duration-200"
         >
-          Apply
+          {t('apply')}
         </Button>
       </div>
     </div>
 
     <h6 className="relative h6 text-dark-900 mb-1">{title}</h6>
     <p className="relative small-1 text-dark-600 mb-4">{company}</p>
-    <p className="relative small-1-md text-dark-700 mb-6">{description}</p>
+    <p className="relative small-1-md text-dark-700 line-clamp-3 mb-6">
+      {description}
+    </p>
 
     <div className="relative flex items-center gap-6">
       <div className="flex flex-1 items-center gap-1 small-1 text-dark-700">
@@ -224,13 +208,19 @@ const JobCard = ({
   </div>
 );
 
-const SectionFooterActions = () => (
+const SectionFooterActions = ({
+  t,
+}: {
+  t: ReturnType<typeof useTranslations>;
+}) => (
   <div className="mt-16 flex justify-center gap-4">
     <Button size="lg" className="gap-3">
-      Explore More Jobs <ArrowRight />
+      {t('exploreMoreJobs')} <ArrowRight />
     </Button>
     <Button size="lg" variant="secondary">
-      Post a job
+      {t('postJob')}
     </Button>
   </div>
 );
+
+export default OpportunitiesSection;

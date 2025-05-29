@@ -82,6 +82,72 @@
         "privacy": "Privacy Policy",
         "cookies": "Cookie Settings"
       }
+    },
+    "jobs": {
+      "tagline": "Lorem Ipsum",
+      "headline": "Explore and find Opportunities/Talents",
+      "subtext": "Malesuada cursus nec tincidunt consectetur aenean velit. Pharetra orci volutpat donec sit diam pulvinar lobortis donec euismod.",
+      "tabs": {
+        "jobs": "Popular Jobs",
+        "professionals": "Popular Talents"
+      },
+      "search": {
+        "category": "Location",
+        "keywords": "Search"
+      },
+      "apply": "Apply",
+      "exploreMoreJobs": "Explore More Jobs",
+      "postJob": "Post a job",
+      "list": [
+        {
+          "title": "Audio Engineers",
+          "company": "Tiktok",
+          "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque. Orci sit semper ullamcorper eleifend faucibus et aliquam integer eu..",
+          "location": "Pickering, ON",
+          "type": "In-office",
+          "featured": false
+        },
+        {
+          "title": "Musician",
+          "company": "Cafe",
+          "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque. Orci sit semper ullamcorper eleifend faucibus et aliquam integer euismod.",
+          "location": "Pickering, ON",
+          "type": "In-office",
+          "featured": true
+        },
+        {
+          "title": "Graphic Designer",
+          "company": "BlueOptima",
+          "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque. Orci sit semper ullamcorper eleifend faucibus et aliquam integer euismod.",
+          "location": "Brampton, ON",
+          "type": "Full-Time",
+          "featured": false
+        },
+        {
+          "title": "Artist",
+          "company": "ACP Studio",
+          "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque. Orci sit semper ullamcorper eleifend faucibus et aliquam integer euismod.",
+          "location": "Toronto, Canada",
+          "type": "Contract",
+          "featured": false
+        },
+        {
+          "title": "Photography",
+          "company": "JK Photo Studio",
+          "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque. Orci sit semper ullamcorper eleifend faucibus et aliquam integer euismod.",
+          "location": "Montreal, QC",
+          "type": "Remote",
+          "featured": false
+        },
+        {
+          "title": "Event Planner",
+          "company": "ChargePoint",
+          "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque. Orci sit semper ullamcorper eleifend faucibus et aliquam integer euismod.",
+          "location": "Pickering, ON",
+          "type": "Hybrid",
+          "featured": false
+        }
+      ]
     }
   },
   "common": {
