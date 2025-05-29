@@ -24,7 +24,7 @@ const TrustedCompaniesSection: React.FC = () => {
   const t = useTranslations('landing.trustedCompanies');
 
   return (
-    <section className="py-10">
+    <section className="py-10 min-h-[180px]">
       <div className="text-center body-1 text-gray-600 mb-10">{t('label')}</div>
 
       <Marquee gradient={false} speed={40} pauseOnHover>

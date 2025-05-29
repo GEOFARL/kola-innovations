@@ -12,6 +12,10 @@ import Phone from '@/assets/icons/social/phone.svg';
 import X from '@/assets/icons/social/x.svg';
 import Button from '@/components/ui/button/button';
 import MaxWidthWrapper from '@/components/utils/max-width-wrapper';
+import SwiggleArrow from '@/assets/icons/swiggle-arrow-2.svg';
+import tikTokLabel from '@/assets/images/tik-tok-label.png';
+import spotifyLabel from '@/assets/images/spotify-label.png';
+import Image from 'next/image';
 
 const contactInfo = [
   { icon: <MailRed />, text: 'example@yahoo.com' },
@@ -37,8 +41,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-dark-900 pt-20">
       <MaxWidthWrapper>
-        {/* Newsletter */}
-        <div className="bg-primary-100 p-12 rounded-[40px] flex justify-between items-end gap-8">
+        <div className="bg-primary-100 p-12 rounded-[40px] flex justify-between items-end gap-8 relative">
           <div className="max-w-[684px]">
             <h3 className="h3 text-dark-900 mb-4">{t('subscribeHeading')}</h3>
             <p className="h6-rg text-dark-700">{t('subscribeSubtext')}</p>
@@ -58,9 +61,28 @@ const Footer: React.FC = () => {
               {t('subscribeButton')}
             </Button>
           </form>
+
+          <div className="absolute top-[100px] left-[750px]">
+            <SwiggleArrow />
+          </div>
+
+          <Image
+            src={tikTokLabel}
+            alt="tik tok label"
+            width={270}
+            height={85}
+            className="absolute -top-[30px] right-[200px]"
+          />
+
+          <Image
+            src={spotifyLabel}
+            alt="spotify label"
+            width={270}
+            height={85}
+            className="absolute top-[30px] -right-[105px]"
+          />
         </div>
 
-        {/* Main */}
         <div className="mt-30">
           <div className="flex gap-[287px] mb-10">
             <div className="space-y-6 max-w-[323px] w-full shrink-0">
@@ -92,7 +114,6 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Bottom */}
           <div className="py-8 text-dark-500 border-t-[1px] border-dark-800 flex items-center justify-between">
             <span>{t('legal.copyright')}</span>
             <div className="flex gap-6">
