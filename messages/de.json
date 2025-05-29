@@ -52,6 +52,36 @@
     },
     "trustedCompanies": {
       "label": "Vertrauenswürdige Unternehmen"
+    },
+    "footer": {
+      "subscribeHeading": "Abonniere unseren Newsletter für Updates und Einblicke!",
+      "subscribeSubtext": "Malesuada cursus nec tincidunt consectetur aenean velit. Pharetra orci volutpat donec sit diam pulvinar lobortis donec euismod.",
+      "emailPlaceholder": "Gib deine E-Mail-Adresse ein",
+      "subscribeButton": "Abonnieren",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+      "sections": {
+        "services": {
+          "title": "Dienstleistungen",
+          "items": [
+            "Arbeit finden",
+            "Talente finden",
+            "Communities",
+            "Mentoring",
+            "Freund empfehlen"
+          ]
+        },
+        "about": {
+          "title": "Über uns",
+          "items": ["Unser Team", "Karriere", "Stores", "Erfahrungsberichte"]
+        },
+        "contact": "Kontakt"
+      },
+      "legal": {
+        "copyright": "© 2024 Alle Rechte vorbehalten.",
+        "terms": "Nutzungsbedingungen",
+        "privacy": "Datenschutzrichtlinie",
+        "cookies": "Cookie-Einstellungen"
+      }
     }
   },
   "common": {

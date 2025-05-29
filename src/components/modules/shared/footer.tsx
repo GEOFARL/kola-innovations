@@ -1,5 +1,6 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import LogoWhite from '@/assets/icons/logo-white.svg';
 import Facebook from '@/assets/icons/social/facebook.svg';
@@ -11,17 +12,6 @@ import Phone from '@/assets/icons/social/phone.svg';
 import X from '@/assets/icons/social/x.svg';
 import Button from '@/components/ui/button/button';
 import MaxWidthWrapper from '@/components/utils/max-width-wrapper';
-
-const navLinks = {
-  services: [
-    'Find Work',
-    'Find Talent',
-    'Communities',
-    'Mentorship',
-    'Refer a friend',
-  ],
-  about: ['Our team', 'Careers', 'Stores', 'Testimonials'],
-};
 
 const contactInfo = [
   { icon: <MailRed />, text: 'example@yahoo.com' },
@@ -36,24 +26,22 @@ const socialLinks = [
 ];
 
 const legalLinks = [
-  { label: 'Terms of Service', href: '#' },
-  { label: 'Privacy Policy', href: '#' },
-  { label: 'Cookie Settings', href: '#' },
+  { key: 'terms', href: '#' },
+  { key: 'privacy', href: '#' },
+  { key: 'cookies', href: '#' },
 ];
 
 const Footer: React.FC = () => {
+  const t = useTranslations('landing.footer');
+
   return (
     <footer className="bg-dark-900 pt-20">
       <MaxWidthWrapper>
+        {/* Newsletter */}
         <div className="bg-primary-100 p-12 rounded-[40px] flex justify-between items-end gap-8">
           <div className="max-w-[684px]">
-            <h3 className="h3 text-dark-900 mb-4">
-              Subscribe to Our Newsletter for Updates and Insights!
-            </h3>
-            <p className="h6-rg text-dark-700">
-              Malesuada cursus nec tincidunt consectetur aenean velit. Pharetra
-              orci volutpat donec sit diam pulvinar lobortis donec euismod.
-            </p>
+            <h3 className="h3 text-dark-900 mb-4">{t('subscribeHeading')}</h3>
+            <p className="h6-rg text-dark-700">{t('subscribeSubtext')}</p>
           </div>
           <form className="flex items-center gap-[10px] w-full max-w-[404px]">
             <div className="flex items-center bg-white px-4 py-3 w-full rounded-[8px] border-[1px] border-dark-200">
@@ -62,24 +50,22 @@ const Footer: React.FC = () => {
               </div>
               <input
                 type="email"
-                placeholder="Enter your Email"
+                placeholder={t('emailPlaceholder')}
                 className="bg-transparent text-sm small-1-md text-dark-700 outline-none w-full"
               />
             </div>
             <Button className="max-w-[114px] w-full" size="lg">
-              Subscribe
+              {t('subscribeButton')}
             </Button>
           </form>
         </div>
 
+        {/* Main */}
         <div className="mt-30">
           <div className="flex gap-[287px] mb-10">
             <div className="space-y-6 max-w-[323px] w-full shrink-0">
               <LogoWhite />
-              <p className="small-1-rg text-dark-100">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore.
-              </p>
+              <p className="small-1-rg text-dark-100">{t('description')}</p>
               <div className="flex gap-4">
                 {socialLinks.map(({ icon, href }, idx) => (
                   <Link
@@ -94,22 +80,29 @@ const Footer: React.FC = () => {
             </div>
 
             <div className="flex gap-[180px]">
-              <NavSection title="Services" items={navLinks.services} />
-              <NavSection title="About Us" items={navLinks.about} />
-              <ContactSection />
+              <NavSection
+                title={t('sections.services.title')}
+                items={t.raw('sections.services.items')}
+              />
+              <NavSection
+                title={t('sections.about.title')}
+                items={t.raw('sections.about.items')}
+              />
+              <ContactSection title={t('sections.contact')} />
             </div>
           </div>
 
+          {/* Bottom */}
           <div className="py-8 text-dark-500 border-t-[1px] border-dark-800 flex items-center justify-between">
-            <span>© 2024 All rights reserved.</span>
+            <span>{t('legal.copyright')}</span>
             <div className="flex gap-6">
-              {legalLinks.map(({ label, href }, index) => (
+              {legalLinks.map(({ key, href }) => (
                 <Link
-                  key={`${label}-${index}`}
+                  key={key}
                   href={href}
                   className="hover:underline text-dark-white"
                 >
-                  {label}
+                  {t(`legal.${key}`)}
                 </Link>
               ))}
             </div>
@@ -133,10 +126,10 @@ const NavSection = ({ title, items }: { title: string; items: string[] }) => (
   </div>
 );
 
-const ContactSection = () => (
+const ContactSection = ({ title }: { title: string }) => (
   <div className="flex flex-col gap-[20px]">
     <h5 className="font-[600] text-[18px] leading-[150%] text-dark-white">
-      Contact
+      {title}
     </h5>
     <ul className="space-y-3 text-gray-100 body-2-md">
       {contactInfo.map(({ icon, text }, i) => (

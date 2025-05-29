@@ -52,6 +52,36 @@
     },
     "trustedCompanies": {
       "label": "Trusted Companies"
+    },
+    "footer": {
+      "subscribeHeading": "Subscribe to Our Newsletter for Updates and Insights!",
+      "subscribeSubtext": "Malesuada cursus nec tincidunt consectetur aenean velit. Pharetra orci volutpat donec sit diam pulvinar lobortis donec euismod.",
+      "emailPlaceholder": "Enter your Email",
+      "subscribeButton": "Subscribe",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+      "sections": {
+        "services": {
+          "title": "Services",
+          "items": [
+            "Find Work",
+            "Find Talent",
+            "Communities",
+            "Mentorship",
+            "Refer a friend"
+          ]
+        },
+        "about": {
+          "title": "About Us",
+          "items": ["Our team", "Careers", "Stores", "Testimonials"]
+        },
+        "contact": "Contact"
+      },
+      "legal": {
+        "copyright": "© 2024 All rights reserved.",
+        "terms": "Terms of Service",
+        "privacy": "Privacy Policy",
+        "cookies": "Cookie Settings"
+      }
     }
   },
   "common": {
