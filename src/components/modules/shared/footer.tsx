@@ -58,10 +58,11 @@ const Footer: React.FC = () => {
               </Button>
             </form>
           }
+          swiggleClassName="hidden 2xl:block"
         />
 
         <div className="mt-30">
-          <div className="flex gap-[287px] mb-10">
+          <div className="flex gap-[180px] 2xl:gap-[287px] mb-10">
             <div className="space-y-6 max-w-[323px] w-full shrink-0">
               <LogoWhite />
               <p className="small-1-rg text-dark-100">{t('description')}</p>
@@ -78,7 +79,7 @@ const Footer: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex gap-[180px]">
+            <div className="flex gap-[120px] 2xl:gap-[180px]">
               <NavSection
                 title={t('sections.services.title')}
                 items={t.raw('sections.services.items')}

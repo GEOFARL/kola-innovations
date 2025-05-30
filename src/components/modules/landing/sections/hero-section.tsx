@@ -15,7 +15,7 @@ const HeroSection: React.FC = () => {
   return (
     <section>
       <MaxWidthWrapper className="relative flex justify-between py-20">
-        <article className="flex flex-col items-start max-w-[708px] py-[111px]">
+        <article className="flex flex-col items-start max-w-[708px] py-[50px] xl:py-[111px]">
           <header className="mb-4">
             <Button
               size="sm"
@@ -36,8 +36,16 @@ const HeroSection: React.FC = () => {
           <HeroSearchBox />
         </article>
 
-        <div className="shrink-0 self-start">
-          <Image height={618} width={658} src={heroCircle} alt="hero circle" />
+        <div className="shrink-0 flex-1 justify-end flex self-start">
+          <div className="w-[500px] xl:w-[658px]">
+            <Image
+              src={heroCircle}
+              alt="hero circle"
+              layout="responsive"
+              width={658}
+              height={618}
+            />
+          </div>
         </div>
 
         <HeroStatBubble />

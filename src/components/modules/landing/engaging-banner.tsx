@@ -1,20 +1,21 @@
-import Button from '@/components/ui/button/button';
 import SwiggleArrow from '@/assets/icons/swiggle-arrow-2.svg';
-import MailIcon from '@/assets/icons/social/mail.svg';
-import tikTokLabel from '@/assets/images/tik-tok-label.png';
 import spotifyLabel from '@/assets/images/spotify-label.png';
+import tikTokLabel from '@/assets/images/tik-tok-label.png';
+import { cn } from '@/lib/cn';
 import Image from 'next/image';
 
 type Props = {
   heading: string;
   subheading: string;
   actionElement?: React.ReactNode;
+  swiggleClassName?: string;
 };
 
 const EngagingBanner: React.FC<Props> = ({
   heading,
   subheading,
   actionElement,
+  swiggleClassName,
 }) => {
   return (
     <div className="bg-primary-100 p-12 rounded-[40px] flex justify-between items-end gap-8 relative">
@@ -24,7 +25,9 @@ const EngagingBanner: React.FC<Props> = ({
       </div>
       {actionElement}
 
-      <div className="absolute top-[100px] left-[750px]">
+      <div
+        className={cn('absolute top-[100px] left-[750px]', swiggleClassName)}
+      >
         <SwiggleArrow />
       </div>
 

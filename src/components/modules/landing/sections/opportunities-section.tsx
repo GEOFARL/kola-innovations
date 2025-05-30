@@ -52,7 +52,7 @@ const OpportunitiesSection: React.FC = () => {
   }));
 
   return (
-    <MaxWidthWrapper className="py-35">
+    <MaxWidthWrapper className="py-24 xl:py-35">
       <SectionHeader t={t} />
       <SectionFilters t={t} />
       <JobGrid jobs={jobs} t={t} />
@@ -122,7 +122,7 @@ const JobCard = ({
   logo,
   t,
 }: Job & { logo: StaticImageData; t: ReturnType<typeof useTranslations> }) => (
-  <div className="group cursor-pointer transition-all duration-200 border border-dark-100 hover:border-transparent rounded-xl p-4 relative ">
+  <div className="group cursor-pointer transition-all duration-200 border border-dark-100 hover:border-transparent rounded-xl p-4 relative overflow-hidden">
     <div className="relative flex justify-between items-center gap-3 mb-4">
       <Image src={logo} alt={company} width={48} height={48} />
       <div className="flex items-center gap-3">
