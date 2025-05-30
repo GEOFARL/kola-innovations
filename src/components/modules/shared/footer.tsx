@@ -1,7 +1,5 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
-import Link from 'next/link';
 import LogoWhite from '@/assets/icons/logo-white.svg';
 import Facebook from '@/assets/icons/social/facebook.svg';
 import Instagram from '@/assets/icons/social/instagram.svg';
@@ -12,10 +10,9 @@ import Phone from '@/assets/icons/social/phone.svg';
 import X from '@/assets/icons/social/x.svg';
 import Button from '@/components/ui/button/button';
 import MaxWidthWrapper from '@/components/utils/max-width-wrapper';
-import SwiggleArrow from '@/assets/icons/swiggle-arrow-2.svg';
-import tikTokLabel from '@/assets/images/tik-tok-label.png';
-import spotifyLabel from '@/assets/images/spotify-label.png';
-import Image from 'next/image';
+import { useTranslations } from 'next-intl';
+import Link from 'next/link';
+import EngagingBanner from '../landing/engaging-banner';
 
 const contactInfo = [
   { icon: <MailRed />, text: 'example@yahoo.com' },
@@ -41,47 +38,27 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-dark-900 pt-20">
       <MaxWidthWrapper>
-        <div className="bg-primary-100 p-12 rounded-[40px] flex justify-between items-end gap-8 relative">
-          <div className="max-w-[684px]">
-            <h3 className="h3 text-dark-900 mb-4">{t('subscribeHeading')}</h3>
-            <p className="h6-rg text-dark-700">{t('subscribeSubtext')}</p>
-          </div>
-          <form className="flex items-center gap-[10px] w-full max-w-[404px]">
-            <div className="flex items-center bg-white px-4 py-3 w-full rounded-[8px] border-[1px] border-dark-200">
-              <div className="w-5 mr-3">
-                <MailIcon />
+        <EngagingBanner
+          heading={t('subscribeHeading')}
+          subheading={t('subscribeSubtext')}
+          actionElement={
+            <form className="flex items-center gap-[10px] w-full max-w-[404px]">
+              <div className="flex items-center bg-white px-4 py-3 w-full rounded-[8px] border-[1px] border-dark-200">
+                <div className="w-5 mr-3">
+                  <MailIcon />
+                </div>
+                <input
+                  type="email"
+                  placeholder={t('emailPlaceholder')}
+                  className="bg-transparent text-sm small-1-md text-dark-700 outline-none w-full"
+                />
               </div>
-              <input
-                type="email"
-                placeholder={t('emailPlaceholder')}
-                className="bg-transparent text-sm small-1-md text-dark-700 outline-none w-full"
-              />
-            </div>
-            <Button className="max-w-[114px] w-full" size="lg">
-              {t('subscribeButton')}
-            </Button>
-          </form>
-
-          <div className="absolute top-[100px] left-[750px]">
-            <SwiggleArrow />
-          </div>
-
-          <Image
-            src={tikTokLabel}
-            alt="tik tok label"
-            width={270}
-            height={85}
-            className="absolute -top-[30px] right-[200px]"
-          />
-
-          <Image
-            src={spotifyLabel}
-            alt="spotify label"
-            width={270}
-            height={85}
-            className="absolute top-[30px] -right-[105px]"
-          />
-        </div>
+              <Button className="max-w-[114px] w-full" size="lg">
+                {t('subscribeButton')}
+              </Button>
+            </form>
+          }
+        />
 
         <div className="mt-30">
           <div className="flex gap-[287px] mb-10">

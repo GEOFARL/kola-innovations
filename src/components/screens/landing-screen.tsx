@@ -1,4 +1,5 @@
 import HeroSection from '../modules/landing/sections/hero-section';
+import MotivationSection from '../modules/landing/sections/motivation-section';
 import OpportunitiesSection from '../modules/landing/sections/opportunities-section';
 import StatsSection from '../modules/landing/sections/stats-section';
 import TrustedCompaniesSection from '../modules/landing/sections/trusted-companies-section';
@@ -12,7 +13,8 @@ const LandingScreen: React.FC = () => {
       <HeroSection />
       <StatsSection />
       <TrustedCompaniesSection />
-      <OpportunitiesSection />ø
+      <OpportunitiesSection />
+      <MotivationSection />
       <Footer />
     </>
   );

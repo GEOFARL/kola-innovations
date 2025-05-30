@@ -148,6 +148,11 @@
           "featured": false
         }
       ]
+    },
+    "motivation": {
+      "heading": "We empower job seekers like you to streamline and supercharge your job search",
+      "subHeading": "Malesuada cursus nec tincidunt consectetur aenean velit. Pharetra orci volutpat donec sit diam pulvinar lobortis donec euismod.",
+      "getStarted": "Get Started Now"
     }
   },
   "common": {

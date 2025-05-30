@@ -144,6 +144,11 @@
           "type": "Hybrid"
         }
       ]
+    },
+    "motivation": {
+      "heading": "Wir stärken Jobsuchende wie dich, um die Stellensuche zu optimieren und zu beschleunigen",
+      "subHeading": "Malesuada cursus nec tincidunt consectetur aenean velit. Pharetra orci volutpat donec sit diam pulvinar lobortis donec euismod.",
+      "getStarted": "Jetzt loslegen"
     }
   },
   "common": {
