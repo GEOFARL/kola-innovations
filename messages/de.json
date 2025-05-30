@@ -149,6 +149,22 @@
       "heading": "Wir stärken Jobsuchende wie dich, um die Stellensuche zu optimieren und zu beschleunigen",
       "subHeading": "Malesuada cursus nec tincidunt consectetur aenean velit. Pharetra orci volutpat donec sit diam pulvinar lobortis donec euismod.",
       "getStarted": "Jetzt loslegen"
+    },
+    "talent": {
+      "tagline": "Lorem Ipsum",
+      "headline": "Finde Talente nach Kategorie",
+      "subtext": "Malesuada cursus nec tincidunt consectetur aenean velit. Pharetra orci volutpat donec sit diam pulvinar lobortis donec euismod.",
+      "avgRating": "Durchschn. Bewertung",
+      "jobsPosted": "bereits veröffentlichte Jobs",
+      "categories": {
+        "photography": { "title": "Fotografie" },
+        "musician": { "title": "Musiker" },
+        "videography": { "title": "Videografie" },
+        "design": { "title": "Design & Kreatives" },
+        "events": { "title": "Eventplaner" },
+        "audio": { "title": "Tontechniker" },
+        "editors": { "title": "Editoren" }
+      }
     }
   },
   "common": {

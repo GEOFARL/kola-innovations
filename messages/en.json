@@ -153,6 +153,22 @@
       "heading": "We empower job seekers like you to streamline and supercharge your job search",
       "subHeading": "Malesuada cursus nec tincidunt consectetur aenean velit. Pharetra orci volutpat donec sit diam pulvinar lobortis donec euismod.",
       "getStarted": "Get Started Now"
+    },
+    "talent": {
+      "tagline": "Lorem Ipsum",
+      "headline": "Browse talent by category",
+      "subtext": "Malesuada cursus nec tincidunt consectetur aenean velit. Pharetra orci volutpat donec sit diam pulvinar lobortis donec euismod.",
+      "avgRating": "Avg Rating",
+      "jobsPosted": "jobs already posted",
+      "categories": {
+        "photography": { "title": "Photography" },
+        "musician": { "title": "Musician" },
+        "videography": { "title": "Videography" },
+        "design": { "title": "Design & Creative" },
+        "events": { "title": "Event Planners" },
+        "audio": { "title": "Audio Engineers" },
+        "editors": { "title": "Editors" }
+      }
     }
   },
   "common": {
