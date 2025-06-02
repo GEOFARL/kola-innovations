@@ -13,7 +13,7 @@ const HeaderV2: React.FC = () => {
   const tActions = useTranslations('common.actions');
 
   return (
-    <header className="h-[88px] py-6 border-b-[1.5px] border-dark-100">
+    <header className="h-[88px] py-6 border-b-[1.5px] border-dark-100 sticky top-0 bg-white z-100">
       <MaxWidthWrapper className="flex items-center justify-between">
         <div className="flex items-center gap-20">
           <Link href="/" aria-label="Homepage">
