@@ -8,44 +8,46 @@ import { FormProvider, useForm } from 'react-hook-form';
 import AuthForm from './auth-form';
 import FormField from '@/components/ui/form-field';
 import { useAuthModalStore } from '@/lib/stores/auth/auth-modal-store';
+import { useTranslations } from 'next-intl';
 
 const SignInForm: React.FC = () => {
+  const t = useTranslations('common.auth');
+  const tf = (key: string) => t(`fields.${key}`);
+  const tp = (key: string) => t(`placeholders.${key}`);
   const { setView } = useAuthModalStore();
+
   const methods = useForm<SignInFormData>({
     resolver: zodResolver(SignInSchema),
   });
 
-  const onSubmit = methods.handleSubmit((data) => {
-    console.log(data);
-  });
+  const onSubmit = methods.handleSubmit((data) => console.log(data));
 
   return (
     <FormProvider {...methods}>
       <AuthForm className="flex flex-col">
         <AuthForm.Header
-          title="Let’s Sign in!"
+          title={t('login')}
           description={
             <>
-              <p>Discover the benefits of joining the platform</p>
-              <p className="-mt-[4px]">Sign up now!</p>
+              <p>{t('signInDescription.line1')}</p>
+              <p className="-mt-[4px]">{t('signInDescription.line2')}</p>
             </>
           }
         />
-
         <form onSubmit={onSubmit} className="space-y-4 flex-1 flex flex-col">
           <AuthForm.Fields className="flex-1">
             <FormField
               name="email"
-              label="Email Address"
+              label={tf('email')}
+              placeholder={tp('email')}
               type="email"
-              placeholder="example30@gmail.com"
               required
             />
             <FormField
               name="password"
-              label="Password"
+              label={tf('password')}
+              placeholder={tp('password')}
               type="password"
-              placeholder="Enter your password"
               required
             />
             <Button
@@ -54,23 +56,22 @@ const SignInForm: React.FC = () => {
               variant="text-link"
               color="black"
             >
-              Forgot Password?
+              {t('forgotPassword')}
             </Button>
           </AuthForm.Fields>
-
           <AuthForm.Footer>
             <Button className="w-full" color="black" size="lg" type="submit">
-              Login
+              {t('login')}
             </Button>
             <div className="flex items-center small-1-rg text-dark-700">
-              Don’t have an account?{' '}
+              {t('noAccount')}?
               <Button
                 variant="text-link"
                 onClick={() => setView('signUp')}
                 className="pl-1"
                 type="button"
               >
-                Sign Up
+                {t('signup')}
               </Button>
             </div>
           </AuthForm.Footer>

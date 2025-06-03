@@ -169,12 +169,54 @@
         "audio": { "title": "Audio Engineers" },
         "editors": { "title": "Editors" }
       }
+    },
+    "authModal": {
+      "left": {
+        "title": "Networking Opportunities",
+        "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque.",
+        "bubble": "Talents found their dream job!"
+      },
+      "connectCard": {
+        "name": "Ramon Alberto V.",
+        "title": "Audio Engineer",
+        "bio": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque. Orci sit semper ullamcorper eleifend faucibus et aliquam integer euismod.",
+        "connect": "Connect",
+        "rating": "4.8/5 Rating",
+        "verified": "Verified by 457"
+      }
     }
   },
   "common": {
     "auth": {
       "login": "Log In",
-      "signup": "Sign Up"
+      "signup": "Sign Up",
+      "haveAccount": "Already have an account",
+      "noAccount": "Don’t have an account",
+      "forgotPassword": "Forgot Password?",
+      "signInDescription": {
+        "line1": "Discover the benefits of joining the platform",
+        "line2": "Sign up now!"
+      },
+      "signUpDescription": {
+        "line1": "Discover the benefits of joining the platform",
+        "line2": "Sign up now!"
+      },
+      "fields": {
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "mobile": "Mobile Number",
+        "email": "Email Address",
+        "password": "Password",
+        "confirmPassword": "Confirm Password"
+      },
+      "placeholders": {
+        "firstName": "Enter your first name",
+        "lastName": "Enter your last name",
+        "mobile": "(000) 000-0000",
+        "email": "example30@gmail.com",
+        "password": "Enter your password",
+        "confirmPassword": "Repeat your password"
+      }
     },
     "actions": {
       "search": "Search"

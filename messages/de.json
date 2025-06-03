@@ -165,12 +165,54 @@
         "audio": { "title": "Tontechniker" },
         "editors": { "title": "Editoren" }
       }
+    },
+    "authModal": {
+      "left": {
+        "title": "Networking-Möglichkeiten",
+        "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque.",
+        "bubble": "Talente haben ihren Traumjob gefunden!"
+      },
+      "connectCard": {
+        "name": "Ramon Alberto V.",
+        "title": "Tontechniker",
+        "bio": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque. Orci sit semper ullamcorper eleifend faucibus et aliquam integer euismod.",
+        "connect": "Vernetzen",
+        "rating": "4,8/5 Bewertung",
+        "verified": "Von 457 verifiziert"
+      }
     }
   },
   "common": {
     "auth": {
       "login": "Anmelden",
-      "signup": "Registrieren"
+      "signup": "Registrieren",
+      "haveAccount": "Du hast bereits ein Konto?",
+      "noAccount": "Du hast noch kein Konto?",
+      "forgotPassword": "Passwort vergessen?",
+      "signInDescription": {
+        "line1": "Entdecke die Vorteile einer Mitgliedschaft auf der Plattform",
+        "line2": "Jetzt anmelden!"
+      },
+      "signUpDescription": {
+        "line1": "Entdecke die Vorteile einer Mitgliedschaft auf der Plattform",
+        "line2": "Jetzt registrieren!"
+      },
+      "fields": {
+        "firstName": "Vorname",
+        "lastName": "Nachname",
+        "mobile": "Handynummer",
+        "email": "E-Mail-Adresse",
+        "password": "Passwort",
+        "confirmPassword": "Passwort bestätigen"
+      },
+      "placeholders": {
+        "firstName": "Gib deinen Vornamen ein",
+        "lastName": "Gib deinen Nachnamen ein",
+        "mobile": "(000) 000-0000",
+        "email": "beispiel30@gmail.com",
+        "password": "Gib dein Passwort ein",
+        "confirmPassword": "Wiederhole dein Passwort"
+      }
     },
     "actions": {
       "search": "Suchen"

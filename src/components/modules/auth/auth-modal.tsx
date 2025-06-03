@@ -12,19 +12,19 @@ import Image from 'next/image';
 import Button from '@/components/ui/button/button';
 import SignInForm from './sign-in-form';
 import SignUpForm from './sign-up-form';
+import { useTranslations } from 'next-intl';
 
 const AuthModal: React.FC = () => {
   const { close, view, isOpen } = useAuthModalStore();
+  const t = useTranslations('landing.authModal');
 
   const renderForm = () => {
     switch (view) {
-      case 'signIn': {
+      case 'signIn':
         return <SignInForm />;
-      }
+      case 'signUp':
       case 'forgot':
-      case 'signUp': {
         return <SignUpForm />;
-      }
     }
   };
 
@@ -44,12 +44,9 @@ const AuthModal: React.FC = () => {
 
           <div className="flex-1 max-w-[360px] mx-auto">
             <div className="mb-[53px] text-center">
-              <h6 className="h6 mb-2 text-dark-900">
-                Networking Opportunities
-              </h6>
+              <h6 className="h6 mb-2 text-dark-900">{t('left.title')}</h6>
               <p className="text-dark-700 small-2-rg font-[400]!">
-                Interdum donec laoreet malesuada a gravida vivamus tempor. Eu
-                magnis lectus in molestie ultricies neque.
+                {t('left.description')}
               </p>
             </div>
             <ConnectCard />
@@ -58,8 +55,7 @@ const AuthModal: React.FC = () => {
           <div className="flex items-center gap-4">
             <Image src={peopleImage} alt="people" width={132} height={42} />
             <p className="max-w-[132px] small-1 font-[400]! text-dark-900">
-              <span className="font-[600]">100+</span> Talents found their dream
-              job!
+              <span className="font-[600]">100+</span> {t('left.bubble')}
             </p>
           </div>
         </div>
@@ -73,23 +69,21 @@ const AuthModal: React.FC = () => {
 export default AuthModal;
 
 const ConnectCard: React.FC = () => {
+  const t = useTranslations('landing.authModal.connectCard');
+
   return (
     <div className="relative p-4 rounded-[16px] border-[1px] border-dark-100 bg-dark-white shadow-[0_0px_4px_rgba(0,0,0,0.12)]">
       <div className="flex justify-between items-start mb-4">
         <Image src={ramonImage} alt="Ramon Alberto" width={48} height={48} />
-        <Button>Connect</Button>
+        <Button>{t('connect')}</Button>
       </div>
 
       <div className="mb-6">
-        <h6 className="h6 text-dark-900">Ramon Alberto V.</h6>
-        <p className="text-dark-600 small-1">Audio Engineer</p>
+        <h6 className="h6 text-dark-900">{t('name')}</h6>
+        <p className="text-dark-600 small-1">{t('title')}</p>
       </div>
 
-      <p className="line-clamp-3 small-1-md text-dark-700">
-        Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis
-        lectus in molestie ultricies neque. Orci sit semper ullamcorper eleifend
-        faucibus et aliquam integer euismod.
-      </p>
+      <p className="line-clamp-3 small-1-md text-dark-700">{t('bio')}</p>
 
       <div className="absolute bg-dark-white rounded-[8px] -left-[30px] -bottom-[10px] p-2 flex flex-col gap-[12px] shadow-[0_0px_4px_rgba(0,0,0,0.12)]">
         <Image
@@ -98,13 +92,11 @@ const ConnectCard: React.FC = () => {
           width={103}
           height={16}
         />
-
-        <p className="small-1-md text-dark-700">4.8/5 Rating</p>
+        <p className="small-1-md text-dark-700">{t('rating')}</p>
       </div>
 
       <div className="absolute bg-dark-white items-center rounded-[8px] -right-[30px] top-[80px] p-2 flex gap-[12px] shadow-[0_0px_4px_rgba(0,0,0,0.12)]">
-        <p className="small-1-md text-dark-700">Verified by 457</p>
-
+        <p className="small-1-md text-dark-700">{t('verified')}</p>
         <VerifiedIcon />
       </div>
     </div>

@@ -8,87 +8,87 @@ import FormField from '@/components/ui/form-field';
 import { SignUpSchema } from '@/lib/schemas/auth/sign-up.schema';
 import { useAuthModalStore } from '@/lib/stores/auth/auth-modal-store';
 import { SignUpFormData } from '@/lib/types/auth/sign-up';
+import { useTranslations } from 'next-intl';
 
 const SignUpForm: React.FC = () => {
+  const t = useTranslations('common.auth');
+  const tf = (key: string) => t(`fields.${key}`);
+  const tp = (key: string) => t(`placeholders.${key}`);
   const { setView } = useAuthModalStore();
 
   const methods = useForm<SignUpFormData>({
     resolver: zodResolver(SignUpSchema),
   });
 
-  const onSubmit = methods.handleSubmit((data) => {
-    console.log('SIGN UP DATA:', data);
-  });
+  const onSubmit = methods.handleSubmit((data) => console.log('SIGN UP', data));
 
   return (
     <FormProvider {...methods}>
       <AuthForm className="flex flex-col">
         <AuthForm.Header
-          title="Welcome !"
+          title={t('signup')}
           description={
             <>
-              <p>Discover the benefits of joining the platform</p>
-              <p className="-mt-[4px]">Sign up now!</p>
+              <p>{t('signUpDescription.line1')}</p>
+              <p className="-mt-[4px]">{t('signUpDescription.line2')}</p>
             </>
           }
         />
-
         <form onSubmit={onSubmit} className="space-y-4 flex-1 flex flex-col">
           <AuthForm.Fields className="flex-1">
             <FormField
               name="firstName"
-              label="First Name"
-              placeholder="Enter your first name"
+              label={tf('firstName')}
+              placeholder={tp('firstName')}
               required
             />
             <FormField
               name="lastName"
-              label="Last Name"
-              placeholder="Enter your last name"
+              label={tf('lastName')}
+              placeholder={tp('lastName')}
               required
             />
             <FormField
               name="mobile"
-              label="Mobile Number"
-              placeholder="(000) 000-0000"
+              label={tf('mobile')}
+              placeholder={tp('mobile')}
               type="tel"
             />
             <FormField
               name="email"
-              label="Email Address"
+              label={tf('email')}
+              placeholder={tp('email')}
               type="email"
-              placeholder="example30@gmail.com"
               required
             />
             <FormField
               name="password"
-              label="Password"
+              label={tf('password')}
+              placeholder={tp('password')}
               type="password"
-              placeholder="Create a password"
               required
             />
             <FormField
               name="confirmPassword"
-              label="Confirm Password"
+              label={tf('confirmPassword')}
+              placeholder={tp('confirmPassword')}
               type="password"
-              placeholder="Repeat your password"
               required
             />
           </AuthForm.Fields>
-
           <AuthForm.Footer>
             <Button className="w-full" color="black" size="lg" type="submit">
-              Sign up
+              {t('signup')}
             </Button>
             <div className="flex items-center small-1-rg text-dark-700">
-              Already have an account?{' '}
+              {t('haveAccount')}?
               <Button
                 variant="text-link"
                 onClick={() => setView('signIn')}
                 className="pl-0"
                 type="button"
               >
-                Login
+                {t('login')}
               </Button>
             </div>
           </AuthForm.Footer>
