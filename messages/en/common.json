@@ -1,0 +1,42 @@
+{
+  "auth": {
+    "login": "Log In",
+    "signup": "Sign Up",
+    "haveAccount": "Already have an account",
+    "noAccount": "Don’t have an account",
+    "forgotPassword": "Forgot Password?",
+    "signInDescription": {
+      "line1": "Discover the benefits of joining the platform",
+      "line2": "Sign up now!"
+    },
+    "signUpDescription": {
+      "line1": "Discover the benefits of joining the platform",
+      "line2": "Sign up now!"
+    },
+    "fields": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "mobile": "Mobile Number",
+      "email": "Email Address",
+      "password": "Password",
+      "confirmPassword": "Confirm Password"
+    },
+    "placeholders": {
+      "firstName": "Enter your first name",
+      "lastName": "Enter your last name",
+      "mobile": "(000) 000-0000",
+      "email": "example30@gmail.com",
+      "password": "Enter your password",
+      "confirmPassword": "Repeat your password"
+    }
+  },
+  "actions": {
+    "search": "Search"
+  },
+  "nav": {
+    "findTalent": "Find Talent",
+    "findWork": "Find Work",
+    "mentorship": "Mentorship",
+    "more": "More"
+  }
+}

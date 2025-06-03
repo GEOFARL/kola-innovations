@@ -1,0 +1,187 @@
+{
+  "title": "Home Page",
+  "description": "Welcome! This is a test landing with Tailwind CSS.",
+  "login": "Log In",
+  "hero": {
+    "exploreOpportunities": "Explore Opportunities",
+    "headline": "Your Gateway to Creative Jobs and Talent",
+    "subtext": "Explore diverse career opportunities or hire skilled experts across creative and professional fields",
+    "explore": "Explore",
+    "tabs": {
+      "jobs": "Jobs",
+      "professionals": "Professionals"
+    },
+    "search": {
+      "category": "Job Category",
+      "keywords": "Keywords or Title",
+      "value": {
+        "category": "Musician",
+        "keywords": "Composer, Audio Engineer"
+      }
+    },
+    "bubble": {
+      "label": "Talents found their dream job!"
+    }
+  },
+  "stats": {
+    "tagline": "Lorem Ipsum",
+    "headline": "Unlock your true potential and Discover a world of opportunities that align with your skills, interests, and Aspirations",
+    "items": {
+      "opportunities": {
+        "value": "400K",
+        "title": "Opportunities",
+        "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in"
+      },
+      "connections": {
+        "value": "5K",
+        "title": "Connections",
+        "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in"
+      },
+      "hired": {
+        "value": "2K",
+        "title": "Professionals hired",
+        "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in"
+      },
+      "mentors": {
+        "value": "100",
+        "title": "Mentors",
+        "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in"
+      }
+    }
+  },
+  "trustedCompanies": {
+    "label": "Trusted Companies"
+  },
+  "footer": {
+    "subscribeHeading": "Subscribe to Our Newsletter for Updates and Insights!",
+    "subscribeSubtext": "Malesuada cursus nec tincidunt consectetur aenean velit. Pharetra orci volutpat donec sit diam pulvinar lobortis donec euismod.",
+    "emailPlaceholder": "Enter your Email",
+    "subscribeButton": "Subscribe",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+    "sections": {
+      "services": {
+        "title": "Services",
+        "items": [
+          "Find Work",
+          "Find Talent",
+          "Communities",
+          "Mentorship",
+          "Refer a friend"
+        ]
+      },
+      "about": {
+        "title": "About Us",
+        "items": ["Our team", "Careers", "Stores", "Testimonials"]
+      },
+      "contact": "Contact"
+    },
+    "legal": {
+      "copyright": "© 2024 All rights reserved.",
+      "terms": "Terms of Service",
+      "privacy": "Privacy Policy",
+      "cookies": "Cookie Settings"
+    }
+  },
+  "jobs": {
+    "tagline": "Lorem Ipsum",
+    "headline": "Explore and find Opportunities/Talents",
+    "subtext": "Malesuada cursus nec tincidunt consectetur aenean velit. Pharetra orci volutpat donec sit diam pulvinar lobortis donec euismod.",
+    "tabs": {
+      "jobs": "Popular Jobs",
+      "professionals": "Popular Talents"
+    },
+    "search": {
+      "category": "Location",
+      "keywords": "Search"
+    },
+    "apply": "Apply",
+    "exploreMoreJobs": "Explore More Jobs",
+    "postJob": "Post a job",
+    "list": [
+      {
+        "title": "Audio Engineers",
+        "company": "Tiktok",
+        "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque. Orci sit semper ullamcorper eleifend faucibus et aliquam integer eu..",
+        "location": "Pickering, ON",
+        "type": "In-office",
+        "featured": false
+      },
+      {
+        "title": "Musician",
+        "company": "Cafe",
+        "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque. Orci sit semper ullamcorper eleifend faucibus et aliquam integer euismod.",
+        "location": "Pickering, ON",
+        "type": "In-office",
+        "featured": true
+      },
+      {
+        "title": "Graphic Designer",
+        "company": "BlueOptima",
+        "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque. Orci sit semper ullamcorper eleifend faucibus et aliquam integer euismod.",
+        "location": "Brampton, ON",
+        "type": "Full-Time",
+        "featured": false
+      },
+      {
+        "title": "Artist",
+        "company": "ACP Studio",
+        "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque. Orci sit semper ullamcorper eleifend faucibus et aliquam integer euismod.",
+        "location": "Toronto, Canada",
+        "type": "Contract",
+        "featured": false
+      },
+      {
+        "title": "Photography",
+        "company": "JK Photo Studio",
+        "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque. Orci sit semper ullamcorper eleifend faucibus et aliquam integer euismod.",
+        "location": "Montreal, QC",
+        "type": "Remote",
+        "featured": false
+      },
+      {
+        "title": "Event Planner",
+        "company": "ChargePoint",
+        "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque. Orci sit semper ullamcorper eleifend faucibus et aliquam integer euismod.",
+        "location": "Pickering, ON",
+        "type": "Hybrid",
+        "featured": false
+      }
+    ]
+  },
+  "motivation": {
+    "heading": "We empower job seekers like you to streamline and supercharge your job search",
+    "subHeading": "Malesuada cursus nec tincidunt consectetur aenean velit. Pharetra orci volutpat donec sit diam pulvinar lobortis donec euismod.",
+    "getStarted": "Get Started Now"
+  },
+  "talent": {
+    "tagline": "Lorem Ipsum",
+    "headline": "Browse talent by category",
+    "subtext": "Malesuada cursus nec tincidunt consectetur aenean velit. Pharetra orci volutpat donec sit diam pulvinar lobortis donec euismod.",
+    "avgRating": "Avg Rating",
+    "jobsPosted": "jobs already posted",
+    "categories": {
+      "photography": { "title": "Photography" },
+      "musician": { "title": "Musician" },
+      "videography": { "title": "Videography" },
+      "design": { "title": "Design & Creative" },
+      "events": { "title": "Event Planners" },
+      "audio": { "title": "Audio Engineers" },
+      "editors": { "title": "Editors" }
+    }
+  },
+  "authModal": {
+    "left": {
+      "title": "Networking Opportunities",
+      "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque.",
+      "bubble": "Talents found their dream job!"
+    },
+    "connectCard": {
+      "name": "Ramon Alberto V.",
+      "title": "Audio Engineer",
+      "bio": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque. Orci sit semper ullamcorper eleifend faucibus et aliquam integer euismod.",
+      "connect": "Connect",
+      "rating": "4.8/5 Rating",
+      "verified": "Verified by 457"
+    }
+  }
+}

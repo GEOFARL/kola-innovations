@@ -1,0 +1,42 @@
+{
+  "auth": {
+    "login": "Anmelden",
+    "signup": "Registrieren",
+    "haveAccount": "Du hast bereits ein Konto?",
+    "noAccount": "Du hast noch kein Konto?",
+    "forgotPassword": "Passwort vergessen?",
+    "signInDescription": {
+      "line1": "Entdecke die Vorteile einer Mitgliedschaft auf der Plattform",
+      "line2": "Jetzt anmelden!"
+    },
+    "signUpDescription": {
+      "line1": "Entdecke die Vorteile einer Mitgliedschaft auf der Plattform",
+      "line2": "Jetzt registrieren!"
+    },
+    "fields": {
+      "firstName": "Vorname",
+      "lastName": "Nachname",
+      "mobile": "Handynummer",
+      "email": "E-Mail-Adresse",
+      "password": "Passwort",
+      "confirmPassword": "Passwort bestätigen"
+    },
+    "placeholders": {
+      "firstName": "Gib deinen Vornamen ein",
+      "lastName": "Gib deinen Nachnamen ein",
+      "mobile": "(000) 000-0000",
+      "email": "beispiel30@gmail.com",
+      "password": "Gib dein Passwort ein",
+      "confirmPassword": "Wiederhole dein Passwort"
+    }
+  },
+  "actions": {
+    "search": "Suchen"
+  },
+  "nav": {
+    "findTalent": "Talente finden",
+    "findWork": "Arbeit finden",
+    "mentorship": "Mentorship",
+    "more": "Mehr"
+  }
+}
