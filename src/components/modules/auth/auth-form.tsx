@@ -33,8 +33,13 @@ AuthForm.Fields = ({
   <div className={cn('space-y-4', className)}>{children}</div>
 );
 
-AuthForm.Footer = ({ children }: PropsWithChildren) => (
-  <div className="flex flex-col items-center gap-2">{children}</div>
+AuthForm.Footer = ({
+  children,
+  className,
+}: PropsWithChildren & { className?: string }) => (
+  <div className={cn('flex flex-col items-center gap-2', className)}>
+    {children}
+  </div>
 );
 
 export default AuthForm;

@@ -5,6 +5,9 @@
     "haveAccount": "Du hast bereits ein Konto?",
     "noAccount": "Du hast noch kein Konto?",
     "forgotPassword": "Passwort vergessen?",
+    "resetInstruction": "Keine Sorge, wir senden dir Anweisungen zum Zurücksetzen",
+    "sendEmail": "E-Mail senden",
+    "back": "Zurück",
     "signInDescription": {
       "line1": "Entdecke die Vorteile einer Mitgliedschaft auf der Plattform",
       "line2": "Jetzt anmelden!"

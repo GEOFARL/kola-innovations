@@ -5,6 +5,9 @@
     "haveAccount": "Already have an account",
     "noAccount": "Don’t have an account",
     "forgotPassword": "Forgot Password?",
+    "resetInstruction": "No worries, we will send you reset instructions",
+    "sendEmail": "Send Email",
+    "back": "Back",
     "signInDescription": {
       "line1": "Discover the benefits of joining the platform",
       "line2": "Sign up now!"

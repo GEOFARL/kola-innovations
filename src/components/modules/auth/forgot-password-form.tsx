@@ -1,71 +1,65 @@
 'use client';
 
 import Button from '@/components/ui/button/button';
-import { SignInSchema } from '@/lib/schemas/auth/sign-in.schema';
-import { SignInFormData } from '@/lib/types/auth/sign-in';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { FormProvider, useForm } from 'react-hook-form';
 import AuthForm from './auth-form';
 import FormField from '@/components/ui/form-field';
 import { useAuthModalStore } from '@/lib/stores/auth/auth-modal-store';
 import { useTranslations } from 'next-intl';
+import { ForgotPasswordSchema } from '@/lib/schemas/auth/forgot-password.schema';
+import { ForgotPasswordFormData } from '@/lib/types/auth/forgot-password';
 
-const SignInForm: React.FC = () => {
+const ForgotPasswordForm: React.FC = () => {
   const t = useTranslations('common.auth');
-  const tf = (key: string) => t(`fields.${key}`);
   const tp = (key: string) => t(`placeholders.${key}`);
   const { setView } = useAuthModalStore();
 
-  const methods = useForm<SignInFormData>({
-    resolver: zodResolver(SignInSchema),
+  const methods = useForm<ForgotPasswordFormData>({
+    resolver: zodResolver(ForgotPasswordSchema),
   });
 
-  const onSubmit = methods.handleSubmit((data) => console.log(data));
+  const onSubmit = methods.handleSubmit((data) => {
+    console.log('FORGOT PASSWORD', data);
+  });
 
   return (
     <FormProvider {...methods}>
       <AuthForm className="flex flex-col">
         <AuthForm.Header
-          title={t('login')}
-          description={
-            <>
-              <p>{t('signInDescription.line1')}</p>
-              <p className="-mt-[4px]">{t('signInDescription.line2')}</p>
-            </>
-          }
+          title={t('forgotPassword')}
+          description={<p>{t('resetInstruction')}</p>}
         />
+
         <form onSubmit={onSubmit} className="space-y-4 flex-1 flex flex-col">
           <AuthForm.Fields className="flex-1">
             <FormField
               name="email"
-              label={tf('email')}
+              label={t('fields.email')}
               placeholder={tp('email')}
               type="email"
               required
             />
-            <FormField
-              name="password"
-              label={tf('password')}
-              placeholder={tp('password')}
-              type="password"
-              required
-            />
-            <Button
-              type="button"
-              className="ml-auto"
-              variant="text-link"
-              color="black"
-              onClick={() => setView('forgot')}
-            >
-              {t('forgotPassword')}
-            </Button>
           </AuthForm.Fields>
-          <AuthForm.Footer>
-            <Button className="w-full" color="black" size="lg" type="submit">
-              {t('login')}
-            </Button>
+
+          <AuthForm.Footer className="flex flex-col gap-3">
+            <div className="flex w-full gap-2">
+              <Button
+                variant="secondary"
+                color="black"
+                type="button"
+                className="w-full"
+                onClick={() => setView('signIn')}
+              >
+                {t('back')}
+              </Button>
+              <Button className="w-full" color="black" size="lg" type="submit">
+                {t('sendEmail')}
+              </Button>
+            </div>
+
             <div className="flex items-center small-1-rg text-dark-700">
-              {t('noAccount')}?
+              {t('noAccount')}?{' '}
               <Button
                 variant="text-link"
                 onClick={() => setView('signUp')}
@@ -82,4 +76,4 @@ const SignInForm: React.FC = () => {
   );
 };
 
-export default SignInForm;
+export default ForgotPasswordForm;

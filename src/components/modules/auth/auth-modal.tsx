@@ -13,6 +13,7 @@ import Button from '@/components/ui/button/button';
 import SignInForm from './sign-in-form';
 import SignUpForm from './sign-up-form';
 import { useTranslations } from 'next-intl';
+import ForgotPasswordForm from './forgot-password-form';
 
 const AuthModal: React.FC = () => {
   const { close, view, isOpen } = useAuthModalStore();
@@ -23,8 +24,9 @@ const AuthModal: React.FC = () => {
       case 'signIn':
         return <SignInForm />;
       case 'signUp':
-      case 'forgot':
         return <SignUpForm />;
+      case 'forgot':
+        return <ForgotPasswordForm />;
     }
   };
 
