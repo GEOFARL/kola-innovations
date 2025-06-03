@@ -9,7 +9,7 @@ import { cn } from '@/lib/cn';
 type Props = {
   name: string;
   label?: string;
-  type?: 'text' | 'email' | 'password';
+  type?: 'text' | 'email' | 'password' | 'tel';
   placeholder?: string;
 } & InputHTMLAttributes<HTMLInputElement>;
 
@@ -52,7 +52,7 @@ const FormField: React.FC<Props> = ({
           placeholder={placeholder}
           {...register(name)}
           className={cn(
-            'w-full border border-dark-200 rounded-md px-4 py-2 small-1-md text-dark-500 focus:outline-none focus:ring-2 focus:ring-black',
+            'w-full border border-dark-200 rounded-md px-4 py-2 small-1-md text-dark-900 focus:outline-none focus:ring-2 focus:ring-black',
             error && 'border-notification-error focus:ring-notification-error',
           )}
           {...rest}

@@ -39,7 +39,7 @@ const HeaderV2: React.FC = () => {
             <Button color="black" variant="link" onClick={() => open('signIn')}>
               {tAuth('login')}
             </Button>
-            <Button>{tAuth('signup')}</Button>
+            <Button onClick={() => open('signUp')}>{tAuth('signup')}</Button>
           </div>
         </MaxWidthWrapper>
       </header>

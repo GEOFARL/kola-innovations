@@ -11,6 +11,7 @@ import VerifiedIcon from '@/assets/icons/verified.svg';
 import Image from 'next/image';
 import Button from '@/components/ui/button/button';
 import SignInForm from './sign-in-form';
+import SignUpForm from './sign-up-form';
 
 const AuthModal: React.FC = () => {
   const { close, view, isOpen } = useAuthModalStore();
@@ -22,14 +23,14 @@ const AuthModal: React.FC = () => {
       }
       case 'forgot':
       case 'signUp': {
-        return <></>;
+        return <SignUpForm />;
       }
     }
   };
 
   return (
     <Modal open={isOpen} onOpenChange={close} showClose ariaTitle="Auth modal">
-      <div className="w-[90vw] max-w-[1200px] h-[665px] rounded-[32px] overflow-hidden grid grid-cols-1 md:grid-cols-2">
+      <div className="w-[90vw] max-w-[1200px] min-h-[665px] rounded-[32px] overflow-hidden grid grid-cols-1 md:grid-cols-2">
         <div className="p-10 bg-primary-100 hidden md:flex flex-col gap-[78px] relative overflow-hidden">
           <LogoIcon />
 

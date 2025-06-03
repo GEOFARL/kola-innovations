@@ -1,29 +1,30 @@
 'use client';
 
 import Button from '@/components/ui/button/button';
-import { SignInSchema } from '@/lib/schemas/auth/sign-in.schema';
-import { SignInFormData } from '@/lib/types/auth/sign-in';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { FormProvider, useForm } from 'react-hook-form';
 import AuthForm from './auth-form';
 import FormField from '@/components/ui/form-field';
+import { SignUpSchema } from '@/lib/schemas/auth/sign-up.schema';
 import { useAuthModalStore } from '@/lib/stores/auth/auth-modal-store';
+import { SignUpFormData } from '@/lib/types/auth/sign-up';
 
-const SignInForm: React.FC = () => {
+const SignUpForm: React.FC = () => {
   const { setView } = useAuthModalStore();
-  const methods = useForm<SignInFormData>({
-    resolver: zodResolver(SignInSchema),
+
+  const methods = useForm<SignUpFormData>({
+    resolver: zodResolver(SignUpSchema),
   });
 
   const onSubmit = methods.handleSubmit((data) => {
-    console.log(data);
+    console.log('SIGN UP DATA:', data);
   });
 
   return (
     <FormProvider {...methods}>
       <AuthForm className="flex flex-col">
         <AuthForm.Header
-          title="Let’s Sign in!"
+          title="Welcome !"
           description={
             <>
               <p>Discover the benefits of joining the platform</p>
@@ -35,6 +36,24 @@ const SignInForm: React.FC = () => {
         <form onSubmit={onSubmit} className="space-y-4 flex-1 flex flex-col">
           <AuthForm.Fields className="flex-1">
             <FormField
+              name="firstName"
+              label="First Name"
+              placeholder="Enter your first name"
+              required
+            />
+            <FormField
+              name="lastName"
+              label="Last Name"
+              placeholder="Enter your last name"
+              required
+            />
+            <FormField
+              name="mobile"
+              label="Mobile Number"
+              placeholder="(000) 000-0000"
+              type="tel"
+            />
+            <FormField
               name="email"
               label="Email Address"
               type="email"
@@ -45,32 +64,31 @@ const SignInForm: React.FC = () => {
               name="password"
               label="Password"
               type="password"
-              placeholder="Enter your password"
+              placeholder="Create a password"
               required
             />
-            <Button
-              type="button"
-              className="ml-auto"
-              variant="text-link"
-              color="black"
-            >
-              Forgot Password?
-            </Button>
+            <FormField
+              name="confirmPassword"
+              label="Confirm Password"
+              type="password"
+              placeholder="Repeat your password"
+              required
+            />
           </AuthForm.Fields>
 
           <AuthForm.Footer>
             <Button className="w-full" color="black" size="lg" type="submit">
-              Login
+              Sign up
             </Button>
             <div className="flex items-center small-1-rg text-dark-700">
-              Don’t have an account?{' '}
+              Already have an account?{' '}
               <Button
                 variant="text-link"
-                onClick={() => setView('signUp')}
-                className="pl-1"
+                onClick={() => setView('signIn')}
+                className="pl-0"
                 type="button"
               >
-                Sign Up
+                Login
               </Button>
             </div>
           </AuthForm.Footer>
@@ -80,4 +98,4 @@ const SignInForm: React.FC = () => {
   );
 };
 
-export default SignInForm;
+export default SignUpForm;
