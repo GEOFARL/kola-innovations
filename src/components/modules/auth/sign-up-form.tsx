@@ -9,9 +9,11 @@ import { SignUpSchema } from '@/lib/schemas/auth/sign-up.schema';
 import { useAuthModalStore } from '@/lib/stores/auth/auth-modal-store';
 import { SignUpFormData } from '@/lib/types/auth/sign-up';
 import { useTranslations } from 'next-intl';
+import { toast } from 'sonner';
 
 const SignUpForm: React.FC = () => {
   const t = useTranslations('common.auth');
+  const toastT = useTranslations('toast.auth');
   const tf = (key: string) => t(`fields.${key}`);
   const tp = (key: string) => t(`placeholders.${key}`);
   const { setView } = useAuthModalStore();
@@ -20,7 +22,10 @@ const SignUpForm: React.FC = () => {
     resolver: zodResolver(SignUpSchema),
   });
 
-  const onSubmit = methods.handleSubmit((data) => console.log('SIGN UP', data));
+  const onSubmit = methods.handleSubmit((data) => {
+    console.log('SIGN UP', data);
+    toast.success(toastT('signUpSuccess'));
+  });
 
   return (
     <FormProvider {...methods}>
@@ -49,7 +54,7 @@ const SignUpForm: React.FC = () => {
               required
             />
             <FormField
-              name="mobile"
+              name="phone"
               label={tf('mobile')}
               placeholder={tp('mobile')}
               type="tel"

@@ -9,9 +9,11 @@ import { useAuthModalStore } from '@/lib/stores/auth/auth-modal-store';
 import { useTranslations } from 'next-intl';
 import { ForgotPasswordSchema } from '@/lib/schemas/auth/forgot-password.schema';
 import { ForgotPasswordFormData } from '@/lib/types/auth/forgot-password';
+import { toast } from 'sonner';
 
 const ForgotPasswordForm: React.FC = () => {
   const t = useTranslations('common.auth');
+  const toastT = useTranslations('toast.auth');
   const tp = (key: string) => t(`placeholders.${key}`);
   const { setView } = useAuthModalStore();
 
@@ -21,6 +23,7 @@ const ForgotPasswordForm: React.FC = () => {
 
   const onSubmit = methods.handleSubmit((data) => {
     console.log('FORGOT PASSWORD', data);
+    toast.success(toastT('forgotPassword'));
   });
 
   return (

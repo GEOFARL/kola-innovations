@@ -9,9 +9,11 @@ import AuthForm from './auth-form';
 import FormField from '@/components/ui/form-field';
 import { useAuthModalStore } from '@/lib/stores/auth/auth-modal-store';
 import { useTranslations } from 'next-intl';
+import { toast } from 'sonner';
 
 const SignInForm: React.FC = () => {
   const t = useTranslations('common.auth');
+  const toastT = useTranslations('toast.auth');
   const tf = (key: string) => t(`fields.${key}`);
   const tp = (key: string) => t(`placeholders.${key}`);
   const { setView } = useAuthModalStore();
@@ -20,7 +22,10 @@ const SignInForm: React.FC = () => {
     resolver: zodResolver(SignInSchema),
   });
 
-  const onSubmit = methods.handleSubmit((data) => console.log(data));
+  const onSubmit = methods.handleSubmit((data) => {
+    console.log(data);
+    toast.success(toastT('signInSuccess'));
+  });
 
   return (
     <FormProvider {...methods}>

@@ -2,12 +2,34 @@
 
 import { cn } from '@/lib/cn';
 import { PropsWithChildren, ReactNode } from 'react';
+import { Toaster } from 'sonner';
+import CheckWhite from '@/assets/icons/check-white.svg';
 
 const AuthForm = ({
   children,
   className,
 }: PropsWithChildren & { className?: string }) => {
-  return <div className={cn('p-8 w-full', className)}>{children}</div>;
+  return (
+    <div className={cn('p-8 w-full', className)}>
+      <Toaster
+        position="top-center"
+        duration={4000}
+        className="!z-10"
+        visibleToasts={1}
+        expand
+        icons={{
+          success: <CheckWhite />,
+        }}
+        toastOptions={{
+          classNames: {
+            success: 'bg-notification-success! text-dark-white! gap-3!',
+            title: 'body-2-md',
+          },
+        }}
+      />
+      {children}
+    </div>
+  );
 };
 
 AuthForm.Header = ({

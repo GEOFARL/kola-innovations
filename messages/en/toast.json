@@ -1,0 +1,7 @@
+{
+  "auth": {
+    "signInSuccess": "Signed in successfully",
+    "signUpSuccess": "Signed up successfully",
+    "forgotPassword": "Please check your email we’ve sent you recovery link"
+  }
+}
