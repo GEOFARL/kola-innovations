@@ -1,21 +1,7 @@
-import Header from '@/components/layouts/header';
-import HomeScreen from '@/components/screens/home-screen';
+import LandingScreen from '@/components/screens/landing-screen';
 
-type Props = Readonly<{
-  params: Promise<{ locale: string }>;
-}>;
-
-const HomePage: React.FC<Props> = async ({ params }) => {
-  const { locale } = await params;
-
-  return (
-    <>
-      <Header locale={locale} />
-      <main className="p-6">
-        <HomeScreen />
-      </main>
-    </>
-  );
+const LandingPage: React.FC = () => {
+  return <LandingScreen />;
 };
 
-export default HomePage;
+export default LandingPage;

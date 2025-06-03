@@ -10,7 +10,7 @@ import MainNav from './main-nav';
 import AuthModal from '../auth/auth-modal';
 import { useAuthModalStore } from '@/lib/stores/auth/auth-modal-store';
 
-const HeaderV2: React.FC = () => {
+const Header: React.FC = () => {
   const tAuth = useTranslations('common.auth');
   const tActions = useTranslations('common.actions');
   const { open } = useAuthModalStore();
@@ -48,4 +48,4 @@ const HeaderV2: React.FC = () => {
   );
 };
 
-export default HeaderV2;
+export default Header;
