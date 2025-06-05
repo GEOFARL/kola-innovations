@@ -1,0 +1,18 @@
+{
+  "footer": {
+    "back": "Back",
+    "skip": "Skip for Now",
+    "next": "Next",
+    "finish": "Let's Get Started!"
+  },
+  "steps": {
+    "personalInfo": {
+      "title": "Your Details",
+      "description": "Interdum donec laoreet malesuada a gravida vivamus tempor."
+    },
+    "skills": {
+      "title": "Skills & Expertise",
+      "description": "Interdum donec laoreet malesuada a gravida vivamus tempor."
+    }
+  }
+}

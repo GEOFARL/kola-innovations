@@ -1,0 +1,18 @@
+{
+  "footer": {
+    "back": "Zurück",
+    "skip": "Jetzt überspringen",
+    "next": "Weiter",
+    "finish": "Los geht’s!"
+  },
+  "steps": {
+    "personalInfo": {
+      "title": "Deine Angaben",
+      "description": "Gib deine persönlichen Daten ein, um loszulegen."
+    },
+    "skills": {
+      "title": "Fähigkeiten & Expertise",
+      "description": "Teile uns deine Fähigkeiten und beruflichen Schwerpunkte mit."
+    }
+  }
+}
