@@ -20,6 +20,7 @@ import { localUserStorage } from '@/lib/storage/user-storage';
 
 import EmailIcon from '@/assets/icons/onboarding/email.svg';
 import PhoneIcon from '@/assets/icons/onboarding/phone.svg';
+import PersonalInfoSkeleton from './personal-info-skeleton';
 
 function getInitialPersonalInfoData(): PersonalInfoData {
   const user =
@@ -79,7 +80,7 @@ const PersonalInfoStep: React.FC = () => {
     return () => setFormSubmitTrigger(null);
   }, [methods, next, setStepData, setFormSubmitTrigger]);
 
-  if (!hydrated) return null;
+  if (!hydrated) return <PersonalInfoSkeleton />;
 
   return (
     <FormProvider {...methods}>
