@@ -10,7 +10,7 @@ const OnboardingLayout: React.FC<Props> = ({ children }) => {
     <div className="flex flex-1">
       <OnboardingSidebar />
       <main className="flex-1 flex flex-col">
-        <div className="flex-1 flex flex-col pt-[88px] px-20 pb-12">
+        <div className="flex-1 flex flex-col pt-[88px] px-12 xl:px-20 pb-12">
           <OnboardingHeader />
           <div className="flex-1">{children}</div>
         </div>

@@ -14,5 +14,73 @@
       "title": "Fähigkeiten & Expertise",
       "description": "Teile uns deine Fähigkeiten und beruflichen Schwerpunkte mit."
     }
+  },
+  "personalInfo": {
+    "title": "Persönliche Informationen",
+    "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque. Orci sit semper ullamcorper eleifend faucibus et aliquam integer euismod.",
+    "fields": {
+      "firstName": "Vorname",
+      "lastName": "Nachname",
+      "email": "E-Mail-Adresse",
+      "phone": "Telefonnummer",
+      "jobTitle": "Berufsbezeichnung",
+      "username": "Benutzername",
+      "province": "Bundesland / Region",
+      "city": "Stadt",
+      "brief": "Kurzprofil",
+      "languages": "Gesprochene Sprachen",
+      "ethnicity": "Ethnische Zugehörigkeit",
+      "orientation": "Sexuelle Orientierung",
+      "disability": "Beeinträchtigung",
+      "resume": "Lebenslauf hochladen"
+    },
+    "placeholders": {
+      "firstName": "Gib deinen Vornamen ein",
+      "lastName": "Gib deinen Nachnamen ein",
+      "email": "du@beispiel.de",
+      "phone": "(030) 123 456",
+      "jobTitle": "z. B. Designer, Entwickler",
+      "username": "Wähle einen Benutzernamen",
+      "province": "Bundesland auswählen",
+      "city": "Stadt eingeben",
+      "brief": "Schreibe eine kurze Vorstellung...",
+      "languages": "Sprachen auswählen",
+      "ethnicity": "Ethnie auswählen",
+      "orientation": "Orientierung auswählen",
+      "disability": "Beeinträchtigung auswählen"
+    },
+    "ethnicities": {
+      "asian": "Asiatisch",
+      "black": "Schwarz oder afrikanisch",
+      "hispanic": "Hispanisch oder lateinamerikanisch",
+      "white": "Weiß oder europäisch",
+      "mixed": "Gemischt oder multikulturell",
+      "other": "Andere"
+    },
+    "disabilities": {
+      "none": "Keine",
+      "vision": "Sehbeeinträchtigung",
+      "hearing": "Hörbeeinträchtigung",
+      "mobility": "Mobilitätseinschränkung",
+      "cognitive": "Kognitive Einschränkung",
+      "other": "Andere"
+    },
+    "provinces": {
+      "quebec": "Québec",
+      "ontario": "Ontario",
+      "alberta": "Alberta"
+    },
+    "cities": {
+      "montreal": "Montréal",
+      "toronto": "Toronto",
+      "calgary": "Calgary"
+    },
+    "orientations": {
+      "heterosexual": "Heterosexuell",
+      "homosexual": "Homosexuell",
+      "bisexual": "Bisexuell",
+      "asexual": "Asexuell",
+      "other": "Andere"
+    }
   }
 }

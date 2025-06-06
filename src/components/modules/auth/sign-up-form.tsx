@@ -10,6 +10,8 @@ import { useAuthModalStore } from '@/lib/stores/auth/auth-modal-store';
 import { SignUpFormData } from '@/lib/types/auth/sign-up';
 import { useTranslations } from 'next-intl';
 import { toast } from 'sonner';
+import { localUserStorage } from '@/lib/storage/user-storage';
+import { v4 } from 'uuid';
 
 const SignUpForm: React.FC = () => {
   const t = useTranslations('common.auth');
@@ -23,7 +25,15 @@ const SignUpForm: React.FC = () => {
   });
 
   const onSubmit = methods.handleSubmit((data) => {
-    console.log('SIGN UP', data);
+    const user = {
+      id: v4(),
+      firstName: data.firstName,
+      lastName: data.lastName,
+      email: data.email,
+      phone: data.phone,
+    };
+
+    localUserStorage.saveUser(user);
     toast.success(toastT('signUpSuccess'));
   });
 

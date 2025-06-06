@@ -9,11 +9,18 @@ const OnboardingFooter: React.FC = () => {
   const t = useTranslations('onboarding.footer');
   const stepsT = useTranslations('onboarding.steps');
 
-  const { step, next, prev } = useOnboardingStore();
+  const { step, next, prev, submitCurrentForm } = useOnboardingStore();
   const isFirst = step === 0;
   const isLast = step === steps.length - 1;
 
   const nextStepKey = steps[step + 1]?.key;
+  const handleNext = () => {
+    if (submitCurrentForm) {
+      submitCurrentForm();
+    } else {
+      next();
+    }
+  };
 
   return (
     <div className="px-10 py-4 flex justify-between items-center shadow-[0_2px_8px_rgba(0,0,0,0.1)]">
@@ -31,7 +38,7 @@ const OnboardingFooter: React.FC = () => {
             {t('skip')}
           </Button>
         )}
-        <Button onClick={isLast ? () => {} : next} color="black">
+        <Button onClick={handleNext} color="black">
           {isLast
             ? t('finish')
             : `${t('next')} : ${stepsT(`${nextStepKey}.title`)}`}

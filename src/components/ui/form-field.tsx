@@ -1,24 +1,41 @@
 'use client';
 
-import { InputHTMLAttributes, useState } from 'react';
+import { InputHTMLAttributes, TextareaHTMLAttributes, useState } from 'react';
 import { useFormContext } from 'react-hook-form';
 import * as Label from '@radix-ui/react-label';
 import { Eye, EyeOff } from 'lucide-react';
 import { cn } from '@/lib/cn';
 
-type Props = {
+type SharedFieldProps = {
   name: string;
   label?: string;
-  type?: 'text' | 'email' | 'password' | 'tel';
   placeholder?: string;
-} & InputHTMLAttributes<HTMLInputElement>;
+  leftIcon?: React.ReactNode;
+  rightIcon?: React.ReactNode;
+};
+
+type InputFieldProps = SharedFieldProps & {
+  multiline?: false;
+  type?: 'text' | 'email' | 'password' | 'tel';
+} & Omit<InputHTMLAttributes<HTMLInputElement>, 'name'>;
+
+type TextareaFieldProps = SharedFieldProps & {
+  multiline: true;
+  type?: never;
+} & Omit<TextareaHTMLAttributes<HTMLTextAreaElement>, 'name'>;
+
+type Props = InputFieldProps | TextareaFieldProps;
 
 const FormField: React.FC<Props> = ({
   name,
   label,
-  type = 'text',
   placeholder,
   required,
+  multiline,
+  disabled,
+  leftIcon,
+  rightIcon,
+  type = 'text',
   ...rest
 }) => {
   const {
@@ -29,7 +46,43 @@ const FormField: React.FC<Props> = ({
   const error = errors[name]?.message as string | undefined;
   const [showPassword, setShowPassword] = useState(false);
 
-  const inputType = type === 'password' && showPassword ? 'text' : type;
+  const isPasswordField = type === 'password';
+  const finalType = isPasswordField && showPassword ? 'text' : type;
+  const paddingLeft = leftIcon ? 'pl-10' : 'pl-4';
+  const paddingRight = isPasswordField || rightIcon ? 'pr-10' : 'pr-4';
+
+  const { ref, onChange, onBlur, name: fieldName } = register(name);
+
+  const commonClasses = cn(
+    'w-full border border-dark-200 rounded-md py-2 small-1-md text-dark-900 focus:outline-none focus:ring-2 focus:ring-black',
+    paddingLeft,
+    paddingRight,
+    error && 'border-notification-error focus:ring-notification-error',
+    disabled && 'bg-dark-100 text-dark-600',
+  );
+
+  const renderIconLeft = leftIcon && (
+    <div className="absolute left-3 top-1/2 -translate-y-1/2 text-dark-500">
+      {leftIcon}
+    </div>
+  );
+
+  const renderPasswordToggle = isPasswordField && (
+    <button
+      type="button"
+      onClick={() => setShowPassword((prev) => !prev)}
+      className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500"
+      tabIndex={-1}
+    >
+      {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+    </button>
+  );
+
+  const renderRightIcon = !isPasswordField && rightIcon && (
+    <div className="absolute right-3 top-1/2 -translate-y-1/2 text-dark-500">
+      {rightIcon}
+    </div>
+  );
 
   return (
     <div>
@@ -46,26 +99,37 @@ const FormField: React.FC<Props> = ({
       )}
 
       <div className="relative">
-        <input
-          id={name}
-          type={inputType}
-          placeholder={placeholder}
-          {...register(name)}
-          className={cn(
-            'w-full border border-dark-200 rounded-md px-4 py-2 small-1-md text-dark-900 focus:outline-none focus:ring-2 focus:ring-black',
-            error && 'border-notification-error focus:ring-notification-error',
-          )}
-          {...rest}
-        />
+        {renderIconLeft}
 
-        {type === 'password' && (
-          <button
-            type="button"
-            onClick={() => setShowPassword(!showPassword)}
-            className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500"
-          >
-            {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
-          </button>
+        {multiline ? (
+          <textarea
+            id={name}
+            name={fieldName}
+            ref={ref}
+            onChange={onChange}
+            onBlur={onBlur}
+            placeholder={placeholder}
+            disabled={disabled}
+            className={cn(commonClasses, 'px-4 resize-none min-h-[66px]')}
+            {...(rest as TextareaHTMLAttributes<HTMLTextAreaElement>)}
+          />
+        ) : (
+          <>
+            <input
+              id={name}
+              name={fieldName}
+              ref={ref}
+              type={finalType}
+              onChange={onChange}
+              onBlur={onBlur}
+              placeholder={placeholder}
+              disabled={disabled}
+              className={commonClasses}
+              {...(rest as InputHTMLAttributes<HTMLInputElement>)}
+            />
+            {renderPasswordToggle}
+            {renderRightIcon}
+          </>
         )}
       </div>
 

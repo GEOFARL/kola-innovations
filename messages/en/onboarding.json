@@ -14,5 +14,73 @@
       "title": "Skills & Expertise",
       "description": "Interdum donec laoreet malesuada a gravida vivamus tempor."
     }
+  },
+  "personalInfo": {
+    "title": "Personal Information",
+    "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque. Orci sit semper ullamcorper eleifend faucibus et aliquam integer euismod.",
+    "fields": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "jobTitle": "Job Title",
+      "username": "Username",
+      "province": "Province / State",
+      "city": "City",
+      "brief": "Brief",
+      "languages": "Languages Spoken",
+      "ethnicity": "Ethnicity",
+      "orientation": "Sexual Orientation",
+      "disability": "Disability",
+      "resume": "Upload your Resume"
+    },
+    "placeholders": {
+      "firstName": "Enter your first name",
+      "lastName": "Enter your last name",
+      "email": "you@example.com",
+      "phone": "(123) 456-7890",
+      "jobTitle": "e.g. Designer, Developer",
+      "username": "Choose a username",
+      "province": "Select province",
+      "city": "Enter city",
+      "brief": "Write a short introduction...",
+      "languages": "Select languages",
+      "ethnicity": "Select your ethnicity",
+      "orientation": "Select orientation",
+      "disability": "Select disability"
+    },
+    "ethnicities": {
+      "asian": "Asian",
+      "black": "Black or African",
+      "hispanic": "Hispanic or Latino",
+      "white": "White or Caucasian",
+      "mixed": "Mixed or Multiracial",
+      "other": "Other"
+    },
+    "disabilities": {
+      "none": "None",
+      "vision": "Vision Impairment",
+      "hearing": "Hearing Impairment",
+      "mobility": "Mobility Impairment",
+      "cognitive": "Cognitive Impairment",
+      "other": "Other"
+    },
+    "provinces": {
+      "quebec": "Quebec",
+      "ontario": "Ontario",
+      "alberta": "Alberta"
+    },
+    "cities": {
+      "montreal": "Montreal",
+      "toronto": "Toronto",
+      "calgary": "Calgary"
+    },
+    "orientations": {
+      "heterosexual": "Heterosexual",
+      "homosexual": "Homosexual",
+      "bisexual": "Bisexual",
+      "asexual": "Asexual",
+      "other": "Other"
+    }
   }
 }
