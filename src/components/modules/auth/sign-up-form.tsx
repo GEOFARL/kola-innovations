@@ -1,17 +1,18 @@
 'use client';
 
 import Button from '@/components/ui/button/button';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { FormProvider, useForm } from 'react-hook-form';
-import AuthForm from './auth-form';
 import FormField from '@/components/ui/form-field';
+import { APP_ROUTES } from '@/lib/constants/routing/routes';
 import { SignUpSchema } from '@/lib/schemas/auth/sign-up.schema';
+import { localUserStorage } from '@/lib/storage/user-storage';
 import { useAuthModalStore } from '@/lib/stores/auth/auth-modal-store';
 import { SignUpFormData } from '@/lib/types/auth/sign-up';
+import { zodResolver } from '@hookform/resolvers/zod';
 import { useTranslations } from 'next-intl';
-import { toast } from 'sonner';
-import { localUserStorage } from '@/lib/storage/user-storage';
+import { useRouter } from 'next/navigation';
+import { FormProvider, useForm } from 'react-hook-form';
 import { v4 } from 'uuid';
+import AuthForm from './auth-form';
 
 const SignUpForm: React.FC = () => {
   const t = useTranslations('common.auth');
@@ -19,6 +20,7 @@ const SignUpForm: React.FC = () => {
   const tf = (key: string) => t(`fields.${key}`);
   const tp = (key: string) => t(`placeholders.${key}`);
   const { setView } = useAuthModalStore();
+  const router = useRouter();
 
   const methods = useForm<SignUpFormData>({
     resolver: zodResolver(SignUpSchema),
@@ -34,7 +36,7 @@ const SignUpForm: React.FC = () => {
     };
 
     localUserStorage.saveUser(user);
-    toast.success(toastT('signUpSuccess'));
+    router.push(APP_ROUTES.ONBOARDING);
   });
 
   return (
