@@ -27,5 +27,3 @@ export const personalInfoSchema = z.object({
     )
     .optional(),
 });
-
-export type PersonalInfoData = z.infer<typeof personalInfoSchema>;

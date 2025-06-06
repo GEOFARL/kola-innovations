@@ -11,16 +11,14 @@ import MultiSelectField from '@/components/ui/multi-select-field';
 import ToggleField from '@/components/ui/toggle-field';
 import FileUploadField from '@/components/ui/file-upload-field';
 
-import {
-  personalInfoSchema,
-  PersonalInfoData,
-} from '@/lib/schemas/onboarding/personal-info.schema';
+import { personalInfoSchema } from '@/lib/schemas/onboarding/personal-info.schema';
 import { useOnboardingStore } from '@/lib/stores/onboarding/onboarding-store';
 import { localUserStorage } from '@/lib/storage/user-storage';
 
 import EmailIcon from '@/assets/icons/onboarding/email.svg';
 import PhoneIcon from '@/assets/icons/onboarding/phone.svg';
 import PersonalInfoSkeleton from './personal-info-skeleton';
+import { PersonalInfoData } from '@/lib/types/onboarding/step';
 
 function getInitialPersonalInfoData(): PersonalInfoData {
   const user =

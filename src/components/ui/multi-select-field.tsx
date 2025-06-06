@@ -138,7 +138,7 @@ const MultiSelectField: React.FC<Props> = ({
                   }}
                   onClick={() => toggleValue(opt.value)}
                   className={cn(
-                    'flex items-center justify-between px-3 py-2 text-sm text-dark-900 rounded-md cursor-pointer hover:bg-dark-50 focus:outline-none focus:ring-1 focus:ring-black',
+                    'flex items-center justify-between px-3 py-2 text-sm text-dark-900 rounded-md cursor-pointer focus:outline-none focus:ring-1 focus:ring-black',
                   )}
                 >
                   <span>{opt.label}</span>

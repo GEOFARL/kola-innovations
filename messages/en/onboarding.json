@@ -82,5 +82,31 @@
       "asexual": "Asexual",
       "other": "Other"
     }
+  },
+  "skills": {
+    "title": "Tell us about your Skills & Expertise",
+    "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque. Orci sit semper ullamcorper eleifend faucibus et aliquam integer euismod.",
+    "searchLabel": "Search skills, tools, roles",
+    "searchPlaceholder": "Type and press enter to add",
+    "suggested": "Suggested Industries",
+    "validation": {
+      "min": "Please add at least one skill."
+    },
+    "values": {
+      "musicComposition": "Music Composition",
+      "instrumentProficiency": "Instrument Proficiency",
+      "guitars": "Guitars",
+      "musicTheory": "Music Theory",
+      "pianos": "Pianos",
+      "audioInterfaces": "Audio Interfaces",
+      "musicProduction": "Music Production",
+      "collaboration": "Collaboration",
+      "effectPedals": "Effect Pedals",
+      "performer": "Performer",
+      "musicDirector": "Music Director",
+      "soundEngineer": "Sound Engineer",
+      "songwriter": "Songwriter",
+      "musicLibrarian": "Music Librarian"
+    }
   }
 }

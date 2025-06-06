@@ -1,12 +1,13 @@
-import { personalInfoSchema } from '@/lib/schemas/onboarding/personal-info.schema';
 import { z } from 'zod';
+import { personalInfoSchema } from '@/lib/schemas/onboarding/personal-info.schema';
+import { skillsSchema } from '@/lib/schemas/onboarding/skills-schema';
 
 export const onboardingSchemas = {
   personalInfo: personalInfoSchema,
-  skills: z.object({}),
+  skills: skillsSchema,
 };
 
-export const onboardingStepOrder = ['personalInfo'] as const;
+export const onboardingStepOrder = ['personalInfo', 'skills'] as const;
 
 export type StepKey = keyof typeof onboardingSchemas;
 
