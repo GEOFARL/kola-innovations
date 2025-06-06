@@ -41,5 +41,16 @@
     "findWork": "Arbeit finden",
     "mentorship": "Mentorship",
     "more": "Mehr"
+  },
+  "upload": {
+    "label": "Datei hochladen",
+    "placeholder": "Datei hierher ziehen oder",
+    "select": "auswählen",
+    "hint": "Verwende eine PDF, DOCX, DOC, RTF oder TXT",
+    "error": "Datei-Upload fehlgeschlagen."
+  },
+  "multiSelect": {
+    "placeholder": "Auswählen...",
+    "more": "+{count} mehr"
   }
 }

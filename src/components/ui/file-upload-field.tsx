@@ -2,16 +2,17 @@
 
 import { useFormContext, Controller } from 'react-hook-form';
 import { useCallback, useState } from 'react';
-import { UploadCloud } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { cn } from '@/lib/cn';
 import UploadIcon from '@/assets/icons/upload.svg';
 
 type Props = {
   name: string;
-  label: string;
+  label?: string;
 };
 
 const FileUploadField: React.FC<Props> = ({ name, label }) => {
+  const t = useTranslations('common.upload');
   const {
     control,
     formState: { errors },
@@ -43,7 +44,9 @@ const FileUploadField: React.FC<Props> = ({ name, label }) => {
       name={name}
       render={({ field: { onChange } }) => (
         <div>
-          <label className="block mb-6 text-sm font-medium">{label}</label>
+          <label className="block mb-6 text-sm font-medium">
+            {label ?? t('label')}
+          </label>
 
           <input
             id={name}
@@ -77,13 +80,13 @@ const FileUploadField: React.FC<Props> = ({ name, label }) => {
               <div className="text-dark-900 small-1-md">
                 {fileName || (
                   <>
-                    Drag & Drop here or{' '}
-                    <span className="text-primary">select file</span>
+                    {t('placeholder')}{' '}
+                    <span className="text-primary">{t('select')}</span>
                   </>
                 )}
               </div>
               <div className="text-xs font-[500] text-dark-600 mt-1">
-                Use a pdf, docx, doc, rtf or txt
+                {t('hint')}
               </div>
             </div>
           </label>

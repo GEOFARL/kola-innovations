@@ -41,5 +41,16 @@
     "findWork": "Find Work",
     "mentorship": "Mentorship",
     "more": "More"
+  },
+  "upload": {
+    "label": "Upload your file",
+    "placeholder": "Drag & Drop here or",
+    "select": "select file",
+    "hint": "Use a pdf, docx, doc, rtf or txt",
+    "error": "File upload failed."
+  },
+  "multiSelect": {
+    "placeholder": "Select...",
+    "more": "{count} more"
   }
 }

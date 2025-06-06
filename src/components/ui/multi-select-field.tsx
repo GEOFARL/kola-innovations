@@ -3,6 +3,7 @@
 import * as Popover from '@radix-ui/react-popover';
 import { Check, ChevronDown, X } from 'lucide-react';
 import { useFormContext } from 'react-hook-form';
+import { useTranslations } from 'next-intl';
 import { cn } from '@/lib/cn';
 
 type MultiSelectOption = { value: string; label: string };
@@ -30,14 +31,14 @@ const MultiSelectField: React.FC<Props> = ({
     formState: { errors },
   } = useFormContext();
 
+  const t = useTranslations('common.multiSelect');
   const selected: string[] = getValues(name) || [];
 
   const toggleValue = (val: string) => {
-    const newSelected = selected.includes(val)
+    const updated = selected.includes(val)
       ? selected.filter((v) => v !== val)
       : [...selected, val];
-
-    setValue(name, newSelected, { shouldValidate: true });
+    setValue(name, updated, { shouldValidate: true });
   };
 
   const removeTag = (val: string) => {
@@ -97,13 +98,13 @@ const MultiSelectField: React.FC<Props> = ({
                   })}
                   {selected.length > maxVisibleTags && (
                     <span className="text-xs text-dark-500">
-                      +{selected.length - maxVisibleTags} more
+                      {t('more', { count: selected.length - maxVisibleTags })}
                     </span>
                   )}
                 </>
               ) : (
                 <span className="text-dark-400">
-                  {placeholder || 'Select...'}
+                  {placeholder || t('placeholder')}
                 </span>
               )}
             </div>
