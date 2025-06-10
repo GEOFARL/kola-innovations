@@ -11,7 +11,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
     ? resolvedLocale
     : routing.defaultLocale;
 
-  const dirPath = path.join(process.cwd(), 'messages', locale);
+  const dirPath = path.join(process.cwd(), 'src/i18n/messages', locale);
   const files = await readdir(dirPath);
 
   const messages: Record<string, any> = {};
@@ -19,7 +19,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
   for (const file of files) {
     if (file.endsWith('.json')) {
       const namespace = file.replace(/\.json$/, '');
-      const module = await import(`../../messages/${locale}/${file}`);
+      const module = await import(`./messages/${locale}/${file}`);
       messages[namespace] = module.default;
     }
   }
