@@ -1,8 +1,21 @@
 import { getRequestConfig } from 'next-intl/server';
 import { hasLocale } from 'next-intl';
 import { routing } from './routing';
-import { readdir } from 'fs/promises';
-import path from 'path';
+
+const messages = {
+  en: {
+    common: () => import('./messages/en/common.json'),
+    landing: () => import('./messages/en/landing.json'),
+    onboarding: () => import('./messages/en/onboarding.json'),
+    toast: () => import('./messages/en/toast.json'),
+  },
+  de: {
+    common: () => import('./messages/de/common.json'),
+    landing: () => import('./messages/de/landing.json'),
+    onboarding: () => import('./messages/de/onboarding.json'),
+    toast: () => import('./messages/de/toast.json'),
+  },
+} satisfies Record<string, Record<string, () => Promise<{ default: any }>>>;
 
 export default getRequestConfig(async ({ requestLocale }) => {
   const resolvedLocale = await requestLocale;
@@ -11,21 +24,20 @@ export default getRequestConfig(async ({ requestLocale }) => {
     ? resolvedLocale
     : routing.defaultLocale;
 
-  const dirPath = path.join(process.cwd(), 'src/i18n/messages', locale);
-  const files = await readdir(dirPath);
+  const localeMessages = messages[locale as keyof typeof messages];
+  const messageKeys = Object.keys(localeMessages);
 
-  const messages: Record<string, any> = {};
-
-  for (const file of files) {
-    if (file.endsWith('.json')) {
-      const namespace = file.replace(/\.json$/, '');
-      const module = await import(`./messages/${locale}/${file}`);
-      messages[namespace] = module.default;
-    }
-  }
+  const loadedMessages = await Promise.all(
+    messageKeys.map((key) =>
+      localeMessages[key as keyof typeof localeMessages]().then((m) => [
+        key,
+        m.default,
+      ]),
+    ),
+  );
 
   return {
     locale,
-    messages,
+    messages: Object.fromEntries(loadedMessages),
   };
 });
