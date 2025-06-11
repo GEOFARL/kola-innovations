@@ -1,3 +1,5 @@
+'use client';
+
 import { cn } from '@/lib/cn';
 import { Loader2 } from 'lucide-react';
 import { ComponentProps } from 'react';
@@ -20,6 +22,8 @@ type Props = {
   size?: Size;
   color?: Color;
   isLoading?: boolean;
+  iconOnly?: boolean;
+  iconCircle?: boolean;
 } & ComponentProps<'button'>;
 
 const Button: React.FC<Props> = ({
@@ -30,6 +34,8 @@ const Button: React.FC<Props> = ({
   className,
   children,
   isLoading,
+  iconOnly,
+  iconCircle,
   ...props
 }) => {
   const base =
@@ -41,6 +47,15 @@ const Button: React.FC<Props> = ({
     md: 'px-3 py-[9.5px] rounded-[8px] min-w-[75px] min-h-[40px]',
     lg: 'px-4 py-[13px] rounded-[8px] min-w-[90px] min-h-[50px]',
   };
+
+  const iconOnlySizeMap: Record<Size, string> = {
+    xs: 'p-1 rounded-[4px] w-7 h-7',
+    sm: 'p-1.5 rounded-[6px] w-8 h-8',
+    md: 'p-2 rounded-[8px] w-10 h-10',
+    lg: 'p-3 rounded-[8px] w-12 h-12',
+  };
+
+  const iconCircleBg = 'bg-[#F5F5F5] hover:bg-[#EAEAEA] rounded-full';
 
   const variantStyles: Record<
     Variant,
@@ -83,15 +98,18 @@ const Button: React.FC<Props> = ({
       ),
   };
 
+  const finalClassName = cn(
+    base,
+    iconOnly ? iconOnlySizeMap[size] : sizesMap[size],
+    iconCircle && iconOnly && iconCircleBg,
+    !iconCircle && variantStyles[variant](color, isLoading ?? false),
+    className,
+  );
+
   return (
     <button
-      className={cn(
-        base,
-        sizesMap[size],
-        variantStyles[variant](color, isLoading ?? false),
-        className,
-      )}
-      disabled={disabled}
+      className={finalClassName}
+      disabled={disabled || isLoading}
       {...props}
     >
       {isLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : children}

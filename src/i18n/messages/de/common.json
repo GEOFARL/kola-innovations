@@ -52,5 +52,11 @@
   "multiSelect": {
     "placeholder": "Auswählen...",
     "more": "+{count} mehr"
+  },
+  "search": {
+    "recent": "Kürzlich",
+    "clear": "Löschen",
+    "exploreMore": "Mehr entdecken",
+    "search": "Suchen"
   }
 }

@@ -5,6 +5,7 @@ import Button, {
   buttonVariants,
   type Variant,
 } from './button';
+import { Search } from 'lucide-react';
 
 const meta: Meta<typeof Button> = {
   title: 'UI/Button',
@@ -23,6 +24,15 @@ const meta: Meta<typeof Button> = {
       control: { type: 'select' },
       options: [...buttonColors],
     },
+    iconOnly: {
+      control: 'boolean',
+    },
+    isLoading: {
+      control: 'boolean',
+    },
+    disabled: {
+      control: 'boolean',
+    },
     onClick: { action: 'clicked' },
   },
 };
@@ -36,17 +46,51 @@ const renderVariants = (variant: Variant) => (
         {buttonSizes.map((size) => (
           <div
             key={`${color}-${variant}-${size}`}
-            className="flex gap-4 items-center"
+            className="flex flex-col gap-2"
           >
-            <Button variant={variant} size={size} color={color}>
-              {`${size.toUpperCase()} Default`}
-            </Button>
-            <Button variant={variant} size={size} color={color} disabled>
-              {`${size.toUpperCase()} Disabled`}
-            </Button>
-            <Button variant={variant} size={size} color={color} isLoading>
-              {`${size.toUpperCase()} Loading`}
-            </Button>
+            <div className="flex gap-4 items-center">
+              <Button variant={variant} size={size} color={color}>
+                {`${size.toUpperCase()} Default`}
+              </Button>
+              <Button variant={variant} size={size} color={color} disabled>
+                {`${size.toUpperCase()} Disabled`}
+              </Button>
+              <Button variant={variant} size={size} color={color} isLoading>
+                {`${size.toUpperCase()} Loading`}
+              </Button>
+            </div>
+
+            <div className="flex gap-4 items-center">
+              <Button
+                variant={variant}
+                size={size}
+                color={color}
+                iconOnly
+                aria-label="Search"
+              >
+                <Search className="w-4 h-4" />
+              </Button>
+              <Button
+                variant={variant}
+                size={size}
+                color={color}
+                iconOnly
+                disabled
+                aria-label="Search"
+              >
+                <Search className="w-4 h-4" />
+              </Button>
+              <Button
+                variant={variant}
+                size={size}
+                color={color}
+                iconOnly
+                isLoading
+                aria-label="Search"
+              >
+                <Search className="w-4 h-4" />
+              </Button>
+            </div>
           </div>
         ))}
       </div>

@@ -36,6 +36,7 @@ const FormField: React.FC<Props> = ({
   leftIcon,
   rightIcon,
   type = 'text',
+  className,
   ...rest
 }) => {
   const {
@@ -59,6 +60,7 @@ const FormField: React.FC<Props> = ({
     paddingRight,
     error && 'border-notification-error focus:ring-notification-error',
     disabled && 'bg-dark-100 text-dark-600',
+    className,
   );
 
   const renderIconLeft = leftIcon && (
