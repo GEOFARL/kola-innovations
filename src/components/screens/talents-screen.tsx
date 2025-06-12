@@ -1,17 +1,19 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 import OpportunitiesTab from '../modules/talents/tabs/opportunities';
 import ProfessionalsTab from '../modules/talents/tabs/professionals';
 import Tabs from '../ui/tabs';
 
-const tabs = [
-  { value: 'professionals', label: 'Professionals' },
-  { value: 'opportunities', label: 'Opportunities' },
-];
-
 const TalentsScreen: React.FC = () => {
+  const t = useTranslations('talents.tabs');
   const [selected, setSelected] = useState('professionals');
+
+  const tabs = [
+    { value: 'professionals', label: t('professionals') },
+    { value: 'opportunities', label: t('opportunities') },
+  ];
 
   return (
     <div>

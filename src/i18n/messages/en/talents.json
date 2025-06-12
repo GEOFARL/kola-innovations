@@ -25,5 +25,19 @@
     "selectCity": "Select City",
     "clear": "Clear",
     "apply": "Apply"
+  },
+  "tabs": {
+    "professionals": "Professionals",
+    "opportunities": "Opportunities"
+  },
+  "search": {
+    "placeholder": "Search",
+    "filters": {
+      "relevant": "Relevant"
+    }
+  },
+  "mostVouched": {
+    "title": "Most Vouched Professionals",
+    "connect": "Connect"
   }
 }

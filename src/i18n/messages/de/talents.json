@@ -10,5 +10,34 @@
     "resources": "Ressourcen",
     "settings": "Einstellungen",
     "logout": "Abmelden"
+  },
+  "filters": {
+    "title": "Alle Filter",
+    "profession": "Beruf",
+    "selectProfession": "Beruf auswählen",
+    "profileTags": "Profil-Tags",
+    "selectTags": "Tags auswählen",
+    "skills": "Fähigkeiten",
+    "selectSkills": "Fähigkeiten auswählen",
+    "country": "Land",
+    "selectCountry": "Land auswählen",
+    "city": "Stadt",
+    "selectCity": "Stadt auswählen",
+    "clear": "Zurücksetzen",
+    "apply": "Anwenden"
+  },
+  "tabs": {
+    "professionals": "Fachkräfte",
+    "opportunities": "Möglichkeiten"
+  },
+  "search": {
+    "placeholder": "Suche",
+    "filters": {
+      "relevant": "Relevant"
+    }
+  },
+  "mostVouched": {
+    "title": "Meist empfohlene Fachkräfte",
+    "connect": "Verbinden"
   }
 }

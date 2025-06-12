@@ -1,7 +1,6 @@
 'use client';
 
 import TimeIcon from '@/assets/icons/header/time.svg';
-import { X } from 'lucide-react';
 
 type Props = {
   visible: boolean;
@@ -14,7 +13,6 @@ const SearchSuggestions: React.FC<Props> = ({
   visible,
   recentQueries = [],
   onQueryClick,
-  onClear,
 }) => {
   if (!visible || recentQueries.length === 0) return null;
 
