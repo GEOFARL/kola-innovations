@@ -10,5 +10,20 @@
     "resources": "Resources",
     "settings": "Settings",
     "logout": "Logout"
+  },
+  "filters": {
+    "title": "All Filters",
+    "profession": "Profession",
+    "selectProfession": "Select Profession",
+    "profileTags": "Profile Tags",
+    "selectTags": "Select Tags",
+    "skills": "Skills",
+    "selectSkills": "Select Skills",
+    "country": "Country",
+    "selectCountry": "Select Country",
+    "city": "City",
+    "selectCity": "Select City",
+    "clear": "Clear",
+    "apply": "Apply"
   }
 }
