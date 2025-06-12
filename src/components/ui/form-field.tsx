@@ -55,7 +55,7 @@ const FormField: React.FC<Props> = ({
   const { ref, onChange, onBlur, name: fieldName } = register(name);
 
   const commonClasses = cn(
-    'w-full border border-dark-200 rounded-md py-2 small-1-md text-dark-900 focus:outline-none focus:ring-2 focus:ring-black',
+    'w-full border border-dark-200 rounded-md py-2 small-1-md text-dark-900 focus:outline-none focus:ring-2 focus:ring-black relative z-1',
     paddingLeft,
     paddingRight,
     error && 'border-notification-error focus:ring-notification-error',
@@ -64,7 +64,7 @@ const FormField: React.FC<Props> = ({
   );
 
   const renderIconLeft = leftIcon && (
-    <div className="absolute left-3 top-1/2 -translate-y-1/2 text-dark-500">
+    <div className="absolute z-10 left-3 top-1/2 -translate-y-1/2 text-dark-500">
       {leftIcon}
     </div>
   );
@@ -81,7 +81,7 @@ const FormField: React.FC<Props> = ({
   );
 
   const renderRightIcon = !isPasswordField && rightIcon && (
-    <div className="absolute right-3 top-1/2 -translate-y-1/2 text-dark-500">
+    <div className="absolute z-10 right-3 top-1/2 -translate-y-1/2 text-dark-500">
       {rightIcon}
     </div>
   );

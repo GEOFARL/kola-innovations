@@ -1,6 +1,8 @@
 'use client';
 
 import { useState } from 'react';
+import OpportunitiesTab from '../modules/talents/tabs/opportunities';
+import ProfessionalsTab from '../modules/talents/tabs/professionals';
 import Tabs from '../ui/tabs';
 
 const tabs = [
@@ -16,9 +18,9 @@ const TalentsScreen: React.FC = () => {
       <Tabs tabs={tabs} value={selected} onValueChange={setSelected} />
       <div className="mt-6">
         {selected === 'professionals' ? (
-          <div>Professionals content...</div>
+          <ProfessionalsTab />
         ) : (
-          <div>Opportunities content...</div>
+          <OpportunitiesTab />
         )}
       </div>
     </div>
