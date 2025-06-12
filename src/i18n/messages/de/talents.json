@@ -1,0 +1,14 @@
+{
+  "sidebar": {
+    "feed": "Startseite",
+    "jobs": "Jobs",
+    "talents": "Talente",
+    "mentors": "Mentoren",
+    "groups": "Communities/ Gruppen",
+    "inbox": "Posteingang",
+    "network": "Mein Netzwerk",
+    "resources": "Ressourcen",
+    "settings": "Einstellungen",
+    "logout": "Abmelden"
+  }
+}

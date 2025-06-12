@@ -1,0 +1,14 @@
+{
+  "sidebar": {
+    "feed": "Feed",
+    "jobs": "Jobs",
+    "talents": "Talents",
+    "mentors": "Mentors",
+    "groups": "Communities/ Groups",
+    "inbox": "Inbox",
+    "network": "My Network",
+    "resources": "Resources",
+    "settings": "Settings",
+    "logout": "Logout"
+  }
+}

@@ -8,12 +8,14 @@ const messages = {
     landing: () => import('./messages/en/landing.json'),
     onboarding: () => import('./messages/en/onboarding.json'),
     toast: () => import('./messages/en/toast.json'),
+    talents: () => import('./messages/en/talents.json'),
   },
   de: {
     common: () => import('./messages/de/common.json'),
     landing: () => import('./messages/de/landing.json'),
     onboarding: () => import('./messages/de/onboarding.json'),
     toast: () => import('./messages/de/toast.json'),
+    talents: () => import('./messages/de/talents.json'),
   },
 } satisfies Record<string, Record<string, () => Promise<{ default: any }>>>;
 
