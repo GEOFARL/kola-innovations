@@ -1,0 +1,7 @@
+{
+  "auth": {
+    "signInSuccess": "Connexion réussie",
+    "signUpSuccess": "Inscription réussie",
+    "forgotPassword": "Veuillez vérifier votre e-mail, nous vous avons envoyé un lien de réinitialisation"
+  }
+}

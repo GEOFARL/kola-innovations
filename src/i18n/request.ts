@@ -17,6 +17,13 @@ const messages = {
     toast: () => import('./messages/de/toast.json'),
     talents: () => import('./messages/de/talents.json'),
   },
+  fr: {
+    common: () => import('./messages/fr/common.json'),
+    landing: () => import('./messages/fr/landing.json'),
+    onboarding: () => import('./messages/fr/onboarding.json'),
+    toast: () => import('./messages/fr/toast.json'),
+    talents: () => import('./messages/fr/talents.json'),
+  },
 } satisfies Record<string, Record<string, () => Promise<{ default: any }>>>;
 
 export default getRequestConfig(async ({ requestLocale }) => {

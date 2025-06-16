@@ -1,0 +1,62 @@
+{
+  "auth": {
+    "login": "Se connecter",
+    "signup": "S'inscrire",
+    "haveAccount": "Vous avez déjà un compte",
+    "noAccount": "Vous n'avez pas de compte",
+    "forgotPassword": "Mot de passe oublié ?",
+    "resetInstruction": "Pas de souci, nous vous enverrons les instructions de réinitialisation",
+    "sendEmail": "Envoyer un e-mail",
+    "back": "Retour",
+    "signInDescription": {
+      "line1": "Découvrez les avantages de rejoindre la plateforme",
+      "line2": "Inscrivez-vous maintenant !"
+    },
+    "signUpDescription": {
+      "line1": "Découvrez les avantages de rejoindre la plateforme",
+      "line2": "Inscrivez-vous maintenant !"
+    },
+    "fields": {
+      "firstName": "Prénom",
+      "lastName": "Nom de famille",
+      "mobile": "Numéro de téléphone",
+      "email": "Adresse e-mail",
+      "password": "Mot de passe",
+      "confirmPassword": "Confirmer le mot de passe"
+    },
+    "placeholders": {
+      "firstName": "Entrez votre prénom",
+      "lastName": "Entrez votre nom de famille",
+      "mobile": "(000) 000-0000",
+      "email": "exemple30@gmail.com",
+      "password": "Entrez votre mot de passe",
+      "confirmPassword": "Répétez votre mot de passe"
+    }
+  },
+  "actions": {
+    "search": "Rechercher"
+  },
+  "nav": {
+    "findTalent": "Trouver un talent",
+    "findWork": "Trouver un emploi",
+    "mentorship": "Mentorat",
+    "more": "Plus"
+  },
+  "upload": {
+    "label": "Téléchargez votre fichier",
+    "placeholder": "Glissez-déposez ici ou",
+    "select": "sélectionnez un fichier",
+    "hint": "Utilisez un fichier pdf, docx, doc, rtf ou txt",
+    "error": "Échec du téléchargement du fichier."
+  },
+  "multiSelect": {
+    "placeholder": "Sélectionnez...",
+    "more": "{count} de plus"
+  },
+  "search": {
+    "recent": "Récent",
+    "clear": "Effacer",
+    "exploreMore": "Explorer plus",
+    "search": "Rechercher"
+  }
+}

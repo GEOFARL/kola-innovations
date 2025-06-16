@@ -1,0 +1,63 @@
+{
+  "sidebar": {
+    "feed": "Fil d'actualité",
+    "jobs": "Offres",
+    "talents": "Talents",
+    "mentors": "Mentors",
+    "groups": "Communautés / Groupes",
+    "inbox": "Boîte de réception",
+    "network": "Mon réseau",
+    "resources": "Ressources",
+    "settings": "Paramètres",
+    "logout": "Déconnexion"
+  },
+  "filters": {
+    "title": "Tous les filtres",
+    "profession": "Profession",
+    "selectProfession": "Sélectionner une profession",
+    "profileTags": "Étiquettes du profil",
+    "selectTags": "Sélectionner des étiquettes",
+    "skills": "Compétences",
+    "selectSkills": "Sélectionner des compétences",
+    "country": "Pays",
+    "selectCountry": "Sélectionner un pays",
+    "city": "Ville",
+    "selectCity": "Sélectionner une ville",
+    "clear": "Réinitialiser",
+    "apply": "Appliquer"
+  },
+  "tabs": {
+    "professionals": "Professionnels",
+    "opportunities": "Opportunités"
+  },
+  "search": {
+    "placeholder": "Rechercher",
+    "filters": {
+      "relevant": "Pertinent"
+    }
+  },
+  "mostVouched": {
+    "title": "Professionnels les plus recommandés",
+    "connect": "Se connecter"
+  },
+  "all": {
+    "title": "Tous les professionnels"
+  },
+  "details": {
+    "share": "Partager le profil",
+    "requestVouch": "Demander une recommandation",
+    "vouch": "Recommander un professionnel",
+    "bio": "Biographie",
+    "languages": "Langues",
+    "tags": "Compétences et expertise",
+    "location": "Localisation",
+    "endorsements": "Recommandations",
+    "back": "Retour",
+    "saved": "Enregistré",
+    "unsaved": "Retiré des favoris"
+  },
+  "analytics": {
+    "title": "Statistiques",
+    "vouches": "Recommandations"
+  }
+}

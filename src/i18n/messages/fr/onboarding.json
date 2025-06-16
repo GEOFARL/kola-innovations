@@ -1,0 +1,112 @@
+{
+  "footer": {
+    "back": "Retour",
+    "skip": "Passer pour l'instant",
+    "next": "Suivant",
+    "finish": "Commençons !"
+  },
+  "steps": {
+    "personalInfo": {
+      "title": "Vos Informations",
+      "description": "Interdum donec laoreet malesuada a gravida vivamus tempor."
+    },
+    "skills": {
+      "title": "Compétences et Expertise",
+      "description": "Interdum donec laoreet malesuada a gravida vivamus tempor."
+    }
+  },
+  "personalInfo": {
+    "title": "Informations Personnelles",
+    "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque. Orci sit semper ullamcorper eleifend faucibus et aliquam integer euismod.",
+    "fields": {
+      "firstName": "Prénom",
+      "lastName": "Nom de famille",
+      "email": "Adresse e-mail",
+      "phone": "Numéro de téléphone",
+      "jobTitle": "Poste",
+      "username": "Nom d'utilisateur",
+      "province": "Province / État",
+      "city": "Ville",
+      "brief": "Présentation",
+      "languages": "Langues parlées",
+      "ethnicity": "Origine ethnique",
+      "orientation": "Orientation sexuelle",
+      "disability": "Handicap",
+      "resume": "Télécharger votre CV"
+    },
+    "placeholders": {
+      "firstName": "Entrez votre prénom",
+      "lastName": "Entrez votre nom",
+      "email": "vous@exemple.com",
+      "phone": "(123) 456-7890",
+      "jobTitle": "ex : Designer, Développeur",
+      "username": "Choisissez un nom d'utilisateur",
+      "province": "Sélectionnez une province",
+      "city": "Entrez votre ville",
+      "brief": "Rédigez une brève présentation...",
+      "languages": "Sélectionnez les langues",
+      "ethnicity": "Sélectionnez votre origine",
+      "orientation": "Sélectionnez l'orientation",
+      "disability": "Sélectionnez un handicap"
+    },
+    "ethnicities": {
+      "asian": "Asiatique",
+      "black": "Noir ou Africain",
+      "hispanic": "Hispanique ou Latino",
+      "white": "Blanc ou Caucasien",
+      "mixed": "Mixte ou Multiracial",
+      "other": "Autre"
+    },
+    "disabilities": {
+      "none": "Aucun",
+      "vision": "Déficience visuelle",
+      "hearing": "Déficience auditive",
+      "mobility": "Déficience motrice",
+      "cognitive": "Déficience cognitive",
+      "other": "Autre"
+    },
+    "provinces": {
+      "quebec": "Québec",
+      "ontario": "Ontario",
+      "alberta": "Alberta"
+    },
+    "cities": {
+      "montreal": "Montréal",
+      "toronto": "Toronto",
+      "calgary": "Calgary"
+    },
+    "orientations": {
+      "heterosexual": "Hétérosexuel",
+      "homosexual": "Homosexuel",
+      "bisexual": "Bisexuel",
+      "asexual": "Asexuel",
+      "other": "Autre"
+    }
+  },
+  "skills": {
+    "title": "Parlez-nous de vos compétences et de votre expertise",
+    "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque. Orci sit semper ullamcorper eleifend faucibus et aliquam integer euismod.",
+    "searchLabel": "Rechercher des compétences, outils, rôles",
+    "searchPlaceholder": "Tapez et appuyez sur Entrée pour ajouter",
+    "suggested": "Secteurs suggérés",
+    "validation": {
+      "min": "Veuillez ajouter au moins une compétence."
+    },
+    "values": {
+      "musicComposition": "Composition musicale",
+      "instrumentProficiency": "Maîtrise des instruments",
+      "guitars": "Guitares",
+      "musicTheory": "Théorie musicale",
+      "pianos": "Pianos",
+      "audioInterfaces": "Interfaces audio",
+      "musicProduction": "Production musicale",
+      "collaboration": "Collaboration",
+      "effectPedals": "Pédales d'effets",
+      "performer": "Interprète",
+      "musicDirector": "Directeur musical",
+      "soundEngineer": "Ingénieur du son",
+      "songwriter": "Auteur-compositeur",
+      "musicLibrarian": "Bibliothécaire musical"
+    }
+  }
+}
