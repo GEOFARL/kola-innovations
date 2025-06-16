@@ -55,5 +55,9 @@
     "back": "Back",
     "saved": "Saved",
     "unsaved": "Removed from saved"
+  },
+  "analytics": {
+    "title": "Analytics",
+    "vouches": "Vouches"
   }
 }

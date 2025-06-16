@@ -42,5 +42,22 @@
   },
   "all": {
     "title": "Alle Fachkräfte"
+  },
+  "details": {
+    "share": "Profil teilen",
+    "requestVouch": "Empfehlung anfordern",
+    "vouch": "Fachkraft empfehlen",
+    "bio": "Biografie",
+    "languages": "Sprachen",
+    "tags": "Fähigkeiten & Fachwissen",
+    "location": "Standort",
+    "endorsements": "Empfehlungen",
+    "back": "Zurück",
+    "saved": "Gespeichert",
+    "unsaved": "Aus gespeichert entfernt"
+  },
+  "analytics": {
+    "title": "Analysen",
+    "vouches": "Empfehlungen"
   }
 }
