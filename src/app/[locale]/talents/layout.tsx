@@ -1,10 +1,22 @@
+'use client';
+
 import Header from '@/components/modules/shared/header/header';
 import TalentsFilters from '@/components/modules/talents/filters';
+import ProfessionalAnalytics from '@/components/modules/talents/professional-analytics';
 import TalentsSidebar from '@/components/modules/talents/sidebar';
 import MaxWidthWrapper from '@/components/utils/max-width-wrapper';
+import { usePathname } from 'next/navigation';
 import { PropsWithChildren } from 'react';
 
 const LayoutTalents: React.FC<PropsWithChildren> = ({ children }) => {
+  const pathname = usePathname();
+
+  const [, _, ...rest] = pathname?.split('/') ?? [];
+  const normalizedPath = rest.join('/');
+
+  const isDetailsPage =
+    normalizedPath.startsWith('talents/') && rest.length === 2;
+
   return (
     <>
       <Header />
@@ -18,7 +30,7 @@ const LayoutTalents: React.FC<PropsWithChildren> = ({ children }) => {
         </section>
 
         <aside className="sticky top-0 h-full overflow-y-auto border-l border-dark-100 bg-white">
-          <TalentsFilters />
+          {isDetailsPage ? <ProfessionalAnalytics /> : <TalentsFilters />}
         </aside>
       </MaxWidthWrapper>
     </>

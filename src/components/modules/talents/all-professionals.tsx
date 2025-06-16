@@ -7,6 +7,7 @@ import Button from '@/components/ui/button/button';
 import { Professional } from '@/lib/types/talents/professional';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
+import Link from 'next/link';
 
 type Props = {
   professionals: Professional[];
@@ -20,15 +21,17 @@ const AllProfessionals: React.FC<Props> = ({ professionals }) => {
       <h2 className="body-1 text-dark-900 mb-6">{t('title')}</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {professionals.map((pro) => (
-          <div
-            key={pro.name}
-            className="border-[1px] border-dark-100 rounded-2xl p-4 bg-white relative"
+          <Link
+            key={pro.id}
+            href={`/talents/${pro.id}`}
+            className="border-[1px] border-dark-100 rounded-2xl p-4 bg-white relative transition hover:shadow-md"
           >
             <Button
               iconOnly
               size="sm"
               iconCircle
               className="absolute top-4 right-4"
+              onClick={(e) => e.preventDefault()}
             >
               <BookmarkIcon />
             </Button>
@@ -73,7 +76,7 @@ const AllProfessionals: React.FC<Props> = ({ professionals }) => {
                 +2
               </span>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

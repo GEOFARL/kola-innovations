@@ -42,5 +42,18 @@
   },
   "all": {
     "title": "All Professionals"
+  },
+  "details": {
+    "share": "Share Profile",
+    "requestVouch": "Request Vouch",
+    "vouch": "Vouch Professional",
+    "bio": "Biography",
+    "languages": "Languages",
+    "tags": "Skills & Expertise",
+    "location": "Location",
+    "endorsements": "Endorsements",
+    "back": "Back",
+    "saved": "Saved",
+    "unsaved": "Removed from saved"
   }
 }
