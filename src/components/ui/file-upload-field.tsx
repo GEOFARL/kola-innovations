@@ -9,9 +9,22 @@ import UploadIcon from '@/assets/icons/upload.svg';
 type Props = {
   name: string;
   label?: string;
+  accept?: string;
+  hint?: string;
+  className?: string;
+  iconVariant?: 'default' | 'red';
+  labelClassName?: string;
 };
 
-const FileUploadField: React.FC<Props> = ({ name, label }) => {
+const FileUploadField: React.FC<Props> = ({
+  name,
+  label,
+  accept = '.pdf,.doc,.docx,.rtf,.txt',
+  hint,
+  className,
+  labelClassName,
+  iconVariant = 'default',
+}) => {
   const t = useTranslations('common.upload');
   const {
     control,
@@ -43,15 +56,17 @@ const FileUploadField: React.FC<Props> = ({ name, label }) => {
       control={control}
       name={name}
       render={({ field: { onChange } }) => (
-        <div>
-          <label className="block mb-6 text-sm font-medium">
+        <div className={className}>
+          <label
+            className={cn('block mb-6 text-sm font-medium', labelClassName)}
+          >
             {label ?? t('label')}
           </label>
 
           <input
             id={name}
             type="file"
-            accept=".pdf,.doc,.docx,.rtf,.txt"
+            accept={accept}
             onChange={(e) => {
               const file = e.target.files?.[0] ?? null;
               onChange(file);
@@ -73,7 +88,14 @@ const FileUploadField: React.FC<Props> = ({ name, label }) => {
               isDragging ? 'bg-dark-50 border-dark-400' : 'border-dark-200',
             )}
           >
-            <div className="bg-primary-100 p-3 rounded-full">
+            <div
+              className={cn(
+                'p-2 rounded-full shrink-0',
+                iconVariant === 'red'
+                  ? 'bg-[#FFF2F2] text-red-600'
+                  : 'bg-[#9CB0C9] text-white',
+              )}
+            >
               <UploadIcon />
             </div>
             <div className="text-left">
@@ -86,7 +108,7 @@ const FileUploadField: React.FC<Props> = ({ name, label }) => {
                 )}
               </div>
               <div className="text-xs font-[500] text-dark-600 mt-1">
-                {t('hint')}
+                {hint || t('hint')}
               </div>
             </div>
           </label>

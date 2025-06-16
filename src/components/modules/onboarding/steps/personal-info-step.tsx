@@ -229,7 +229,11 @@ const PersonalInfoStep: React.FC = () => {
           )}
         </div>
 
-        <FileUploadField name="resume" label={t('fields.resume')} />
+        <FileUploadField
+          iconVariant="red"
+          name="resume"
+          label={t('fields.resume')}
+        />
       </form>
     </FormProvider>
   );
