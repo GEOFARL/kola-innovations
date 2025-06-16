@@ -39,5 +39,8 @@
   "mostVouched": {
     "title": "Meist empfohlene Fachkräfte",
     "connect": "Verbinden"
+  },
+  "all": {
+    "title": "Alle Fachkräfte"
   }
 }

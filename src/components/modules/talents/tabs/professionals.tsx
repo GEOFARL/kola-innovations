@@ -6,6 +6,7 @@ import ramonImage from '@/assets/images/people/ramon.jpg';
 import mariuszImage from '@/assets/images/people/mariuz.jpg';
 import taylorImage from '@/assets/images/people/taylor.jpg';
 import { Professional } from '@/lib/types/talents/professional';
+import AllProfessionals from '../all-professionals';
 
 const sampleProfessionals: Professional[] = [
   {
@@ -39,6 +40,7 @@ const ProfessionalsTab: React.FC = () => {
     <div>
       <ProfessionalsSearch />
       <MostVouchedProfessionals professionals={sampleProfessionals} />
+      <AllProfessionals professionals={sampleProfessionals} />
     </div>
   );
 };

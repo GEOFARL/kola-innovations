@@ -39,5 +39,8 @@
   "mostVouched": {
     "title": "Most Vouched Professionals",
     "connect": "Connect"
+  },
+  "all": {
+    "title": "All Professionals"
   }
 }
