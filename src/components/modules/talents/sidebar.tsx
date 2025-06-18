@@ -1,6 +1,11 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
+
+import { normalizePathname } from '@/lib/utils/normalize-pathname';
+import { APP_ROUTES } from '@/lib/constants/routing/routes';
 
 import GroupsIcon from '@/assets/icons/talents/groups.svg';
 import HomeIcon from '@/assets/icons/talents/home.svg';
@@ -20,9 +25,17 @@ const TalentsSidebar: React.FC = () => {
     <nav className="flex flex-col justify-between h-full">
       <div>
         <div className="py-6">
-          <SidebarItem icon={<HomeIcon />} label={t('feed')} />
+          <SidebarItem
+            icon={<HomeIcon />}
+            label={t('feed')}
+            href={APP_ROUTES.PROFESSIONALS}
+          />
           <SidebarItem icon={<JobsIcon />} label={t('jobs')} />
-          <SidebarItem icon={<TalentsIcon />} label={t('talents')} />
+          <SidebarItem
+            icon={<TalentsIcon />}
+            label={t('talents')}
+            href={APP_ROUTES.TALENTS}
+          />
         </div>
 
         <div className="border-t border-dark-100 py-6">
@@ -45,19 +58,41 @@ const TalentsSidebar: React.FC = () => {
   );
 };
 
-const SidebarItem = ({
-  icon,
-  label,
-}: {
+type SidebarItemProps = {
   icon: React.ReactNode;
   label: string;
-}) => (
-  <button className="flex py-3 px-5 items-center gap-3 small-1-md text-dark-700 hover:bg-dark-100 w-full transition">
-    <span className="w-5 h-5">{icon}</span>
-    <span className="max-w-[130px] break-words leading-snug text-left">
-      {label}
-    </span>
-  </button>
-);
+  href?: string;
+};
+
+const SidebarItem = ({ icon, label, href }: SidebarItemProps) => {
+  const pathname = usePathname();
+  const normalizedPath = normalizePathname(pathname);
+  const isActive = href ? normalizedPath.startsWith(href) : false;
+
+  const className = `flex py-3 px-5 items-center gap-3 small-1-md w-full transition ${
+    isActive
+      ? 'bg-primary-100 text-primary border-r-[4px] border-primary font-semibold'
+      : 'text-dark-700 hover:bg-dark-100'
+  }`;
+
+  const iconClassName = `${isActive ? 'text-primary' : ''}`;
+
+  const content = (
+    <>
+      <span className={iconClassName}>{icon}</span>
+      <span className="max-w-[130px] break-words leading-snug text-left">
+        {label}
+      </span>
+    </>
+  );
+
+  return href ? (
+    <Link href={href} className={className}>
+      {content}
+    </Link>
+  ) : (
+    <button className={className}>{content}</button>
+  );
+};
 
 export default TalentsSidebar;
