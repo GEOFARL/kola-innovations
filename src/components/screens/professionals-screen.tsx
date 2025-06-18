@@ -6,7 +6,7 @@ import OpportunitiesTab from '../modules/talents/tabs/opportunities';
 import ProfessionalsTab from '../modules/talents/tabs/professionals';
 import Tabs from '../ui/tabs';
 
-const TalentsScreen: React.FC = () => {
+const ProfessionalsScreen: React.FC = () => {
   const t = useTranslations('talents.tabs');
   const [selected, setSelected] = useState('professionals');
 
@@ -29,4 +29,4 @@ const TalentsScreen: React.FC = () => {
   );
 };
 
-export default TalentsScreen;
+export default ProfessionalsScreen;

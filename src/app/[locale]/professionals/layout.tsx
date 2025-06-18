@@ -8,7 +8,7 @@ import MaxWidthWrapper from '@/components/utils/max-width-wrapper';
 import { usePathname } from 'next/navigation';
 import { PropsWithChildren } from 'react';
 
-const LayoutTalents: React.FC<PropsWithChildren> = ({ children }) => {
+const LayoutProfessionals: React.FC<PropsWithChildren> = ({ children }) => {
   const pathname = usePathname();
 
   const [, _, ...rest] = pathname?.split('/') ?? [];
@@ -37,4 +37,4 @@ const LayoutTalents: React.FC<PropsWithChildren> = ({ children }) => {
   );
 };
 
-export default LayoutTalents;
+export default LayoutProfessionals;

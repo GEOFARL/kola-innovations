@@ -8,6 +8,7 @@ import { Professional } from '@/lib/types/talents/professional';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
+import { APP_ROUTES } from '@/lib/constants/routing/routes';
 
 type Props = {
   professionals: Professional[];
@@ -23,7 +24,7 @@ const AllProfessionals: React.FC<Props> = ({ professionals }) => {
         {professionals.map((pro) => (
           <Link
             key={pro.id}
-            href={`/talents/${pro.id}`}
+            href={APP_ROUTES.PROFESSIONAL_DETAILS(pro.id)}
             className="border-[1px] border-dark-100 rounded-2xl p-4 bg-white relative transition hover:shadow-md"
           >
             <Button
