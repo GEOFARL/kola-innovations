@@ -62,5 +62,9 @@
   "analytics": {
     "title": "Analysen",
     "vouches": "Empfehlungen"
+  },
+  "similar": {
+    "title": "Ähnliche Talente",
+    "viewProfile": "Profil ansehen"
   }
 }

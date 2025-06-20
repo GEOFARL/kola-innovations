@@ -4,7 +4,9 @@ import Header from '@/components/modules/shared/header/header';
 import TalentsFilters from '@/components/modules/talents/filters';
 import ProfessionalAnalytics from '@/components/modules/talents/professional-analytics';
 import TalentsSidebar from '@/components/modules/talents/sidebar';
+import SimilarTalents from '@/components/modules/talents/similar-talents';
 import MaxWidthWrapper from '@/components/utils/max-width-wrapper';
+import { APP_ROUTES } from '@/lib/constants/routing/routes';
 import { usePathname } from 'next/navigation';
 import { PropsWithChildren } from 'react';
 
@@ -14,8 +16,24 @@ const LayoutProfessionals: React.FC<PropsWithChildren> = ({ children }) => {
   const [, _, ...rest] = pathname?.split('/') ?? [];
   const normalizedPath = rest.join('/');
 
-  const isDetailsPage =
-    normalizedPath.startsWith('talents/') && rest.length === 2;
+  const routeType = (() => {
+    const isDetails =
+      normalizedPath.startsWith(APP_ROUTES.PROFESSIONALS.slice(1)) &&
+      rest.length === 2;
+    const isTalents =
+      normalizedPath.startsWith(APP_ROUTES.TALENTS.slice(1)) &&
+      rest.length === 1;
+
+    if (isDetails) return 'professional:detail';
+    if (isTalents) return 'talents:list';
+    return 'default';
+  })();
+
+  const rightSidebarContentMap: Record<string, React.ReactNode> = {
+    'professional:detail': <ProfessionalAnalytics />,
+    'talents:list': <SimilarTalents />,
+    default: <TalentsFilters />,
+  };
 
   return (
     <>
@@ -30,7 +48,7 @@ const LayoutProfessionals: React.FC<PropsWithChildren> = ({ children }) => {
         </section>
 
         <aside className="sticky top-0 h-full overflow-y-auto border-l border-dark-100 bg-white">
-          {isDetailsPage ? <ProfessionalAnalytics /> : <TalentsFilters />}
+          {rightSidebarContentMap[routeType]}
         </aside>
       </MaxWidthWrapper>
     </>
