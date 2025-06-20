@@ -1,39 +1,52 @@
 'use client';
 
+import { PropsWithChildren, ReactNode } from 'react';
+import { usePathname } from 'next/navigation';
 import Header from '@/components/modules/shared/header/header';
+import TalentsSidebar from '@/components/modules/talents/sidebar';
 import TalentsFilters from '@/components/modules/talents/filters';
 import ProfessionalAnalytics from '@/components/modules/talents/professional-analytics';
-import TalentsSidebar from '@/components/modules/talents/sidebar';
 import SimilarTalents from '@/components/modules/talents/similar-talents';
 import MaxWidthWrapper from '@/components/utils/max-width-wrapper';
 import { APP_ROUTES } from '@/lib/constants/routing/routes';
-import { usePathname } from 'next/navigation';
-import { PropsWithChildren } from 'react';
+
+type RouteType =
+  | 'professional:detail'
+  | 'talent:detail'
+  | 'talents:list'
+  | 'default';
+
+const getRouteType = (pathname: string): RouteType => {
+  const [, , ...rest] = pathname?.split('/') ?? [];
+  const normalizedPath = rest.join('/');
+
+  const isProfessionalDetails =
+    normalizedPath.startsWith(APP_ROUTES.PROFESSIONALS.slice(1)) &&
+    rest.length === 2;
+
+  const isTalentDetails =
+    normalizedPath.startsWith(APP_ROUTES.TALENTS.slice(1)) && rest.length === 2;
+
+  const isTalentsList =
+    normalizedPath.startsWith(APP_ROUTES.TALENTS.slice(1)) && rest.length === 1;
+
+  if (isProfessionalDetails) return 'professional:detail';
+  if (isTalentDetails) return 'talent:detail';
+  if (isTalentsList) return 'talents:list';
+
+  return 'default';
+};
+
+const rightSidebarContentMap: Record<RouteType, ReactNode> = {
+  'professional:detail': <ProfessionalAnalytics />,
+  'talents:list': <SimilarTalents />,
+  'talent:detail': null,
+  default: <TalentsFilters />,
+};
 
 const LayoutProfessionals: React.FC<PropsWithChildren> = ({ children }) => {
   const pathname = usePathname();
-
-  const [, _, ...rest] = pathname?.split('/') ?? [];
-  const normalizedPath = rest.join('/');
-
-  const routeType = (() => {
-    const isDetails =
-      normalizedPath.startsWith(APP_ROUTES.PROFESSIONALS.slice(1)) &&
-      rest.length === 2;
-    const isTalents =
-      normalizedPath.startsWith(APP_ROUTES.TALENTS.slice(1)) &&
-      rest.length === 1;
-
-    if (isDetails) return 'professional:detail';
-    if (isTalents) return 'talents:list';
-    return 'default';
-  })();
-
-  const rightSidebarContentMap: Record<string, React.ReactNode> = {
-    'professional:detail': <ProfessionalAnalytics />,
-    'talents:list': <SimilarTalents />,
-    default: <TalentsFilters />,
-  };
+  const routeType = getRouteType(pathname);
 
   return (
     <>

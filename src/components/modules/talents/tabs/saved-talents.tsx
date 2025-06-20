@@ -7,11 +7,11 @@ import PersonGrid from '../person-grid';
 import ProfessionalsSearch from '../search/professionals-search';
 
 const SavedTalentsTab: React.FC = () => {
-  const people: (Professional & { href: string, isSaved?: boolean })[] = [
+  const people: (Professional & { href: string; isSaved?: boolean })[] = [
     ...sampleProfessionals,
     ...sampleProfessionals.map((v) => ({
       ...v,
-      id: v.id + sampleProfessionals.length,
+      id: (+v.id + sampleProfessionals.length).toString(),
     })),
   ].map((talent) => ({
     ...talent,

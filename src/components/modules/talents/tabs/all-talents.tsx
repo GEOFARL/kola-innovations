@@ -11,7 +11,7 @@ const AllTalentsTab: React.FC = () => {
     ...sampleProfessionals,
     ...sampleProfessionals.map((v) => ({
       ...v,
-      id: v.id + sampleProfessionals.length,
+      id: (+v.id + sampleProfessionals.length).toString(),
     })),
   ].map((talent) => ({
     ...talent,
