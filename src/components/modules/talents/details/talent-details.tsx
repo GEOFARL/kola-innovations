@@ -21,7 +21,7 @@ const TalentDetails: React.FC<Props> = ({ id }) => {
 
   return (
     <div className="flex flex-col h-full gap-6">
-      <ProfessionalHeader name={pro.name} avatar={pro.avatar} />
+      <ProfessionalHeader name={pro.name} avatar={pro.avatar} withConnect />
       <ProfessionalMain
         name={pro.name}
         title={pro.title}

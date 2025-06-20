@@ -6,13 +6,15 @@ import ShareIcon from '@/assets/icons/talents/share.svg';
 import ArrowLeftIcon from '@/assets/icons/arrow-left.svg';
 import Button from '@/components/ui/button/button';
 import ProfessionalActionsDropdown from './professional-actions-dropdown';
+import { Plus } from 'lucide-react';
 
 type Props = {
   name: string;
   avatar: StaticImageData;
+  withConnect?: boolean;
 };
 
-const ProfessionalHeader: React.FC<Props> = ({ name, avatar }) => {
+const ProfessionalHeader: React.FC<Props> = ({ name, avatar, withConnect }) => {
   const router = useRouter();
 
   return (
@@ -36,6 +38,12 @@ const ProfessionalHeader: React.FC<Props> = ({ name, avatar }) => {
       </button>
 
       <div className="flex gap-2">
+        {withConnect && (
+          <Button size="sm" color="black" className="gap-2">
+            <Plus className="w-4 h-4" />
+            Connect
+          </Button>
+        )}
         <Button
           size="sm"
           iconOnly
