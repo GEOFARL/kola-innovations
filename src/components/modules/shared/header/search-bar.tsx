@@ -4,7 +4,6 @@ import SearchIcon from '@/assets/icons/header/search.svg';
 import FormField from '@/components/ui/form-field';
 import { useClickOutside } from '@/hooks/use-click-outside';
 import { cn } from '@/lib/cn';
-import { ChevronDown } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
@@ -72,7 +71,7 @@ const SearchBar: React.FC<Props> = ({
             }}
             rightIcon={filters}
             className={cn(
-              'rounded-[27px] w-full relative bg-white',
+              'rounded-[27px] w-full relative z-2 bg-white',
               inputClassName,
             )}
           />

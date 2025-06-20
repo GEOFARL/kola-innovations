@@ -28,7 +28,10 @@
   },
   "tabs": {
     "professionals": "Fachkräfte",
-    "opportunities": "Möglichkeiten"
+    "opportunities": "Möglichkeiten",
+    "talents": "Talente",
+    "all": "Alle Talente",
+    "saved": "Gespeichert"
   },
   "search": {
     "placeholder": "Suche",

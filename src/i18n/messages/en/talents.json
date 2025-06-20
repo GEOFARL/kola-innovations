@@ -28,7 +28,10 @@
   },
   "tabs": {
     "professionals": "Professionals",
-    "opportunities": "Opportunities"
+    "opportunities": "Opportunities",
+    "talents": "Talents",
+    "all": "All Talents",
+    "saved": "Saved"
   },
   "search": {
     "placeholder": "Search",

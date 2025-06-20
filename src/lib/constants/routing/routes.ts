@@ -3,4 +3,5 @@ export const APP_ROUTES = {
   TALENTS: '/talents',
   PROFESSIONALS: '/professionals',
   PROFESSIONAL_DETAILS: (id: string) => `/professionals/${id}`,
+  TALENT_DETAILS: (id: string) => `/talent/${id}`,
 };

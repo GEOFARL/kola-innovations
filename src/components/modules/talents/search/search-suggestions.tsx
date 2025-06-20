@@ -17,7 +17,7 @@ const SearchSuggestions: React.FC<Props> = ({
   if (!visible || recentQueries.length === 0) return null;
 
   return (
-    <div className="absolute top-[calc(100%-28px)] left-0 mt-2 w-full rounded-bl-[20px] rounded-br-[20px] shadow-md bg-white z-0">
+    <div className="absolute top-[calc(100%-28px)] left-0 mt-2 w-full rounded-bl-[20px] rounded-br-[20px] shadow-md bg-white z-1">
       <div className="px-4 pt-[35px] pb-3 flex justify-between items-center">
         <p className="small-1 text-dark-900">Recent Search</p>
       </div>
