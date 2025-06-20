@@ -65,6 +65,7 @@
   },
   "similar": {
     "title": "Similar Talents",
-    "viewProfile": "View Profile"
+    "viewProfile": "View Profile",
+    "exploreAll": "Explore all Talents"
   }
 }

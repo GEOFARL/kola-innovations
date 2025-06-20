@@ -45,10 +45,18 @@ const SimilarTalents: React.FC = () => {
                 </Button>
               </div>
             </div>
-            {idx !== 2 && <div className="h-[1px] bg-dark-100" />}
+            <div className="h-[1px] bg-dark-100" />
           </Fragment>
         ))}
       </div>
+
+      <Button
+        variant="text-link"
+        className="mt-6 mx-auto p-0 min-h-5! justify-start"
+        onClick={() => router.push(APP_ROUTES.TALENTS)}
+      >
+        {t('exploreAll')} ↗
+      </Button>
     </div>
   );
 };
