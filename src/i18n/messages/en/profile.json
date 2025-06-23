@@ -1,0 +1,12 @@
+{
+  "sidebar": {
+    "profile": "Profile",
+    "vouch": "Vouch",
+    "logout": "Logout"
+  },
+  "analytics": {
+    "title": "Analytics",
+    "profileViews": "Profile Views",
+    "vouches": "Vouches"
+  }
+}

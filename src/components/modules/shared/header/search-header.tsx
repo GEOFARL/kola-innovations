@@ -4,10 +4,11 @@ import GiftIcon from '@/assets/icons/header/gift.svg';
 import NotificationIcon from '@/assets/icons/header/notification.svg';
 import BookmarkIcon from '@/assets/icons/header/save.svg';
 import Logo from '@/assets/icons/logo.svg';
-import womanAvatar from '@/assets/images/people/woman.jpg';
 
 import Button from '@/components/ui/button/button';
 import { Link } from '@/i18n/navigation';
+import { DEFAULT_USER } from '@/lib/constants/profile';
+import { APP_ROUTES } from '@/lib/constants/routing/routes';
 import Image from 'next/image';
 import HeaderWrapper from './header-wrapper';
 import SearchBar from './search-bar';
@@ -50,16 +51,19 @@ const SearchHeader: React.FC = () => {
           <Button size="sm" iconOnly iconCircle aria-label="Notifications">
             <NotificationIcon />
           </Button>
-          <div className="flex items-center gap-2 cursor-pointer">
+          <Link
+            href={APP_ROUTES.PROFILE}
+            className="flex items-center gap-2 cursor-pointer"
+          >
             <Image
-              src={womanAvatar}
+              src={DEFAULT_USER.avatarUrl}
               alt="User Avatar"
               className="w-8 h-8 rounded-full object-cover"
             />
             <span className="text-sm font-[600] text-dark-900">
-              Cameron Williamson
+              {DEFAULT_USER.fullName}
             </span>
-          </div>
+          </Link>
         </div>
       </div>
     </HeaderWrapper>

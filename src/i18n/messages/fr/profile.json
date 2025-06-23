@@ -1,0 +1,12 @@
+{
+  "sidebar": {
+    "profile": "Profil",
+    "vouch": "Recommander",
+    "logout": "Se déconnecter"
+  },
+  "analytics": {
+    "title": "Statistiques",
+    "profileViews": "Vues du profil",
+    "vouches": "Recommandations"
+  }
+}

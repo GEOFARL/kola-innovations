@@ -1,10 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { usePathname } from 'next/navigation';
-import Link from 'next/link';
 
-import { normalizePathname } from '@/lib/utils/normalize-pathname';
 import { APP_ROUTES } from '@/lib/constants/routing/routes';
 
 import GroupsIcon from '@/assets/icons/talents/groups.svg';
@@ -17,6 +14,7 @@ import NetworkIcon from '@/assets/icons/talents/network.svg';
 import ResourcesIcon from '@/assets/icons/talents/resources.svg';
 import SettingsIcon from '@/assets/icons/talents/settings.svg';
 import TalentsIcon from '@/assets/icons/talents/talents.svg';
+import SidebarItem from '../shared/sidebar-item';
 
 const TalentsSidebar: React.FC = () => {
   const t = useTranslations('talents.sidebar');
@@ -55,43 +53,6 @@ const TalentsSidebar: React.FC = () => {
         <SidebarItem icon={<LogoutIcon />} label={t('logout')} />
       </div>
     </nav>
-  );
-};
-
-type SidebarItemProps = {
-  icon: React.ReactNode;
-  label: string;
-  href?: string;
-};
-
-const SidebarItem = ({ icon, label, href }: SidebarItemProps) => {
-  const pathname = usePathname();
-  const normalizedPath = normalizePathname(pathname);
-  const isActive = href ? normalizedPath.startsWith(href) : false;
-
-  const className = `flex py-3 px-5 items-center gap-3 small-1-md w-full transition ${
-    isActive
-      ? 'bg-primary-100 text-primary border-r-[4px] border-primary font-semibold'
-      : 'text-dark-700 hover:bg-dark-100'
-  }`;
-
-  const iconClassName = `${isActive ? 'text-primary' : ''}`;
-
-  const content = (
-    <>
-      <span className={iconClassName}>{icon}</span>
-      <span className="max-w-[130px] break-words leading-snug text-left">
-        {label}
-      </span>
-    </>
-  );
-
-  return href ? (
-    <Link href={href} className={className}>
-      {content}
-    </Link>
-  ) : (
-    <button className={className}>{content}</button>
   );
 };
 

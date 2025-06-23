@@ -1,14 +1,15 @@
 'use client';
 
-import { PropsWithChildren, ReactNode } from 'react';
-import { usePathname } from 'next/navigation';
 import Header from '@/components/modules/shared/header/header';
-import TalentsSidebar from '@/components/modules/talents/sidebar';
+import Analytics from '@/components/modules/talents/analytics';
 import TalentsFilters from '@/components/modules/talents/filters';
-import ProfessionalAnalytics from '@/components/modules/talents/professional-analytics';
+import TalentsSidebar from '@/components/modules/talents/sidebar';
 import SimilarTalents from '@/components/modules/talents/similar-talents';
 import MaxWidthWrapper from '@/components/utils/max-width-wrapper';
 import { APP_ROUTES } from '@/lib/constants/routing/routes';
+import { useTranslations } from 'next-intl';
+import { usePathname } from 'next/navigation';
+import { PropsWithChildren, ReactNode } from 'react';
 
 type RouteType =
   | 'professional:detail'
@@ -37,16 +38,22 @@ const getRouteType = (pathname: string): RouteType => {
   return 'default';
 };
 
-const rightSidebarContentMap: Record<RouteType, ReactNode> = {
-  'professional:detail': <ProfessionalAnalytics />,
-  'talents:list': <SimilarTalents />,
-  'talent:detail': null,
-  default: <TalentsFilters />,
-};
-
 const LayoutProfessionals: React.FC<PropsWithChildren> = ({ children }) => {
   const pathname = usePathname();
+  const t = useTranslations('talents.analytics');
   const routeType = getRouteType(pathname);
+
+  const rightSidebarContentMap: Record<RouteType, ReactNode> = {
+    'professional:detail': (
+      <Analytics
+        title={t('title')}
+        items={[{ label: t('vouches'), value: 30 }]}
+      />
+    ),
+    'talents:list': <SimilarTalents />,
+    'talent:detail': null,
+    default: <TalentsFilters />,
+  };
 
   return (
     <>
