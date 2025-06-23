@@ -17,40 +17,40 @@ type TalentFiltersActions = {
   clearAll: () => void;
 };
 
-export const useTalentFiltersStore = create<TalentFiltersState & TalentFiltersActions>(
-  (set) => ({
-    activeTab: null,
-    activeSkills: [],
-    selectedCitiesByProvince: {},
-    activeLocationTab: '',
-    setActiveTab: (bar) => set(() => ({ activeTab: bar })),
-    setActiveLocationTab: (tab) => set(() => ({ activeLocationTab: tab })),
-    toggleCity: (city) =>
-      set((state) => {
-        const province = state.activeLocationTab;
-        const current = state.selectedCitiesByProvince[province] ?? [];
-        const updated = current.includes(city)
-          ? current.filter((c) => c !== city)
-          : [...current, city];
+export const useTalentFiltersStore = create<
+  TalentFiltersState & TalentFiltersActions
+>((set) => ({
+  activeTab: null,
+  activeSkills: [],
+  selectedCitiesByProvince: {},
+  activeLocationTab: 'nova-scotia',
+  setActiveTab: (bar) => set(() => ({ activeTab: bar })),
+  setActiveLocationTab: (tab) => set(() => ({ activeLocationTab: tab })),
+  toggleCity: (city) =>
+    set((state) => {
+      const province = state.activeLocationTab;
+      const current = state.selectedCitiesByProvince[province] ?? [];
+      const updated = current.includes(city)
+        ? current.filter((c) => c !== city)
+        : [...current, city];
 
-        return {
-          selectedCitiesByProvince: {
-            ...state.selectedCitiesByProvince,
-            [province]: updated,
-          },
-        };
-      }),
-    toggleActiveSkill: (skill) =>
-      set(({ activeSkills }) => ({
-        activeSkills: activeSkills.includes(skill)
-          ? activeSkills.filter((v) => v !== skill)
-          : [...activeSkills, skill],
-      })),
-    clearAll: () =>
-      set(() => ({
-        activeSkills: [],
-        selectedCitiesByProvince: {},
-        activeLocationTab: "",
-      })),
-  }),
-);
+      return {
+        selectedCitiesByProvince: {
+          ...state.selectedCitiesByProvince,
+          [province]: updated,
+        },
+      };
+    }),
+  toggleActiveSkill: (skill) =>
+    set(({ activeSkills }) => ({
+      activeSkills: activeSkills.includes(skill)
+        ? activeSkills.filter((v) => v !== skill)
+        : [...activeSkills, skill],
+    })),
+  clearAll: () =>
+    set(() => ({
+      activeSkills: [],
+      selectedCitiesByProvince: {},
+      activeLocationTab: 'nova-scotia',
+    })),
+}));

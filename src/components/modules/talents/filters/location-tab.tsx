@@ -29,16 +29,14 @@ const LocationTab: React.FC = () => {
     label: tProvince(key),
   }));
 
-  const locationTab =
-    activeLocationTab.length === 0 ? tabs[0].value : activeLocationTab;
-  const cities = citiesByProvince[locationTab] || [];
-  const selected = selectedCitiesByProvince[locationTab] || [];
+  const cities = citiesByProvince[activeLocationTab] || [];
+  const selected = selectedCitiesByProvince[activeLocationTab] || [];
 
   return (
     <div className="flex w-full">
       <Tabs
         tabs={tabs}
-        value={locationTab}
+        value={activeLocationTab}
         onValueChange={setActiveLocationTab}
         layout="vertical"
         className="h-full border-r-[1px] border-[#E0E3E5]"
