@@ -2,6 +2,7 @@
 
 import MultiSelectField from '@/components/ui/multi-select-field';
 import TagChip from '@/components/ui/tag-chip';
+import { skillKeys } from '@/lib/constants/profile/skills';
 import { skillsSchema } from '@/lib/schemas/onboarding/skills-schema';
 import { useOnboardingStore } from '@/lib/stores/onboarding/onboarding-store';
 import { SkillsData } from '@/lib/types/onboarding/step';
@@ -9,23 +10,6 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useTranslations } from 'next-intl';
 import { useEffect, useMemo } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
-
-const skillKeys = [
-  'musicComposition',
-  'instrumentProficiency',
-  'guitars',
-  'musicTheory',
-  'pianos',
-  'audioInterfaces',
-  'musicProduction',
-  'collaboration',
-  'effectPedals',
-  'performer',
-  'musicDirector',
-  'soundEngineer',
-  'songwriter',
-  'musicLibrarian',
-] as const;
 
 const SkillsStep: React.FC = () => {
   const t = useTranslations('onboarding.skills');

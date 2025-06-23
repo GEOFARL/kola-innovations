@@ -9,4 +9,5 @@ export type User = {
   ethnicity: string;
   brief: string;
   job: string;
+  skills?: string[];
 };

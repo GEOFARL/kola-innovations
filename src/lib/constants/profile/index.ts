@@ -11,5 +11,12 @@ export const DEFAULT_USER: User = {
   location: 'Montreal, QC',
   brief:
     'Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque. Orci sit semper ullamcorper eleifend faucibus et aliquam integer euismod.',
+  skills: [
+    'musicTheory',
+    'soundEngineer',
+    'songwriter',
+    'musicLibrarian',
+    'pianos',
+    'guitars',
+  ],
 };
-  

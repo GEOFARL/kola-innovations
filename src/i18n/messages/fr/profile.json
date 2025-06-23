@@ -8,5 +8,19 @@
     "title": "Statistiques",
     "profileViews": "Vues du profil",
     "vouches": "Recommandations"
+  },
+  "header": {
+    "my": "Mon profil",
+    "edit": "Modifier le profil"
+  },
+  "info": {
+    "title": "Informations personnelles",
+    "description": "Mettre à jour vos informations vous permettra d'accéder à un contenu et des conversations plus pertinents.",
+    "fullName": "Nom complet",
+    "jobTitle": "Poste",
+    "email": "E-mail",
+    "phone": "Numéro de téléphone",
+    "location": "Localisation",
+    "ethnicity": "Origine ethnique"
   }
 }

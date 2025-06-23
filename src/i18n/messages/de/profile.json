@@ -8,5 +8,19 @@
     "title": "Analysen",
     "profileViews": "Profilansichten",
     "vouches": "Empfehlungen"
+  },
+  "header": {
+    "my": "Mein Profil",
+    "edit": "Profil bearbeiten"
+  },
+  "info": {
+    "title": "Persönliche Informationen",
+    "description": "Die Aktualisierung Ihrer Daten bietet Ihnen relevantere Inhalte und Gespräche.",
+    "fullName": "Vollständiger Name",
+    "jobTitle": "Berufsbezeichnung",
+    "email": "E-Mail",
+    "phone": "Telefonnummer",
+    "location": "Standort",
+    "ethnicity": "Ethnische Zugehörigkeit"
   }
 }

@@ -8,5 +8,19 @@
     "title": "Analytics",
     "profileViews": "Profile Views",
     "vouches": "Vouches"
+  },
+  "header": {
+    "my": "My Profile",
+    "edit": "Edit Profile"
+  },
+  "info": {
+    "title": "Personal Information",
+    "description": "Updating your information will offer you the most relevant content and conversations",
+    "fullName": "Full Name",
+    "jobTitle": "Job Title",
+    "email": "Email",
+    "phone": "Phone No.",
+    "location": "Location",
+    "ethnicity": "Ethnicity"
   }
 }

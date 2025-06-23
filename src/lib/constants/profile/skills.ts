@@ -1,0 +1,16 @@
+export const skillKeys = [
+  'musicComposition',
+  'instrumentProficiency',
+  'guitars',
+  'musicTheory',
+  'pianos',
+  'audioInterfaces',
+  'musicProduction',
+  'collaboration',
+  'effectPedals',
+  'performer',
+  'musicDirector',
+  'soundEngineer',
+  'songwriter',
+  'musicLibrarian',
+] as const;
