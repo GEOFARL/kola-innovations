@@ -5,6 +5,7 @@ import { APP_ROUTES } from '@/lib/constants/routing/routes';
 import { Professional } from '@/lib/types/talents/professional';
 import PersonGrid from '../person-grid';
 import ProfessionalsSearch from '../search/professionals-search';
+import FilterTriggerBar from '../filters/filter-trigger-bar';
 
 const AllTalentsTab: React.FC = () => {
   const people: (Professional & { href: string })[] = [
@@ -21,6 +22,7 @@ const AllTalentsTab: React.FC = () => {
   return (
     <div>
       <ProfessionalsSearch />
+      <FilterTriggerBar className="mt-6" />
       <PersonGrid people={people} />
     </div>
   );

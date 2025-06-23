@@ -13,6 +13,7 @@
   },
   "filters": {
     "title": "Tous les filtres",
+    "name": "Filtres",
     "profession": "Profession",
     "selectProfession": "Sélectionner une profession",
     "profileTags": "Étiquettes du profil",
@@ -67,5 +68,42 @@
     "title": "Talents similaires",
     "viewProfile": "Voir le profil",
     "exploreAll": "Voir tous les talents"
+  },
+  "skillsList": {
+    "music": "Musique",
+    "musicians": "Musiciens",
+    "photographers": "Photographes",
+    "speakers": "Orateurs",
+    "stylists": "Stylistes",
+    "videographers": "Vidéastes",
+    "audio_engineers": "Ingénieurs du son",
+    "editors": "Monteurs",
+    "event_planners": "Organisateurs d'événements",
+    "performer": "Interprète",
+    "music_director": "Directeur musical",
+    "sound_engineer": "Ingénieur du son",
+    "songwriter": "Auteur-compositeur"
+  },
+  "provinces": {
+    "alberta": "Alberta",
+    "nova-scotia": "Nouvelle-Écosse",
+    "ontario": "Ontario",
+    "quebec": "Québec",
+    "saskatchewan": "Saskatchewan"
+  },
+  "cities": {
+    "halifax": "Halifax",
+    "sydney": "Sydney",
+    "dartmouth": "Dartmouth",
+    "truro": "Truro",
+    "new_glasgow": "New Glasgow",
+    "calgary": "Calgary",
+    "edmonton": "Edmonton",
+    "toronto": "Toronto",
+    "ottawa": "Ottawa",
+    "montreal": "Montréal",
+    "quebec_city": "Ville de Québec",
+    "regina": "Regina",
+    "saskatoon": "Saskatoon"
   }
 }

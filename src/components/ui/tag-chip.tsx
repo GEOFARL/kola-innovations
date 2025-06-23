@@ -8,12 +8,14 @@ type Props = {
   onClick?: () => void;
   variant?: 'remove' | 'add' | 'static';
   className?: string;
+  color?: 'red';
 };
 
 const TagChip: React.FC<Props> = ({
   label,
   onClick,
   className,
+  color,
   variant = 'remove',
 }) => {
   const showIcon = variant !== 'static';
@@ -21,8 +23,11 @@ const TagChip: React.FC<Props> = ({
   return (
     <span
       className={cn(
-        'bg-dark-100 text-dark-800 rounded-full px-2 py-[2px] text-xs flex items-center gap-1 shrink-0',
+        'bg-dark-100 text-dark-800 rounded-full px-2 py-[2px] text-xs flex items-center gap-1 shrink-0 border-[1px] border-transparent',
         variant !== 'static' && 'cursor-pointer',
+        variant === 'remove' &&
+          color === 'red' &&
+          'border-primary bg-primary-100 text-primary',
         className,
       )}
       onClick={(e) => {
@@ -36,7 +41,12 @@ const TagChip: React.FC<Props> = ({
         (variant === 'add' ? (
           <Plus className="w-3 h-3 text-dark-500" />
         ) : (
-          <X className="w-3 h-3 text-dark-500" />
+          <X
+            className={cn(
+              'w-3 h-3 text-dark-500',
+              variant === 'remove' && color === 'red' && 'text-primary',
+            )}
+          />
         ))}
     </span>
   );

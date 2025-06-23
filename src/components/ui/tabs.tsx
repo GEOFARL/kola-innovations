@@ -13,6 +13,9 @@ type TabsProps = {
   value: string;
   onValueChange: (val: string) => void;
   className?: string;
+  rootClassName?: string;
+  itemClassName?: string;
+  layout?: 'horizontal' | 'vertical';
 };
 
 const Tabs: React.FC<TabsProps> = ({
@@ -20,12 +23,21 @@ const Tabs: React.FC<TabsProps> = ({
   value,
   onValueChange,
   className,
+  rootClassName,
+  itemClassName,
+  layout = 'horizontal',
 }) => {
   return (
-    <TabsPrimitive.Root value={value} onValueChange={onValueChange}>
+    <TabsPrimitive.Root
+      value={value}
+      onValueChange={onValueChange}
+      className={rootClassName}
+    >
       <TabsPrimitive.List
         className={cn(
-          'flex items-center border-b border-dark-100 gap-4',
+          'flex items-center gap-4',
+          layout === 'vertical' && 'flex-col items-start gap-0',
+          layout === 'horizontal' && 'border-b border-dark-100',
           className,
         )}
       >
@@ -34,9 +46,14 @@ const Tabs: React.FC<TabsProps> = ({
             key={tab.value}
             value={tab.value}
             className={cn(
-              'pb-3 px-4 h6-md transition-colors border-b-[1px] border-b-transparent',
-              'text-dark-700 hover:text-dark-900',
-              'data-[state=active]:text-primary data-[state=active]:font-[600] data-[state=active]:border-b-primary',
+              'pb-3 px-4 transition-colors',
+              'text-dark-600 hover:text-dark-900',
+              'data-[state=active]:text-primary data-[state=active]:font-[600]',
+              layout === 'vertical' &&
+                'py-3 px-5 w-full small-1-md text-left data-[state=active]:border-r-primary border-r-[4px] border-r-transparent',
+              layout === 'horizontal' &&
+                'border-b-[1px] h6-md border-b-transparent data-[state=active]:border-b-primary',
+              itemClassName,
             )}
           >
             {tab.label}

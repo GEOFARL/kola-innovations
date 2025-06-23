@@ -1,8 +1,7 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
 import { ChevronDown } from 'lucide-react';
-import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 import SearchBar from '../../shared/header/search-bar';
 import SearchSuggestions from '../search/search-suggestions';
 
@@ -10,19 +9,15 @@ const recentQueries = ['UI UX Designer', 'Project Manager', 'Logo Designer'];
 
 const ProfessionalsSearch: React.FC = () => {
   const t = useTranslations('talents.search');
-  const [focused, setFocused] = useState(false);
 
   return (
     <SearchBar
-      onFocusChange={setFocused}
       className="max-w-none"
       renderSuggestions={({ setQuery, clearSuggestions }) => (
         <SearchSuggestions
-          visible={focused}
           onClear={clearSuggestions}
           onQueryClick={(q) => {
             setQuery(q);
-            setFocused(true);
           }}
           recentQueries={recentQueries}
         />

@@ -13,6 +13,7 @@
   },
   "filters": {
     "title": "Alle Filter",
+    "name": "Filter",
     "profession": "Beruf",
     "selectProfession": "Beruf auswählen",
     "profileTags": "Profil-Tags",
@@ -67,5 +68,42 @@
     "title": "Ähnliche Talente",
     "viewProfile": "Profil ansehen",
     "exploreAll": "Alle Talente anzeigen"
+  },
+  "skillsList": {
+    "music": "Musik",
+    "musicians": "Musiker",
+    "photographers": "Fotografen",
+    "speakers": "Redner",
+    "stylists": "Stylisten",
+    "videographers": "Videofilmer",
+    "audio_engineers": "Toningenieure",
+    "editors": "Editoren",
+    "event_planners": "Eventplaner",
+    "performer": "Darsteller",
+    "music_director": "Musikdirektor",
+    "sound_engineer": "Tonmeister",
+    "songwriter": "Songwriter"
+  },
+  "provinces": {
+    "alberta": "Alberta",
+    "nova-scotia": "Neuschottland",
+    "ontario": "Ontario",
+    "quebec": "Québec",
+    "saskatchewan": "Saskatchewan"
+  },
+  "cities": {
+    "halifax": "Halifax",
+    "sydney": "Sydney",
+    "dartmouth": "Dartmouth",
+    "truro": "Truro",
+    "new_glasgow": "New Glasgow",
+    "calgary": "Calgary",
+    "edmonton": "Edmonton",
+    "toronto": "Toronto",
+    "ottawa": "Ottawa",
+    "montreal": "Montreal",
+    "quebec_city": "Québec-Stadt",
+    "regina": "Regina",
+    "saskatoon": "Saskatoon"
   }
 }
