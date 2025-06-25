@@ -11,9 +11,13 @@ import HomeIcon from '@/assets/icons/talents/home.svg';
 import LogoutIcon from '@/assets/icons/talents/logout.svg';
 import { DEFAULT_USER } from '@/lib/constants/profile';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
+import { normalizePathname } from '@/lib/utils/normalize-pathname';
 
 const ProfileSidebar: React.FC = () => {
   const t = useTranslations('profile.sidebar');
+  const pathname = usePathname();
+  const normalizedPath = normalizePathname(pathname);
 
   return (
     <nav className="flex flex-col justify-between h-full">
@@ -47,6 +51,7 @@ const ProfileSidebar: React.FC = () => {
             icon={<HomeIcon />}
             label={t('profile')}
             href={APP_ROUTES.PROFILE}
+            notActive={normalizedPath === APP_ROUTES.PROFILE_VOUCH}
           />
           <SidebarItem
             icon={<BadgeIcon />}

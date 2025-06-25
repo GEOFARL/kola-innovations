@@ -8,13 +8,16 @@ type Props = {
   icon: React.ReactNode;
   label: string;
   href?: string;
+  notActive?: boolean;
 };
 
-const SidebarItem: React.FC<Props> = ({ icon, label, href }) => {
+const SidebarItem: React.FC<Props> = ({ icon, label, href, notActive }) => {
   const pathname = usePathname();
   const normalizedPath = normalizePathname(pathname);
-  const isActive = href ? normalizedPath === href : false;
-
+  const isActive =
+    href &&
+    !notActive &&
+    (normalizedPath === href || normalizedPath.startsWith(`${href}/`));
   const className = `flex py-3 px-5 items-center gap-3 small-1-md w-full transition ${
     isActive
       ? 'bg-primary-100 text-primary border-r-[4px] border-primary font-semibold!'
