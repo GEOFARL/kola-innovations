@@ -2,7 +2,7 @@
 
 import Card from '@/components/ui/card';
 import { useTranslations } from 'next-intl';
-import SkillsField from '../../shared/skills-field';
+import SkillsField from '../../shared/fields/skills-field';
 
 const Skills: React.FC = () => {
   const t = useTranslations('profile');

@@ -6,14 +6,14 @@ import { useMemo } from 'react';
 
 const ProfileInfo: React.FC = () => {
   const t = useTranslations('profile.info');
-  const tOnboarding = useTranslations('onboarding.skills');
+  const tSkills = useTranslations('common.skills');
   const allSkills = useMemo(
     () =>
       DEFAULT_USER.skills?.map((key) => ({
         value: key,
-        label: tOnboarding(`values.${key}`),
+        label: tSkills(`values.${key}`),
       })),
-    [tOnboarding],
+    [tSkills],
   );
 
   return (

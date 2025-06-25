@@ -12,7 +12,7 @@ import {
   provinces,
 } from '@/lib/constants/onboarding/select-options';
 import { useTranslations } from 'next-intl';
-import DisabilityField from '../../shared/disability-field';
+import DisabilityField from '../../shared/fields/disability-field';
 
 const PersonalInformation: React.FC = () => {
   const t = useTranslations('profile');

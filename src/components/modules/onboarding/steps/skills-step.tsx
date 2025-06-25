@@ -7,7 +7,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useTranslations } from 'next-intl';
 import { useEffect } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
-import SkillsField from '../../shared/skills-field';
+import SkillsField from '../../shared/fields/skills-field';
 
 const SkillsStep: React.FC = () => {
   const t = useTranslations('skills.onboarding');

@@ -24,7 +24,7 @@ import {
   provinces,
 } from '@/lib/constants/onboarding/select-options';
 import { PersonalInfoData } from '@/lib/types/onboarding/step';
-import DisabilityField from '../../shared/disability-field';
+import DisabilityField from '../../shared/fields/disability-field';
 import PersonalInfoSkeleton from './personal-info-skeleton';
 
 function getInitialPersonalInfoData(): PersonalInfoData {
