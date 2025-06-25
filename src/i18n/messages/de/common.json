@@ -58,5 +58,43 @@
     "clear": "Löschen",
     "exploreMore": "Mehr entdecken",
     "search": "Suchen"
+  },
+  "skills": {
+    "title": "Erzähle uns von deinen Fähigkeiten & deiner Expertise",
+    "description": "Hilf uns, deinen beruflichen Hintergrund zu verstehen, indem du deine wichtigsten Fähigkeiten, Werkzeuge und Fachgebiete angibst.",
+    "searchLabel": "Suche nach Fähigkeiten, Tools, Rollen",
+    "searchPlaceholder": "Tippe und drücke Enter, um hinzuzufügen",
+    "suggested": "Vorgeschlagene Branchen",
+    "validation": {
+      "min": "Bitte gib mindestens eine Fähigkeit an."
+    },
+    "values": {
+      "musicComposition": "Musikkomposition",
+      "instrumentProficiency": "Instrumentenbeherrschung",
+      "guitars": "Gitarren",
+      "musicTheory": "Musiktheorie",
+      "pianos": "Klaviere",
+      "audioInterfaces": "Audio-Interfaces",
+      "musicProduction": "Musikproduktion",
+      "collaboration": "Zusammenarbeit",
+      "effectPedals": "Effektpedale",
+      "performer": "Darsteller",
+      "musicDirector": "Musikdirektor",
+      "soundEngineer": "Toningenieur",
+      "songwriter": "Songwriter",
+      "musicLibrarian": "Musikbibliothekar"
+    }
+  },
+  "disability": {
+    "label": "Behinderung",
+    "typeLabel": "Art der Behinderung",
+    "options": {
+      "none": "Keine",
+      "vision": "Sehbehinderung",
+      "hearing": "Hörbehinderung",
+      "mobility": "Mobilitätsbeeinträchtigung",
+      "cognitive": "Kognitive Beeinträchtigung",
+      "other": "Andere"
+    }
   }
 }

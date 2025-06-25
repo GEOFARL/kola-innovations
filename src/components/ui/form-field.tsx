@@ -5,6 +5,7 @@ import { useFormContext } from 'react-hook-form';
 import * as Label from '@radix-ui/react-label';
 import { Eye, EyeOff } from 'lucide-react';
 import { cn } from '@/lib/cn';
+import { getNestedError } from '@/lib/utils/get-nested-error';
 
 type SharedFieldProps = {
   name: string;
@@ -44,7 +45,9 @@ const FormField: React.FC<Props> = ({
     formState: { errors },
   } = useFormContext();
 
-  const error = errors[name]?.message as string | undefined;
+  const fieldError = getNestedError(errors, name);
+  const error =
+    typeof fieldError?.message === 'string' ? fieldError.message : undefined;
   const [showPassword, setShowPassword] = useState(false);
 
   const isPasswordField = type === 'password';

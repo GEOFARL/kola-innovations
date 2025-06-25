@@ -46,8 +46,7 @@
       "brief": "Schreibe eine kurze Vorstellung...",
       "languages": "Sprachen auswählen",
       "ethnicity": "Ethnie auswählen",
-      "orientation": "Orientierung auswählen",
-      "disability": "Beeinträchtigung auswählen"
+      "orientation": "Orientierung auswählen"
     },
     "ethnicities": {
       "asian": "Asiatisch",
@@ -55,14 +54,6 @@
       "hispanic": "Hispanisch oder lateinamerikanisch",
       "white": "Weiß oder europäisch",
       "mixed": "Gemischt oder multikulturell",
-      "other": "Andere"
-    },
-    "disabilities": {
-      "none": "Keine",
-      "vision": "Sehbeeinträchtigung",
-      "hearing": "Hörbeeinträchtigung",
-      "mobility": "Mobilitätseinschränkung",
-      "cognitive": "Kognitive Einschränkung",
       "other": "Andere"
     },
     "provinces": {
@@ -81,32 +72,6 @@
       "bisexual": "Bisexuell",
       "asexual": "Asexuell",
       "other": "Andere"
-    }
-  },
-  "skills": {
-    "title": "Erzähle uns von deinen Fähigkeiten & deiner Expertise",
-    "description": "Hilf uns, deinen beruflichen Hintergrund zu verstehen, indem du deine wichtigsten Fähigkeiten, Werkzeuge und Fachgebiete angibst.",
-    "searchLabel": "Suche nach Fähigkeiten, Tools, Rollen",
-    "searchPlaceholder": "Tippe und drücke Enter, um hinzuzufügen",
-    "suggested": "Vorgeschlagene Branchen",
-    "validation": {
-      "min": "Bitte gib mindestens eine Fähigkeit an."
-    },
-    "values": {
-      "musicComposition": "Musikkomposition",
-      "instrumentProficiency": "Instrumentenbeherrschung",
-      "guitars": "Gitarren",
-      "musicTheory": "Musiktheorie",
-      "pianos": "Klaviere",
-      "audioInterfaces": "Audio-Interfaces",
-      "musicProduction": "Musikproduktion",
-      "collaboration": "Zusammenarbeit",
-      "effectPedals": "Effektpedale",
-      "performer": "Darsteller",
-      "musicDirector": "Musikdirektor",
-      "soundEngineer": "Toningenieur",
-      "songwriter": "Songwriter",
-      "musicLibrarian": "Musikbibliothekar"
     }
   }
 }

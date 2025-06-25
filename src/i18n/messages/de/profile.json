@@ -5,22 +5,62 @@
     "logout": "Abmelden"
   },
   "analytics": {
-    "title": "Analysen",
+    "title": "Analytik",
     "profileViews": "Profilansichten",
     "vouches": "Empfehlungen"
   },
   "header": {
     "my": "Mein Profil",
+    "settings": "Profileinstellungen",
     "edit": "Profil bearbeiten"
   },
   "info": {
     "title": "Persönliche Informationen",
-    "description": "Die Aktualisierung Ihrer Daten bietet Ihnen relevantere Inhalte und Gespräche.",
+    "description": "Durch das Aktualisieren Ihrer Informationen erhalten Sie die relevantesten Inhalte und Gespräche.",
     "fullName": "Vollständiger Name",
     "jobTitle": "Berufsbezeichnung",
     "email": "E-Mail",
     "phone": "Telefonnummer",
     "location": "Standort",
-    "ethnicity": "Ethnische Zugehörigkeit"
+    "ethnicity": "Ethnische Zugehörigkeit",
+    "city": "Stadt",
+    "brief": "Kurzvorstellung",
+    "languagesSpoken": "Gesprochene Sprachen",
+    "sexualOrientation": "Sexuelle Orientierung"
+  },
+  "provinces": {
+    "quebec": "Québec",
+    "ontario": "Ontario",
+    "alberta": "Alberta"
+  },
+  "cities": {
+    "montreal": "Montreal",
+    "toronto": "Toronto",
+    "calgary": "Calgary"
+  },
+  "ethnicities": {
+    "asian": "Asiatisch",
+    "black": "Schwarz",
+    "hispanic": "Hispanisch",
+    "white": "Weiß",
+    "mixed": "Gemischt",
+    "other": "Andere"
+  },
+  "orientations": {
+    "heterosexual": "Heterosexuell",
+    "homosexual": "Homosexuell",
+    "bisexual": "Bisexuell",
+    "asexual": "Asexuell",
+    "other": "Andere"
+  },
+  "socials": {
+    "title": "Soziale Links",
+    "twitter": "Twitter",
+    "linkedin": "LinkedIn",
+    "instagram": "Instagram",
+    "youtube": "YouTube"
+  },
+  "skills": {
+    "title": "Fähigkeiten"
   }
 }

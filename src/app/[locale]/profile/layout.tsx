@@ -18,7 +18,7 @@ const LayoutProfile: React.FC<PropsWithChildren> = ({ children }) => {
           <ProfileSidebar />
         </aside>
 
-        <section className="overflow-y-auto p-6 bg-[#FAFAFA]">
+        <section className="overflow-y-auto relative p-6 bg-[#FAFAFA]">
           {children}
         </section>
 

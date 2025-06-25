@@ -1,4 +1,6 @@
+import { profileSettingsSchema } from '@/lib/schemas/profile/settings-schema';
 import { StaticImageData } from 'next/image';
+import { z } from 'zod';
 
 export type User = {
   fullName: string;
@@ -11,3 +13,5 @@ export type User = {
   job: string;
   skills?: string[];
 };
+
+export type ProfileSettingsData = z.infer<typeof profileSettingsSchema>;

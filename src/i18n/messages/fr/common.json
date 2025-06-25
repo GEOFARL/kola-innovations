@@ -58,5 +58,43 @@
     "clear": "Effacer",
     "exploreMore": "Explorer plus",
     "search": "Rechercher"
+  },
+  "skills": {
+    "title": "Parlez-nous de vos compétences et de votre expertise",
+    "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque. Orci sit semper ullamcorper eleifend faucibus et aliquam integer euismod.",
+    "searchLabel": "Rechercher des compétences, outils, rôles",
+    "searchPlaceholder": "Tapez et appuyez sur Entrée pour ajouter",
+    "suggested": "Secteurs suggérés",
+    "validation": {
+      "min": "Veuillez ajouter au moins une compétence."
+    },
+    "values": {
+      "musicComposition": "Composition musicale",
+      "instrumentProficiency": "Maîtrise des instruments",
+      "guitars": "Guitares",
+      "musicTheory": "Théorie musicale",
+      "pianos": "Pianos",
+      "audioInterfaces": "Interfaces audio",
+      "musicProduction": "Production musicale",
+      "collaboration": "Collaboration",
+      "effectPedals": "Pédales d'effets",
+      "performer": "Interprète",
+      "musicDirector": "Directeur musical",
+      "soundEngineer": "Ingénieur du son",
+      "songwriter": "Auteur-compositeur",
+      "musicLibrarian": "Bibliothécaire musical"
+    }
+  },
+  "disability": {
+    "label": "Handicap",
+    "typeLabel": "Type de handicap",
+    "options": {
+      "none": "Aucun",
+      "vision": "Déficience visuelle",
+      "hearing": "Déficience auditive",
+      "mobility": "Mobilité réduite",
+      "cognitive": "Déficience cognitive",
+      "other": "Autre"
+    }
   }
 }

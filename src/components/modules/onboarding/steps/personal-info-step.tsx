@@ -1,24 +1,31 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { useForm, FormProvider, useWatch } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useTranslations } from 'next-intl';
+import { useEffect, useState } from 'react';
+import { FormProvider, useForm } from 'react-hook-form';
 
-import FormField from '@/components/ui/form-field';
-import SelectField from '@/components/ui/select-field';
-import MultiSelectField from '@/components/ui/multi-select-field';
-import ToggleField from '@/components/ui/toggle-field';
 import FileUploadField from '@/components/ui/file-upload-field';
+import FormField from '@/components/ui/form-field';
+import MultiSelectField from '@/components/ui/multi-select-field';
+import SelectField from '@/components/ui/select-field';
 
 import { personalInfoSchema } from '@/lib/schemas/onboarding/personal-info.schema';
-import { useOnboardingStore } from '@/lib/stores/onboarding/onboarding-store';
 import { localUserStorage } from '@/lib/storage/user-storage';
+import { useOnboardingStore } from '@/lib/stores/onboarding/onboarding-store';
 
 import EmailIcon from '@/assets/icons/onboarding/email.svg';
 import PhoneIcon from '@/assets/icons/onboarding/phone.svg';
-import PersonalInfoSkeleton from './personal-info-skeleton';
+import {
+  cities,
+  ethnicities,
+  languages,
+  orientations,
+  provinces,
+} from '@/lib/constants/onboarding/select-options';
 import { PersonalInfoData } from '@/lib/types/onboarding/step';
+import DisabilityField from '../../shared/disability-field';
+import PersonalInfoSkeleton from './personal-info-skeleton';
 
 function getInitialPersonalInfoData(): PersonalInfoData {
   const user =
@@ -56,17 +63,6 @@ const PersonalInfoStep: React.FC = () => {
     resolver: zodResolver(personalInfoSchema),
     defaultValues: data.personalInfo ?? initialValues,
   });
-
-  const hasDisability = useWatch({
-    control: methods.control,
-    name: 'hasDisability',
-  });
-
-  useEffect(() => {
-    if (!hasDisability) {
-      methods.setValue('disability', '', { shouldValidate: true });
-    }
-  }, [hasDisability, methods]);
 
   useEffect(() => {
     setFormSubmitTrigger(
@@ -141,23 +137,22 @@ const PersonalInfoStep: React.FC = () => {
             name="location.province"
             label={t('fields.province')}
             placeholder={t('placeholders.province')}
-            options={[
-              { value: 'quebec', label: t('provinces.quebec') },
-              { value: 'ontario', label: t('provinces.ontario') },
-              { value: 'alberta', label: t('provinces.alberta') },
-            ]}
+            options={provinces.map(({ value, labelKey }) => ({
+              value,
+              label: t(labelKey),
+            }))}
             required
             className="flex-1"
           />
+
           <SelectField
             name="location.city"
             label={t('fields.city')}
             placeholder={t('placeholders.city')}
-            options={[
-              { value: 'montreal', label: t('cities.montreal') },
-              { value: 'toronto', label: t('cities.toronto') },
-              { value: 'calgary', label: t('cities.calgary') },
-            ]}
+            options={cities.map(({ value, labelKey }) => ({
+              value,
+              label: t(labelKey),
+            }))}
             required
             className="flex-1"
           />
@@ -175,11 +170,7 @@ const PersonalInfoStep: React.FC = () => {
           name="languages"
           label={t('fields.languages')}
           placeholder={t('placeholders.languages')}
-          options={[
-            { value: 'english', label: 'English' },
-            { value: 'french', label: 'French' },
-            { value: 'german', label: 'German' },
-          ]}
+          options={languages}
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -187,46 +178,24 @@ const PersonalInfoStep: React.FC = () => {
             name="ethnicity"
             label={t('fields.ethnicity')}
             placeholder={t('placeholders.ethnicity')}
-            options={[
-              { value: 'asian', label: t('ethnicities.asian') },
-              { value: 'black', label: t('ethnicities.black') },
-              { value: 'hispanic', label: t('ethnicities.hispanic') },
-              { value: 'white', label: t('ethnicities.white') },
-              { value: 'mixed', label: t('ethnicities.mixed') },
-              { value: 'other', label: t('ethnicities.other') },
-            ]}
+            options={ethnicities.map(({ value, labelKey }) => ({
+              value,
+              label: t(labelKey),
+            }))}
           />
           <SelectField
             name="orientation"
             label={t('fields.orientation')}
             placeholder={t('placeholders.orientation')}
-            options={[
-              { value: 'heterosexual', label: t('orientations.heterosexual') },
-              { value: 'homosexual', label: t('orientations.homosexual') },
-              { value: 'bisexual', label: t('orientations.bisexual') },
-              { value: 'asexual', label: t('orientations.asexual') },
-              { value: 'other', label: t('orientations.other') },
-            ]}
+            options={orientations.map(({ value, labelKey }) => ({
+              value,
+              label: t(labelKey),
+            }))}
           />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 min-h-[64px]">
-          <ToggleField name="hasDisability" label={t('fields.disability')} />
-          {hasDisability && (
-            <SelectField
-              name="disability"
-              label={t('fields.disability')}
-              placeholder={t('placeholders.disability')}
-              options={[
-                { value: 'none', label: t('disabilities.none') },
-                { value: 'vision', label: t('disabilities.vision') },
-                { value: 'hearing', label: t('disabilities.hearing') },
-                { value: 'mobility', label: t('disabilities.mobility') },
-                { value: 'cognitive', label: t('disabilities.cognitive') },
-                { value: 'other', label: t('disabilities.other') },
-              ]}
-            />
-          )}
+          <DisabilityField />
         </div>
 
         <FileUploadField

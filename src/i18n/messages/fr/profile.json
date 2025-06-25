@@ -2,25 +2,65 @@
   "sidebar": {
     "profile": "Profil",
     "vouch": "Recommander",
-    "logout": "Se déconnecter"
+    "logout": "Déconnexion"
   },
   "analytics": {
-    "title": "Statistiques",
+    "title": "Analytique",
     "profileViews": "Vues du profil",
     "vouches": "Recommandations"
   },
   "header": {
-    "my": "Mon profil",
-    "edit": "Modifier le profil"
+    "my": "Mon Profil",
+    "settings": "Paramètres du Profil",
+    "edit": "Modifier le Profil"
   },
   "info": {
-    "title": "Informations personnelles",
-    "description": "Mettre à jour vos informations vous permettra d'accéder à un contenu et des conversations plus pertinents.",
+    "title": "Informations Personnelles",
+    "description": "Mettre à jour vos informations vous permettra de recevoir du contenu et des conversations plus pertinents.",
     "fullName": "Nom complet",
     "jobTitle": "Poste",
-    "email": "E-mail",
-    "phone": "Numéro de téléphone",
-    "location": "Localisation",
-    "ethnicity": "Origine ethnique"
+    "email": "Email",
+    "phone": "Téléphone",
+    "location": "Emplacement",
+    "ethnicity": "Origine ethnique",
+    "city": "Ville",
+    "brief": "Présentation brève",
+    "languagesSpoken": "Langues parlées",
+    "sexualOrientation": "Orientation sexuelle"
+  },
+  "provinces": {
+    "quebec": "Québec",
+    "ontario": "Ontario",
+    "alberta": "Alberta"
+  },
+  "cities": {
+    "montreal": "Montréal",
+    "toronto": "Toronto",
+    "calgary": "Calgary"
+  },
+  "ethnicities": {
+    "asian": "Asiatique",
+    "black": "Noir",
+    "hispanic": "Hispanique",
+    "white": "Blanc",
+    "mixed": "Mixte",
+    "other": "Autre"
+  },
+  "orientations": {
+    "heterosexual": "Hétérosexuel",
+    "homosexual": "Homosexuel",
+    "bisexual": "Bisexuel",
+    "asexual": "Asexuel",
+    "other": "Autre"
+  },
+  "socials": {
+    "title": "Liens Sociaux",
+    "twitter": "Twitter",
+    "linkedin": "LinkedIn",
+    "instagram": "Instagram",
+    "youtube": "YouTube"
+  },
+  "skills": {
+    "title": "Compétences"
   }
 }

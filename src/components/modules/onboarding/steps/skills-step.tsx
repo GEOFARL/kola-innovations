@@ -1,20 +1,17 @@
 'use client';
 
-import MultiSelectField from '@/components/ui/multi-select-field';
-import TagChip from '@/components/ui/tag-chip';
-import { skillKeys } from '@/lib/constants/profile/skills';
 import { skillsSchema } from '@/lib/schemas/onboarding/skills-schema';
 import { useOnboardingStore } from '@/lib/stores/onboarding/onboarding-store';
 import { SkillsData } from '@/lib/types/onboarding/step';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useTranslations } from 'next-intl';
-import { useEffect, useMemo } from 'react';
+import { useEffect } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
+import SkillsField from '../../shared/skills-field';
 
 const SkillsStep: React.FC = () => {
-  const t = useTranslations('onboarding.skills');
-  const { setStepData, setFormSubmitTrigger, next, data } =
-    useOnboardingStore();
+  const t = useTranslations('skills.onboarding');
+  const { setStepData, setFormSubmitTrigger, data } = useOnboardingStore();
 
   const methods = useForm<SkillsData>({
     resolver: zodResolver(skillsSchema),
@@ -22,29 +19,6 @@ const SkillsStep: React.FC = () => {
       skills: [],
     },
   });
-
-  const selectedSkills = methods.watch('skills') ?? [];
-
-  const allSkills = useMemo(
-    () =>
-      skillKeys.map((key) => ({
-        value: key,
-        label: t(`values.${key}`),
-      })),
-    [t],
-  );
-
-  const filteredSuggestions = allSkills.filter(
-    (skill) => !selectedSkills.includes(skill.value),
-  );
-
-  const addSkill = (skillValue: string) => {
-    if (!selectedSkills.includes(skillValue)) {
-      methods.setValue('skills', [...selectedSkills, skillValue], {
-        shouldValidate: true,
-      });
-    }
-  };
 
   useEffect(() => {
     setStepData('skills', methods.getValues());
@@ -69,28 +43,7 @@ const SkillsStep: React.FC = () => {
           </p>
         </div>
 
-        <MultiSelectField
-          name="skills"
-          label={t('searchLabel')}
-          options={allSkills}
-          maxVisibleTags={7}
-        />
-
-        {filteredSuggestions.length > 0 && (
-          <div>
-            <p className="small-1 text-dark-900 mb-4">{t('suggested')}</p>
-            <div className="flex flex-wrap gap-2 mt-2">
-              {filteredSuggestions.map((skill) => (
-                <TagChip
-                  key={skill.value}
-                  label={skill.label}
-                  onClick={() => addSkill(skill.value)}
-                  variant="add"
-                />
-              ))}
-            </div>
-          </div>
-        )}
+        <SkillsField />
       </form>
     </FormProvider>
   );

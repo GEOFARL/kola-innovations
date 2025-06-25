@@ -11,6 +11,7 @@
   },
   "header": {
     "my": "My Profile",
+    "settings": "Profile Settings",
     "edit": "Edit Profile"
   },
   "info": {
@@ -21,6 +22,45 @@
     "email": "Email",
     "phone": "Phone No.",
     "location": "Location",
-    "ethnicity": "Ethnicity"
+    "ethnicity": "Ethnicity",
+    "city": "City",
+    "brief": "Brief",
+    "languagesSpoken": "Languages Spoken",
+    "sexualOrientation": "Sexual Orientation"
+  },
+  "provinces": {
+    "quebec": "Quebec",
+    "ontario": "Ontario",
+    "alberta": "Alberta"
+  },
+  "cities": {
+    "montreal": "Montreal",
+    "toronto": "Toronto",
+    "calgary": "Calgary"
+  },
+  "ethnicities": {
+    "asian": "Asian",
+    "black": "Black",
+    "hispanic": "Hispanic",
+    "white": "White",
+    "mixed": "Mixed",
+    "other": "Other"
+  },
+  "orientations": {
+    "heterosexual": "Heterosexual",
+    "homosexual": "Homosexual",
+    "bisexual": "Bisexual",
+    "asexual": "Asexual",
+    "other": "Other"
+  },
+  "socials": {
+    "title": "Social Links",
+    "twitter": "Twitter",
+    "linkedin": "LinkedIn",
+    "instagram": "Instagram",
+    "youtube": "YouTube"
+  },
+  "skills": {
+    "title": "Skills"
   }
 }
