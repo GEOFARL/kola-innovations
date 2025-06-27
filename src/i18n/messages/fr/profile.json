@@ -12,7 +12,8 @@
   "header": {
     "my": "Mon Profil",
     "settings": "Paramètres du Profil",
-    "edit": "Modifier le Profil"
+    "edit": "Modifier le Profil",
+    "vouch": "Recommander"
   },
   "info": {
     "title": "Informations Personnelles",
@@ -62,5 +63,23 @@
   },
   "skills": {
     "title": "Compétences"
+  },
+  "vouch": {
+    "whatIs": "Qu'est-ce qu'un Vouch ?",
+    "description": "Le vouch consiste à recommander quelqu’un pour lui témoigner du soutien et renforcer la confiance et la crédibilité.",
+    "keyAspects": {
+      "title": "Aspects clés",
+      "items": [
+        "Interdum donec laoreet malesuada a gravida vivamus tempor.",
+        "Interdum donec laoreet malesuada a gravida vivamus tempor.",
+        "Interdum donec laoreet malesuada a gravida vivamus tempor.",
+        "Interdum donec laoreet malesuada a gravida vivamus tempor."
+      ]
+    },
+    "tabs": {
+      "received": "Vouchs reçus",
+      "requested": "Demandes de Vouch",
+      "my": "Mes Vouchs"
+    }
   }
 }

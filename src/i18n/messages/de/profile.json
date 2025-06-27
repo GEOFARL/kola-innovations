@@ -12,7 +12,8 @@
   "header": {
     "my": "Mein Profil",
     "settings": "Profileinstellungen",
-    "edit": "Profil bearbeiten"
+    "edit": "Profil bearbeiten",
+    "vouch": "Empfehlen"
   },
   "info": {
     "title": "Persönliche Informationen",
@@ -62,5 +63,23 @@
   },
   "skills": {
     "title": "Fähigkeiten"
+  },
+  "vouch": {
+    "whatIs": "Was ist ein Vouch?",
+    "description": "Ein Vouch ist eine Form der Unterstützung, bei der man jemanden empfiehlt, um Vertrauen und Glaubwürdigkeit aufzubauen.",
+    "keyAspects": {
+      "title": "Wichtige Aspekte",
+      "items": [
+        "Interdum donec laoreet malesuada a gravida vivamus tempor.",
+        "Interdum donec laoreet malesuada a gravida vivamus tempor.",
+        "Interdum donec laoreet malesuada a gravida vivamus tempor.",
+        "Interdum donec laoreet malesuada a gravida vivamus tempor."
+      ]
+    },
+    "tabs": {
+      "received": "Erhaltene Vouches",
+      "requested": "Angeforderte Vouches",
+      "my": "Meine Vouches"
+    }
   }
 }

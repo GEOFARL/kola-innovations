@@ -12,7 +12,8 @@
   "header": {
     "my": "My Profile",
     "settings": "Profile Settings",
-    "edit": "Edit Profile"
+    "edit": "Edit Profile",
+    "vouch": "Vouch"
   },
   "info": {
     "title": "Personal Information",
@@ -62,5 +63,23 @@
   },
   "skills": {
     "title": "Skills"
+  },
+  "vouch": {
+    "whatIs": "What is Vouch?",
+    "description": "Vouching is the act of endorsing someone as a show of support, building trust and credibility.",
+    "keyAspects": {
+      "title": "Key Aspects",
+      "items": [
+        "Interdum donec laoreet malesuada a gravida vivamus tempor.",
+        "Interdum donec laoreet malesuada a gravida vivamus tempor.",
+        "Interdum donec laoreet malesuada a gravida vivamus tempor.",
+        "Interdum donec laoreet malesuada a gravida vivamus tempor."
+      ]
+    },
+    "tabs": {
+      "received": "Received Vouch",
+      "requested": "Vouch Requests",
+      "my": "My Vouch"
+    }
   }
 }
