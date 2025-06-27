@@ -10,6 +10,7 @@ const messages = {
     toast: () => import('./messages/en/toast.json'),
     talents: () => import('./messages/en/talents.json'),
     profile: () => import('./messages/en/profile.json'),
+    settings: () => import('./messages/en/settings.json'),
   },
   de: {
     common: () => import('./messages/de/common.json'),
@@ -18,6 +19,7 @@ const messages = {
     toast: () => import('./messages/de/toast.json'),
     talents: () => import('./messages/de/talents.json'),
     profile: () => import('./messages/de/profile.json'),
+    settings: () => import('./messages/de/settings.json'),
   },
   fr: {
     common: () => import('./messages/fr/common.json'),
@@ -26,6 +28,7 @@ const messages = {
     toast: () => import('./messages/fr/toast.json'),
     talents: () => import('./messages/fr/talents.json'),
     profile: () => import('./messages/fr/profile.json'),
+    settings: () => import('./messages/fr/settings.json'),
   },
 } satisfies Record<string, Record<string, () => Promise<{ default: any }>>>;
 

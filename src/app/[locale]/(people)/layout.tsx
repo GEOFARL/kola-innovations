@@ -1,5 +1,6 @@
 'use client';
 
+import AccountSidebar from '@/components/modules/settings/account-sidebar';
 import Header from '@/components/modules/shared/header/header';
 import Analytics from '@/components/modules/talents/analytics';
 import TalentsFilters from '@/components/modules/talents/filters';
@@ -55,7 +56,7 @@ const LayoutProfessionals: React.FC<PropsWithChildren> = ({ children }) => {
     ),
     'talents:list': <SimilarTalents />,
     'talent:detail': null,
-    'settings': null,
+    'settings': <AccountSidebar />,
     default: <TalentsFilters />,
   };
 
