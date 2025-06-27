@@ -1,5 +1,16 @@
 {
+  "title": "Konto",
   "sidebar": {
     "account": "Konto"
+  },
+  "account": {
+    "title": "Kontaktinformationen",
+    "fields": {
+      "email": "E-Mail",
+      "phone": "Telefonnummer"
+    },
+    "actions": {
+      "save": "Speichern"
+    }
   }
 }
