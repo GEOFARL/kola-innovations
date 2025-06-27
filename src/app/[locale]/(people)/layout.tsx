@@ -15,6 +15,7 @@ type RouteType =
   | 'professional:detail'
   | 'talent:detail'
   | 'talents:list'
+  | 'settings'
   | 'default';
 
 const getRouteType = (pathname: string): RouteType => {
@@ -30,10 +31,12 @@ const getRouteType = (pathname: string): RouteType => {
 
   const isTalentsList =
     normalizedPath.startsWith(APP_ROUTES.TALENTS.slice(1)) && rest.length === 1;
+  const isSettings = normalizedPath.startsWith(APP_ROUTES.SETTINGS.slice(1));
 
   if (isProfessionalDetails) return 'professional:detail';
   if (isTalentDetails) return 'talent:detail';
   if (isTalentsList) return 'talents:list';
+  if (isSettings) return 'settings';
 
   return 'default';
 };
@@ -52,6 +55,7 @@ const LayoutProfessionals: React.FC<PropsWithChildren> = ({ children }) => {
     ),
     'talents:list': <SimilarTalents />,
     'talent:detail': null,
+    'settings': null,
     default: <TalentsFilters />,
   };
 

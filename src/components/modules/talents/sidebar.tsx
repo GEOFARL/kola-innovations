@@ -49,7 +49,11 @@ const TalentsSidebar: React.FC = () => {
 
       <div className="border-t border-dark-100 py-6">
         <SidebarItem icon={<ResourcesIcon />} label={t('resources')} />
-        <SidebarItem icon={<SettingsIcon />} label={t('settings')} />
+        <SidebarItem
+          icon={<SettingsIcon />}
+          href={APP_ROUTES.SETTINGS}
+          label={t('settings')}
+        />
         <SidebarItem icon={<LogoutIcon />} label={t('logout')} />
       </div>
     </nav>

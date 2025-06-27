@@ -1,5 +1,6 @@
 export const APP_ROUTES = {
   ONBOARDING: '/onboarding',
+  SETTINGS: '/settings',
   TALENTS: '/talents',
   PROFILE: '/profile',
   PROFILE_SETTINGS: '/profile/settings',
