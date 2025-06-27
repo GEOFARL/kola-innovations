@@ -12,5 +12,18 @@
     "actions": {
       "save": "Save"
     }
+  },
+  "password": {
+    "title": "Change Password",
+    "newPasswordTitle": "Set up a new Password",
+    "fields": {
+      "current": "Current Password",
+      "new": "New Password",
+      "confirm": "Confirm Password"
+    },
+    "note": "8 character minimum (A-Z, case sensitive, special characters allowed)",
+    "actions": {
+      "save": "Save"
+    }
   }
 }
