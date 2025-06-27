@@ -25,5 +25,18 @@
     "actions": {
       "save": "Save"
     }
+  },
+  "deactivation": {
+    "title": "Account Deactivation",
+    "description": "Delete your account and account data. This can’t be undone!",
+    "reasonLabel": "I'm leaving because…",
+    "selectReason": "Select Reason",
+    "reasons": {
+      "notUseful": "The platform is not useful",
+      "privacy": "Privacy concerns",
+      "foundAlternative": "I found an alternative",
+      "other": "Other"
+    },
+    "deleteButton": "Delete Account"
   }
 }

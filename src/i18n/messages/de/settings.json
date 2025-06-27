@@ -25,5 +25,18 @@
     "actions": {
       "save": "Speichern"
     }
+  },
+  "deactivation": {
+    "title": "Kontodeaktivierung",
+    "description": "Löschen Sie Ihr Konto und Ihre Kontodaten. Dies kann nicht rückgängig gemacht werden!",
+    "reasonLabel": "Ich verlasse die Plattform, weil…",
+    "selectReason": "Grund auswählen",
+    "reasons": {
+      "notUseful": "Die Plattform ist nicht nützlich",
+      "privacy": "Datenschutzbedenken",
+      "foundAlternative": "Ich habe eine Alternative gefunden",
+      "other": "Sonstiges"
+    },
+    "deleteButton": "Konto löschen"
   }
 }

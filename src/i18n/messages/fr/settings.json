@@ -25,5 +25,18 @@
     "actions": {
       "save": "Enregistrer"
     }
+  },
+  "deactivation": {
+    "title": "Désactivation du compte",
+    "description": "Supprimez votre compte et vos données. Cette action est irréversible !",
+    "reasonLabel": "Je pars parce que…",
+    "selectReason": "Sélectionner une raison",
+    "reasons": {
+      "notUseful": "La plateforme n’est pas utile",
+      "privacy": "Préoccupations concernant la confidentialité",
+      "foundAlternative": "J’ai trouvé une alternative",
+      "other": "Autre"
+    },
+    "deleteButton": "Supprimer le compte"
   }
 }

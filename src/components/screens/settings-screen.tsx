@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl';
 import ContactInformation from '../modules/settings/sections/contact-inforamtion';
 import ChangePassword from '../modules/settings/sections/change-password';
+import AccountDeactivation from '../modules/settings/sections/account-deactivation';
 
 const SettingsScreen: React.FC = () => {
   const t = useTranslations('settings');
@@ -12,6 +13,7 @@ const SettingsScreen: React.FC = () => {
       <h1 className="h6 text-dark-900">{t('title')}</h1>
       <ContactInformation />
       <ChangePassword />
+      <AccountDeactivation />
     </div>
   );
 };
