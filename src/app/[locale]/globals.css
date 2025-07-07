@@ -34,7 +34,7 @@
 
 @layer utilities {
   .h1 {
-    @apply font-bold text-[54px] leading-[120%] tracking-[-1.5px] font-[Montserrat,sans-serif];
+    @apply font-bold text-[28px] -tracking-[1.5px] sm:text-[54px] leading-[120%] tracking-[-1.5px] sm:tracking-normal font-[Montserrat,sans-serif];
   }
   .h2 {
     @apply font-bold text-[45px] leading-[130%] tracking-[0px];
@@ -58,7 +58,7 @@
     @apply font-medium text-[20px] leading-[140%] tracking-[-0.3px];
   }
   .h6-rg {
-    @apply font-normal text-[20px] leading-[140%] tracking-[-0.3px];
+    @apply font-[500] sm:font-normal text-[14px] sm:text-[20px] leading-[150%] sm:leading-[140%] tracking-[-0.3px];
   }
   .body-1 {
     @apply font-semibold text-[18px] leading-[140%];
@@ -79,10 +79,10 @@
     @apply font-normal text-[16px] leading-[150%];
   }
   .small-1 {
-    @apply font-semibold text-[14px] leading-[150%];
+    @apply font-semibold text-[12px] sm:text-[14px] leading-[150%];
   }
   .small-1-md {
-    @apply font-medium text-[14px] leading-[150%];
+    @apply font-medium text-[12px] sm:text-[14px] leading-[150%];
   }
   .small-1-rg {
     @apply font-normal text-[14px] leading-[150%];

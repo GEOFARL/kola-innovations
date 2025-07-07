@@ -9,7 +9,7 @@ type Props = {
 
 const ToggleTabs: React.FC<Props> = ({ tabs }) => {
   return (
-    <div className="py-3 px-4 flex items-center gap-3">
+    <div className="p-0 justify-center sm:justify-start sm:py-3 sm:px-4 flex items-center gap-1 sm:gap-3">
       {tabs.map((tab) => (
         <div
           key={tab.label}
