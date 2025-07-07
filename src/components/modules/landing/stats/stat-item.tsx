@@ -11,8 +11,10 @@ const StatItem: React.FC<Props> = ({ value, title, description }) => {
         {value}
         <span className="text-primary text-[28px] font-semibold">+</span>
       </p>
-      <h6 className="h6 text-dark-900 mb-4">{title}</h6>
-      <p className="small-1-md text-dark-700">{description}</p>
+      <h6 className="h6 text-dark-900 mb-2 sm:mb-4">{title}</h6>
+      <p className="small-1-md text-[13px] sm:text-[14px] text-dark-700">
+        {description}
+      </p>
     </div>
   );
 };

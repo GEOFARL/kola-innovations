@@ -14,7 +14,7 @@ const HeroSection: React.FC = () => {
 
   return (
     <section>
-      <MaxWidthWrapper className="relative flex-col items-center lg:flex-row flex justify-between py-3 sm:py-12 sm:pb-24 lg:pb-20 lg:py-20 mb-4 sm:mb-0">
+      <MaxWidthWrapper className="relative flex-col items-center lg:flex-row flex justify-between py-3 sm:py-12 sm:pb-24 lg:pb-20 lg:py-20 mb-0 sm:mb-4">
         <article className="flex flex-col items-start max-w-[708px] sm:py-[50px] xl:py-[111px]">
           <header className="mb-4">
             <Button

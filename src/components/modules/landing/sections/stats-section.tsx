@@ -8,15 +8,15 @@ const StatsSection: React.FC = () => {
   const t = useTranslations('landing.stats');
 
   return (
-    <MaxWidthWrapper className="py-20">
-      <div className="max-w-[952px] mx-auto text-center mb-16">
-        <p className="text-primary caption mb-3">{t('tagline')}</p>
+    <MaxWidthWrapper className="py-12 sm:py-20">
+      <div className="sm:max-w-[952px] sm:mx-auto sm:text-center mb-6 sm:mb-16">
+        <p className="text-primary caption mb-[10px] sm:mb-3">{t('tagline')}</p>
         <h2 className="h3 text-dark-900 whitespace-pre-line">
           {t('headline')}
         </h2>
       </div>
 
-      <div className="grid gap-20 grid-cols-4">
+      <div className="grid gap-5 sm:gap-12 lg:gap-20 grid-cols-2 sm:grid-cols-4">
         <StatItem
           value={t('items.opportunities.value')}
           title={t('items.opportunities.title')}
