@@ -1,32 +1,31 @@
 'use client';
 
 import Logo from '@/assets/icons/logo.svg';
+import Search from '@/assets/icons/search-small.svg';
 import SearchIcon from '@/assets/icons/search.svg';
 import { Link } from '@/i18n/navigation';
-import { useAuthModalStore } from '@/lib/stores/auth/auth-modal-store';
 import { useTranslations } from 'next-intl';
 import Button from '../../../ui/button/button';
 import AuthModal from '../../auth/auth-modal';
-import MainNav from '../main-nav';
+import Navigation from '../navigation';
+import LoginButton from './buttons/login-button';
+import SignUpButton from './buttons/sign-up-button';
 import HeaderWrapper from './header-wrapper';
 
 const LandingHeader: React.FC = () => {
-  const tAuth = useTranslations('common.auth');
   const tActions = useTranslations('common.actions');
-  const { open } = useAuthModalStore();
 
   return (
     <>
       <HeaderWrapper>
-        <div className="flex items-center gap-20">
+        <div className="flex flex-row-reverse lg:flex-row items-center gap-2 lg:gap-20">
           <Link href="/" aria-label="Homepage">
-            <Logo />
+            <Logo className="scale-80 -mb-1 lg:mb-0 lg:scale-100" />
           </Link>
-
-          <MainNav />
+          <Navigation />
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="hidden lg:flex items-center gap-2">
           <Button
             className="min-w-10! min-h-10!"
             variant="link"
@@ -34,11 +33,21 @@ const LandingHeader: React.FC = () => {
           >
             <SearchIcon />
           </Button>
+          <LoginButton />
+          <SignUpButton />
+        </div>
 
-          <Button color="black" variant="link" onClick={() => open('signIn')}>
-            {tAuth('login')}
+        <div className="lg:hidden">
+          <Button
+            iconOnly
+            iconCircle
+            size="sm"
+            variant="secondary"
+            color="black"
+            aria-label={tActions('search')}
+          >
+            <Search />
           </Button>
-          <Button onClick={() => open('signUp')}>{tAuth('signup')}</Button>
         </div>
       </HeaderWrapper>
       <AuthModal />
