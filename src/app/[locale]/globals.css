@@ -37,7 +37,7 @@
     @apply font-bold text-[28px] -tracking-[1.5px] sm:text-[54px] leading-[120%] tracking-[-1.5px] sm:tracking-normal font-[Montserrat,sans-serif];
   }
   .h2 {
-    @apply font-bold text-[24px] sm:text-[45px] leading-[130%] tracking-[0px];
+    @apply font-semibold sm:font-bold text-[22px] sm:text-[24px] sm:text-[45px] leading-[140%] sm:leading-[130%] tracking-[0px];
   }
   .h3 {
     @apply font-[600] sm:font-bold text-[22px] sm:text-[36px] leading-[140%] sm:leading-[130%] tracking-[-0.5px];
@@ -55,7 +55,7 @@
     @apply font-bold sm:font-semibold text-[14px] sm:text-[20px] leading-[140%] tracking-[-0.3px];
   }
   .h6-md {
-    @apply font-medium text-[20px] leading-[140%] tracking-[-0.3px];
+    @apply font-semibold sm:font-medium text-[14px] sm:text-[20px] leading-[150%] sm:leading-[140%] tracking-[-0.3px];
   }
   .h6-rg {
     @apply font-[500] sm:font-normal text-[14px] sm:text-[20px] leading-[150%] sm:leading-[140%] tracking-[-0.3px];
@@ -85,7 +85,7 @@
     @apply font-medium text-[12px] sm:text-[14px] leading-[150%];
   }
   .small-1-rg {
-    @apply font-normal text-[14px] leading-[150%];
+    @apply font-normal text-[12px] sm:text-[14px] leading-[150%];
   }
   .small-2 {
     @apply font-semibold text-[12px] leading-[150%] tracking-[0.2px];

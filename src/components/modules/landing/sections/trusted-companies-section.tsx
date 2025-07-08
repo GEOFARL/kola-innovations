@@ -24,7 +24,7 @@ const TrustedCompaniesSection: React.FC = () => {
   const t = useTranslations('landing.trustedCompanies');
 
   return (
-    <section className="py-6 sm:py-10 min-h-[180px]">
+    <section className="py-6 sm:py-10 sm:min-h-[180px]">
       <div className="ml-3 sm:ml-0 sm:text-center font-semibold leading-[140%] text-[12px] sm:text-[18px] text-gray-600 mb-6 sm:mb-10">
         {t('label')}
       </div>
