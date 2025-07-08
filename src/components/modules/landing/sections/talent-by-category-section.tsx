@@ -29,53 +29,59 @@ const TalentByCategorySection: React.FC = () => {
   ];
 
   return (
-    <div className="bg-dark-50 py-35">
+    <div className="bg-dark-50 py-8 sm:py-24 lg:py-35">
       <MaxWidthWrapper>
-        <div className="max-w-[950px] mx-auto text-center">
-          <p className="caption text-primary mb-3">{t('tagline')}</p>
-          <h2 className="h2 text-dark-900 mb-4">{t('headline')}</h2>
+        <div className="max-w-[950px] mx-auto sm:text-center">
+          <p className="caption text-primary mb-[10px] sm:mb-3">
+            {t('tagline')}
+          </p>
+          <h2 className="h2 text-dark-900 mb-[10px] sm:mb-4">
+            {t('headline')}
+          </h2>
           <h6 className="max-w-[708px] mx-auto text-dark-700 h6-md">
             {t('subtext')}
           </h6>
         </div>
 
-        <div className="grid grid-cols-4 gap-6 mt-16">
-          {talentCards.map((card, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-[16px] p-6 flex flex-col gap-6"
-            >
+        <div className="mt-4 sm:mt-16">
+          <div className="flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 overflow-x-auto md:overflow-visible pb-2">
+            {talentCards.map((card, index) => (
               <div
-                style={{ backgroundColor: card.color }}
-                className="w-12 h-12 rounded-full flex items-center justify-center"
+                key={index}
+                className="min-w-[240px] sm:min-w-[280px] max-w-[320px] flex-shrink-0 md:min-w-0 md:max-w-none bg-white rounded-[16px] p-6 flex flex-col gap-4 sm:gap-6"
               >
-                <card.icon />
-              </div>
-              <div className="flex flex-col gap-2">
-                <h5 className="h5 text-dark-900">
-                  {t(`categories.${card.key}.title`)}
-                </h5>
-                <div className="flex items-center gap-2 small-1-md text-dark-700">
-                  <StarIcon />
-                  <p>4.85/5</p>
-                  <p>{t('avgRating')}</p>
+                <div
+                  style={{ backgroundColor: card.color }}
+                  className="w-12 h-12 rounded-full flex items-center justify-center"
+                >
+                  <card.icon />
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <h5 className="h5 text-dark-900">
+                    {t(`categories.${card.key}.title`)}
+                  </h5>
+                  <div className="flex items-center gap-2 small-1-md text-dark-700">
+                    <StarIcon />
+                    <p>4.85/5</p>
+                    <p>{t('avgRating')}</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-between ">
+                  <Image src={people} alt="people" width={112} height={32} />
+                  <ArrowUpRight />
                 </div>
               </div>
+            ))}
 
-              <div className="flex items-center justify-between ">
-                <Image src={people} alt="people" width={112} height={32} />
-                <ArrowUpRight />
+            <div className="min-w-[280px] max-w-[320px] flex-shrink-0 md:min-w-0 md:max-w-none p-6 rounded-[16px] bg-primary flex flex-col justify-between">
+              <div className="flex flex-col gap-2">
+                <h2 className="h2 text-dark-white">13k+</h2>
+                <p className="body-2-md text-dark-white">{t('jobsPosted')}</p>
               </div>
+              <ArrowUpRightCircle className="self-end -mr-[12px] -mb-[12px]" />
             </div>
-          ))}
-
-          <div className="p-6 rounded-[16px] bg-primary flex flex-col justify-between">
-            <div className="flex flex-col gap-2">
-              <h2 className="h2 text-dark-white">13k+</h2>
-              <p className="body-2-md text-dark-white">{t('jobsPosted')}</p>
-            </div>
-
-            <ArrowUpRightCircle className="self-end -mr-[12px] -mb-[12px]" />
           </div>
         </div>
       </MaxWidthWrapper>

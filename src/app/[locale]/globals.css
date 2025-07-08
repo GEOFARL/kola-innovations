@@ -46,7 +46,7 @@
     @apply font-bold text-[30px] leading-[130%];
   }
   .h5 {
-    @apply font-semibold text-[24px] leading-[140%] tracking-[-0.2px];
+    @apply font-semibold text-[18px] sm:text-[24px] leading-[140%] tracking-[-0.2px];
   }
   .h5-rg {
     @apply font-normal text-[24px] leading-[140%] tracking-[-0.3px];
