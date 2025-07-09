@@ -1,4 +1,6 @@
 @import 'tailwindcss';
+@import 'tailwind-animate';
+@plugin 'tailwindcss-radix';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
 @theme {
@@ -107,5 +109,30 @@
   }
   .caption {
     @apply font-semibold text-[12px] sm:text-[18px] leading-[150%] tracking-[0.2px];
+  }
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+@layer utilities {
+  .animate-accordion-down {
+    animation: accordion-down 300ms ease-out;
+  }
+  .animate-accordion-up {
+    animation: accordion-up 300ms ease-out;
   }
 }
