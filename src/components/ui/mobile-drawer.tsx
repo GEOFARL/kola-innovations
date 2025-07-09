@@ -9,11 +9,15 @@ import CloseIcon from '@/assets/icons/x.svg';
 
 type Props = {
   children: ReactNode;
+  trigger?: (props: { onClick: () => void }) => ReactNode;
+  navElement?: ReactNode;
   titleId?: string;
 };
 
 const MobileDrawer: React.FC<Props> = ({
   children,
+  trigger,
+  navElement,
   titleId = 'mobile-drawer-title',
 }) => {
   const [open, setOpen] = useState(false);
@@ -40,19 +44,23 @@ const MobileDrawer: React.FC<Props> = ({
 
   return (
     <>
-      <Button
-        iconOnly
-        iconCircle
-        size="sm"
-        variant="secondary"
-        color="black"
-        onClick={() => setOpen(true)}
-        aria-haspopup="dialog"
-        aria-expanded={open}
-        aria-controls="mobile-drawer"
-      >
-        <BurgerIcon />
-      </Button>
+      {trigger ? (
+        trigger({ onClick: () => setOpen(true) })
+      ) : (
+        <Button
+          iconOnly
+          iconCircle
+          size="sm"
+          variant="secondary"
+          color="black"
+          onClick={() => setOpen(true)}
+          aria-haspopup="dialog"
+          aria-expanded={open}
+          aria-controls="mobile-drawer"
+        >
+          <BurgerIcon />
+        </Button>
+      )}
 
       <div
         ref={drawerRef}
@@ -67,7 +75,7 @@ const MobileDrawer: React.FC<Props> = ({
           open ? 'translate-x-0' : '-translate-x-full',
         )}
       >
-        <div className="py-[10px] px-3 flex border-b-[1.5px] border-dark-100">
+        <div className="py-[10px] px-3 flex gap-3 justify-between border-b-[1.5px] border-dark-100">
           <Button
             iconOnly
             iconCircle
@@ -79,6 +87,7 @@ const MobileDrawer: React.FC<Props> = ({
           >
             <CloseIcon />
           </Button>
+          {navElement}
         </div>
 
         <div className="overflow-y-auto h-[calc(100%-55px)]">{children}</div>

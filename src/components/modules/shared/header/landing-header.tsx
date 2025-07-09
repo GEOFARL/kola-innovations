@@ -1,7 +1,6 @@
 'use client';
 
 import Logo from '@/assets/icons/logo.svg';
-import Search from '@/assets/icons/search-small.svg';
 import SearchIcon from '@/assets/icons/search.svg';
 import { Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
@@ -11,6 +10,7 @@ import Navigation from '../navigation';
 import LoginButton from './buttons/login-button';
 import SignUpButton from './buttons/sign-up-button';
 import HeaderWrapper from './header-wrapper';
+import MobileSearch from './mobile-search';
 
 const LandingHeader: React.FC = () => {
   const tActions = useTranslations('common.actions');
@@ -37,18 +37,7 @@ const LandingHeader: React.FC = () => {
           <SignUpButton />
         </div>
 
-        <div className="lg:hidden">
-          <Button
-            iconOnly
-            iconCircle
-            size="sm"
-            variant="secondary"
-            color="black"
-            aria-label={tActions('search')}
-          >
-            <Search />
-          </Button>
-        </div>
+        <MobileSearch />
       </HeaderWrapper>
       <AuthModal />
     </>
