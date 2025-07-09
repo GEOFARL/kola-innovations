@@ -45,7 +45,7 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="bg-dark-900 pt-8 sm:pt-10 lg:pt-20">
-      <MaxWidthWrapper>
+      <MaxWidthWrapper className="overflow-hidden">
         <EngagingBanner
           heading={t('subscribeHeading')}
           subheading={t('subscribeSubtext')}
