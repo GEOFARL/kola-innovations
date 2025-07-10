@@ -53,10 +53,16 @@ const ForgotPasswordForm: React.FC = () => {
                 type="button"
                 className="w-full"
                 onClick={() => setView('signIn')}
+                responsiveSize={{ base: 'md', lg: 'lg' }}
               >
                 {t('back')}
               </Button>
-              <Button className="w-full" color="black" size="lg" type="submit">
+              <Button
+                className="w-full"
+                color="black"
+                type="submit"
+                responsiveSize={{ base: 'md', lg: 'lg' }}
+              >
                 {t('sendEmail')}
               </Button>
             </div>

@@ -94,7 +94,12 @@ const SignUpForm: React.FC = () => {
             />
           </AuthForm.Fields>
           <AuthForm.Footer>
-            <Button className="w-full" color="black" size="lg" type="submit">
+            <Button
+              responsiveSize={{ base: 'md', lg: 'lg' }}
+              color="black"
+              type="submit"
+              className="w-full"
+            >
               {t('signup')}
             </Button>
             <div className="flex items-center small-1-rg text-dark-700">

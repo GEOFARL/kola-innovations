@@ -10,7 +10,12 @@ const AuthForm = ({
   className,
 }: PropsWithChildren & { className?: string }) => {
   return (
-    <div className={cn('p-8 w-full', className)}>
+    <div
+      className={cn(
+        'py-8 pb-6 px-3 lg:p-8 w-full min-h-[420px] lg:min-h-auto',
+        className,
+      )}
+    >
       <Toaster
         position="top-center"
         duration={4000}
@@ -39,10 +44,10 @@ AuthForm.Header = ({
   title: string;
   description?: string | ReactNode;
 }) => (
-  <div className="mb-12 text-center">
+  <div className="mb-2 lg:mb-12 text-center">
     <h3 className="h4 text-dark-900 mb-2">{title}</h3>
     {description && (
-      <div className="text-dark-700 small-1-rg space-y-1">
+      <div className="text-dark-700 font-[500] lg:font-normal text-[13px] lg:text-[14px] leading-[150%] lg:space-y-1">
         {typeof description === 'string' ? <p>{description}</p> : description}
       </div>
     )}
@@ -52,7 +57,7 @@ AuthForm.Fields = ({
   children,
   className,
 }: PropsWithChildren & { className?: string }) => (
-  <div className={cn('space-y-4', className)}>{children}</div>
+  <div className={cn('space-y-2 lg:space-y-4', className)}>{children}</div>
 );
 
 AuthForm.Footer = ({

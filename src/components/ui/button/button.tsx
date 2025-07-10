@@ -13,6 +13,7 @@ export const buttonVariants = [
 ] as const;
 export const buttonColors = ['red', 'black'] as const;
 
+type ResponsiveSize = Partial<Record<'base' | 'sm' | 'md' | 'lg' | 'xl', Size>>;
 export type Size = (typeof buttonSizes)[number];
 export type Variant = (typeof buttonVariants)[number];
 export type Color = (typeof buttonColors)[number];
@@ -20,6 +21,7 @@ export type Color = (typeof buttonColors)[number];
 type Props = {
   variant?: Variant;
   size?: Size;
+  responsiveSize?: ResponsiveSize;
   color?: Color;
   isLoading?: boolean;
   iconOnly?: boolean;
@@ -30,6 +32,7 @@ const Button: React.FC<Props> = ({
   variant = 'primary',
   size = 'md',
   color = 'red',
+  responsiveSize,
   disabled,
   className,
   children,
@@ -98,9 +101,28 @@ const Button: React.FC<Props> = ({
       ),
   };
 
+  const computedResponsiveClasses = responsiveSize
+    ? Object.entries(responsiveSize).map(([breakpoint, sizeKey]) => {
+        const sizeClass = iconOnly
+          ? iconOnlySizeMap[sizeKey]
+          : sizesMap[sizeKey];
+        return breakpoint === 'base'
+          ? sizeClass
+          : sizeClass
+              .split(' ')
+              .map((cls) => `${breakpoint}:${cls}`)
+              .join(' ');
+      })
+    : [];
+
+  console.log('Computed Responsive Classes:', computedResponsiveClasses);
   const finalClassName = cn(
     base,
-    iconOnly ? iconOnlySizeMap[size] : sizesMap[size],
+    responsiveSize
+      ? computedResponsiveClasses
+      : iconOnly
+      ? iconOnlySizeMap[size]
+      : sizesMap[size],
     iconCircle && iconOnly && iconCircleBg,
     !iconCircle && variantStyles[variant](color, isLoading ?? false),
     className,

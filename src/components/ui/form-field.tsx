@@ -52,13 +52,13 @@ const FormField: React.FC<Props> = ({
 
   const isPasswordField = type === 'password';
   const finalType = isPasswordField && showPassword ? 'text' : type;
-  const paddingLeft = leftIcon ? 'pl-10' : 'pl-4';
-  const paddingRight = isPasswordField || rightIcon ? 'pr-10' : 'pr-4';
+  const paddingLeft = leftIcon ? 'pl-10' : 'pl-2 lg:pl-4';
+  const paddingRight = isPasswordField || rightIcon ? 'pr-10' : 'pr-2 lg:pr-4';
 
   const { ref, onChange, onBlur, name: fieldName } = register(name);
 
   const commonClasses = cn(
-    'w-full border border-dark-200 rounded-md py-2 small-1-md text-dark-900 focus:outline-none focus:ring-2 focus:ring-black relative z-1',
+    'w-full border border-dark-200 rounded-md py-2 font-medium text-[13px] lg:text-[14px] leading-[150%] text-dark-900 focus:outline-none focus:ring-2 focus:ring-black relative z-1',
     paddingLeft,
     paddingRight,
     error && 'border-notification-error focus:ring-notification-error',
@@ -94,7 +94,7 @@ const FormField: React.FC<Props> = ({
       {label && (
         <Label.Root
           htmlFor={name}
-          className="small-1-md text-dark-600 block mb-1"
+          className="font-medium text-[10px] lg:text-[14px] leading-[150%] text-dark-600 block ml-2 lg:ml-0 lg:mb-1"
         >
           {label}
           {required && (

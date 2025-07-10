@@ -10,12 +10,16 @@ import CloseIcon from '@/assets/icons/x.svg';
 type Props = {
   children: ReactNode;
   trigger?: (props: { onClick: () => void }) => ReactNode;
+  closeIcon?: ReactNode;
+  closeAction?: () => void;
   navElement?: ReactNode;
   titleId?: string;
 };
 
 const MobileDrawer: React.FC<Props> = ({
   children,
+  closeIcon,
+  closeAction,
   trigger,
   navElement,
   titleId = 'mobile-drawer-title',
@@ -82,10 +86,10 @@ const MobileDrawer: React.FC<Props> = ({
             size="sm"
             variant="secondary"
             color="black"
-            onClick={() => setOpen(false)}
+            onClick={() => (closeAction ? closeAction() : setOpen(false))}
             aria-label="Close menu"
           >
-            <CloseIcon />
+            {closeIcon || <CloseIcon />}
           </Button>
           {navElement}
         </div>

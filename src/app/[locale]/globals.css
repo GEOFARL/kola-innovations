@@ -45,7 +45,7 @@
     @apply font-[600] sm:font-bold text-[22px] sm:text-[36px] leading-[140%] sm:leading-[130%] tracking-[-0.5px];
   }
   .h4 {
-    @apply font-bold text-[30px] leading-[130%];
+    @apply font-semibold lg:font-bold text-[22px] lg:text-[30px] leading-[130%];
   }
   .h5 {
     @apply font-semibold text-[18px] sm:text-[24px] leading-[140%] tracking-[-0.2px];
@@ -96,7 +96,7 @@
     @apply font-medium text-[12px] leading-[150%];
   }
   .small-2-rg {
-    @apply font-semibold text-[12px] leading-[150%];
+    @apply font-semibold text-[9px] lg:text-[12px] leading-[150%];
   }
   .small-3 {
     @apply font-semibold text-[10px] leading-[150%] tracking-[0.2px];

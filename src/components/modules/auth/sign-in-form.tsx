@@ -39,7 +39,10 @@ const SignInForm: React.FC = () => {
             </>
           }
         />
-        <form onSubmit={onSubmit} className="space-y-4 flex-1 flex flex-col">
+        <form
+          onSubmit={onSubmit}
+          className="space-y-2 lg:space-y-4 flex-1 flex flex-col"
+        >
           <AuthForm.Fields className="flex-1">
             <FormField
               name="email"
@@ -57,7 +60,7 @@ const SignInForm: React.FC = () => {
             />
             <Button
               type="button"
-              className="ml-auto"
+              className="mx-auto lg:mr-0 lg:ml-auto"
               variant="text-link"
               color="black"
               onClick={() => setView('forgot')}
@@ -66,7 +69,12 @@ const SignInForm: React.FC = () => {
             </Button>
           </AuthForm.Fields>
           <AuthForm.Footer>
-            <Button className="w-full" color="black" size="lg" type="submit">
+            <Button
+              className="w-full"
+              color="black"
+              type="submit"
+              responsiveSize={{ base: 'md', lg: 'lg' }}
+            >
               {t('login')}
             </Button>
             <div className="flex items-center small-1-rg text-dark-700">
