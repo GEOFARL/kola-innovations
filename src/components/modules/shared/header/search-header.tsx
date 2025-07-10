@@ -3,14 +3,15 @@
 import GiftIcon from '@/assets/icons/header/gift.svg';
 import NotificationIcon from '@/assets/icons/header/notification.svg';
 import BookmarkIcon from '@/assets/icons/header/save.svg';
-import Logo from '@/assets/icons/logo.svg';
 
 import Button from '@/components/ui/button/button';
 import { Link } from '@/i18n/navigation';
 import { DEFAULT_USER } from '@/lib/constants/profile';
 import { APP_ROUTES } from '@/lib/constants/routing/routes';
 import Image from 'next/image';
+import HomepageLogo from '../homepage-logo';
 import HeaderWrapper from './header-wrapper';
+import MobileSearch from './mobile-search';
 import SearchBar from './search-bar';
 import SearchSuggestions from './search-suggestions';
 
@@ -19,12 +20,10 @@ const SearchHeader: React.FC = () => {
 
   return (
     <HeaderWrapper>
-      <Link href="/" aria-label="Homepage">
-        <Logo />
-      </Link>
+      <HomepageLogo />
 
       <div className="flex items-center gap-4 relative">
-        <div className="w-[360px]">
+        <div className="hidden lg:block w-[360px]">
           <SearchBar
             onSubmit={handleSubmit}
             inputClassName="py-[4px]!"
@@ -38,12 +37,25 @@ const SearchHeader: React.FC = () => {
             )}
           />
         </div>
+        <MobileSearch />
 
         <div className="flex items-center gap-3">
-          <Button size="sm" iconOnly iconCircle aria-label="Gifts">
+          <Button
+            size="sm"
+            className="hidden lg:block"
+            iconOnly
+            iconCircle
+            aria-label="Gifts"
+          >
             <GiftIcon />
           </Button>
-          <Button size="sm" iconOnly iconCircle aria-label="Bookmarks">
+          <Button
+            size="sm"
+            className="hidden lg:block"
+            iconOnly
+            iconCircle
+            aria-label="Bookmarks"
+          >
             <BookmarkIcon />
           </Button>
           <Button size="sm" iconOnly iconCircle aria-label="Notifications">
@@ -58,7 +70,7 @@ const SearchHeader: React.FC = () => {
               alt="User Avatar"
               className="w-8 h-8 rounded-full object-cover"
             />
-            <span className="text-sm font-[600] text-dark-900">
+            <span className="hidden lg:block text-sm font-[600] text-dark-900">
               {DEFAULT_USER.fullName}
             </span>
           </Link>

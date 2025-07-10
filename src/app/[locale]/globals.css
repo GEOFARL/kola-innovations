@@ -63,7 +63,7 @@
     @apply font-[500] sm:font-normal text-[14px] sm:text-[20px] leading-[150%] sm:leading-[140%] tracking-[-0.3px];
   }
   .body-1 {
-    @apply font-semibold text-[18px] leading-[140%];
+    @apply font-semibold text-[16px] lg:text-[18px] leading-[140%];
   }
   .body-1-md {
     @apply font-medium text-[18px] leading-[140%];

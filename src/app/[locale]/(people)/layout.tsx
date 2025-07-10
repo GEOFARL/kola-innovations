@@ -63,16 +63,16 @@ const LayoutProfessionals: React.FC<PropsWithChildren> = ({ children }) => {
   return (
     <>
       <Header />
-      <MaxWidthWrapper className="grid grid-cols-[220px_1fr_342px] h-[calc(100vh-88px)]">
-        <aside className="sticky top-0 h-full overflow-y-auto border-r border-dark-100 bg-white">
+      <MaxWidthWrapper className="grid lg:grid-cols-[220px_1fr_342px] h-[calc(100vh-53px)] lg:h-[calc(100vh-88px)] px-0 sm:px-0 lg:px-4 xl:px-8">
+        <aside className="sticky hidden lg:block top-0 h-full overflow-y-auto border-r border-dark-100 bg-white">
           <TalentsSidebar />
         </aside>
 
-        <section className="overflow-y-auto p-6 bg-[#FAFAFA]">
+        <section className="overflow-y-auto px-3 lg:p-6 bg-[#FAFAFA]">
           {children}
         </section>
 
-        <aside className="sticky top-0 h-full overflow-y-auto border-l border-dark-100 bg-white">
+        <aside className="sticky hidden lg:block top-0 h-full overflow-y-auto border-l border-dark-100 bg-white">
           {rightSidebarContentMap[routeType]}
         </aside>
       </MaxWidthWrapper>

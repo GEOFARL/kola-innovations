@@ -10,9 +10,9 @@ type Props = {
 
 const PersonGrid: React.FC<Props> = ({ title, people }) => {
   return (
-    <div className="mt-6 relative z-0">
-      {title && <h2 className="body-1 text-dark-900 mb-6">{title}</h2>}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <div className="mt-8 mb-4 lg:mb-0 lg:mt-6 relative z-0">
+      {title && <h2 className="body-1 text-dark-900 mb-4 lg:mb-6">{title}</h2>}
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
         {people.map((person) => (
           <PersonCard key={person.id} {...person} />
         ))}

@@ -28,7 +28,7 @@ const PersonCard: React.FC<Props> = ({
     <Link
       key={id}
       href={href}
-      className="border-[1px] border-dark-100 rounded-2xl p-4 bg-white relative transition hover:shadow-md"
+      className="border-[1px] border-dark-100 rounded-[6px] lg:rounded-2xl p-4 bg-white relative transition hover:shadow-md"
     >
       <Button
         iconOnly
@@ -44,7 +44,7 @@ const PersonCard: React.FC<Props> = ({
         />
       </Button>
 
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-row lg:flex-col gap-4">
         <Image
           src={avatar}
           alt={name}
@@ -53,17 +53,19 @@ const PersonCard: React.FC<Props> = ({
           className="w-12 h-12 rounded-full object-cover"
         />
         <div>
-          <p className="h6 text-dark-900 mb-1">{name}</p>
+          <p className="font-semibold text-[18px] lg:text-[20px] leading-[140%] tracking-[-0.3px] text-dark-900 mb-1">
+            {name}
+          </p>
           <p className="small-1 text-dark-600">{title}</p>
         </div>
       </div>
 
-      <p className="small-1-md text-dark-700 mt-4 line-clamp-2">
+      <p className="small-1-md text-dark-700 mt-3 lg:mt-4 line-clamp-2">
         Passionate professional committed to delivering high-quality results
         across creative and technical domains.
       </p>
 
-      <div className="flex items-center text-dark-700 small-1 mt-6 gap-6">
+      <div className="flex items-center text-dark-700 small-1 mt-4 lg:mt-6 gap-6">
         <p className="flex gap-2 items-center flex-1">
           <LocationIcon /> Pickering, ON
         </p>
@@ -74,7 +76,7 @@ const PersonCard: React.FC<Props> = ({
       </div>
 
       {(tags?.length ?? 0) > 0 && (
-        <div className="flex flex-wrap gap-2 mt-6">
+        <div className="flex flex-wrap gap-2 mt-4 lg:mt-6">
           {tags?.map((tag, idx) => (
             <span
               key={idx}
