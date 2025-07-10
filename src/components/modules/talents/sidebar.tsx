@@ -22,7 +22,7 @@ const TalentsSidebar: React.FC = () => {
   return (
     <nav className="flex flex-col justify-between h-full">
       <div>
-        <div className="py-6">
+        <div className="py-2 lg:py-6">
           <SidebarItem
             icon={<HomeIcon />}
             label={t('feed')}
@@ -36,18 +36,18 @@ const TalentsSidebar: React.FC = () => {
           />
         </div>
 
-        <div className="border-t border-dark-100 py-6">
+        <div className="lg:border-t border-dark-100 py-2 lg:py-6">
           <SidebarItem icon={<MentorsIcon />} label={t('mentors')} />
           <SidebarItem icon={<GroupsIcon />} label={t('groups')} />
         </div>
 
-        <div className="border-t border-dark-100 py-6">
+        <div className="lg:border-t border-dark-100 py-2 lg:py-6">
           <SidebarItem icon={<InboxIcon />} label={t('inbox')} />
           <SidebarItem icon={<NetworkIcon />} label={t('network')} />
         </div>
       </div>
 
-      <div className="border-t border-dark-100 py-6">
+      <div className="lg:border-t border-dark-100 py-2 lg:py-6">
         <SidebarItem icon={<ResourcesIcon />} label={t('resources')} />
         <SidebarItem
           icon={<SettingsIcon />}

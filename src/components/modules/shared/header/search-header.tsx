@@ -14,13 +14,17 @@ import HeaderWrapper from './header-wrapper';
 import MobileSearch from './mobile-search';
 import SearchBar from './search-bar';
 import SearchSuggestions from './search-suggestions';
+import TalentsDrawerMenu from '../../talents/drawer-menu';
 
 const SearchHeader: React.FC = () => {
   const handleSubmit = (query: string) => {};
 
   return (
     <HeaderWrapper>
-      <HomepageLogo />
+      <div className="flex items-center gap-2 flex-row-reverse">
+        <HomepageLogo />
+        <TalentsDrawerMenu />
+      </div>
 
       <div className="flex items-center gap-4 relative">
         <div className="hidden lg:block w-[360px]">
