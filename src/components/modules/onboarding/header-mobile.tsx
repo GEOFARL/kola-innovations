@@ -7,6 +7,7 @@ import { steps } from '@/lib/constants/onboarding/steps';
 import InfoIcon from '@/assets/icons/info.svg';
 import Tabs from '@/components/ui/tabs';
 import { cn } from '@/lib/cn';
+import HomepageLogo from '../shared/homepage-logo';
 
 const OnboardingHeaderMobile: React.FC = () => {
   const { step, setStep } = useOnboardingStore();
@@ -18,7 +19,7 @@ const OnboardingHeaderMobile: React.FC = () => {
   return (
     <div className="lg:hidden sticky top-0 bg-dark-white z-50">
       <div className="py-[10px] px-3">
-        <LogoIcon className="scale-75" />
+        <HomepageLogo />
       </div>
 
       <div className="w-full border-b border-dark-100 bg-primary-100 px-4">
