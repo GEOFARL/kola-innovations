@@ -34,7 +34,7 @@ const SkillsStep: React.FC = () => {
     <FormProvider {...methods}>
       <form
         onSubmit={methods.handleSubmit(() => {})}
-        className="space-y-6 mt-10"
+        className="space-y-6 mt-4 lg:mt-10"
       >
         <div>
           <h2 className="h5 text-dark-900">{t('title')}</h2>

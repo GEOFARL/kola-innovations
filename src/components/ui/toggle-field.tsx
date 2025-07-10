@@ -25,7 +25,7 @@ const ToggleField: React.FC<Props> = ({ name, label, required }) => {
   return (
     <div>
       {label && (
-        <label className="small-1-md text-dark-600 block mb-1">
+        <label className="font-medium text-[10px] lg:text-[14px] leading-[150%] text-dark-600 block mb-1">
           {label}
           {required && (
             <span className="text-notification-error small-2-md"> *</span>

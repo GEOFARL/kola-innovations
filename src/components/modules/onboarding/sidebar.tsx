@@ -11,7 +11,7 @@ const OnboardingSidebar: React.FC = () => {
   const t = useTranslations('onboarding.steps');
 
   return (
-    <aside className="max-w-[370px] xl:max-w-[506px] flex flex-col bg-primary-100 py-16 px-6 xl:px-10 gap-[93px] relative z-1">
+    <aside className="max-w-[370px] xl:max-w-[506px] hidden lg:flex flex-col bg-primary-100 py-16 px-6 xl:px-10 gap-[93px] relative z-1">
       <LogoIcon />
       <div className="flex flex-col gap-6">
         {steps.map((item, index) => (

@@ -23,22 +23,31 @@ const OnboardingFooter: React.FC = () => {
   };
 
   return (
-    <div className="px-10 py-4 flex justify-between items-center shadow-[0_2px_8px_rgba(0,0,0,0.1)]">
+    <div className="py-5 px-3 lg:px-10 lg:py-4 flex justify-between items-center shadow-[0_2px_8px_rgba(0,0,0,0.1)]">
       {isFirst ? (
         <div />
       ) : (
-        <Button variant="secondary" color="black" onClick={prev}>
+        <Button
+          variant="secondary"
+          className="hidden lg:flex"
+          color="black"
+          onClick={prev}
+        >
           {t('back')}
         </Button>
       )}
 
-      <div className="flex items-center gap-4">
+      <div className="w-full lg:w-auto flex items-center gap-4">
         {isLast && (
-          <Button variant="text-link" color="black">
+          <Button
+            variant="text-link"
+            color="black"
+            className="w-full lg:w-auto"
+          >
             {t('skip')}
           </Button>
         )}
-        <Button onClick={handleNext} color="black">
+        <Button onClick={handleNext} color="black" className="w-full lg:w-auto">
           {isLast
             ? t('finish')
             : `${t('next')} : ${stepsT(`${nextStepKey}.title`)}`}

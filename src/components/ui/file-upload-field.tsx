@@ -74,7 +74,10 @@ const FileUploadField: React.FC<Props> = ({
         return (
           <div className={className}>
             <label
-              className={cn('block mb-6 text-sm font-medium', labelClassName)}
+              className={cn(
+                'block mb-3 lg:mb-6 text-[10px] lg:text-[14px] leading-[150%]  font-medium',
+                labelClassName,
+              )}
             >
               {label ?? t('label')}
             </label>

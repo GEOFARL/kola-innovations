@@ -115,7 +115,10 @@ const FormField: React.FC<Props> = ({
             onBlur={onBlur}
             placeholder={placeholder}
             disabled={disabled}
-            className={cn(commonClasses, 'px-4 resize-none min-h-[66px]')}
+            className={cn(
+              commonClasses,
+              'px-2 lg:px-4 resize-none min-h-[66px]',
+            )}
             {...(rest as TextareaHTMLAttributes<HTMLTextAreaElement>)}
           />
         ) : (

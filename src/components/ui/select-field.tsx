@@ -35,7 +35,10 @@ const SelectField: React.FC<Props> = ({
   return (
     <div className={cn(className)}>
       {label ? (
-        <label htmlFor={name} className="small-1-md text-dark-600 block mb-1">
+        <label
+          htmlFor={name}
+          className="font-medium text-[10px] lg:text-[14px] leading-[150%] text-dark-600  block mb-1"
+        >
           {label}
           {required && (
             <span className="text-notification-error small-2-md"> *</span>
@@ -49,7 +52,7 @@ const SelectField: React.FC<Props> = ({
         <Select.Trigger
           id={name}
           className={cn(
-            'w-full border border-dark-200 rounded-md px-4 py-2 small-1-md text-left text-dark-900 flex items-center justify-between focus:outline-none focus:ring-2 focus:ring-black',
+            'w-full border border-dark-200 rounded-md px-2 lg:px-4 py-2 small-1-md text-left text-dark-900 flex items-center justify-between focus:outline-none focus:ring-2 focus:ring-black',
             error && 'border-notification-error focus:ring-notification-error',
           )}
         >
@@ -71,7 +74,7 @@ const SelectField: React.FC<Props> = ({
               <Select.Item
                 key={opt.value}
                 value={opt.value}
-                className="text-sm px-3 py-2 cursor-pointer text-dark-900 rounded-md hover:bg-dark-50 flex items-center justify-between"
+                className="text-sm px-2 lg:px-3 py-2 cursor-pointer text-dark-900 rounded-md hover:bg-dark-50 flex items-center justify-between"
               >
                 <Select.ItemText>{opt.label}</Select.ItemText>
                 <Select.ItemIndicator>

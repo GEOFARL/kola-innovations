@@ -84,16 +84,16 @@ const PersonalInfoStep: React.FC = () => {
     <FormProvider {...methods}>
       <form
         onSubmit={methods.handleSubmit(() => {})}
-        className="space-y-6 mt-10"
+        className="space-y-4 lg:space-y-6 mt-4 lg:mt-10"
       >
         <div>
           <h2 className="h5 text-dark-900">{t('title')}</h2>
-          <p className="text-[#1E1E1E] mt-2 text-sm leading-[130%]">
+          <p className="text-[#1E1E1E] mt-4 lg:mt-2 text-[13px] lg:text-sm leading-[130%]">
             {t('description')}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-start">
           <FormField
             name="firstName"
             label={t('fields.firstName')}
@@ -115,7 +115,7 @@ const PersonalInfoStep: React.FC = () => {
             type="email"
             required
             disabled={!!initialValues.email}
-            rightIcon={<EmailIcon />}
+            rightIcon={<EmailIcon className="scale-80 lg:scale-100" />}
           />
           <FormField
             name="phone"
@@ -123,7 +123,7 @@ const PersonalInfoStep: React.FC = () => {
             placeholder={t('placeholders.phone')}
             type="tel"
             disabled={!!initialValues.phone}
-            rightIcon={<PhoneIcon />}
+            rightIcon={<PhoneIcon className="scale-80 lg:scale-100" />}
           />
           <FormField
             name="jobTitle"
@@ -160,7 +160,7 @@ const PersonalInfoStep: React.FC = () => {
             required
             className="flex-1"
           />
-          <div className="col-span-2">
+          <div className="lg:col-span-2">
             <FormField
               name="brief"
               label={t('fields.brief')}
