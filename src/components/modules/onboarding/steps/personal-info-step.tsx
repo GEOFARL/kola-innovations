@@ -2,7 +2,7 @@
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useTranslations } from 'next-intl';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 
 import FileUploadField from '@/components/ui/file-upload-field';
@@ -64,15 +64,19 @@ const PersonalInfoStep: React.FC = () => {
     defaultValues: data.personalInfo ?? initialValues,
   });
 
+  const submitHandler = useCallback(
+    methods.handleSubmit((formData) => {
+      setStepData('personalInfo', formData);
+      next();
+    }),
+    [methods, setStepData, next],
+  );
+
   useEffect(() => {
-    setFormSubmitTrigger(
-      methods.handleSubmit((formData) => {
-        setStepData('personalInfo', formData);
-        next();
-      }),
-    );
+    setFormSubmitTrigger(submitHandler);
     return () => setFormSubmitTrigger(null);
-  }, [methods, next, setStepData, setFormSubmitTrigger]);
+  }, [setFormSubmitTrigger, submitHandler]);
+  console.log('render');
 
   if (!hydrated) return <PersonalInfoSkeleton />;
 
