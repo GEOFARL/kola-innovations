@@ -2,10 +2,11 @@
 
 import * as TabsPrimitive from '@radix-ui/react-tabs';
 import { cn } from '@/lib/cn';
+import React from 'react';
 
 type TabItem = {
   value: string;
-  label: string;
+  label: React.ReactNode;
 };
 
 type TabsProps = {
