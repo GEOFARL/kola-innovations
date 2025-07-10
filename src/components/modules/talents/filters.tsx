@@ -26,15 +26,18 @@ const TalentFilters: React.FC = () => {
 
   return (
     <FormProvider {...methods}>
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 p-6">
-        <h2 className="font-semibold text-lg text-dark-900 flex justify-between items-center">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="space-y-6 lg:p-6 h-full lg:h-auto flex flex-col justify-between lg:block"
+      >
+        <h2 className="font-semibold text-lg text-dark-900 hidden lg:flex justify-between items-center">
           {t('title')}
           <span className="ml-2 bg-dark-900 text-white text-xs w-[34px] h-[29px] rounded-full flex items-center justify-center">
             4
           </span>
         </h2>
 
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 py-6 px-[10px] lg:px-0 lg:py-0">
           <MultiSelectField
             name="professions"
             label={t('profession')}
@@ -91,17 +94,22 @@ const TalentFilters: React.FC = () => {
           />
         </div>
 
-        <div className="flex justify-between">
+        <div className="flex justify-between gap-[10px] lg:gap-0 py-[20px] px-[10px] lg:px-0 lg:py-0 lg:border-none border-t-[1px] border-dark-200">
           <Button
             variant="secondary"
-            size="sm"
+            responsiveSize={{ 'base': 'md', lg: 'sm' }}
             color="black"
             type="button"
+            className="flex-1 lg:flex-auto"
             onClick={() => reset()}
           >
             {t('clear')}
           </Button>
-          <Button size="sm" type="submit">
+          <Button
+            responsiveSize={{ 'base': 'md', lg: 'sm' }}
+            type="submit"
+            className="flex-1 lg:flex-auto"
+          >
             {t('apply')}
           </Button>
         </div>

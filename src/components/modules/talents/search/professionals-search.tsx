@@ -4,7 +4,7 @@ import { ChevronDown } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import SearchBar from '../../shared/header/search-bar';
 import SearchSuggestions from '../search/search-suggestions';
-import FilterIcon from '@/assets/icons/filter.svg';
+import MobileFilters from './mobile-filters';
 
 const recentQueries = ['UI UX Designer', 'Project Manager', 'Logo Designer'];
 
@@ -35,12 +35,7 @@ const ProfessionalsSearch: React.FC = () => {
         }
       />
 
-      <button className="lg:hidden cursor-pointer px-3 py-2 bg-dark-200 rounded-[34px] flex items-center gap-1">
-        <FilterIcon />
-        <div className="flex items-center justify-center rounded-full bg-white w-5 h-5 text-[10px] leading-[150%] font-[600]">
-          4
-        </div>
-      </button>
+      <MobileFilters />
     </div>
   );
 };

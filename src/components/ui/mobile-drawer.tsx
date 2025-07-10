@@ -1,11 +1,10 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
-import { cn } from '@/lib/cn';
-import { ReactNode } from 'react';
-import Button from '@/components/ui/button/button';
 import BurgerIcon from '@/assets/icons/burger.svg';
 import CloseIcon from '@/assets/icons/x.svg';
+import Button from '@/components/ui/button/button';
+import { cn } from '@/lib/cn';
+import { ReactNode, use, useEffect, useRef, useState } from 'react';
 
 type Props = {
   children: ReactNode;
@@ -14,6 +13,8 @@ type Props = {
   closeAction?: () => void;
   navElement?: ReactNode;
   titleId?: string;
+  isOpen?: boolean;
+  navElementClassName?: string;
 };
 
 const MobileDrawer: React.FC<Props> = ({
@@ -22,15 +23,23 @@ const MobileDrawer: React.FC<Props> = ({
   closeAction,
   trigger,
   navElement,
+  isOpen,
+  navElementClassName,
   titleId = 'mobile-drawer-title',
 }) => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(isOpen);
   const drawerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     document.body.classList.toggle('overflow-hidden', open);
     return () => document.body.classList.remove('overflow-hidden');
   }, [open]);
+
+  useEffect(() => {
+    if (isOpen !== undefined) {
+      setOpen(isOpen);
+    }
+  }, [isOpen]);
 
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
@@ -79,14 +88,22 @@ const MobileDrawer: React.FC<Props> = ({
           open ? 'translate-x-0' : '-translate-x-full',
         )}
       >
-        <div className="py-[10px] px-3 flex gap-3 justify-between items-center border-b-[1.5px] border-dark-100">
+        <div
+          className={cn(
+            'py-[10px] px-3 flex gap-3 justify-between items-center border-b-[1.5px] border-dark-100',
+            navElementClassName,
+          )}
+        >
           <Button
             iconOnly
             iconCircle
             size="sm"
             variant="secondary"
             color="black"
-            onClick={() => (closeAction ? closeAction() : setOpen(false))}
+            onClick={() => {
+              closeAction?.();
+              setOpen(false);
+            }}
             aria-label="Close menu"
           >
             {closeIcon || <CloseIcon />}
