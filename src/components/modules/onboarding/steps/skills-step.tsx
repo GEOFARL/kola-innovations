@@ -10,7 +10,7 @@ import { FormProvider, useForm } from 'react-hook-form';
 import SkillsField from '../../shared/fields/skills-field';
 
 const SkillsStep: React.FC = () => {
-  const t = useTranslations('skills.onboarding');
+  const t = useTranslations('onboarding.steps.skills');
   const { setStepData, setFormSubmitTrigger, data } = useOnboardingStore();
 
   const methods = useForm<SkillsData>({
