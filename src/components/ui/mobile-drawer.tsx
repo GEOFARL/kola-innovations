@@ -79,7 +79,7 @@ const MobileDrawer: React.FC<Props> = ({
           open ? 'translate-x-0' : '-translate-x-full',
         )}
       >
-        <div className="py-[10px] px-3 flex gap-3 justify-between border-b-[1.5px] border-dark-100">
+        <div className="py-[10px] px-3 flex gap-3 justify-between items-center border-b-[1.5px] border-dark-100">
           <Button
             iconOnly
             iconCircle
