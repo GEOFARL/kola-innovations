@@ -15,9 +15,7 @@ import SearchBar from './search-bar';
 import SearchSuggestions from './search-suggestions';
 
 const SearchHeader: React.FC = () => {
-  const handleSubmit = (query: string) => {
-    console.log('Search:', query);
-  };
+  const handleSubmit = (query: string) => {};
 
   return (
     <HeaderWrapper>

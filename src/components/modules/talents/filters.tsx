@@ -22,9 +22,7 @@ const TalentFilters: React.FC = () => {
 
   const { reset, handleSubmit } = methods;
 
-  const onSubmit = (data: FiltersData) => {
-    console.log('Apply filters:', data);
-  };
+  const onSubmit = (data: FiltersData) => {};
 
   return (
     <FormProvider {...methods}>

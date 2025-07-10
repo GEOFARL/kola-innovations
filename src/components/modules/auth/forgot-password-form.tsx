@@ -22,7 +22,6 @@ const ForgotPasswordForm: React.FC = () => {
   });
 
   const onSubmit = methods.handleSubmit((data) => {
-    console.log('FORGOT PASSWORD', data);
     toast.success(toastT('forgotPassword'));
   });
 

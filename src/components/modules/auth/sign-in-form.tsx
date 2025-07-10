@@ -23,7 +23,6 @@ const SignInForm: React.FC = () => {
   });
 
   const onSubmit = methods.handleSubmit((data) => {
-    console.log(data);
     toast.success(toastT('signInSuccess'));
   });
 

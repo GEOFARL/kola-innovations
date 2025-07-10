@@ -22,7 +22,6 @@ const VouchProfessionalModal: React.FC<Props> = ({ open, onClose }) => {
   });
 
   const handleSubmit = methods.handleSubmit((data) => {
-    console.log('Vouch submitted', data);
     onClose();
   });
 

@@ -115,7 +115,6 @@ const Button: React.FC<Props> = ({
       })
     : [];
 
-  console.log('Computed Responsive Classes:', computedResponsiveClasses);
   const finalClassName = cn(
     base,
     responsiveSize
