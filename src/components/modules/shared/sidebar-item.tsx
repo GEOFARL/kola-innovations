@@ -9,9 +9,16 @@ type Props = {
   label: string;
   href?: string;
   notActive?: boolean;
+  onClick?: () => void;
 };
 
-const SidebarItem: React.FC<Props> = ({ icon, label, href, notActive }) => {
+const SidebarItem: React.FC<Props> = ({
+  icon,
+  label,
+  href,
+  notActive,
+  onClick,
+}) => {
   const pathname = usePathname();
   const normalizedPath = normalizePathname(pathname);
   const isActive =
@@ -36,11 +43,13 @@ const SidebarItem: React.FC<Props> = ({ icon, label, href, notActive }) => {
   );
 
   return href ? (
-    <Link href={href} className={className}>
+    <Link onClick={onClick} href={href} className={className}>
       {content}
     </Link>
   ) : (
-    <button className={className}>{content}</button>
+    <button onClick={onClick} className={className}>
+      {content}
+    </button>
   );
 };
 

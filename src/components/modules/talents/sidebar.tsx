@@ -15,21 +15,27 @@ import ResourcesIcon from '@/assets/icons/talents/resources.svg';
 import SettingsIcon from '@/assets/icons/talents/settings.svg';
 import TalentsIcon from '@/assets/icons/talents/talents.svg';
 import SidebarItem from '../shared/sidebar-item';
+import { useProfessionalsSidebar } from '@/lib/stores/professionals/sidebar';
 
 const TalentsSidebar: React.FC = () => {
   const t = useTranslations('talents.sidebar');
+
+  const { close } = useProfessionalsSidebar();
+  const commonProps = { onClick: close };
 
   return (
     <nav className="flex flex-col justify-between h-full">
       <div>
         <div className="py-2 lg:py-6">
           <SidebarItem
+            {...commonProps}
             icon={<HomeIcon />}
             label={t('feed')}
             href={APP_ROUTES.PROFESSIONALS}
           />
-          <SidebarItem icon={<JobsIcon />} label={t('jobs')} />
+          <SidebarItem {...commonProps} icon={<JobsIcon />} label={t('jobs')} />
           <SidebarItem
+            {...commonProps}
             icon={<TalentsIcon />}
             label={t('talents')}
             href={APP_ROUTES.TALENTS}
@@ -37,24 +43,49 @@ const TalentsSidebar: React.FC = () => {
         </div>
 
         <div className="lg:border-t border-dark-100 py-2 lg:py-6">
-          <SidebarItem icon={<MentorsIcon />} label={t('mentors')} />
-          <SidebarItem icon={<GroupsIcon />} label={t('groups')} />
+          <SidebarItem
+            {...commonProps}
+            icon={<MentorsIcon />}
+            label={t('mentors')}
+          />
+          <SidebarItem
+            {...commonProps}
+            icon={<GroupsIcon />}
+            label={t('groups')}
+          />
         </div>
 
         <div className="lg:border-t border-dark-100 py-2 lg:py-6">
-          <SidebarItem icon={<InboxIcon />} label={t('inbox')} />
-          <SidebarItem icon={<NetworkIcon />} label={t('network')} />
+          <SidebarItem
+            {...commonProps}
+            icon={<InboxIcon />}
+            label={t('inbox')}
+          />
+          <SidebarItem
+            {...commonProps}
+            icon={<NetworkIcon />}
+            label={t('network')}
+          />
         </div>
       </div>
 
       <div className="lg:border-t border-dark-100 py-2 lg:py-6">
-        <SidebarItem icon={<ResourcesIcon />} label={t('resources')} />
         <SidebarItem
+          {...commonProps}
+          icon={<ResourcesIcon />}
+          label={t('resources')}
+        />
+        <SidebarItem
+          {...commonProps}
           icon={<SettingsIcon />}
           href={APP_ROUTES.SETTINGS}
           label={t('settings')}
         />
-        <SidebarItem icon={<LogoutIcon />} label={t('logout')} />
+        <SidebarItem
+          {...commonProps}
+          icon={<LogoutIcon />}
+          label={t('logout')}
+        />
       </div>
     </nav>
   );
