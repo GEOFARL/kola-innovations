@@ -29,54 +29,69 @@ const VouchProfessionalModal: React.FC<Props> = ({ open, onClose }) => {
     <Modal
       open={open}
       onOpenChange={onClose}
-      className="max-w-[512px] w-full top-[50px] translate-y-0 p-6"
+      className="max-w-[512px] w-[calc(100%-25px)] rounded-[6px] lg:rounded-2xl lg:w-full top-[120px] lg:top-[50px] translate-y-0 lg:p-6"
     >
       <FormProvider {...methods}>
         <form onSubmit={handleSubmit} className="space-y-4">
-          <h2 className="h5 mb-1">Vouch Professional</h2>
-          <p className="text-sm text-dark-600 mb-6">
-            Lorem ipsum dolor sit amet consectetur.
-          </p>
+          <div className="space-y-4 py-6 px-3 lg:py-0 lg:px-0">
+            <h2 className="font-semibold text-[18px] lg:text-[24px] leading-[140%] tracking-[-0.2px] mb-1">
+              Vouch Professional
+            </h2>
+            <p className="text-sm text-dark-600 mb-6">
+              Lorem ipsum dolor sit amet consectetur.
+            </p>
 
-          <FileUploadField
-            name="vouchImage"
-            label="Upload Image"
-            accept=".jpeg,.jpg,.png"
-            hint="Use a jpeg, jpg, png file"
-            iconVariant="red"
-            labelClassName="mb-2"
-          />
+            <FileUploadField
+              name="vouchImage"
+              label="Upload Image"
+              accept=".jpeg,.jpg,.png"
+              hint="Use a jpeg, jpg, png file"
+              iconVariant="red"
+              labelClassName="mb-2"
+            />
 
-          <SelectField
-            name="reason"
-            label="Select Reason"
-            required
-            options={[
-              { value: 'project', label: 'Worked together on a project' },
-              { value: 'hired', label: 'Hired them directly' },
-              { value: 'collab', label: 'Collaborated in a group' },
-            ]}
-          />
+            <SelectField
+              name="reason"
+              label="Select Reason"
+              required
+              options={[
+                { value: 'project', label: 'Worked together on a project' },
+                { value: 'hired', label: 'Hired them directly' },
+                { value: 'collab', label: 'Collaborated in a group' },
+              ]}
+            />
 
-          <FormField
-            name="details"
-            label="Additional Details"
-            placeholder="Type your vouch..."
-            multiline
-            rows={5}
-          />
-
-          <div className="flex justify-end gap-2 pt-4">
+            <FormField
+              name="details"
+              label="Additional Details"
+              placeholder="Type your vouch..."
+              multiline
+              rows={5}
+            />
+          </div>
+          <div className="flex justify-end gap-2 pt-4 py-4 px-3 lg:py-0 lg:px-0 shadow-[0_2px_8px_rgba(0,0,0,0.1)]">
             <Button
               type="button"
-              size="lg"
+              responsiveSize={{
+                'base': 'md',
+                'lg': 'lg',
+              }}
+              className="flex-1 lg:flex-auto"
               variant="secondary"
               color="black"
               onClick={onClose}
             >
               Cancel
             </Button>
-            <Button size="lg" color="black" type="submit">
+            <Button
+              responsiveSize={{
+                'base': 'md',
+                'lg': 'lg',
+              }}
+              color="black"
+              className="flex-1 lg:flex-auto"
+              type="submit"
+            >
               Vouch
             </Button>
           </div>

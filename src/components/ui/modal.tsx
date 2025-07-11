@@ -35,7 +35,7 @@ const Modal: React.FC<Props> = ({
           <Dialog.Title className="sr-only">{ariaTitle}</Dialog.Title>
 
           {showClose && (
-            <Dialog.Close className="absolute top-4 right-4 text-gray-500 hover:text-black">
+            <Dialog.Close className="absolute top-[25px] lg:top-4 right-3 lg:right-4 text-gray-500 hover:text-black">
               <div className="h-5 w-5 flex items-center justify-center rounded-full border-[1.5px] border-[#292D32]">
                 <X className="w-3 h-3 text-[#292D32]" />
               </div>
