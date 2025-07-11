@@ -3,6 +3,7 @@
 import { sampleProfessionals } from '@/lib/constants/professionals/sample-professionals';
 import ProfessionalHeader from './professional-header';
 import ProfessionalMain from './professional-main';
+import MobileAnalytics from '../search/mobile-analytics';
 
 type Props = {
   id: string;
@@ -20,7 +21,7 @@ const ProfessionalDetails: React.FC<Props> = ({ id }) => {
   }
 
   return (
-    <div className="flex flex-col h-full gap-6">
+    <div className="flex flex-col h-full gap-[16px] lg:gap-6">
       <ProfessionalHeader name={pro.name} avatar={pro.avatar} />
       <ProfessionalMain
         name={pro.name}

@@ -12,8 +12,10 @@ type Props = {
 
 const Analytics: React.FC<Props> = ({ title, items }) => {
   return (
-    <div className="p-6">
-      <h2 className="font-semibold text-lg text-dark-900 mb-6">{title}</h2>
+    <div className="lg:p-6 py-6 px-3">
+      <h2 className="font-semibold hidden lg:block text-lg text-dark-900 mb-6">
+        {title}
+      </h2>
 
       <div className="space-y-6">
         {items.map((item, idx) => (

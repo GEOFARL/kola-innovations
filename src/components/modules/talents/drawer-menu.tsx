@@ -2,26 +2,42 @@
 
 import MobileDrawer from '@/components/ui/mobile-drawer';
 import TalentsSidebar from './sidebar';
-import { useProfessionalsFilters } from '@/lib/stores/professionals/filters';
+import { useProfessionalsSidebar } from '@/lib/stores/professionals/sidebar';
 import MobileFiltersComponent from './search/mobile-filters';
+import MobileAnalyticsComponent from './search/mobile-analytics';
 
 const TalentsDrawerMenu: React.FC = () => {
-  const { isOpen, close } = useProfessionalsFilters();
+  const { state, close, open } = useProfessionalsSidebar();
+
+  const renderNavTitle = () => {
+    if (state === 'filters') return 'Filters';
+    if (state === 'analytics') return 'Analytics';
+    return null;
+  };
+
+  const renderContent = () => {
+    if (state === 'sidebar') return <TalentsSidebar />;
+    if (state === 'filters') return <MobileFiltersComponent.Content />;
+    if (state === 'analytics') return <MobileAnalyticsComponent.Content />;
+    return null;
+  };
 
   return (
     <div className="lg:hidden">
       <MobileDrawer
-        isOpen={isOpen ? isOpen : undefined}
-        closeAction={() => {
-          close();
-        }}
+        isOpen={!!state}
+        triggerAction={() => open('sidebar')}
+        closeAction={close}
         navElement={
-          <p className="text-[16px] leading-[140%] font-[600]">Filters</p>
+          renderNavTitle() && (
+            <p className="text-[16px] leading-[140%] font-[600]">
+              {renderNavTitle()}
+            </p>
+          )
         }
         navElementClassName="flex-row-reverse"
       >
-        {!isOpen && <TalentsSidebar />}
-        {isOpen && <MobileFiltersComponent.Content />}
+        {renderContent()}
       </MobileDrawer>
     </div>
   );

@@ -9,6 +9,7 @@ import { ReactNode, use, useEffect, useRef, useState } from 'react';
 type Props = {
   children: ReactNode;
   trigger?: (props: { onClick: () => void }) => ReactNode;
+  triggerAction?: () => void;
   closeIcon?: ReactNode;
   closeAction?: () => void;
   navElement?: ReactNode;
@@ -22,6 +23,7 @@ const MobileDrawer: React.FC<Props> = ({
   closeIcon,
   closeAction,
   trigger,
+  triggerAction,
   navElement,
   isOpen,
   navElementClassName,
@@ -66,7 +68,7 @@ const MobileDrawer: React.FC<Props> = ({
           size="sm"
           variant="secondary"
           color="black"
-          onClick={() => setOpen(true)}
+          onClick={triggerAction ? triggerAction : () => setOpen(true)}
           aria-haspopup="dialog"
           aria-expanded={open}
           aria-controls="mobile-drawer"

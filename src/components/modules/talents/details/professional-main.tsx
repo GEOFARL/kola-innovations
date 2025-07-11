@@ -26,9 +26,9 @@ const ProfessionalMain: React.FC<Props> = ({
   const t = useTranslations('talents.details');
 
   return (
-    <div className="bg-white rounded-2xl py-8 px-10">
-      <div className="flex flex-col items-center space-y-6">
-        <div className="w-[100px] h-[100px] relative">
+    <div className="bg-white rounded-2xl py-6 px-3 lg:py-8 lg:px-10">
+      <div className="flex flex-col items-center space-y-4 lg:space-y-6">
+        <div className="w-20 h-20 lg:w-[100px] lg:h-[100px] relative">
           <Image
             src={avatar}
             alt={name}
@@ -37,8 +37,10 @@ const ProfessionalMain: React.FC<Props> = ({
           />
         </div>
 
-        <div>
-          <h2 className="h6">{name}</h2>
+        <div className="text-center">
+          <h2 className="font-semibold sm:font-semibold text-[20px] sm:text-[20px] leading-[140%] tracking-[-0.3px]">
+            {name}
+          </h2>
           <p className="body-2-md text-dark-600 mt-2">{title}</p>
         </div>
 
