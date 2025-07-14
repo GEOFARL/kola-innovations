@@ -33,17 +33,17 @@ const LocationTab: React.FC = () => {
   const selected = selectedCitiesByProvince[activeLocationTab] || [];
 
   return (
-    <div className="flex w-full">
+    <div className="flex w-full flex-col lg:flex-row">
       <Tabs
         tabs={tabs}
         value={activeLocationTab}
         onValueChange={setActiveLocationTab}
         layout="vertical"
-        className="h-full border-r-[1px] border-[#E0E3E5]"
-        rootClassName="flex-1 w-full max-w-[170px]"
-        itemClassName="pl-0 py-2"
+        className="h-full lg:border-r-[1px] lg:border-[#E0E3E5] flex-row lg:flex-col flex-wrap lg:flex-nowrap"
+        rootClassName="flex-1 w-full lg:max-w-[170px] pb-6 lg:pb-0 border-b-[1px] lg:border-b-0 border-dark-200"
+        itemClassName="w-auto p-0 lg:py-3 lg:px-5 lg:pl-0 lg:py-2 border-r-0 pr-[28px] py-2"
       />
-      <div className="flex-1 grid grid-cols-2 px-4 gap-x-4 gap-y-3 content-start">
+      <div className="flex-1 grid grid-cols-2 pt-6 lg:pt-0 lg:px-4 gap-x-4 gap-y-3 content-start">
         {cities.map((city) => (
           <Checkbox
             key={city}
