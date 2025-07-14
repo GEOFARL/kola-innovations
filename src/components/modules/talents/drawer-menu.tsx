@@ -2,13 +2,14 @@
 
 import MobileDrawer from '@/components/ui/mobile-drawer';
 import { useSidebar } from '@/lib/stores/sidebar';
+import { normalizePathname } from '@/lib/utils/normalize-pathname';
+import { usePathname } from 'next/navigation';
 import ProfileAnalytics from '../profile/analytics';
+import AccountSidebar from '../settings/account-sidebar';
 import MobileAnalyticsComponent from './search/mobile-analytics';
 import MobileFiltersComponent from './search/mobile-filters';
 import TalentsSidebar from './sidebar';
 import SimilarTalents from './similar-talents';
-import { usePathname } from 'next/navigation';
-import { normalizePathname } from '@/lib/utils/normalize-pathname';
 
 const TalentsDrawerMenu: React.FC = () => {
   const { state, close, open } = useSidebar();
@@ -34,6 +35,7 @@ const TalentsDrawerMenu: React.FC = () => {
     if (state === 'analytics') return <MobileAnalyticsComponent.Content />;
     if (state === 'profile-analytics') return <ProfileAnalytics />;
     if (state === 'similar-talents') return <SimilarTalents />;
+    if (state === 'settings') return <AccountSidebar />;
     return null;
   };
 

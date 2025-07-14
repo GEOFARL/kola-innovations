@@ -1,9 +1,10 @@
 'use client';
 
-import Card from '@/components/ui/card';
 import Button from '@/components/ui/button/button';
-import { FormProvider, UseFormReturn } from 'react-hook-form';
 import { PropsWithChildren } from 'react';
+import { FormProvider, UseFormReturn } from 'react-hook-form';
+import CommonLayout from '../../profile/settings/common-layout';
+import { cn } from '@/lib/cn';
 
 type Props = {
   title: string;
@@ -22,27 +23,28 @@ const SettingsFormSection: React.FC<PropsWithChildren<Props>> = ({
   alignButtonEnd = true,
 }) => {
   return (
-    <div className="space-y-6">
-      <h4 className="body-1 text-dark-900 text-center">{title}</h4>
-      <Card>
-        <FormProvider {...methods}>
-          <form
-            onSubmit={methods.handleSubmit(onSubmit)}
-            className="flex flex-col gap-6"
+    <CommonLayout title={title} className="lg:grid-cols-1">
+      <FormProvider {...methods}>
+        <form
+          onSubmit={methods.handleSubmit(onSubmit)}
+          className="flex flex-col gap-6"
+        >
+          {children}
+          <Button
+            size="sm"
+            responsiveSize={{
+              base: 'md',
+              lg: 'sm',
+            }}
+            color="black"
+            type="submit"
+            className={cn('w-full lg:w-auto', alignButtonEnd && 'self-end')}
           >
-            {children}
-            <Button
-              size="sm"
-              color="black"
-              type="submit"
-              className={alignButtonEnd ? 'self-end' : ''}
-            >
-              {submitLabel}
-            </Button>
-          </form>
-        </FormProvider>
-      </Card>
-    </div>
+            {submitLabel}
+          </Button>
+        </form>
+      </FormProvider>
+    </CommonLayout>
   );
 };
 

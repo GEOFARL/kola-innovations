@@ -6,6 +6,7 @@ type OpenState =
   | 'profile-analytics'
   | 'sidebar'
   | 'similar-talents'
+  | 'settings'
   | null;
 
 type SidebarState = {

@@ -7,9 +7,16 @@ import MoreButton from '../talents/search/more-button';
 type Props = {
   title: string;
   actionElement?: React.ReactNode;
+  moreButton?: React.ReactNode;
+  withoutBackButton?: boolean;
 };
 
-const ProfileHeader: React.FC<Props> = ({ title, actionElement }) => {
+const ProfileHeader: React.FC<Props> = ({
+  title,
+  actionElement,
+  moreButton,
+  withoutBackButton,
+}) => {
   return (
     <SubHeader
       title={
@@ -18,7 +25,8 @@ const ProfileHeader: React.FC<Props> = ({ title, actionElement }) => {
         </p>
       }
       rightContent={actionElement}
-      moreButton={<ProfileMoreButton />}
+      moreButton={moreButton ?? <ProfileMoreButton />}
+      withoutBackButton={withoutBackButton}
     />
   );
 };
