@@ -1,7 +1,8 @@
 'use client';
 
-import ArrowLeft from '@/assets/icons/arrow-left.svg';
-import { useRouter } from 'next/navigation';
+import { useSidebar } from '@/lib/stores/sidebar';
+import SubHeader from '../shared/subheader';
+import MoreButton from '../talents/search/more-button';
 
 type Props = {
   title: string;
@@ -9,18 +10,22 @@ type Props = {
 };
 
 const ProfileHeader: React.FC<Props> = ({ title, actionElement }) => {
-  const router = useRouter();
-
   return (
-    <div className="flex justify-between items-center">
-      <div className="flex gap-4 items-center" onClick={() => router.back()}>
-        <ArrowLeft />
-        <p className="h6 text-dark-900">{title}</p>
-      </div>
-
-      {actionElement}
-    </div>
+    <SubHeader
+      title={
+        <p className="h6 text-dark-900 font-[500]! sm:font-semibold!">
+          {title}
+        </p>
+      }
+      rightContent={actionElement}
+      moreButton={<ProfileMoreButton />}
+    />
   );
+};
+
+const ProfileMoreButton: React.FC = () => {
+  const { open } = useSidebar();
+  return <MoreButton onClick={() => open('profile-analytics')} />;
 };
 
 export default ProfileHeader;

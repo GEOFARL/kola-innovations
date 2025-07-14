@@ -1,13 +1,13 @@
 'use client';
 
 import FilterIcon from '@/assets/icons/filter.svg';
-import { useProfessionalsSidebar } from '@/lib/stores/professionals/sidebar';
-import TalentFilters from '../filters';
-import { HTMLAttributes } from 'react';
 import { cn } from '@/lib/cn';
+import { useSidebar } from '@/lib/stores/sidebar';
+import { HTMLAttributes } from 'react';
+import TalentFilters from '../filters';
 
 const MobileFilters: React.FC = () => {
-  const { open } = useProfessionalsSidebar();
+  const { open } = useSidebar();
 
   return (
     <MobileButton onClick={() => open('filters')}>
@@ -19,9 +19,11 @@ const MobileFilters: React.FC = () => {
   );
 };
 
-export const MobileButton: React.FC<
-  { onClick: () => void } & HTMLAttributes<HTMLDivElement>
-> = ({ onClick, children, className }) => {
+export const MobileButton: React.FC<HTMLAttributes<HTMLButtonElement>> = ({
+  onClick,
+  children,
+  className,
+}) => {
   return (
     <button
       onClick={onClick}

@@ -15,12 +15,12 @@ import ResourcesIcon from '@/assets/icons/talents/resources.svg';
 import SettingsIcon from '@/assets/icons/talents/settings.svg';
 import TalentsIcon from '@/assets/icons/talents/talents.svg';
 import SidebarItem from '../shared/sidebar-item';
-import { useProfessionalsSidebar } from '@/lib/stores/professionals/sidebar';
+import { useSidebar } from '@/lib/stores/sidebar';
 
 const TalentsSidebar: React.FC = () => {
   const t = useTranslations('talents.sidebar');
 
-  const { close } = useProfessionalsSidebar();
+  const { close } = useSidebar();
   const commonProps = { onClick: close };
 
   return (

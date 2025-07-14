@@ -1,18 +1,20 @@
 'use client';
 
 import MobileDrawer from '@/components/ui/mobile-drawer';
-import TalentsSidebar from './sidebar';
-import { useProfessionalsSidebar } from '@/lib/stores/professionals/sidebar';
-import MobileFiltersComponent from './search/mobile-filters';
+import { useSidebar } from '@/lib/stores/sidebar';
+import ProfileAnalytics from '../profile/analytics';
 import MobileAnalyticsComponent from './search/mobile-analytics';
+import MobileFiltersComponent from './search/mobile-filters';
+import TalentsSidebar from './sidebar';
 import SimilarTalents from './similar-talents';
 
 const TalentsDrawerMenu: React.FC = () => {
-  const { state, close, open } = useProfessionalsSidebar();
+  const { state, close, open } = useSidebar();
 
   const renderNavTitle = () => {
     if (state === 'filters') return 'Filters';
-    if (state === 'analytics') return 'Analytics';
+    if (state === 'analytics' || state === 'profile-analytics')
+      return 'Analytics';
     if (state === 'similar-talents') return 'Similar Talents';
     return null;
   };
@@ -21,6 +23,7 @@ const TalentsDrawerMenu: React.FC = () => {
     if (state === 'sidebar') return <TalentsSidebar />;
     if (state === 'filters') return <MobileFiltersComponent.Content />;
     if (state === 'analytics') return <MobileAnalyticsComponent.Content />;
+    if (state === 'profile-analytics') return <ProfileAnalytics />;
     if (state === 'similar-talents') return <SimilarTalents />;
     return null;
   };

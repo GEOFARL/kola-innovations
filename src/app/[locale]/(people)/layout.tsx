@@ -1,12 +1,11 @@
 'use client';
 
 import AccountSidebar from '@/components/modules/settings/account-sidebar';
-import Header from '@/components/modules/shared/header/header';
+import CommonLayout from '@/components/modules/shared/layouts/common-layout';
 import Analytics from '@/components/modules/talents/analytics';
 import TalentsFilters from '@/components/modules/talents/filters';
 import TalentsSidebar from '@/components/modules/talents/sidebar';
 import SimilarTalents from '@/components/modules/talents/similar-talents';
-import MaxWidthWrapper from '@/components/utils/max-width-wrapper';
 import { APP_ROUTES } from '@/lib/constants/routing/routes';
 import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
@@ -61,22 +60,12 @@ const LayoutProfessionals: React.FC<PropsWithChildren> = ({ children }) => {
   };
 
   return (
-    <>
-      <Header />
-      <MaxWidthWrapper className="grid lg:grid-cols-[220px_1fr_342px] h-[calc(100vh-53px)] lg:h-[calc(100vh-88px)] px-0 sm:px-0 lg:px-4 xl:px-8">
-        <aside className="sticky hidden lg:block top-0 h-full overflow-y-auto border-r border-dark-100 bg-white">
-          <TalentsSidebar />
-        </aside>
-
-        <section className="overflow-y-auto px-3 lg:p-6 bg-[#FAFAFA]">
-          {children}
-        </section>
-
-        <aside className="sticky hidden lg:block top-0 h-full overflow-y-auto border-l border-dark-100 bg-white">
-          {rightSidebarContentMap[routeType]}
-        </aside>
-      </MaxWidthWrapper>
-    </>
+    <CommonLayout
+      leftAsideContent={<TalentsSidebar />}
+      rightAsideContent={rightSidebarContentMap[routeType]}
+    >
+      {children}
+    </CommonLayout>
   );
 };
 

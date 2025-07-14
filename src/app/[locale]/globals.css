@@ -75,7 +75,7 @@
     @apply font-semibold text-[14px] lg:text-[16px] leading-[150%];
   }
   .body-2-md {
-    @apply font-medium text-[16px] leading-[150%];
+    @apply font-medium text-[14px] lg:text-[16px] leading-[150%];
   }
   .body-2-rg {
     @apply font-normal text-[13px] lg:text-[16px] leading-[150%];

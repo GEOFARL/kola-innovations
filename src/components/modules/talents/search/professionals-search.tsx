@@ -1,7 +1,7 @@
 'use client';
 
 import RightArrow from '@/assets/icons/right-arrow-circle.svg';
-import { useProfessionalsSidebar } from '@/lib/stores/professionals/sidebar';
+import { useSidebar } from '@/lib/stores/sidebar';
 import { ChevronDown } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import SearchBar from '../../shared/header/search-bar';
@@ -18,7 +18,7 @@ const ProfessionalsSearch: React.FC<Props> = ({
   buttonType: type = 'filters',
 }) => {
   const t = useTranslations('talents.search');
-  const { open } = useProfessionalsSidebar();
+  const { open } = useSidebar();
 
   return (
     <div className="flex items-center gap-2">

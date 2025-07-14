@@ -4,7 +4,7 @@ import { DEFAULT_USER } from '@/lib/constants/profile';
 import { useTranslations } from 'next-intl';
 import { useMemo } from 'react';
 
-const ProfileInfo: React.FC = () => {
+const ProfileDetails: React.FC = () => {
   const t = useTranslations('profile.info');
   const tSkills = useTranslations('common.skills');
   const allSkills = useMemo(
@@ -17,8 +17,8 @@ const ProfileInfo: React.FC = () => {
   );
 
   return (
-    <Card className="space-y-6">
-      <div className="grid grid-cols-2 gap-6">
+    <Card className="space-y-4 lg:space-y-6 lg:p-6 px-3 py-6 rounded-[6px] lg:rounded-[16px]">
+      <div className="grid xl:grid-cols-2 gap-3 lg:gap-6">
         <InfoItem title={t('fullName')} value={DEFAULT_USER.fullName} />
         <InfoItem title={t('jobTitle')} value={DEFAULT_USER.job} />
         <InfoItem title={t('email')} value={DEFAULT_USER.email} />
@@ -48,9 +48,11 @@ const InfoItem: React.FC<{ title: string; value: string }> = ({
   return (
     <div className="space-y-2">
       <p className="body-2-md text-dark-600">{title}</p>
-      <p className="text-dark-900 body-2">{value}</p>
+      <p className="text-dark-900 body-2 font-bold! lg:font-semibold!">
+        {value}
+      </p>
     </div>
   );
 };
 
-export default ProfileInfo;
+export default ProfileDetails;

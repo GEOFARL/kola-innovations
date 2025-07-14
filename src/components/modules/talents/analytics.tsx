@@ -17,7 +17,7 @@ const Analytics: React.FC<Props> = ({ title, items }) => {
         {title}
       </h2>
 
-      <div className="space-y-6">
+      <div className="space-y-4 lg:space-y-6">
         {items.map((item, idx) => (
           <div key={idx} className="flex justify-between items-center">
             <span className="text-sm font-medium text-dark-900">
