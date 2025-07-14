@@ -69,7 +69,7 @@
     @apply font-medium text-[18px] leading-[140%];
   }
   .body-1-rg {
-    @apply font-normal text-[18px] leading-[140%];
+    @apply font-normal text-[14px] lg:text-[18px] leading-[140%];
   }
   .body-2 {
     @apply font-semibold text-[14px] lg:text-[16px] leading-[150%];

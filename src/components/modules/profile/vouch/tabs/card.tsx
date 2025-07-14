@@ -12,7 +12,7 @@ type Props = {
 const VouchCard: React.FC<Props> = ({ data, invite }) => {
   const { image, name, relationship } = data;
   return (
-    <Card className="p-4 relative">
+    <Card className="p-4 relative flex flex-col">
       <Image
         src={image}
         alt={name}
@@ -37,11 +37,20 @@ const VouchCard: React.FC<Props> = ({ data, invite }) => {
       </div>
 
       {invite && (
-        <div className="mt-4 flex items-center gap-[10px]">
-          <Button size={'xs'} className="flex-1" color="black" variant="link">
+        <div className="mt-4 flex-1 flex flex-col-reverse lg:flex-row items-end gap-[10px]">
+          <Button
+            responsiveSize={{ base: 'sm', lg: 'xs' }}
+            className="lg:flex-1 w-full"
+            color="black"
+            variant="link"
+          >
             Reject
           </Button>
-          <Button size={'xs'} className="flex-1" variant="secondary">
+          <Button
+            responsiveSize={{ base: 'sm', lg: 'xs' }}
+            className="lg:flex-1 w-full"
+            variant="secondary"
+          >
             Accept
           </Button>
         </div>

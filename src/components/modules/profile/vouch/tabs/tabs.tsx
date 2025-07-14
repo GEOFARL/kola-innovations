@@ -19,7 +19,12 @@ const VouchTabs: React.FC = () => {
 
   return (
     <>
-      <Tabs tabs={tabs} value={selectedTab} onValueChange={setSelectedTab} />
+      <Tabs
+        tabs={tabs}
+        value={selectedTab}
+        onValueChange={setSelectedTab}
+        itemClassName="py-2 px-1 sm:py-0 sm:pb-3 sm:px-4"
+      />
       {selectedTab === 'received' && <ReceivedTab />}
       {selectedTab === 'requested' && <RequestedTab />}
       {selectedTab === 'my' && <MyTab />}
