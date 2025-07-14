@@ -13,6 +13,7 @@ import {
 } from '@/lib/constants/onboarding/select-options';
 import { useTranslations } from 'next-intl';
 import DisabilityField from '../../shared/fields/disability-field';
+import CommonLayout from './common-layout';
 
 const PersonalInformation: React.FC = () => {
   const t = useTranslations('profile');
@@ -20,75 +21,71 @@ const PersonalInformation: React.FC = () => {
   const tOption = (key: string) => t(key);
 
   return (
-    <section className="space-y-6">
-      <h2 className="body-1 text-center text-dark-900">{t('info.title')}</h2>
+    <CommonLayout title={t('info.title')}>
+      <FormField name="firstName" label={tField('fullName')} required />
+      <FormField name="lastName" label={tField('fullName')} required />
+      <FormField name="email" label={tField('email')} type="email" required />
+      <FormField name="phone" label={tField('phone')} type="tel" required />
+      <FormField name="jobTitle" label={tField('jobTitle')} required />
+      <FormField name="username" label="Username" required />
 
-      <Card className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-6">
-        <FormField name="firstName" label={tField('fullName')} required />
-        <FormField name="lastName" label={tField('fullName')} required />
-        <FormField name="email" label={tField('email')} type="email" required />
-        <FormField name="phone" label={tField('phone')} type="tel" required />
-        <FormField name="jobTitle" label={tField('jobTitle')} required />
-        <FormField name="username" label="Username" required />
+      <SelectField
+        name="location.province"
+        label={tField('location')}
+        options={provinces.map(({ value, labelKey }) => ({
+          value,
+          label: tOption(labelKey),
+        }))}
+        required
+      />
 
-        <SelectField
-          name="location.province"
-          label={tField('location')}
-          options={provinces.map(({ value, labelKey }) => ({
-            value,
-            label: tOption(labelKey),
-          }))}
-          required
+      <SelectField
+        name="location.city"
+        label={tField('city')}
+        options={cities.map(({ value, labelKey }) => ({
+          value,
+          label: tOption(labelKey),
+        }))}
+        required
+      />
+
+      <div className="lg:col-span-2">
+        <FormField
+          name="brief"
+          label={tField('brief')}
+          placeholder="Tell us about yourself..."
+          multiline
         />
+      </div>
 
-        <SelectField
-          name="location.city"
-          label={tField('city')}
-          options={cities.map(({ value, labelKey }) => ({
-            value,
-            label: tOption(labelKey),
-          }))}
-          required
+      <div className="lg:col-span-2">
+        <MultiSelectField
+          name="languages"
+          label={tField('languagesSpoken')}
+          options={languages}
         />
+      </div>
 
-        <div className="col-span-2">
-          <FormField
-            name="brief"
-            label={tField('brief')}
-            placeholder="Tell us about yourself..."
-            multiline
-          />
-        </div>
+      <SelectField
+        name="ethnicity"
+        label={tField('ethnicity')}
+        options={ethnicities.map(({ value, labelKey }) => ({
+          value,
+          label: tOption(labelKey),
+        }))}
+      />
 
-        <div className="col-span-2">
-          <MultiSelectField
-            name="languages"
-            label={tField('languagesSpoken')}
-            options={languages}
-          />
-        </div>
+      <SelectField
+        name="orientation"
+        label={tField('sexualOrientation')}
+        options={orientations.map(({ value, labelKey }) => ({
+          value,
+          label: tOption(labelKey),
+        }))}
+      />
 
-        <SelectField
-          name="ethnicity"
-          label={tField('ethnicity')}
-          options={ethnicities.map(({ value, labelKey }) => ({
-            value,
-            label: tOption(labelKey),
-          }))}
-        />
-
-        <SelectField
-          name="orientation"
-          label={tField('sexualOrientation')}
-          options={orientations.map(({ value, labelKey }) => ({
-            value,
-            label: tOption(labelKey),
-          }))}
-        />
-
-        <DisabilityField />
-      </Card>
-    </section>
+      <DisabilityField />
+    </CommonLayout>
   );
 };
 

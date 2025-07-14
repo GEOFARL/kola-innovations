@@ -48,21 +48,22 @@ const ProfileSettingsScreen: React.FC = () => {
       <ProfileHeader title={t('header.settings')} />
 
       <FormProvider {...methods}>
-        <form onSubmit={handleSave} className="space-y-6">
+        <form onSubmit={handleSave} className="space-y-4 lg:space-y-6">
           <PersonalInformation />
           <Skills />
           <Socials />
 
-          <div className="absolute bottom-0 left-0 w-full bg-white py-4 px-8 shadow-[0_4px_4px_rgba(0,0,0,1)] z-50 flex items-center gap-4 justify-end">
+          <div className="absolute bottom-0 left-0 w-full bg-white py-4 px-[10px] lg:px-8 shadow-[0_4px_4px_rgba(0,0,0,1)] z-50 flex items-center gap-4 justify-end">
             <Button
               onClick={handleCancel}
               type="button"
               variant="secondary"
               color="black"
+              className="flex-1 lg:flex-none"
             >
               Cancel
             </Button>
-            <Button type="submit" color="black">
+            <Button type="submit" color="black" className="flex-1 lg:flex-none">
               Save
             </Button>
           </div>
