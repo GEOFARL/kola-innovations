@@ -100,7 +100,7 @@ const TalentFilters: React.FC = () => {
             responsiveSize={{ 'base': 'md', lg: 'sm' }}
             color="black"
             type="button"
-            className="flex-1 lg:flex-auto"
+            className="flex-1 lg:flex-none"
             onClick={() => reset()}
           >
             {t('clear')}
@@ -108,7 +108,7 @@ const TalentFilters: React.FC = () => {
           <Button
             responsiveSize={{ 'base': 'md', lg: 'sm' }}
             type="submit"
-            className="flex-1 lg:flex-auto"
+            className="flex-1 lg:flex-none"
           >
             {t('apply')}
           </Button>

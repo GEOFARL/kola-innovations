@@ -52,9 +52,9 @@ const ProfessionalCard: React.FC<ProfessionalCardProps> = ({ pro }) => {
         >
           {t('connect')}
         </Button>
-        <button className="cursor-pointer hover:bg-dark-100 lg:hidden px-2 py-[7px] border-[1px] border-dark-200 rounded-[34px] flex items-center gap-1">
+        <button className="cursor-pointer hover:bg-dark-100 lg:hidden px-2 py-[7px] border-[1px] border-dark-200 rounded-[34px] flex items-center gap-1 [&_rect]:fill-primary text-dark-white">
           <ConnectIcon />
-          <PlusIcon />
+          <PlusIcon className="text-primary" />
         </button>
       </div>
       <div className="mt-4">
