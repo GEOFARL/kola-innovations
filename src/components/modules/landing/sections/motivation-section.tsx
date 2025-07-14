@@ -6,7 +6,7 @@ import Button from '@/components/ui/button/button';
 const MotivationSection: React.FC = () => {
   const t = useTranslations('landing.motivation');
   return (
-    <MaxWidthWrapper className="pb-8 sm:pb-40 overflow-hidden">
+    <MaxWidthWrapper className="pb-8 sm:pb-40 overflow-hidden lg:overflow-visible">
       <EngagingBanner
         heading={t('heading')}
         subheading={t('subHeading')}
