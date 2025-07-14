@@ -21,9 +21,9 @@ const AllTalentsTab: React.FC = () => {
 
   return (
     <div>
-      <ProfessionalsSearch />
-      <FilterTriggerBar className="mt-6" />
-      <PersonGrid people={people} />
+      <ProfessionalsSearch buttonType="more" />
+      <FilterTriggerBar className="mt-4 lg:mt-6" />
+      <PersonGrid className="mt-4" people={people} />
     </div>
   );
 };

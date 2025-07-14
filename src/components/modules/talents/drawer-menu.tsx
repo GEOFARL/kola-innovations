@@ -5,6 +5,7 @@ import TalentsSidebar from './sidebar';
 import { useProfessionalsSidebar } from '@/lib/stores/professionals/sidebar';
 import MobileFiltersComponent from './search/mobile-filters';
 import MobileAnalyticsComponent from './search/mobile-analytics';
+import SimilarTalents from './similar-talents';
 
 const TalentsDrawerMenu: React.FC = () => {
   const { state, close, open } = useProfessionalsSidebar();
@@ -12,6 +13,7 @@ const TalentsDrawerMenu: React.FC = () => {
   const renderNavTitle = () => {
     if (state === 'filters') return 'Filters';
     if (state === 'analytics') return 'Analytics';
+    if (state === 'similar-talents') return 'Similar Talents';
     return null;
   };
 
@@ -19,6 +21,7 @@ const TalentsDrawerMenu: React.FC = () => {
     if (state === 'sidebar') return <TalentsSidebar />;
     if (state === 'filters') return <MobileFiltersComponent.Content />;
     if (state === 'analytics') return <MobileAnalyticsComponent.Content />;
+    if (state === 'similar-talents') return <SimilarTalents />;
     return null;
   };
 

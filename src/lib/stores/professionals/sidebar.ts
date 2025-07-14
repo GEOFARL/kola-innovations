@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-type OpenState = 'filters' | 'analytics' | 'sidebar' | null;
+type OpenState = 'filters' | 'analytics' | 'sidebar' | 'similar-talents' | null;
 
 type ProfessionalsSidebarState = {
   state: OpenState;

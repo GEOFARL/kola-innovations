@@ -17,8 +17,14 @@ const TalentsScreen: React.FC = () => {
 
   return (
     <div>
-      <Tabs tabs={tabs} value={selected} onValueChange={setSelected} />
-      <div className="mt-6">
+      <Tabs
+        itemClassName="flex-1 lg:flex-auto py-2 text-[14px]! sm:text-[14px]! leading-[140%] font-semibold lg:text-[20px]! lg:leading-[140%] tracking-[-0.3px]"
+        className="gap-2 lg:gap-4"
+        tabs={tabs}
+        value={selected}
+        onValueChange={setSelected}
+      />
+      <div className="mt-[10px] lg:mt-6">
         {selected === 'all' ? <AllTalentsTab /> : <SavedTalentsTab />}
       </div>
     </div>
