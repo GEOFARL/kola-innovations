@@ -7,9 +7,13 @@ import MobileAnalyticsComponent from './search/mobile-analytics';
 import MobileFiltersComponent from './search/mobile-filters';
 import TalentsSidebar from './sidebar';
 import SimilarTalents from './similar-talents';
+import { usePathname } from 'next/navigation';
+import { normalizePathname } from '@/lib/utils/normalize-pathname';
 
 const TalentsDrawerMenu: React.FC = () => {
   const { state, close, open } = useSidebar();
+  const pathname = usePathname();
+  const normalizedPath = normalizePathname(pathname);
 
   const renderNavTitle = () => {
     if (state === 'filters') return 'Filters';
@@ -20,7 +24,12 @@ const TalentsDrawerMenu: React.FC = () => {
   };
 
   const renderContent = () => {
-    if (state === 'sidebar') return <TalentsSidebar />;
+    if (state === 'sidebar')
+      return (
+        <TalentsSidebar
+          withProfileContent={normalizedPath.includes('profile')}
+        />
+      );
     if (state === 'filters') return <MobileFiltersComponent.Content />;
     if (state === 'analytics') return <MobileAnalyticsComponent.Content />;
     if (state === 'profile-analytics') return <ProfileAnalytics />;

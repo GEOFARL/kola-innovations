@@ -16,8 +16,13 @@ import SettingsIcon from '@/assets/icons/talents/settings.svg';
 import TalentsIcon from '@/assets/icons/talents/talents.svg';
 import SidebarItem from '../shared/sidebar-item';
 import { useSidebar } from '@/lib/stores/sidebar';
+import ProfileSidebarContent from '../profile/profile-sidebar-content';
 
-const TalentsSidebar: React.FC = () => {
+type Props = {
+  withProfileContent?: boolean;
+};
+
+const TalentsSidebar: React.FC<Props> = ({ withProfileContent = false }) => {
   const t = useTranslations('talents.sidebar');
 
   const { close } = useSidebar();
@@ -67,6 +72,8 @@ const TalentsSidebar: React.FC = () => {
             label={t('network')}
           />
         </div>
+
+        {withProfileContent && <ProfileSidebarContent />}
       </div>
 
       <div className="lg:border-t border-dark-100 py-2 lg:py-6">
