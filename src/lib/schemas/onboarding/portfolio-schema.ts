@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { z } from 'zod';
 
 export const portfolioSchema = z.object({
   projects: z
@@ -23,7 +23,12 @@ export const portfolioSchema = z.object({
           'youtube',
           'dev',
         ]),
-        url: z.string().url(),
+        url: z
+          .string()
+          .optional()
+          .refine((val) => !val || /^https?:\/\/.+\..+/.test(val), {
+            message: 'Invalid url',
+          }),
       }),
     )
     .optional(),

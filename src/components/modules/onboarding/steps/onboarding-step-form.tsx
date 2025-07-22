@@ -7,17 +7,24 @@ import {
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useTranslations } from 'next-intl';
 import { useEffect } from 'react';
-import { FormProvider, useForm, UseFormReturn } from 'react-hook-form';
+import {
+  DefaultValues,
+  FormProvider,
+  useForm,
+  UseFormReturn,
+} from 'react-hook-form';
 import { ZodType } from 'zod';
 
 type Props<T extends StepKey> = {
   stepKey: T;
+  defaultValues?: DefaultValues<OnboardingDataMap[T]>;
   children: (methods: UseFormReturn<OnboardingDataMap[T]>) => React.ReactNode;
 };
 
 const OnboardingStepForm = <T extends StepKey>({
   stepKey,
   children,
+  defaultValues,
 }: Props<T>) => {
   const namespace = `onboarding.steps.${stepKey}` as const;
   const t = useTranslations(namespace as Parameters<typeof useTranslations>[0]);
@@ -27,6 +34,7 @@ const OnboardingStepForm = <T extends StepKey>({
   const schema = onboardingSchemas[stepKey] as ZodType<OnboardingDataMap[T]>;
   const methods = useForm<OnboardingDataMap[T]>({
     resolver: zodResolver(schema),
+    defaultValues,
   });
 
   useEffect(() => {

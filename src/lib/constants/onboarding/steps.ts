@@ -4,7 +4,7 @@ import FilesIcon from '@/assets/icons/files.svg';
 import { StepItem } from '@/lib/types/onboarding/step';
 
 export const steps: StepItem[] = [
-  { key: 'portfolio', icon: FilesIcon },
   { key: 'personalInfo', icon: DetailsIcon },
   { key: 'skills', icon: SkillsIcon },
+  { key: 'portfolio', icon: FilesIcon },
 ];
