@@ -21,12 +21,13 @@ type Props<T extends StepKey> = {
   children: (methods: UseFormReturn<OnboardingDataMap[T]>) => React.ReactNode;
 };
 
+const onboardingStepKeys = Object.keys(onboardingSchemas) as StepKey[];
 const OnboardingStepForm = <T extends StepKey>({
   stepKey,
   children,
   defaultValues,
 }: Props<T>) => {
-  const namespace = `onboarding.steps.${stepKey}` as const;
+  const namespace = `onboarding.${stepKey}` as const;
   const t = useTranslations(namespace as Parameters<typeof useTranslations>[0]);
   const { setStepData, setFormSubmitTrigger, next } = useOnboardingStore();
 
@@ -37,11 +38,14 @@ const OnboardingStepForm = <T extends StepKey>({
     defaultValues,
   });
 
+  const isLastStep =
+    onboardingStepKeys.indexOf(stepKey) === onboardingStepKeys.length - 1;
+
   useEffect(() => {
     setFormSubmitTrigger(
       methods.handleSubmit((formData) => {
         setStepData(stepKey as any, formData);
-        next();
+        if (!isLastStep) next();
       }),
     );
     return () => setFormSubmitTrigger(null);

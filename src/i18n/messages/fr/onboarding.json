@@ -77,5 +77,14 @@
       "asexual": "Asexuel",
       "other": "Autre"
     }
+  },
+  "skills": {
+    "title": "Parlez-nous de vos compétences et expertises",
+    "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque. Orci sit semper ullamcorper eleifend faucibus et aliquam integer euismod."
+  },
+  "portfolio": {
+    "title": "Mettez en valeur votre travail",
+    "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque. Orci sit semper ullamcorper eleifend faucibus et aliquam integer euismod.",
+    "addProject": "Ajouter un projet"
   }
 }
