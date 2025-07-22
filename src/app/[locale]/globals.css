@@ -57,7 +57,7 @@
     @apply font-bold sm:font-semibold text-[14px] sm:text-[20px] leading-[140%] tracking-[-0.3px];
   }
   .h6-md {
-    @apply font-semibold sm:font-medium text-[14px] sm:text-[20px] leading-[150%] sm:leading-[140%] tracking-[-0.3px];
+    @apply font-semibold lg:font-medium text-[14px] lg:text-[20px] leading-[150%] lg:leading-[140%] tracking-[-0.3px];
   }
   .h6-rg {
     @apply font-[500] sm:font-normal text-[14px] sm:text-[20px] leading-[150%] sm:leading-[140%] tracking-[-0.3px];

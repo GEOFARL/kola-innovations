@@ -13,6 +13,10 @@
     "skills": {
       "title": "Fähigkeiten & Expertise",
       "description": "Teile uns deine Fähigkeiten und beruflichen Schwerpunkte mit."
+    },
+    "portfolio": {
+      "title": "Portfolio",
+      "description": "Zwischenzeitlich wird der Lebenslauf durch abgestimmte Maßnahmen mit dem Wachstum abgestimmt."
     }
   },
   "personalInfo": {
