@@ -6,7 +6,7 @@ const dateSchema = z.object({
   year: z.string().min(1, 'Year required'),
 });
 
-const experienceItemSchema = z.object({
+export const experienceItemSchema = z.object({
   jobTitle: z.string().min(1, 'Job title is required'),
   companyName: z.string().min(1, 'Company name is required'),
   companyWebsite: z

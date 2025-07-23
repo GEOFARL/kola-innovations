@@ -86,6 +86,10 @@
     "title": "Erzählen Sie uns von Ihren Fähigkeiten & Ihrer Expertise",
     "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque. Orci sit semper ullamcorper eleifend faucibus et aliquam integer euismod."
   },
+  "experience": {
+    "title": "Wenn Sie relevante Berufserfahrung haben, fügen Sie sie hier hinzu.",
+    "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque. Orci sit semper ullamcorper eleifend faucibus et aliquam integer euismod."
+  },
   "portfolio": {
     "title": "Präsentieren Sie Ihre Arbeit",
     "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque. Orci sit semper ullamcorper eleifend faucibus et aliquam integer euismod.",
