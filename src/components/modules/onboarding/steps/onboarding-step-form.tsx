@@ -13,7 +13,6 @@ import {
   useForm,
   UseFormReturn,
 } from 'react-hook-form';
-import { ZodType } from 'zod';
 
 type Props<T extends StepKey> = {
   stepKey: T;
@@ -32,7 +31,7 @@ const OnboardingStepForm = <T extends StepKey>({
   const { setStepData, setFormSubmitTrigger, next } = useOnboardingStore();
 
   useOnboardingStore();
-  const schema = onboardingSchemas[stepKey] as ZodType<OnboardingDataMap[T]>;
+  const schema = onboardingSchemas[stepKey] as any;
   const methods = useForm<OnboardingDataMap[T]>({
     resolver: zodResolver(schema),
     defaultValues,

@@ -17,6 +17,10 @@
     "portfolio": {
       "title": "Portfolio",
       "description": "Entre-temps, le portfolio est mis en valeur par des actions coordonnées favorisant le développement."
+    },
+    "experience": {
+      "title": "Expérience",
+      "description": "Interdum donec laoreet malesuada a gravida vivamus tempor."
     }
   },
   "personalInfo": {

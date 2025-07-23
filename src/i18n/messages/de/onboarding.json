@@ -17,6 +17,10 @@
     "portfolio": {
       "title": "Portfolio",
       "description": "Zwischenzeitlich wird der Lebenslauf durch abgestimmte Maßnahmen mit dem Wachstum abgestimmt."
+    },
+    "experience": {
+      "title": "Erfahrung",
+      "description": "Interdum donec laoreet malesuada a gravida vivamus tempor."
     }
   },
   "personalInfo": {

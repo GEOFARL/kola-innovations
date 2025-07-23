@@ -17,6 +17,10 @@
     "portfolio": {
       "title": "Portfolio",
       "description": "Interdum donec laoreet malesuada a gravida vivamus tempor."
+    },
+    "experience": {
+      "title": "Experience",
+      "description": "Interdum donec laoreet malesuada a gravida vivamus tempor."
     }
   },
   "personalInfo": {
