@@ -19,27 +19,57 @@ export const experienceItemSchema = z
       .or(z.literal(''))
       .optional(),
     startDate: dateSchema,
-    endDate: dateSchema.optional(),
+    endDate: z
+      .object({
+        month: z.string(),
+        year: z.string(),
+      })
+      .optional(),
     currentlyWorking: z.boolean(),
     location: basePersonalInfoSchema.shape.location,
     workType: z.enum(['remote', 'hybrid', 'in-office']),
     primaryRole: z.string().optional(),
     description: z.string().optional(),
   })
-  .refine(
-    (data) => {
-      if (data.currentlyWorking || !data.endDate) return true;
-      const start = new Date(
-        `${data.startDate.year}-${data.startDate.month}-01`,
-      );
-      const end = new Date(`${data.endDate.year}-${data.endDate.month}-01`);
-      return end >= start;
-    },
-    {
-      message: 'End date must be after start date',
-      path: ['endDate', 'year'],
-    },
-  );
+  .superRefine((data, ctx) => {
+    const { currentlyWorking, endDate, startDate } = data;
+
+    if (!currentlyWorking) {
+      if (!endDate?.month || !endDate?.year) {
+        ctx.addIssue({
+          path: ['endDate'],
+          code: z.ZodIssueCode.custom,
+          message: 'End date is required unless currently working',
+        });
+        return;
+      }
+
+      if (!monthRegex.test(endDate.month)) {
+        ctx.addIssue({
+          path: ['endDate', 'month'],
+          code: z.ZodIssueCode.custom,
+          message: 'Invalid month',
+        });
+      }
+      if (!yearRegex.test(endDate.year)) {
+        ctx.addIssue({
+          path: ['endDate', 'year'],
+          code: z.ZodIssueCode.custom,
+          message: 'Invalid year',
+        });
+      }
+
+      const start = new Date(`${startDate.year}-${startDate.month}-01`);
+      const end = new Date(`${endDate.year}-${endDate.month}-01`);
+      if (end < start) {
+        ctx.addIssue({
+          path: ['endDate', 'year'],
+          code: z.ZodIssueCode.custom,
+          message: 'End date must be after start date',
+        });
+      }
+    }
+  });
 
 export const jobPreferenceSchema = z.object({
   preferredRoles: z.array(z.string()).default([]),
