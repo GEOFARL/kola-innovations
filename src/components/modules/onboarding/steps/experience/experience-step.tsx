@@ -1,5 +1,6 @@
 import OnboardingStepForm from '../onboarding-step-form';
 import Experiences from './add-experience/experiences';
+import JobOpenStatus from './job-open-status';
 
 const ExperienceStep: React.FC = () => {
   return (
@@ -7,6 +8,7 @@ const ExperienceStep: React.FC = () => {
       {() => (
         <div className="space-y-10">
           <Experiences />
+          <JobOpenStatus />
         </div>
       )}
     </OnboardingStepForm>
