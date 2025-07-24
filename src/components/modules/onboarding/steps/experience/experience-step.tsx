@@ -1,6 +1,6 @@
 import OnboardingStepForm from '../onboarding-step-form';
 import Experiences from './add-experience/experiences';
-import JobOpenStatus from './job-open-status';
+import JobOpenStatus from './job-status/job-open-status';
 
 const ExperienceStep: React.FC = () => {
   return (

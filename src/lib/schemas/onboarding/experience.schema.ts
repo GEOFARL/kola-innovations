@@ -72,14 +72,14 @@ export const experienceItemSchema = z
   });
 
 export const jobPreferenceSchema = z.object({
-  preferredRoles: z.array(z.string()).default([]),
-  preferredJobTypes: z.array(z.string()).default([]),
-  location: basePersonalInfoSchema.shape.location.optional(),
-  workModes: z.array(z.enum(['remote', 'hybrid', 'in-office'])).default([]),
-  holdingOtherOffers: z.boolean().default(false),
-  preferredIndustries: z.array(z.string()).default([]),
-  ethnicity: basePersonalInfoSchema.shape.ethnicity.optional(),
-  orientation: basePersonalInfoSchema.shape.orientation.optional(),
+  preferredRoles: z.array(z.string()),
+  preferredJobTypes: z.array(z.string()),
+  workModes: z.array(z.enum(['remote', 'hybrid', 'in-office'])),
+  holdingOtherOffers: z.boolean(),
+  preferredIndustries: z.array(z.string()),
+  location: basePersonalInfoSchema.shape.location,
+  ethnicity: z.string(),
+  orientation: z.string(),
 });
 
 export const experienceSchema = z.object({

@@ -1,15 +1,19 @@
 'use client';
 
+import PlusIcon from '@/assets/icons/onboarding/plus.svg';
 import Button from '@/components/ui/button/button';
 import RadioGroupField from '@/components/ui/radio-group-field';
-import { useFormContext, useWatch } from 'react-hook-form';
 import { useTranslations } from 'next-intl';
-import PlusIcon from '@/assets/icons/onboarding/plus.svg';
+import { useState } from 'react';
+import { useFormContext, useWatch } from 'react-hook-form';
+import JobPreferenceDialog from './dialog';
 
 const JobOpenStatus: React.FC = () => {
   const t = useTranslations('onboarding.experience.jobOpenStatus');
   const { control } = useFormContext();
   const jobStatus = useWatch({ control, name: 'jobStatus' });
+
+  const [dialogOpen, setDialogOpen] = useState(false);
 
   const jobOptions = [
     {
@@ -49,28 +53,41 @@ const JobOpenStatus: React.FC = () => {
 
   const showButton = jobStatus === 'actively' || jobStatus === 'casually';
 
-  return (
-    <div className="flex flex-col gap-4">
-      <RadioGroupField
-        name="jobStatus"
-        label={t('label')}
-        options={jobOptions}
-        required
-        containerClassName="2xl:grid-cols-3 xl:grid-cols-2 grid-cols-1"
-        itemClassName="p-4 pt-[14px]"
-      />
+  const handleDialogSubmit = (values: any) => {
+    console.log('Job preference saved:', values);
+    // TODO: store values in your main form state or send to API
+  };
 
-      {showButton && (
-        <Button
-          variant="secondary"
-          size="md"
-          className="self-start flex items-center gap-3"
-        >
-          <PlusIcon />
-          {t('buttons.addJobPreference')}
-        </Button>
-      )}
-    </div>
+  return (
+    <>
+      <div className="flex flex-col gap-4">
+        <RadioGroupField
+          name="jobStatus"
+          label={t('label')}
+          options={jobOptions}
+          containerClassName="2xl:grid-cols-3 xl:grid-cols-2 grid-cols-1"
+          itemClassName="p-4 pt-[14px]"
+        />
+
+        {showButton && (
+          <Button
+            variant="secondary"
+            size="md"
+            className="self-start flex items-center gap-3"
+            onClick={() => setDialogOpen(true)}
+          >
+            <PlusIcon />
+            {t('buttons.addJobPreference')}
+          </Button>
+        )}
+      </div>
+
+      <JobPreferenceDialog
+        open={dialogOpen}
+        onClose={() => setDialogOpen(false)}
+        onSubmit={handleDialogSubmit}
+      />
+    </>
   );
 };
 

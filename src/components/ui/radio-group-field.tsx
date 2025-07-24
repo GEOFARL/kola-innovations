@@ -13,21 +13,25 @@ type Option = {
 type Props = {
   name: string;
   label?: string;
-  required?: boolean;
   options: Option[];
+  value?: string;
+  onValueChange?: (val: string) => void;
   className?: string;
   containerClassName?: string;
   itemClassName?: string;
+  variant?: 'grouped' | 'basic';
 };
 
 const RadioGroupField: React.FC<Props> = ({
   name,
   label,
-  required,
   options,
+  value,
+  onValueChange,
   className,
   containerClassName,
   itemClassName,
+  variant = 'grouped',
 }) => {
   const { control } = useFormContext();
   const {
@@ -37,28 +41,56 @@ const RadioGroupField: React.FC<Props> = ({
 
   return (
     <div className={cn(className)}>
-      {label && <label className="h5 text-dark-900 block mb-6">{label}</label>}
+      {label && (
+        <label
+          className={cn(
+            'text-dark-900 block',
+            variant === 'grouped' && 'h5 mb-6',
+            variant === 'basic' && 'text-[14px] font-semibold mb-4',
+          )}
+        >
+          {label}
+        </label>
+      )}
 
       <RadioGroup.Root
-        value={field.value}
-        onValueChange={field.onChange}
-        className={cn('grid gap-4', containerClassName)}
+        value={value ?? field.value}
+        onValueChange={onValueChange ?? field.onChange}
+        className={cn(
+          variant === 'grouped' && 'grid gap-4',
+          variant === 'basic' && 'flex gap-6',
+          containerClassName,
+        )}
       >
         {options.map((opt) => (
           <RadioGroup.Item
             key={opt.value}
             value={opt.value}
             className={cn(
-              'relative rounded-lg border border-dark-200 p-4 cursor-pointer transition-colors duration-150 flex flex-col items-start',
+              'relative rounded-lg cursor-pointer transition-colors duration-150 flex items-start',
+              variant === 'grouped' && 'flex-col border border-dark-200 p-4',
+              variant === 'basic' && 'items-center gap-[6px]',
               itemClassName,
             )}
           >
-            <span className="absolute top-4 left-4 flex items-center justify-center w-[25px] h-[25px] rounded-full border-[1px] border-dark-300 bg-white">
+            <span
+              className={cn(
+                'flex items-center justify-center rounded-full border-[1px] border-dark-300 bg-white',
+                variant === 'grouped' &&
+                  'absolute top-4 left-4 w-[25px] h-[25px]',
+                variant === 'basic' && 'w-5 h-5',
+              )}
+            >
               <RadioGroup.Indicator>
-                <span className="w-[12.5px] h-[12.5px] rounded-full bg-primary block" />
+                <span
+                  className={cn(
+                    'rounded-full bg-primary block',
+                    variant === 'grouped' && 'w-[12.5px] h-[12.5px]',
+                    variant === 'basic' && 'w-[10px] h-[10px]',
+                  )}
+                />
               </RadioGroup.Indicator>
             </span>
-
             {opt.component}
           </RadioGroup.Item>
         ))}

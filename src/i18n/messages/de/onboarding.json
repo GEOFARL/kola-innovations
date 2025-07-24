@@ -141,6 +141,42 @@
       "buttons": {
         "addJobPreference": "Jobpräferenz hinzufügen"
       }
+    },
+    "jobPreference": {
+      "title": "Jobpräferenzen",
+      "fields": {
+        "preferredRoles": "Bevorzugte Rollen",
+        "preferredJobTypes": "Bevorzugte Beschäftigungsarten",
+        "remote": "Remote",
+        "hybrid": "Hybrid",
+        "inOffice": "Im Büro",
+        "holdingOtherOffers": "Halten Sie andere Angebote?",
+        "yes": "Ja",
+        "no": "Nein",
+        "preferredIndustries": "Bevorzugte Branchen",
+        "ethnicity": "Ethnische Zugehörigkeit",
+        "orientation": "Sexuelle Orientierung"
+      },
+      "buttons": {
+        "cancel": "Abbrechen",
+        "save": "Speichern"
+      }
+    },
+    "preferredRoles": {
+      "frontendDeveloper": "Frontend-Entwickler",
+      "backendDeveloper": "Backend-Entwickler",
+      "fullstackDeveloper": "Fullstack-Entwickler",
+      "designer": "Designer",
+      "productManager": "Produktmanager",
+      "qaEngineer": "QA-Ingenieur",
+      "dataAnalyst": "Datenanalyst"
+    },
+    "preferredJobTypes": {
+      "fullTime": "Vollzeit",
+      "partTime": "Teilzeit",
+      "contract": "Vertrag",
+      "internship": "Praktikum",
+      "freelance": "Freiberuflich"
     }
   },
   "portfolio": {

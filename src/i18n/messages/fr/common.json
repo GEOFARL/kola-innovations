@@ -96,5 +96,25 @@
       "cognitive": "Déficience cognitive",
       "other": "Autre"
     }
+  },
+  "industries": {
+    "searchLabel": "Secteurs préférés",
+    "suggested": "Secteurs suggérés",
+    "values": {
+      "musicComposition": "Composition musicale",
+      "instrumentProficiency": "Maîtrise des instruments",
+      "guitars": "Guitares",
+      "musicTheory": "Théorie musicale",
+      "pianos": "Pianos",
+      "audioInterfaces": "Interfaces audio",
+      "musicProduction": "Production musicale",
+      "collaboration": "Collaboration",
+      "effectPedals": "Pédales d'effet",
+      "performer": "Interprète",
+      "musicDirector": "Directeur musical",
+      "soundEngineer": "Ingénieur du son",
+      "songwriter": "Auteur-compositeur",
+      "musicLibrarian": "Bibliothécaire musical"
+    }
   }
 }

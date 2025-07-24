@@ -45,3 +45,41 @@ export const primaryRoles = [
   { value: 'manager', labelKey: 'primaryRoles.manager' },
   { value: 'analyst', labelKey: 'primaryRoles.analyst' },
 ];
+
+export const preferredRoles = [
+  { value: 'frontend-developer', labelKey: 'preferredRoles.frontendDeveloper' },
+  { value: 'backend-developer', labelKey: 'preferredRoles.backendDeveloper' },
+  {
+    value: 'fullstack-developer',
+    labelKey: 'preferredRoles.fullstackDeveloper',
+  },
+  { value: 'designer', labelKey: 'preferredRoles.designer' },
+  { value: 'product-manager', labelKey: 'preferredRoles.productManager' },
+  { value: 'qa-engineer', labelKey: 'preferredRoles.qaEngineer' },
+  { value: 'data-analyst', labelKey: 'preferredRoles.dataAnalyst' },
+];
+
+export const preferredJobTypes = [
+  { value: 'full-time', labelKey: 'preferredJobTypes.fullTime' },
+  { value: 'part-time', labelKey: 'preferredJobTypes.partTime' },
+  { value: 'contract', labelKey: 'preferredJobTypes.contract' },
+  { value: 'internship', labelKey: 'preferredJobTypes.internship' },
+  { value: 'freelance', labelKey: 'preferredJobTypes.freelance' },
+];
+
+export const industryKeys = [
+  'musicComposition',
+  'instrumentProficiency',
+  'guitars',
+  'musicTheory',
+  'pianos',
+  'audioInterfaces',
+  'musicProduction',
+  'collaboration',
+  'effectPedals',
+  'performer',
+  'musicDirector',
+  'soundEngineer',
+  'songwriter',
+  'musicLibrarian',
+] as const;

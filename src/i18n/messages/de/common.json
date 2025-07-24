@@ -96,5 +96,25 @@
       "cognitive": "Kognitive Beeinträchtigung",
       "other": "Andere"
     }
+  },
+  "industries": {
+    "searchLabel": "Bevorzugte Branchen",
+    "suggested": "Vorgeschlagene Branchen",
+    "values": {
+      "musicComposition": "Musikkomposition",
+      "instrumentProficiency": "Instrumentenbeherrschung",
+      "guitars": "Gitarren",
+      "musicTheory": "Musiktheorie",
+      "pianos": "Klaviere",
+      "audioInterfaces": "Audio-Interfaces",
+      "musicProduction": "Musikproduktion",
+      "collaboration": "Zusammenarbeit",
+      "effectPedals": "Effektpedale",
+      "performer": "Interpret",
+      "musicDirector": "Musikdirektor",
+      "soundEngineer": "Toningenieur",
+      "songwriter": "Songwriter",
+      "musicLibrarian": "Musikbibliothekar"
+    }
   }
 }

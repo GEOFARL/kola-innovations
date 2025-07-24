@@ -7,12 +7,16 @@ type Props = {
   label: string;
   checked: boolean;
   onChange: () => void;
+  className?: string;
 };
 
-const Checkbox: React.FC<Props> = ({ label, checked, onChange }) => {
+const Checkbox: React.FC<Props> = ({ label, checked, onChange, className }) => {
   return (
     <label
-      className="flex items-center gap-3 cursor-pointer select-none"
+      className={cn(
+        'flex items-center gap-3 cursor-pointer select-none',
+        className,
+      )}
       onClick={onChange}
     >
       <span
