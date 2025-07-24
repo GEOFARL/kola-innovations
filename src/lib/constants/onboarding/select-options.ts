@@ -32,3 +32,16 @@ export const languages = [
   { value: 'french', label: 'French' },
   { value: 'german', label: 'German' },
 ];
+
+export const workTypes = [
+  { value: 'remote', label: 'Remote' },
+  { value: 'hybrid', label: 'Hybrid' },
+  { value: 'in-office', label: 'In Office' },
+];
+
+export const primaryRoles = [
+  { value: 'developer', label: 'Developer' },
+  { value: 'designer', label: 'Designer' },
+  { value: 'manager', label: 'Manager' },
+  { value: 'analyst', label: 'Analyst' },
+];

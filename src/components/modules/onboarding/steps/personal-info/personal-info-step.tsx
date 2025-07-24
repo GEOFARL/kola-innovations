@@ -27,6 +27,7 @@ import { PersonalInfoData } from '@/lib/types/onboarding/step';
 import PersonalInfoSkeleton from './personal-info-skeleton';
 import DisabilityField from '@/components/modules/shared/fields/disability-field';
 import OnboardingStepForm from '../onboarding-step-form';
+import LocationFields from '@/components/modules/shared/fields/location-fields';
 
 function getInitialPersonalInfoData(): PersonalInfoData {
   const user =
@@ -105,29 +106,7 @@ const PersonalInfoStep: React.FC = () => {
               placeholder={t('placeholders.username')}
               required
             />
-            <SelectField
-              name="location.province"
-              label={t('fields.province')}
-              placeholder={t('placeholders.province')}
-              options={provinces.map(({ value, labelKey }) => ({
-                value,
-                label: t(labelKey),
-              }))}
-              required
-              className="flex-1"
-            />
-
-            <SelectField
-              name="location.city"
-              label={t('fields.city')}
-              placeholder={t('placeholders.city')}
-              options={cities.map(({ value, labelKey }) => ({
-                value,
-                label: t(labelKey),
-              }))}
-              required
-              className="flex-1"
-            />
+            <LocationFields />
             <div className="lg:col-span-2">
               <FormField
                 name="brief"

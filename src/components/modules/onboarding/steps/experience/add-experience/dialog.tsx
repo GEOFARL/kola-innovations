@@ -12,6 +12,14 @@ import SelectField from '@/components/ui/select-field';
 import { experienceItemSchema } from '@/lib/schemas/onboarding/experience.schema';
 import { ExperienceItem } from '@/lib/types/onboarding/experience';
 
+import LinkIcon from '@/assets/icons/link.svg';
+import CalendarIcon from '@/assets/icons/calendar.svg';
+import LocationFields from '@/components/modules/shared/fields/location-fields';
+import {
+  primaryRoles,
+  workTypes,
+} from '@/lib/constants/onboarding/select-options';
+
 type Props = {
   open: boolean;
   onClose: () => void;
@@ -65,7 +73,11 @@ const AddExperienceDialog: React.FC<Props> = ({
               <FormField name="jobTitle" label="Job Title" required />
               <div className="grid grid-cols-2 gap-4">
                 <FormField name="companyName" label="Company name" required />
-                <FormField name="companyWebsite" label="Company website" />
+                <FormField
+                  name="companyWebsite"
+                  label="Company website"
+                  rightIcon={<LinkIcon />}
+                />
               </div>
 
               <div className="grid grid-cols-2 gap-4">
@@ -74,12 +86,14 @@ const AddExperienceDialog: React.FC<Props> = ({
                   label="Start Month"
                   placeholder="MM"
                   required
+                  rightIcon={<CalendarIcon />}
                 />
                 <FormField
                   name="startDate.year"
                   label="Start Year"
                   placeholder="YYYY"
                   required
+                  rightIcon={<CalendarIcon />}
                 />
               </div>
 
@@ -95,32 +109,35 @@ const AddExperienceDialog: React.FC<Props> = ({
                     name="endDate.month"
                     label="End Month"
                     placeholder="MM"
+                    rightIcon={<CalendarIcon />}
                   />
                   <FormField
                     name="endDate.year"
                     label="End Year"
                     placeholder="YYYY"
+                    rightIcon={<CalendarIcon />}
                   />
                 </div>
               )}
 
               <div className="grid grid-cols-2 gap-4">
-                <FormField name="location.province" label="Province" required />
-                <FormField name="location.city" label="City" required />
+                <LocationFields />
               </div>
 
-              <SelectField
-                name="workType"
-                label="Work Type"
-                options={[
-                  { value: 'remote', label: 'Remote' },
-                  { value: 'hybrid', label: 'Hybrid' },
-                  { value: 'in-office', label: 'In Office' },
-                ]}
-                required
-              />
-
-              <FormField name="primaryRole" label="Your primary role" />
+              <div className="grid grid-cols-2 gap-4">
+                <SelectField
+                  name="workType"
+                  label="Work Type"
+                  options={workTypes}
+                  required
+                />
+                <SelectField
+                  name="primaryRole"
+                  label="Your primary role"
+                  options={primaryRoles}
+                  required
+                />
+              </div>
               <FormField
                 name="description"
                 label="About your role"

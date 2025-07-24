@@ -3,7 +3,6 @@
 import { sampleProfessionals } from '@/lib/constants/professionals/sample-professionals';
 import ProfessionalHeader from './professional-header';
 import ProfessionalMain from './professional-main';
-import MobileAnalytics from '../search/mobile-analytics';
 
 type Props = {
   id: string;
