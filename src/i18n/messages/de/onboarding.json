@@ -87,8 +87,41 @@
     "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque. Orci sit semper ullamcorper eleifend faucibus et aliquam integer euismod."
   },
   "experience": {
-    "title": "Wenn Sie relevante Berufserfahrung haben, fügen Sie sie hier hinzu.",
-    "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque. Orci sit semper ullamcorper eleifend faucibus et aliquam integer euismod."
+    "title": "Wenn Sie relevante Berufserfahrung haben, fügen Sie diese hier hinzu.",
+    "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque. Orci sit semper ullamcorper eleifend faucibus et aliquam integer euismod.",
+    "buttons": {
+      "add": "Erfahrung hinzufügen",
+      "edit": "Bearbeiten",
+      "delete": "Löschen",
+      "cancel": "Abbrechen",
+      "save": "Änderungen speichern",
+      "submit": "Erfahrung hinzufügen"
+    },
+    "fields": {
+      "jobTitle": "Berufsbezeichnung",
+      "companyName": "Firmenname",
+      "companyWebsite": "Firmenwebsite",
+      "startMonth": "Startmonat",
+      "startYear": "Startjahr",
+      "endMonth": "Endmonat",
+      "endYear": "Endjahr",
+      "currentlyWorking": "Ich arbeite derzeit in dieser Position",
+      "location": "Standort",
+      "workType": "Arbeitsart",
+      "primaryRole": "Ihre Hauptrolle",
+      "description": "Über Ihre Rolle"
+    },
+    "workTypes": {
+      "remote": "Remote",
+      "hybrid": "Hybrid",
+      "inOffice": "Im Büro"
+    },
+    "primaryRoles": {
+      "developer": "Entwickler",
+      "designer": "Designer",
+      "manager": "Manager",
+      "analyst": "Analyst"
+    }
   },
   "portfolio": {
     "title": "Präsentieren Sie Ihre Arbeit",

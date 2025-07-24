@@ -34,14 +34,14 @@ export const languages = [
 ];
 
 export const workTypes = [
-  { value: 'remote', label: 'Remote' },
-  { value: 'hybrid', label: 'Hybrid' },
-  { value: 'in-office', label: 'In Office' },
+  { value: 'remote', labelKey: 'workTypes.remote' },
+  { value: 'hybrid', labelKey: 'workTypes.hybrid' },
+  { value: 'in-office', labelKey: 'workTypes.inOffice' },
 ];
 
 export const primaryRoles = [
-  { value: 'developer', label: 'Developer' },
-  { value: 'designer', label: 'Designer' },
-  { value: 'manager', label: 'Manager' },
-  { value: 'analyst', label: 'Analyst' },
+  { value: 'developer', labelKey: 'primaryRoles.developer' },
+  { value: 'designer', labelKey: 'primaryRoles.designer' },
+  { value: 'manager', labelKey: 'primaryRoles.manager' },
+  { value: 'analyst', labelKey: 'primaryRoles.analyst' },
 ];

@@ -2,6 +2,7 @@
 
 import { useOnboardingStore } from '@/lib/stores/onboarding/onboarding-store';
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 import { ExperienceItem } from '@/lib/types/onboarding/experience';
 import AddExperienceButton from './button';
@@ -9,6 +10,7 @@ import ExperienceCard from './card';
 import AddExperienceDialog from './dialog';
 
 const Experiences: React.FC = () => {
+  const t = useTranslations('onboarding.experience.buttons');
   const { data, setStepData } = useOnboardingStore();
   const experiences = data.experience?.experiences || [];
   const [open, setOpen] = useState(false);
@@ -37,12 +39,14 @@ const Experiences: React.FC = () => {
 
   return (
     <div className="flex flex-wrap items-start gap-4 h-auto">
-      <AddExperienceButton onClick={() => setOpen(true)} />
+      <AddExperienceButton label={t('add')} onClick={() => setOpen(true)} />
 
       {experiences.map((exp, idx) => (
         <ExperienceCard
           key={idx}
           experience={exp}
+          editLabel={t('edit')}
+          deleteLabel={t('delete')}
           onEdit={() => {
             setEditIndex(idx);
             setOpen(true);

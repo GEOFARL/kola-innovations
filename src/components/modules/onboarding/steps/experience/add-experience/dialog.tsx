@@ -1,6 +1,7 @@
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useTranslations } from 'next-intl';
 import { FormProvider, useForm } from 'react-hook-form';
 
 import Button from '@/components/ui/button/button';
@@ -33,6 +34,10 @@ const AddExperienceDialog: React.FC<Props> = ({
   onSubmit,
   defaultValues,
 }) => {
+  const t = useTranslations('onboarding.experience.fields');
+  const tb = useTranslations('onboarding.experience.buttons');
+  const tOption = useTranslations('onboarding.experience');
+
   const methods = useForm<ExperienceItem>({
     resolver: zodResolver(experienceItemSchema),
     defaultValues: defaultValues ?? {
@@ -67,15 +72,21 @@ const AddExperienceDialog: React.FC<Props> = ({
       <FormProvider {...methods}>
         <form onSubmit={submitHandler} className="flex flex-col">
           <div className="space-y-6 p-6">
-            <h2 className="body-1">Add Experience</h2>
+            <h2 className="body-1">
+              {defaultValues ? tb('save') : tb('submit')}
+            </h2>
 
             <div className="flex flex-col gap-4">
-              <FormField name="jobTitle" label="Job Title" required />
+              <FormField name="jobTitle" label={t('jobTitle')} required />
               <div className="grid grid-cols-2 gap-4">
-                <FormField name="companyName" label="Company name" required />
+                <FormField
+                  name="companyName"
+                  label={t('companyName')}
+                  required
+                />
                 <FormField
                   name="companyWebsite"
-                  label="Company website"
+                  label={t('companyWebsite')}
                   rightIcon={<LinkIcon />}
                 />
               </div>
@@ -83,14 +94,14 @@ const AddExperienceDialog: React.FC<Props> = ({
               <div className="grid grid-cols-2 gap-4">
                 <FormField
                   name="startDate.month"
-                  label="Start Month"
+                  label={t('startMonth')}
                   placeholder="MM"
                   required
                   rightIcon={<CalendarIcon />}
                 />
                 <FormField
                   name="startDate.year"
-                  label="Start Year"
+                  label={t('startYear')}
                   placeholder="YYYY"
                   required
                   rightIcon={<CalendarIcon />}
@@ -98,7 +109,7 @@ const AddExperienceDialog: React.FC<Props> = ({
               </div>
 
               <Checkbox
-                label="I am currently working in this role"
+                label={t('currentlyWorking')}
                 checked={currentlyWorking}
                 onChange={() => setValue('currentlyWorking', !currentlyWorking)}
               />
@@ -107,13 +118,13 @@ const AddExperienceDialog: React.FC<Props> = ({
                 <div className="grid grid-cols-2 gap-4">
                   <FormField
                     name="endDate.month"
-                    label="End Month"
+                    label={t('endMonth')}
                     placeholder="MM"
                     rightIcon={<CalendarIcon />}
                   />
                   <FormField
                     name="endDate.year"
-                    label="End Year"
+                    label={t('endYear')}
                     placeholder="YYYY"
                     rightIcon={<CalendarIcon />}
                   />
@@ -127,20 +138,27 @@ const AddExperienceDialog: React.FC<Props> = ({
               <div className="grid grid-cols-2 gap-4">
                 <SelectField
                   name="workType"
-                  label="Work Type"
-                  options={workTypes}
+                  label={t('workType')}
+                  options={workTypes.map(({ value, labelKey }) => ({
+                    value,
+                    label: tOption(labelKey),
+                  }))}
                   required
                 />
+
                 <SelectField
                   name="primaryRole"
-                  label="Your primary role"
-                  options={primaryRoles}
+                  label={t('primaryRole')}
+                  options={primaryRoles.map(({ value, labelKey }) => ({
+                    value,
+                    label: tOption(labelKey),
+                  }))}
                   required
                 />
               </div>
               <FormField
                 name="description"
-                label="About your role"
+                label={t('description')}
                 multiline
                 rows={3}
               />
@@ -155,10 +173,10 @@ const AddExperienceDialog: React.FC<Props> = ({
               onClick={onClose}
               size="lg"
             >
-              Cancel
+              {tb('cancel')}
             </Button>
             <Button type="submit" color="black" size="lg">
-              {defaultValues ? 'Save Changes' : 'Add Experience'}
+              {defaultValues ? tb('save') : tb('submit')}
             </Button>
           </div>
         </form>

@@ -88,7 +88,40 @@
   },
   "experience": {
     "title": "If you have relevant work experience, add it here.",
-    "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque. Orci sit semper ullamcorper eleifend faucibus et aliquam integer euismod."
+    "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque. Orci sit semper ullamcorper eleifend faucibus et aliquam integer euismod.",
+    "buttons": {
+      "add": "Add experience",
+      "edit": "Edit",
+      "delete": "Delete",
+      "cancel": "Cancel",
+      "save": "Save Changes",
+      "submit": "Add Experience"
+    },
+    "fields": {
+      "jobTitle": "Job Title",
+      "companyName": "Company name",
+      "companyWebsite": "Company website",
+      "startMonth": "Start Month",
+      "startYear": "Start Year",
+      "endMonth": "End Month",
+      "endYear": "End Year",
+      "currentlyWorking": "I am currently working in this role",
+      "location": "Location",
+      "workType": "Work Type",
+      "primaryRole": "Your primary role",
+      "description": "About your role"
+    },
+    "workTypes": {
+      "remote": "Remote",
+      "hybrid": "Hybrid",
+      "inOffice": "In Office"
+    },
+    "primaryRoles": {
+      "developer": "Developer",
+      "designer": "Designer",
+      "manager": "Manager",
+      "analyst": "Analyst"
+    }
   },
   "portfolio": {
     "title": "Showcase your work",

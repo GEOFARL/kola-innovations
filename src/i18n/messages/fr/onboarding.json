@@ -88,7 +88,40 @@
   },
   "experience": {
     "title": "Si vous avez une expérience professionnelle pertinente, ajoutez-la ici.",
-    "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque. Orci sit semper ullamcorper eleifend faucibus et aliquam integer euismod."
+    "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque. Orci sit semper ullamcorper eleifend faucibus et aliquam integer euismod.",
+    "buttons": {
+      "add": "Ajouter une expérience",
+      "edit": "Modifier",
+      "delete": "Supprimer",
+      "cancel": "Annuler",
+      "save": "Enregistrer les modifications",
+      "submit": "Ajouter une expérience"
+    },
+    "fields": {
+      "jobTitle": "Intitulé du poste",
+      "companyName": "Nom de l'entreprise",
+      "companyWebsite": "Site Web de l'entreprise",
+      "startMonth": "Mois de début",
+      "startYear": "Année de début",
+      "endMonth": "Mois de fin",
+      "endYear": "Année de fin",
+      "currentlyWorking": "J'occupe actuellement ce poste",
+      "location": "Localisation",
+      "workType": "Type de travail",
+      "primaryRole": "Votre rôle principal",
+      "description": "À propos de votre rôle"
+    },
+    "workTypes": {
+      "remote": "À distance",
+      "hybrid": "Hybride",
+      "inOffice": "Au bureau"
+    },
+    "primaryRoles": {
+      "developer": "Développeur",
+      "designer": "Designer",
+      "manager": "Manager",
+      "analyst": "Analyste"
+    }
   },
   "portfolio": {
     "title": "Mettez en valeur votre travail",

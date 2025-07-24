@@ -7,16 +7,23 @@ import { ExperienceItem } from '@/lib/types/onboarding/experience';
 
 type Props = {
   experience: ExperienceItem;
+  editLabel: string;
+  deleteLabel: string;
   onEdit: () => void;
   onDelete: () => void;
 };
-
 const formatMonthYear = (month: string, year: string) => {
   const date = new Date(parseInt(year), parseInt(month) - 1);
   return format(date, 'MMM yyyy');
 };
 
-const ExperienceCard: React.FC<Props> = ({ experience, onEdit, onDelete }) => {
+const ExperienceCard: React.FC<Props> = ({
+  experience,
+  onEdit,
+  onDelete,
+  editLabel,
+  deleteLabel,
+}) => {
   const start = formatMonthYear(
     experience.startDate.month,
     experience.startDate.year,
@@ -39,7 +46,7 @@ const ExperienceCard: React.FC<Props> = ({ experience, onEdit, onDelete }) => {
             iconOnly
             onClick={onEdit}
             iconCircle
-            aria-label="Edit"
+            aria-label={editLabel}
           >
             <EditIcon />
           </Button>
@@ -50,7 +57,7 @@ const ExperienceCard: React.FC<Props> = ({ experience, onEdit, onDelete }) => {
             iconOnly
             iconCircle
             onClick={onDelete}
-            aria-label="Delete"
+            aria-label={deleteLabel}
           >
             <DeleteIcon />
           </Button>

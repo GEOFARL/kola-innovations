@@ -2,9 +2,15 @@ import { cn } from '@/lib/cn';
 import { HTMLAttributes } from 'react';
 import GreenPlusIcon from '@/assets/icons/onboarding/green-plus.svg';
 
-type Props = HTMLAttributes<HTMLButtonElement>;
+type Props = HTMLAttributes<HTMLButtonElement> & {
+  label: string;
+};
 
-const AddExperienceButton: React.FC<Props> = ({ className, ...props }) => {
+const AddExperienceButton: React.FC<Props> = ({
+  className,
+  label,
+  ...props
+}) => {
   return (
     <button
       className={cn(
@@ -14,7 +20,7 @@ const AddExperienceButton: React.FC<Props> = ({ className, ...props }) => {
       {...props}
     >
       <GreenPlusIcon />
-      <p className="body-2-md text-dark-900">Add experience</p>
+      <p className="body-2-md text-dark-900">{label}</p>
     </button>
   );
 };
