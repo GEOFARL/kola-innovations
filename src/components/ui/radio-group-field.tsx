@@ -49,7 +49,7 @@ const RadioGroupField: React.FC<Props> = ({
             key={opt.value}
             value={opt.value}
             className={cn(
-              'relative rounded-lg border border-dark-200 p-4 cursor-pointer transition-colors duration-150',
+              'relative rounded-lg border border-dark-200 p-4 cursor-pointer transition-colors duration-150 flex flex-col items-start',
               itemClassName,
             )}
           >

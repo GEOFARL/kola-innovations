@@ -121,6 +121,26 @@
       "designer": "Designer",
       "manager": "Manager",
       "analyst": "Analyste"
+    },
+    "jobOpenStatus": {
+      "label": "Êtes-vous ouvert aux offres d'emploi ?",
+      "options": {
+        "actively": {
+          "title": "Oui – en recherche active.",
+          "description": "Soyez recommandé aux recruteurs qui recherchent des rôles pertinents."
+        },
+        "casually": {
+          "title": "Oui – en veille.",
+          "description": "Les recruteurs peuvent découvrir votre profil et nous vous recommanderons sélectivement de nouveaux postes."
+        },
+        "notLooking": {
+          "title": "Pas à la recherche de nouveaux emplois",
+          "description": "Votre profil ne sera pas recommandé aux recruteurs."
+        }
+      },
+      "buttons": {
+        "addJobPreference": "Ajouter une préférence d'emploi"
+      }
     }
   },
   "portfolio": {

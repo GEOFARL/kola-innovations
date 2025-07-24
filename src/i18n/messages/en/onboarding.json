@@ -121,6 +121,26 @@
       "designer": "Designer",
       "manager": "Manager",
       "analyst": "Analyst"
+    },
+    "jobOpenStatus": {
+      "label": "Are you open for job?",
+      "options": {
+        "actively": {
+          "title": "Yes – actively applying.",
+          "description": "Get recommended to recruiters hiring for relevant roles."
+        },
+        "casually": {
+          "title": "Yes – casually looking.",
+          "description": "Recruiters can discover you, and we'll selectively recommend new jobs."
+        },
+        "notLooking": {
+          "title": "Not looking for new jobs",
+          "description": "Your profile won’t be recommended to recruiters."
+        }
+      },
+      "buttons": {
+        "addJobPreference": "Add Job Preference"
+      }
     }
   },
   "portfolio": {

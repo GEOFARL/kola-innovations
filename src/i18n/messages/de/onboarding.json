@@ -121,6 +121,26 @@
       "designer": "Designer",
       "manager": "Manager",
       "analyst": "Analyst"
+    },
+    "jobOpenStatus": {
+      "label": "Sind Sie offen für Jobangebote?",
+      "options": {
+        "actively": {
+          "title": "Ja – aktiv auf Jobsuche.",
+          "description": "Lassen Sie sich Recruitern empfehlen, die nach passenden Rollen suchen."
+        },
+        "casually": {
+          "title": "Ja – gelegentlich interessiert.",
+          "description": "Recru iter können Ihr Profil entdecken und wir empfehlen Ihnen gezielt neue Jobs."
+        },
+        "notLooking": {
+          "title": "Nicht auf Jobsuche",
+          "description": "Ihr Profil wird Recruitern nicht empfohlen."
+        }
+      },
+      "buttons": {
+        "addJobPreference": "Jobpräferenz hinzufügen"
+      }
     }
   },
   "portfolio": {
