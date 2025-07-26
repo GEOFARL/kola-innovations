@@ -73,7 +73,7 @@ const JobPreferenceDialog: React.FC<Props> = ({
           <div className="space-y-6 p-6">
             <h2 className="body-1">{t('title')}</h2>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid lg:grid-cols-2 gap-4">
               <MultiSelectField
                 name="preferredRoles"
                 label={t('fields.preferredRoles')}
@@ -93,7 +93,7 @@ const JobPreferenceDialog: React.FC<Props> = ({
               />
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid lg:grid-cols-2 gap-4">
               <LocationFields />
             </div>
 
@@ -138,11 +138,19 @@ const JobPreferenceDialog: React.FC<Props> = ({
                   options={[
                     {
                       value: 'true',
-                      component: <span>{t('fields.yes')}</span>,
+                      component: (
+                        <span className="text-[14px] lg:text-[16px]">
+                          {t('fields.yes')}
+                        </span>
+                      ),
                     },
                     {
                       value: 'false',
-                      component: <span>{t('fields.no')}</span>,
+                      component: (
+                        <span className="text-[14px] lg:text-[16px]">
+                          {t('fields.no')}
+                        </span>
+                      ),
                     },
                   ]}
                   value={String(field.value)}
@@ -159,7 +167,7 @@ const JobPreferenceDialog: React.FC<Props> = ({
               translationPrefix="industries.values"
             />
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid lg:grid-cols-2 gap-4">
               <SelectField
                 name="ethnicity"
                 label={tPersonalInfo('fields.ethnicity')}
@@ -187,11 +195,21 @@ const JobPreferenceDialog: React.FC<Props> = ({
               variant="secondary"
               color="black"
               onClick={onClose}
-              size="lg"
+              responsiveSize={{
+                'base': 'md',
+                'lg': 'lg',
+              }}
             >
               {t('buttons.cancel')}
             </Button>
-            <Button type="submit" color="black" size="lg">
+            <Button
+              type="submit"
+              color="black"
+              responsiveSize={{
+                'base': 'md',
+                'lg': 'lg',
+              }}
+            >
               {t('buttons.save')}
             </Button>
           </div>

@@ -78,7 +78,7 @@ const AddExperienceDialog: React.FC<Props> = ({
 
             <div className="flex flex-col gap-4">
               <FormField name="jobTitle" label={t('jobTitle')} required />
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid lg:grid-cols-2 gap-4">
                 <FormField
                   name="companyName"
                   label={t('companyName')}
@@ -91,7 +91,7 @@ const AddExperienceDialog: React.FC<Props> = ({
                 />
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid lg:grid-cols-2 gap-4">
                 <FormField
                   name="startDate.month"
                   label={t('startMonth')}
@@ -115,7 +115,7 @@ const AddExperienceDialog: React.FC<Props> = ({
               />
 
               {!currentlyWorking && (
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid lg:grid-cols-2 gap-4">
                   <FormField
                     name="endDate.month"
                     label={t('endMonth')}
@@ -131,11 +131,11 @@ const AddExperienceDialog: React.FC<Props> = ({
                 </div>
               )}
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid lg:grid-cols-2 gap-4">
                 <LocationFields />
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid lg:grid-cols-2 gap-4">
                 <SelectField
                   name="workType"
                   label={t('workType')}
@@ -171,11 +171,21 @@ const AddExperienceDialog: React.FC<Props> = ({
               variant="secondary"
               color="black"
               onClick={onClose}
-              size="lg"
+              responsiveSize={{
+                'base': 'md',
+                'lg': 'lg',
+              }}
             >
               {tb('cancel')}
             </Button>
-            <Button type="submit" color="black" size="lg">
+            <Button
+              type="submit"
+              color="black"
+              responsiveSize={{
+                'base': 'md',
+                'lg': 'lg',
+              }}
+            >
               {defaultValues ? tb('save') : tb('submit')}
             </Button>
           </div>
