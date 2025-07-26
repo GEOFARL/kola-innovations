@@ -13,6 +13,13 @@ type SharedFieldProps = {
   placeholder?: string;
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
+  value?: string;
+  onChange?: (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => void;
+  onBlur?: (
+    e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => void;
 };
 
 type InputFieldProps = SharedFieldProps & {
@@ -37,6 +44,9 @@ const FormField: React.FC<Props> = ({
   leftIcon,
   rightIcon,
   type = 'text',
+  value,
+  onChange,
+  onBlur,
   className,
   ...rest
 }) => {
@@ -55,7 +65,12 @@ const FormField: React.FC<Props> = ({
   const paddingLeft = leftIcon ? 'pl-10' : 'pl-2 lg:pl-4';
   const paddingRight = isPasswordField || rightIcon ? 'pr-10' : 'pr-2 lg:pr-4';
 
-  const { ref, onChange, onBlur, name: fieldName } = register(name);
+  const controlled = value !== undefined && onChange !== undefined;
+
+  const registered = register(name);
+  const inputProps = controlled
+    ? { value, onChange, onBlur }
+    : { ...registered };
 
   const commonClasses = cn(
     'w-full border border-dark-200 rounded-md py-2 font-medium text-[13px] lg:text-[14px] leading-[150%] text-dark-900 focus:outline-none focus:ring-2 focus:ring-black relative z-1',
@@ -109,10 +124,6 @@ const FormField: React.FC<Props> = ({
         {multiline ? (
           <textarea
             id={name}
-            name={fieldName}
-            ref={ref}
-            onChange={onChange}
-            onBlur={onBlur}
             placeholder={placeholder}
             disabled={disabled}
             className={cn(
@@ -120,20 +131,18 @@ const FormField: React.FC<Props> = ({
               'px-2 lg:px-4 resize-none min-h-[66px]',
             )}
             {...(rest as TextareaHTMLAttributes<HTMLTextAreaElement>)}
+            {...inputProps}
           />
         ) : (
           <>
             <input
               id={name}
-              name={fieldName}
-              ref={ref}
               type={finalType}
-              onChange={onChange}
-              onBlur={onBlur}
               placeholder={placeholder}
               disabled={disabled}
               className={commonClasses}
               {...(rest as InputHTMLAttributes<HTMLInputElement>)}
+              {...inputProps}
             />
             {renderPasswordToggle}
             {renderRightIcon}

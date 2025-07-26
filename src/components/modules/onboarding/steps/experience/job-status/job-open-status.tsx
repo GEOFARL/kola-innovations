@@ -3,6 +3,8 @@
 import PlusIcon from '@/assets/icons/onboarding/plus.svg';
 import Button from '@/components/ui/button/button';
 import RadioGroupField from '@/components/ui/radio-group-field';
+import { useOnboardingStore } from '@/lib/stores/onboarding/onboarding-store';
+import { JobPreference } from '@/lib/types/onboarding/job-preference';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 import { useFormContext, useWatch } from 'react-hook-form';
@@ -53,9 +55,16 @@ const JobOpenStatus: React.FC = () => {
 
   const showButton = jobStatus === 'actively' || jobStatus === 'casually';
 
-  const handleDialogSubmit = (values: any) => {
-    console.log('Job preference saved:', values);
-    // TODO: store values in your main form state or send to API
+  const { data, setStepData } = useOnboardingStore();
+
+  const handleDialogSubmit = (values: JobPreference) => {
+    const current = data.experience || { experiences: [] };
+    setStepData('experience', {
+      ...current,
+      experiences: current.experiences || [],
+      jobPreference: values,
+    });
+    setDialogOpen(false);
   };
 
   return (
@@ -86,6 +95,7 @@ const JobOpenStatus: React.FC = () => {
         open={dialogOpen}
         onClose={() => setDialogOpen(false)}
         onSubmit={handleDialogSubmit}
+        defaultValues={data.experience?.jobPreference}
       />
     </>
   );

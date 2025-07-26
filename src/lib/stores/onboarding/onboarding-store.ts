@@ -1,5 +1,8 @@
-import { OnboardingDataMap, StepKey } from '@/lib/types/onboarding/store';
+'use client';
+
 import { create } from 'zustand';
+import { persist, createJSONStorage } from 'zustand/middleware';
+import { OnboardingDataMap, StepKey } from '@/lib/types/onboarding/store';
 
 type OnboardingState = {
   step: number;
@@ -16,18 +19,28 @@ type OnboardingActions = {
   reset: () => void;
 };
 
-export const useOnboardingStore = create<OnboardingState & OnboardingActions>(
-  (set) => ({
-    data: {},
-    step: 0,
-    next: () => set((s) => ({ step: s.step + 1 })),
-    prev: () => set((s) => ({ step: Math.max(0, s.step - 1) })),
-    reset: () => set(() => ({ step: 0, data: {} })),
-    setStep: (step) => set(() => ({ step })),
-    setFormSubmitTrigger: (fn) => set(() => ({ submitCurrentForm: fn })),
-    setStepData: (key, value) =>
-      set((s) => ({
-        data: { ...s.data, [key]: value },
-      })),
-  }),
+export const useOnboardingStore = create<OnboardingState & OnboardingActions>()(
+  persist(
+    (set) => ({
+      data: {},
+      step: 0,
+      next: () => set((s) => ({ step: s.step + 1 })),
+      prev: () => set((s) => ({ step: Math.max(0, s.step - 1) })),
+      reset: () => set(() => ({ step: 0, data: {} })),
+      setStep: (step) => set(() => ({ step })),
+      setFormSubmitTrigger: (fn) => set(() => ({ submitCurrentForm: fn })),
+      setStepData: (key, value) =>
+        set((s) => ({
+          data: { ...s.data, [key]: value },
+        })),
+    }),
+    {
+      name: 'onboarding-storage',
+      storage: createJSONStorage(() => sessionStorage),
+      partialize: (state) => ({
+        step: state.step,
+        data: state.data,
+      }),
+    },
+  ),
 );

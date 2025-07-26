@@ -27,16 +27,22 @@ type Props = {
   open: boolean;
   onClose: () => void;
   onSubmit: (data: JobPreference) => void;
+  defaultValues?: JobPreference;
 };
 
-const JobPreferenceDialog: React.FC<Props> = ({ open, onClose, onSubmit }) => {
+const JobPreferenceDialog: React.FC<Props> = ({
+  open,
+  onClose,
+  onSubmit,
+  defaultValues,
+}) => {
   const t = useTranslations('onboarding.experience.jobPreference');
   const tSelect = useTranslations('onboarding.experience');
   const tPersonalInfo = useTranslations('onboarding.personalInfo');
 
   const methods = useForm<JobPreference>({
     resolver: zodResolver(jobPreferenceSchema),
-    defaultValues: {
+    defaultValues: defaultValues || {
       preferredRoles: [],
       preferredJobTypes: [],
       workModes: [],

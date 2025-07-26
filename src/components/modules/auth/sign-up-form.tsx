@@ -4,7 +4,6 @@ import Button from '@/components/ui/button/button';
 import FormField from '@/components/ui/form-field';
 import { APP_ROUTES } from '@/lib/constants/routing/routes';
 import { SignUpSchema } from '@/lib/schemas/auth/sign-up.schema';
-import { localUserStorage } from '@/lib/storage/user-storage';
 import { useAuthModalStore } from '@/lib/stores/auth/auth-modal-store';
 import { SignUpFormData } from '@/lib/types/auth/sign-up';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -35,7 +34,6 @@ const SignUpForm: React.FC = () => {
       phone: data.phone,
     };
 
-    localUserStorage.saveUser(user);
     router.push(APP_ROUTES.ONBOARDING);
   });
 

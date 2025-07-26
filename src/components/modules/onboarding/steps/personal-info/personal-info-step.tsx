@@ -1,65 +1,31 @@
 'use client';
 
-import { zodResolver } from '@hookform/resolvers/zod';
 import { useTranslations } from 'next-intl';
-import { useCallback, useEffect, useState } from 'react';
-import { FormProvider, useForm } from 'react-hook-form';
 
 import FileUploadField from '@/components/ui/file-upload-field';
 import FormField from '@/components/ui/form-field';
 import MultiSelectField from '@/components/ui/multi-select-field';
 import SelectField from '@/components/ui/select-field';
 
-import { personalInfoSchema } from '@/lib/schemas/onboarding/personal-info.schema';
-import { localUserStorage } from '@/lib/storage/user-storage';
-import { useOnboardingStore } from '@/lib/stores/onboarding/onboarding-store';
-
 import EmailIcon from '@/assets/icons/onboarding/email.svg';
 import PhoneIcon from '@/assets/icons/onboarding/phone.svg';
+import DisabilityField from '@/components/modules/shared/fields/disability-field';
+import LocationFields from '@/components/modules/shared/fields/location-fields';
 import {
-  cities,
   ethnicities,
   languages,
   orientations,
-  provinces,
 } from '@/lib/constants/onboarding/select-options';
-import { PersonalInfoData } from '@/lib/types/onboarding/step';
-import PersonalInfoSkeleton from './personal-info-skeleton';
-import DisabilityField from '@/components/modules/shared/fields/disability-field';
+import { useOnboardingStore } from '@/lib/stores/onboarding/onboarding-store';
 import OnboardingStepForm from '../onboarding-step-form';
-import LocationFields from '@/components/modules/shared/fields/location-fields';
-
-function getInitialPersonalInfoData(): PersonalInfoData {
-  const user =
-    typeof window !== 'undefined' ? localUserStorage.getUser() : null;
-
-  return {
-    firstName: user?.firstName ?? '',
-    lastName: user?.lastName ?? '',
-    email: user?.email ?? '',
-    phone: user?.phone ?? '',
-    jobTitle: '',
-    username: '',
-    location: { province: '', city: '' },
-    brief: '',
-    languages: [],
-    ethnicity: '',
-    orientation: '',
-    hasDisability: false,
-    disability: '',
-    resume: undefined,
-  };
-}
 
 const PersonalInfoStep: React.FC = () => {
   const t = useTranslations('onboarding.personalInfo');
-  const [hydrated, setHydrated] = useState(false);
-  useEffect(() => setHydrated(true), []);
-  const initialValues = getInitialPersonalInfoData();
-  if (!hydrated) return <PersonalInfoSkeleton />;
+  const initialValues = useOnboardingStore((s) => s.data['personalInfo']);
+  console.log('Initial Values:', initialValues);
 
   return (
-    <OnboardingStepForm stepKey="personalInfo">
+    <OnboardingStepForm stepKey="personalInfo" defaultValues={initialValues}>
       {() => (
         <>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-start">
@@ -68,14 +34,14 @@ const PersonalInfoStep: React.FC = () => {
               label={t('fields.firstName')}
               placeholder={t('placeholders.firstName')}
               required
-              disabled={!!initialValues.firstName}
+              disabled={!!initialValues?.firstName}
             />
             <FormField
               name="lastName"
               label={t('fields.lastName')}
               placeholder={t('placeholders.lastName')}
               required
-              disabled={!!initialValues.lastName}
+              disabled={!!initialValues?.lastName}
             />
             <FormField
               name="email"
@@ -83,7 +49,7 @@ const PersonalInfoStep: React.FC = () => {
               placeholder={t('placeholders.email')}
               type="email"
               required
-              disabled={!!initialValues.email}
+              disabled={!!initialValues?.email}
               rightIcon={<EmailIcon className="scale-80 lg:scale-100" />}
             />
             <FormField
@@ -91,7 +57,7 @@ const PersonalInfoStep: React.FC = () => {
               label={t('fields.phone')}
               placeholder={t('placeholders.phone')}
               type="tel"
-              disabled={!!initialValues.phone}
+              disabled={!!initialValues?.phone}
               rightIcon={<PhoneIcon className="scale-80 lg:scale-100" />}
             />
             <FormField

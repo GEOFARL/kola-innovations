@@ -17,6 +17,7 @@ import {
 type Props<T extends StepKey> = {
   stepKey: T;
   defaultValues?: DefaultValues<OnboardingDataMap[T]>;
+  onSubmit?: (values: any) => void;
   children: (methods: UseFormReturn<OnboardingDataMap[T]>) => React.ReactNode;
 };
 
@@ -25,17 +26,22 @@ const OnboardingStepForm = <T extends StepKey>({
   stepKey,
   children,
   defaultValues,
+  onSubmit,
 }: Props<T>) => {
   const namespace = `onboarding.${stepKey}` as const;
   const t = useTranslations(namespace as Parameters<typeof useTranslations>[0]);
   const { setStepData, setFormSubmitTrigger, next } = useOnboardingStore();
 
-  useOnboardingStore();
   const schema = onboardingSchemas[stepKey] as any;
   const methods = useForm<OnboardingDataMap[T]>({
     resolver: zodResolver(schema),
     defaultValues,
   });
+  useEffect(() => {
+    if (defaultValues) {
+      methods.reset(defaultValues);
+    }
+  }, [defaultValues, methods]);
 
   const isLastStep =
     onboardingStepKeys.indexOf(stepKey) === onboardingStepKeys.length - 1;
@@ -53,7 +59,10 @@ const OnboardingStepForm = <T extends StepKey>({
   return (
     <FormProvider {...methods}>
       <form
-        onSubmit={(e) => e.preventDefault()}
+        onSubmit={(e) => {
+          e.preventDefault();
+          onSubmit?.(methods.getValues());
+        }}
         className="space-y-6 mt-4 lg:mt-10"
       >
         <div>

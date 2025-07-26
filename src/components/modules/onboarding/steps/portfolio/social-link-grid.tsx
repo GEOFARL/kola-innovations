@@ -19,7 +19,9 @@ const SocialLinkGrid: React.FC<Props> = ({ control }) => {
           control={control}
           render={({ field }) => (
             <FormField
-              {...field}
+              value={field.value || ''}
+              onChange={field.onChange}
+              onBlur={field.onBlur}
               name={`links.${index}.url`}
               placeholder={label}
               leftIcon={<Icon className="scale-90" />}

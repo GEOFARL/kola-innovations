@@ -17,7 +17,7 @@ const OnboardingFooter: React.FC = () => {
   const handleNext = () => {
     if (submitCurrentForm) {
       submitCurrentForm();
-    } else {
+    } else if (!isLast) {
       next();
     }
   };
