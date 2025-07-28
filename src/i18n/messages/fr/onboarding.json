@@ -21,6 +21,10 @@
     "experience": {
       "title": "Expérience",
       "description": "Interdum donec laoreet malesuada a gravida vivamus tempor."
+    },
+    "mentorship": {
+      "title": "Mentorat",
+      "description": "Interdum donec laoreet malesuada a gravida vivamus tempor."
     }
   },
   "personalInfo": {
@@ -54,7 +58,8 @@
       "brief": "Rédigez une brève présentation...",
       "languages": "Sélectionnez les langues",
       "ethnicity": "Sélectionnez votre origine",
-      "orientation": "Sélectionnez l'orientation"
+      "orientation": "Sélectionnez l'orientation",
+      "disability": "Sélectionner un handicap"
     },
     "ethnicities": {
       "asian": "Asiatique",
