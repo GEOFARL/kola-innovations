@@ -3,7 +3,7 @@
 import CalendarIcon from '@/assets/icons/calendar.svg';
 import ClockIcon from '@/assets/icons/clock.svg';
 import Card from '@/components/modules/shared/onboarding/card';
-import { MentorshipSession } from '@/lib/schemas/onboarding/mentorship.schema';
+import { MentorshipSession } from '@/lib/types/onboarding/mentorship';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 

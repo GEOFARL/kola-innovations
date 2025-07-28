@@ -25,6 +25,10 @@
     "mentorship": {
       "title": "Mentorat",
       "description": "Interdum donec laoreet malesuada a gravida vivamus tempor."
+    },
+    "services": {
+      "title": "Services offerts",
+      "description": "Interdum donec laoreet malesuada a gravida vivamus tempor."
     }
   },
   "personalInfo": {

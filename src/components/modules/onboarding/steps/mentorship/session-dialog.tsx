@@ -1,20 +1,18 @@
 'use client';
 
+import CalendarIcon from '@/assets/icons/calendar.svg';
+import ClockIcon from '@/assets/icons/clock.svg';
 import MultiSelectWithSuggestions from '@/components/modules/shared/fields/multiselect-with-suggestions';
 import Button from '@/components/ui/button/button';
 import FileUploadField from '@/components/ui/file-upload-field';
 import FormField from '@/components/ui/form-field';
 import Modal from '@/components/ui/modal';
 import { industryKeys } from '@/lib/constants/onboarding/select-options';
-import {
-  MentorshipSession,
-  mentorshipSessionSchema,
-} from '@/lib/schemas/onboarding/mentorship.schema';
+import { mentorshipSessionSchema } from '@/lib/schemas/onboarding/mentorship.schema';
+import { MentorshipSession } from '@/lib/types/onboarding/mentorship';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useTranslations } from 'next-intl';
 import { FormProvider, useForm } from 'react-hook-form';
-import CalendarIcon from '@/assets/icons/calendar.svg';
-import ClockIcon from '@/assets/icons/clock.svg';
 
 type Props = {
   open: boolean;

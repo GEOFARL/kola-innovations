@@ -25,6 +25,3 @@ export const mentorshipSchema = z.object({
   }),
   sessions: z.array(mentorshipSessionSchema),
 });
-
-export type MentorshipSession = z.infer<typeof mentorshipSessionSchema>;
-export type MentorshipData = z.infer<typeof mentorshipSchema>;

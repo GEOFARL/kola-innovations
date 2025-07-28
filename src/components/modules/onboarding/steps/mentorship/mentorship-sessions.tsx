@@ -1,12 +1,12 @@
 'use client';
 
 import AddButton from '@/components/modules/shared/onboarding/add-button';
-import { MentorshipSession } from '@/lib/schemas/onboarding/mentorship.schema';
 import { useOnboardingStore } from '@/lib/stores/onboarding/onboarding-store';
-import { use, useState } from 'react';
+import { MentorshipSession } from '@/lib/types/onboarding/mentorship';
+import { useTranslations } from 'next-intl';
+import { useState } from 'react';
 import SessionCard from './session-card';
 import SessionDialog from './session-dialog';
-import { useTranslations } from 'next-intl';
 
 const MentorshipSessions: React.FC = () => {
   const { data, setStepData } = useOnboardingStore();
