@@ -13,6 +13,8 @@ import {
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useTranslations } from 'next-intl';
 import { FormProvider, useForm } from 'react-hook-form';
+import CalendarIcon from '@/assets/icons/calendar.svg';
+import ClockIcon from '@/assets/icons/clock.svg';
 
 type Props = {
   open: boolean;
@@ -92,6 +94,7 @@ const SessionDialog: React.FC<Props> = ({
                 onBlur={(e) =>
                   methods.setValue('date', formatDate(e.target.value))
                 }
+                rightIcon={<CalendarIcon />}
               />
               <FormField
                 name="time"
@@ -101,6 +104,7 @@ const SessionDialog: React.FC<Props> = ({
                 onBlur={(e) =>
                   methods.setValue('time', formatTime(e.target.value))
                 }
+                rightIcon={<ClockIcon />}
               />
             </div>
             <FormField
