@@ -187,5 +187,22 @@
     "title": "Showcase your work",
     "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque. Orci sit semper ullamcorper eleifend faucibus et aliquam integer euismod.",
     "addProject": "Add Project"
+  },
+  "mentorship": {
+    "title": "Would you be interested in serving as a mentor?",
+    "description": "Mentorship is a relationship where an experienced individual guides and supports another’s personal and professional growth.",
+    "yes": "Yes",
+    "no": "No",
+    "info": {
+      "title": "What is Mentorship?",
+      "description": "Mentorship is a relationship where an experienced individual guides and supports another’s personal and professional growth.",
+      "imageAlt": "Mentorship illustration",
+      "keyPoints": [
+        "Provide guidance and share your experience",
+        "Help others grow professionally",
+        "Build meaningful connections",
+        "Give back to your community"
+      ]
+    }
   }
 }

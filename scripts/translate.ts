@@ -16,20 +16,67 @@ async function translateText(
     messages: [
       {
         role: 'system',
-        content: `Translate the following text to ${targetLang}. Keep formatting intact.`,
+        content: [
+          {
+            type: 'text',
+            text: `Translate the following text to ${targetLang}. Keep formatting intact.`,
+          },
+        ],
       },
-      { role: 'user', content: text },
+      {
+        role: 'user',
+        content: [{ type: 'text', text }],
+      },
     ],
   });
 
-  return response.choices[0].message.content?.trim() || text;
+  const content = response.choices[0].message.content;
+
+  if (!content) return text;
+
+  if (typeof content === 'string') {
+    return content.trim();
+  }
+
+  if (Array.isArray(content)) {
+    const parts = content as Array<{ type: string; text?: string }>;
+    return parts
+      .map((part) => (part.type === 'text' ? part.text ?? '' : ''))
+      .join('')
+      .trim();
+  }
+
+  return text;
+}
+
+async function translateAny(value: any, targetLang: string): Promise<any> {
+  if (Array.isArray(value)) {
+    const results: any[] = [];
+    for (const v of value) {
+      results.push(await translateAny(v, targetLang));
+    }
+    return results;
+  } else if (typeof value === 'object' && value !== null) {
+    const result: Record<string, any> = {};
+    for (const k of Object.keys(value)) {
+      result[k] = await translateAny(value[k], targetLang);
+    }
+    return result;
+  } else if (typeof value === 'string') {
+    return await translateText(value, targetLang);
+  }
+  return value;
 }
 
 function deepKeys(obj: any, prefix = ''): Record<string, any> {
   let result: Record<string, any> = {};
   for (const key in obj) {
     const fullPath = prefix ? `${prefix}.${key}` : key;
-    if (typeof obj[key] === 'object' && !Array.isArray(obj[key])) {
+    if (
+      typeof obj[key] === 'object' &&
+      obj[key] !== null &&
+      !Array.isArray(obj[key])
+    ) {
       result = { ...result, ...deepKeys(obj[key], fullPath) };
     } else {
       result[fullPath] = obj[key];
@@ -58,7 +105,8 @@ async function syncTranslations() {
       for (const [key, value] of Object.entries(enKeys)) {
         if (!(key in targetKeys)) {
           console.log(`Missing key ${key} in ${locale}/${file}`);
-          const translated = await translateText(value as string, locale);
+          const translated = await translateAny(value, locale);
+
           const segments = key.split('.');
           let cursor = targetData;
           segments.forEach((segment, i) => {

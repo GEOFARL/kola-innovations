@@ -188,5 +188,22 @@
     "title": "Präsentieren Sie Ihre Arbeit",
     "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque. Orci sit semper ullamcorper eleifend faucibus et aliquam integer euismod.",
     "addProject": "Projekt hinzufügen"
+  },
+  "mentorship": {
+    "title": "Wären Sie interessiert, als Mentor zu dienen?",
+    "description": "Mentorship ist eine Beziehung, in der eine erfahrene Person eine andere in ihrem persönlichen und beruflichen Wachstum anleitet und unterstützt.",
+    "yes": "Ja",
+    "no": "Nein",
+    "info": {
+      "title": "Was ist Mentorship?",
+      "description": "Mentoring ist eine Beziehung, in der eine erfahrene Person eine andere in ihrem persönlichen und beruflichen Wachstum leitet und unterstützt.",
+      "imageAlt": "Mentoren-Illustration",
+      "keyPoints": [
+        "Geben Sie Anleitung und teilen Sie Ihre Erfahrungen.",
+        "Helfen Sie anderen, sich beruflich weiterzuentwickeln.",
+        "Bauen Sie sinnvolle Verbindungen",
+        "Geben Sie Ihrer Gemeinschaft etwas zurück"
+      ]
+    }
   }
 }

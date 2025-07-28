@@ -10,7 +10,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "storybook:build": "npm run build-storybook -o storybook-static",
-    "storybook:export": "npm run storybook:build && rm -rf public/storybook && mkdir -p public && mv storybook-static public/storybook"
+    "storybook:export": "npm run storybook:build && rm -rf public/storybook && mkdir -p public && mv storybook-static public/storybook",
+    "translate": "npx ts-node ./scripts/translate.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
