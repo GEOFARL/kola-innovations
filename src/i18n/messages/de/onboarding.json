@@ -223,8 +223,10 @@
       },
       "buttons": {
         "cancel": "Stornieren",
-        "save": "Sitzung erstellen"
-      }
+        "save": "Sitzung erstellen",
+        "edit": "Bearbeitungssitzung"
+      },
+      "meetingTopic": "Besprechungsthema:"
     }
   }
 }

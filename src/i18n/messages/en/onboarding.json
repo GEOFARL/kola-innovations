@@ -210,6 +210,7 @@
     "session": {
       "addTitle": "Add Session",
       "editTitle": "Edit Session",
+      "meetingTopic": "Meeting Topic:",
       "fields": {
         "title": "Blog Title",
         "date": "Date",
@@ -222,7 +223,8 @@
       },
       "buttons": {
         "cancel": "Cancel",
-        "save": "Create Session"
+        "save": "Create Session",
+        "edit": "Edit Session"
       }
     }
   }

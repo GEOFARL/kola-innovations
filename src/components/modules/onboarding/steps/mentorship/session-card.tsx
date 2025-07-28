@@ -4,6 +4,8 @@ import CalendarIcon from '@/assets/icons/calendar.svg';
 import ClockIcon from '@/assets/icons/clock.svg';
 import Card from '@/components/modules/shared/onboarding/card';
 import { MentorshipSession } from '@/lib/schemas/onboarding/mentorship.schema';
+import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 
 type Props = {
   session: MentorshipSession;
@@ -20,6 +22,8 @@ const SessionCard: React.FC<Props> = ({
   onEdit,
   onDelete,
 }) => {
+  const t = useTranslations('common.industries.values');
+  const tMentorship = useTranslations('onboarding.mentorship.session');
   return (
     <Card
       editLabel={editLabel}
@@ -27,38 +31,45 @@ const SessionCard: React.FC<Props> = ({
       onEdit={onEdit}
       onDelete={onDelete}
     >
-      <div className="flex gap-3 items-start">
-        {session.image && (
-          <img
-            src={session.image}
-            alt={session.title}
-            className="w-12 h-12 rounded-full object-cover"
-          />
-        )}
-        <div>
-          <h3 className="font-semibold">{session.title}</h3>
-          <p className="text-sm text-dark-600">{session.brief}</p>
-          <div className="flex items-center gap-4 mt-2 text-sm text-dark-700">
-            <div className="flex items-center gap-1">
-              <CalendarIcon /> {session.date}
-            </div>
-            <div className="flex items-center gap-1">
-              <ClockIcon /> {session.time}
-            </div>
+      <div className="space-y-4">
+        <div className="flex gap-3 items-center">
+          {session.image && (
+            <Image
+              src={session.image as string}
+              alt={session.title}
+              className="w-12 h-12 rounded-full object-cover"
+              height={48}
+              width={48}
+            />
+          )}
+          <h3 className="h6">{session.title}</h3>
+        </div>
+        <p className="body-2-rg text-dark-700">{session.brief}</p>
+        <div className="flex items-center gap-6 small-1 text-dark-700">
+          <div className="flex min-w-[244px] items-center gap-2">
+            <CalendarIcon className="-mt-[1px]" /> {session.date}
           </div>
-          {session.topics.length > 0 && (
-            <div className="flex flex-wrap gap-2 mt-3">
+          <div className="flex min-w-[244px] items-center gap-2">
+            <ClockIcon className="-mt-[1px]" /> {session.time}
+          </div>
+        </div>
+        {session.topics.length > 0 && (
+          <div className="flex flex-wrap gap-4 mt-3">
+            <p className="small-1 text-dark-900">
+              {tMentorship('meetingTopic')}
+            </p>
+            <div className="flex items-center gap-2">
               {session.topics.map((topic, idx) => (
                 <span
                   key={idx}
-                  className="bg-dark-100 text-dark-700 text-xs px-3 py-1 rounded-full"
+                  className="py-1 px-3 bg-dark-100 rounded-full small-2-md"
                 >
-                  {topic}
+                  {t(topic)}
                 </span>
               ))}
             </div>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </Card>
   );

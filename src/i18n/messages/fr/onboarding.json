@@ -223,8 +223,10 @@
       },
       "buttons": {
         "cancel": "Annuler",
-        "save": "Créer une session"
-      }
+        "save": "Créer une session",
+        "edit": "Édition de session"
+      },
+      "meetingTopic": "Sujet de la réunion :"
     }
   }
 }

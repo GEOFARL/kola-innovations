@@ -21,6 +21,26 @@ type Props = {
   defaultValues?: MentorshipSession;
 };
 
+function formatDate(input: string): string {
+  return input.replace(/[-.]/g, '/');
+}
+
+function formatTime(input: string): string {
+  const match = input.match(/^(\d{1,2})[:.]?(\d{2})(\s?(am|pm))?$/i);
+  if (!match) return input;
+
+  let hours = parseInt(match[1], 10);
+  const minutes = match[2];
+  let suffix = match[4] ? match[4].toUpperCase() : '';
+
+  if (!suffix) {
+    suffix = hours < 12 ? 'AM' : 'PM';
+    if (hours > 12) hours -= 12;
+  }
+
+  return `${hours.toString().padStart(2, '0')}:${minutes} ${suffix}`;
+}
+
 const SessionDialog: React.FC<Props> = ({
   open,
   onClose,
@@ -41,7 +61,11 @@ const SessionDialog: React.FC<Props> = ({
   });
 
   const handleSave = methods.handleSubmit((values: MentorshipSession) => {
-    onSubmit(values);
+    const image =
+      values.image instanceof File
+        ? URL.createObjectURL(values.image)
+        : values.image;
+    onSubmit({ ...values, image });
     onClose();
   });
 
@@ -63,14 +87,20 @@ const SessionDialog: React.FC<Props> = ({
               <FormField
                 name="date"
                 label={t('fields.date')}
-                placeholder="YYYY-MM-DD"
+                placeholder="DD/MM/YYYY"
                 required
+                onBlur={(e) =>
+                  methods.setValue('date', formatDate(e.target.value))
+                }
               />
               <FormField
                 name="time"
                 label={t('fields.time')}
-                placeholder="HH:MM"
+                placeholder="HH:MM AM/PM"
                 required
+                onBlur={(e) =>
+                  methods.setValue('time', formatTime(e.target.value))
+                }
               />
             </div>
             <FormField
@@ -117,7 +147,7 @@ const SessionDialog: React.FC<Props> = ({
                 'lg': 'lg',
               }}
             >
-              {t('buttons.save')}
+              {defaultValues ? t('buttons.edit') : t('buttons.save')}
             </Button>
           </div>
         </form>
