@@ -55,7 +55,7 @@ const MentorshipStep: React.FC = () => {
                 title={t('info.title')}
                 description={t('info.description')}
                 items={{
-                  title: t('info.title'),
+                  title: t('info.subtitle'),
                   values: t.raw('info.keyPoints') as string[],
                 }}
                 image={profileImage}

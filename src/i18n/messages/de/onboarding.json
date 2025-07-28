@@ -207,7 +207,8 @@
         "Helfen Sie anderen, sich beruflich weiterzuentwickeln.",
         "Bauen Sie sinnvolle Verbindungen",
         "Geben Sie Ihrer Gemeinschaft etwas zurück"
-      ]
+      ],
+      "subtitle": "Schlüsselaspekte"
     },
     "buttons": {
       "add": "Sitzung erstellen"
@@ -231,6 +232,24 @@
         "edit": "Bearbeitungssitzung"
       },
       "meetingTopic": "Besprechungsthema:"
+    }
+  },
+  "services": {
+    "title": "Wären Sie daran interessiert, Dienstleistungen anzubieten?",
+    "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque. Orci sit semper ullamcorper eleifend faucibus et aliquam integer euismod.",
+    "yes": "Ja",
+    "no": "Nein",
+    "info": {
+      "title": "Was ist Dienstleistung?",
+      "subtitle": "Wichtige Aspekte",
+      "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque.",
+      "imageAlt": "Dienstleistungsillustration",
+      "keyPoints": [
+        "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque.",
+        "Interdum donec laoreet malesuada a gravida vivamus tempor.",
+        "Interdum donec laoreet malesuada a gravida vivamus tempor.",
+        "Interdum donec laoreet malesuada a gravida vivamus tempor."
+      ]
     }
   }
 }

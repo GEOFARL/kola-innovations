@@ -207,7 +207,8 @@
         "Aidez les autres à grandir professionnellement",
         "Établissez des connexions significatives",
         "Redonnez à votre communauté"
-      ]
+      ],
+      "subtitle": "Aspects Clés"
     },
     "buttons": {
       "add": "Créer une session"
@@ -231,6 +232,24 @@
         "edit": "Édition de session"
       },
       "meetingTopic": "Sujet de la réunion :"
+    }
+  },
+  "services": {
+    "title": "Seriez-vous intéressé à fournir des services ?",
+    "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque. Orci sit semper ullamcorper eleifend faucibus et aliquam integer euismod.",
+    "yes": "Oui",
+    "no": "Non",
+    "info": {
+      "title": "Qu'est-ce que le service ?",
+      "subtitle": "Aspects Clés",
+      "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque.",
+      "imageAlt": "Illustration de service",
+      "keyPoints": [
+        "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque.",
+        "Interdum donec laoreet malesuada a gravida vivamus tempor.",
+        "Interdum donec laoreet malesuada a gravida vivamus tempor.",
+        "Interdum donec laoreet malesuada a gravida vivamus tempor."
+      ]
     }
   }
 }

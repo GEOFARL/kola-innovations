@@ -202,6 +202,7 @@
     },
     "info": {
       "title": "What is Mentorship?",
+      "subtitle": "Key Aspects",
       "description": "Mentorship is a relationship where an experienced individual guides and supports another’s personal and professional growth.",
       "imageAlt": "Mentorship illustration",
       "keyPoints": [
@@ -230,6 +231,24 @@
         "save": "Create Session",
         "edit": "Edit Session"
       }
+    }
+  },
+  "services": {
+    "title": "Would you be interested in providing services?",
+    "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque. Orci sit semper ullamcorper eleifend faucibus et aliquam integer euismod.",
+    "yes": "Yes",
+    "no": "No",
+    "info": {
+      "title": "What is service?",
+      "subtitle": "Key Aspects",
+      "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque.",
+      "imageAlt": "Service illustration",
+      "keyPoints": [
+        "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque.",
+        "Interdum donec laoreet malesuada a gravida vivamus tempor. ",
+        "Interdum donec laoreet malesuada a gravida vivamus tempor. ",
+        "Interdum donec laoreet malesuada a gravida vivamus tempor. "
+      ]
     }
   }
 }
