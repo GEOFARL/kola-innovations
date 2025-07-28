@@ -1,11 +1,11 @@
 'use client';
 
 import { useOnboardingStore } from '@/lib/stores/onboarding/onboarding-store';
-import { useState } from 'react';
 import { useTranslations } from 'next-intl';
+import { useState } from 'react';
 
+import AddButton from '@/components/modules/shared/onboarding/add-button';
 import { ExperienceItem } from '@/lib/types/onboarding/experience';
-import AddExperienceButton from './button';
 import ExperienceCard from './card';
 import AddExperienceDialog from './dialog';
 
@@ -39,7 +39,7 @@ const Experiences: React.FC = () => {
 
   return (
     <div className="flex flex-wrap items-start gap-4 h-auto">
-      <AddExperienceButton label={t('add')} onClick={() => setOpen(true)} />
+      <AddButton label={t('add')} onClick={() => setOpen(true)} />
 
       {experiences.map((exp, idx) => (
         <ExperienceCard

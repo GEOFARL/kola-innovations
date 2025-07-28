@@ -193,6 +193,9 @@
     "description": "Mentorship is a relationship where an experienced individual guides and supports another’s personal and professional growth.",
     "yes": "Yes",
     "no": "No",
+    "buttons": {
+      "add": "Create Session"
+    },
     "info": {
       "title": "What is Mentorship?",
       "description": "Mentorship is a relationship where an experienced individual guides and supports another’s personal and professional growth.",
@@ -203,6 +206,24 @@
         "Build meaningful connections",
         "Give back to your community"
       ]
+    },
+    "session": {
+      "addTitle": "Add Session",
+      "editTitle": "Edit Session",
+      "fields": {
+        "title": "Blog Title",
+        "date": "Date",
+        "time": "Timing",
+        "brief": "Brief",
+        "topics": "Meeting Topic",
+        "topicsPlaceholder": "Add topics...",
+        "upload": "Upload Image",
+        "uploadHint": "Use a jpeg, jpg, png file"
+      },
+      "buttons": {
+        "cancel": "Cancel",
+        "save": "Create Session"
+      }
     }
   }
 }

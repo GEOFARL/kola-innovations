@@ -204,6 +204,27 @@
         "Établissez des connexions significatives",
         "Redonnez à votre communauté"
       ]
+    },
+    "buttons": {
+      "add": "Créer une session"
+    },
+    "session": {
+      "addTitle": "Ajouter une session",
+      "editTitle": "Modifier la session",
+      "fields": {
+        "title": "Titre du blog",
+        "date": "Date",
+        "time": "Chronométrage",
+        "brief": "Bref",
+        "topics": "Sujet de la réunion",
+        "topicsPlaceholder": "Ajouter des sujets...",
+        "upload": "Télécharger l'image",
+        "uploadHint": "Utilisez un fichier jpeg, jpg, png"
+      },
+      "buttons": {
+        "cancel": "Annuler",
+        "save": "Créer une session"
+      }
     }
   }
 }

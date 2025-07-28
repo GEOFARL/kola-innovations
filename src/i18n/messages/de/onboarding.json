@@ -204,6 +204,27 @@
         "Bauen Sie sinnvolle Verbindungen",
         "Geben Sie Ihrer Gemeinschaft etwas zurück"
       ]
+    },
+    "buttons": {
+      "add": "Sitzung erstellen"
+    },
+    "session": {
+      "addTitle": "Sitzung hinzufügen",
+      "editTitle": "Bearbeitungssitzung",
+      "fields": {
+        "title": "Blogtitel",
+        "date": "Datum",
+        "time": "Timing",
+        "brief": "Kurzfassung",
+        "topics": "Besprechungsthema",
+        "topicsPlaceholder": "Fügen Sie Themen hinzu...",
+        "upload": "Bild hochladen",
+        "uploadHint": "Verwenden Sie eine jpeg-, jpg- oder png-Datei."
+      },
+      "buttons": {
+        "cancel": "Stornieren",
+        "save": "Sitzung erstellen"
+      }
     }
   }
 }

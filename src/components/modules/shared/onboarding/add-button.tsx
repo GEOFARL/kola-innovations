@@ -6,11 +6,7 @@ type Props = HTMLAttributes<HTMLButtonElement> & {
   label: string;
 };
 
-const AddExperienceButton: React.FC<Props> = ({
-  className,
-  label,
-  ...props
-}) => {
+const AddButton: React.FC<Props> = ({ className, label, ...props }) => {
   return (
     <button
       className={cn(
@@ -25,4 +21,4 @@ const AddExperienceButton: React.FC<Props> = ({
   );
 };
 
-export default AddExperienceButton;
+export default AddButton;

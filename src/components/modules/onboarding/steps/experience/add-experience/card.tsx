@@ -1,9 +1,7 @@
 import BlueFolder from '@/assets/icons/onboarding/blue-folder.svg';
-import DeleteIcon from '@/assets/icons/onboarding/delete.svg';
-import EditIcon from '@/assets/icons/onboarding/edit.svg';
-import Button from '@/components/ui/button/button';
-import { format } from 'date-fns';
+import Card from '@/components/modules/shared/onboarding/card';
 import { ExperienceItem } from '@/lib/types/onboarding/experience';
+import { format } from 'date-fns';
 
 type Props = {
   experience: ExperienceItem;
@@ -35,34 +33,14 @@ const ExperienceCard: React.FC<Props> = ({
     : '';
 
   return (
-    <div className="relative border-[1px] border-dark-200 rounded-[8px] p-4 w-full max-w-[288px] shadow-sm min-h-full self-stretch flex flex-col gap-6">
-      <div className="flex justify-between">
-        <BlueFolder />
-
-        <div className="flex gap-3 items-center">
-          <Button
-            size="sm"
-            className="hidden lg:block"
-            iconOnly
-            onClick={onEdit}
-            iconCircle
-            aria-label={editLabel}
-          >
-            <EditIcon />
-          </Button>
-
-          <Button
-            size="sm"
-            className="hidden lg:block"
-            iconOnly
-            iconCircle
-            onClick={onDelete}
-            aria-label={deleteLabel}
-          >
-            <DeleteIcon />
-          </Button>
-        </div>
-      </div>
+    <Card
+      editLabel={editLabel}
+      deleteLabel={deleteLabel}
+      onEdit={onEdit}
+      onDelete={onDelete}
+      className="max-w-[288px]"
+    >
+      <BlueFolder />
       <div className="flex flex-col gap-2">
         <p className="font-semibold text-[16px] leading-[140%] text-dark-900">
           {experience.jobTitle}
@@ -71,7 +49,7 @@ const ExperienceCard: React.FC<Props> = ({
           {experience.companyName} · {start} - {end}
         </p>
       </div>
-    </div>
+    </Card>
   );
 };
 

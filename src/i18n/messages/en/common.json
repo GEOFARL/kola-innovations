@@ -116,5 +116,9 @@
       "songwriter": "Songwriter",
       "musicLibrarian": "Music Librarian"
     }
+  },
+  "meetingTopics": {
+    "searchLabel": "Meeting Topic",
+    "suggested": "Suggested Topics"
   }
 }
