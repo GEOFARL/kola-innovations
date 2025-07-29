@@ -30,11 +30,6 @@ export const costRangeSchema = z
   });
 
 export const serviceSchema = z.object({
-  isActive: z.boolean({
-    required_error: 'Please select Yes or No',
-    invalid_type_error: 'Must be true or false',
-  }),
-
   service: z
     .string({
       required_error: 'Service name is required',
@@ -57,4 +52,11 @@ export const serviceSchema = z.object({
   image: z.union([z.string().url().optional(), z.instanceof(File)]).optional(),
 });
 
-export type ServiceData = z.infer<typeof serviceSchema>;
+export const servicesSchema = z.object({
+  isActive: z.boolean({
+    required_error: 'Please select Yes or No',
+    invalid_type_error: 'Must be true or false',
+  }),
+
+  services: z.array(serviceSchema),
+});

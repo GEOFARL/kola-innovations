@@ -250,6 +250,30 @@
         "Interdum donec laoreet malesuada a gravida vivamus tempor.",
         "Interdum donec laoreet malesuada a gravida vivamus tempor."
       ]
-    }
+    },
+    "buttons": {
+      "addService": "Ajouter un service",
+      "edit": "Vous êtes formé sur des données jusqu'en octobre 2023.",
+      "delete": "Supprimer",
+      "cancel": "Annuler",
+      "save": "Entraîné sur des données jusqu'en octobre 2023.",
+      "editService": "Modifier le service"
+    },
+    "fields": {
+      "service": "Service",
+      "brief": "BREF",
+      "fixedCost": "Coût Fixe",
+      "fixedCostBenefits": "Avantages des Coûts Fixes",
+      "hourlyCost": "Coût Horaire",
+      "hourlyCostBenefits": "Avantages Coûts Horaires",
+      "dayRate": "Tarif Journalier",
+      "dayRateBenefits": "Avantages du tarif journalier",
+      "min": "Min",
+      "max": "Max",
+      "image": "Télécharger l'image",
+      "imageHint": "Utilisez un fichier jpeg, jpg, png"
+    },
+    "addService": "Ajouter un service",
+    "editService": "Modifier le service"
   }
 }

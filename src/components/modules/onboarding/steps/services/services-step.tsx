@@ -1,12 +1,13 @@
 'use client';
 
 import profileImage from '@/assets/images/profile.jpg';
+import InfoCard from '@/components/modules/shared/info-card';
+import RadioGroupField from '@/components/ui/radio-group-field';
 import { useOnboardingStore } from '@/lib/stores/onboarding/onboarding-store';
 import { useTranslations } from 'next-intl';
 import { Controller, useWatch } from 'react-hook-form';
 import OnboardingStepForm from '../onboarding-step-form';
-import RadioGroupField from '@/components/ui/radio-group-field';
-import InfoCard from '@/components/modules/shared/info-card';
+import Services from './services';
 
 const ServicesStep: React.FC = () => {
   const t = useTranslations('onboarding.services');
@@ -35,10 +36,8 @@ const ServicesStep: React.FC = () => {
                     field.onChange(selected);
 
                     setStepData('services', {
-                      ...data.services,
-                      brief: data.services?.brief || '',
-                      service: data.services?.service || '',
                       isActive: selected,
+                      services: data.services?.services ?? [],
                     });
                   }}
                   options={[
@@ -61,6 +60,8 @@ const ServicesStep: React.FC = () => {
                 image={profileImage}
               />
             )}
+
+            {isActive && <Services />}
           </div>
         );
       }}

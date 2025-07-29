@@ -24,7 +24,7 @@ type SharedFieldProps = {
 
 type InputFieldProps = SharedFieldProps & {
   multiline?: false;
-  type?: 'text' | 'email' | 'password' | 'tel';
+  type?: 'text' | 'email' | 'password' | 'tel' | 'number';
 } & Omit<InputHTMLAttributes<HTMLInputElement>, 'name'>;
 
 type TextareaFieldProps = SharedFieldProps & {

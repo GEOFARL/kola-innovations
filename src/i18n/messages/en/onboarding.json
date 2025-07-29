@@ -245,10 +245,34 @@
       "imageAlt": "Service illustration",
       "keyPoints": [
         "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque.",
-        "Interdum donec laoreet malesuada a gravida vivamus tempor. ",
-        "Interdum donec laoreet malesuada a gravida vivamus tempor. ",
-        "Interdum donec laoreet malesuada a gravida vivamus tempor. "
+        "Interdum donec laoreet malesuada a gravida vivamus tempor.",
+        "Interdum donec laoreet malesuada a gravida vivamus tempor.",
+        "Interdum donec laoreet malesuada a gravida vivamus tempor."
       ]
-    }
+    },
+    "buttons": {
+      "addService": "Add Service",
+      "edit": "Edit",
+      "delete": "Delete",
+      "cancel": "Cancel",
+      "save": "Save",
+      "editService": "Edit Service"
+    },
+    "fields": {
+      "service": "Service",
+      "brief": "Brief",
+      "fixedCost": "Fixed Cost",
+      "fixedCostBenefits": "Fixed Cost Benefits",
+      "hourlyCost": "Hourly Cost",
+      "hourlyCostBenefits": "Hourly Cost Benefits",
+      "dayRate": "Day Rate",
+      "dayRateBenefits": "Day Rate Benefits",
+      "min": "Min",
+      "max": "Max",
+      "image": "Upload Image",
+      "imageHint": "Use a jpeg, jpg, png file"
+    },
+    "addService": "Add Service",
+    "editService": "Edit Service"
   }
 }
