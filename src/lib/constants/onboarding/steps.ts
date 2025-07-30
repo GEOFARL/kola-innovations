@@ -4,6 +4,7 @@ import ExperienceIcon from '@/assets/icons/onboarding/experience.svg';
 import MentorshipIcon from '@/assets/icons/onboarding/mentorship.svg';
 import ServicesIcon from '@/assets/icons/onboarding/services.svg';
 import SkillsIcon from '@/assets/icons/onboarding/skills.svg';
+import ReviewIcon from '@/assets/icons/onboarding/review.svg';
 import { StepItem } from '@/lib/types/onboarding/step';
 
 export const steps: StepItem[] = [
@@ -13,4 +14,5 @@ export const steps: StepItem[] = [
   { key: 'experience', icon: ExperienceIcon },
   { key: 'mentorship', icon: MentorshipIcon },
   { key: 'services', icon: ServicesIcon },
+  { key: 'review', icon: ReviewIcon },
 ];
