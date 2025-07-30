@@ -191,7 +191,9 @@
       "contract": "Contract",
       "internship": "Internship",
       "freelance": "Freelance"
-    }
+    },
+    "reviewTitle": "Your Experience",
+    "noExperience": "No experience added yet"
   },
   "portfolio": {
     "title": "Showcase your work",

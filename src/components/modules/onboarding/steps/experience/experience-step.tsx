@@ -4,7 +4,7 @@ import JobOpenStatus from './job-status/job-open-status';
 
 const ExperienceStep: React.FC = () => {
   return (
-    <OnboardingStepForm stepKey="experience">
+    <OnboardingStepForm stepKey="experience" skipFormSave>
       {() => (
         <div className="space-y-10">
           <Experiences />
