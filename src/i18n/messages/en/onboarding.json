@@ -240,7 +240,9 @@
         "save": "Create Session",
         "edit": "Edit Session"
       }
-    }
+    },
+    "reviewTitle": "Mentorship",
+    "noMentorship": "No mentorship sessions added yet"
   },
   "services": {
     "title": "Would you be interested in providing services?",

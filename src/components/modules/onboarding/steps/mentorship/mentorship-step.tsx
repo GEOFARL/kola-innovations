@@ -16,7 +16,11 @@ const MentorshipStep: React.FC = () => {
   const initialValues = data.mentorship || { isMentor: false, sessions: [] };
 
   return (
-    <OnboardingStepForm stepKey="mentorship" defaultValues={initialValues}>
+    <OnboardingStepForm
+      stepKey="mentorship"
+      defaultValues={initialValues}
+      skipFormSave
+    >
       {(methods) => {
         const isMentor = useWatch({
           control: methods.control,

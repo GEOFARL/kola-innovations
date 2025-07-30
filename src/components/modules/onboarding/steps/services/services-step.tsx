@@ -15,7 +15,11 @@ const ServicesStep: React.FC = () => {
   const initialValues = data.services || { isActive: false };
 
   return (
-    <OnboardingStepForm stepKey="services" defaultValues={initialValues}>
+    <OnboardingStepForm
+      stepKey="services"
+      skipFormSave
+      defaultValues={initialValues}
+    >
       {(methods) => {
         const isActive = useWatch({
           control: methods.control,
