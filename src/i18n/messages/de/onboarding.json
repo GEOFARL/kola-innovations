@@ -29,6 +29,10 @@
     "services": {
       "title": "Angebotene Dienstleistungen",
       "description": "Interdum donec laoreet malesuada a gravida vivamus tempor."
+    },
+    "review": {
+      "title": "Überprüfung",
+      "description": "Interdum donec laoreet malesuada a gravida vivamus tempor."
     }
   },
   "personalInfo": {
@@ -275,5 +279,9 @@
     },
     "addService": "Dienst hinzufügen",
     "editService": "Bearbeiten Sie den Dienst"
+  },
+  "review": {
+    "title": "Überprüfen Sie Ihre Details.",
+    "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque. Orci sit semper ullamcorper eleifend faucibus et aliquam integer euismod."
   }
 }
