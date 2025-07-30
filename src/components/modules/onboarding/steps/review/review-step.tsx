@@ -5,6 +5,7 @@ import SkillsReviewCard from './skills-review-card';
 import PortfolioReviewCard from './portfolio-review-card';
 import ExperienceReviewCard from './experience-review-card';
 import MentorshipReviewCard from './mentorship-review-card';
+import ServicesReviewCard from './services-review-card';
 
 const ReviewStep: React.FC = () => {
   const { data } = useOnboardingStore();
@@ -18,6 +19,7 @@ const ReviewStep: React.FC = () => {
           <PortfolioReviewCard />
           <ExperienceReviewCard />
           <MentorshipReviewCard data={data.mentorship!} />
+          <ServicesReviewCard data={data.services!} />
         </div>
       )}
     </OnboardingStepForm>

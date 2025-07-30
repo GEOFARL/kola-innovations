@@ -284,7 +284,9 @@
       "imageHint": "Use a jpeg, jpg, png file"
     },
     "addService": "Add Service",
-    "editService": "Edit Service"
+    "editService": "Edit Service",
+    "reviewTitle": "Services Offered",
+    "noServices": "No services added yet"
   },
   "review": {
     "title": "Review your details.",

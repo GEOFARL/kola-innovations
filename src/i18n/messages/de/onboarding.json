@@ -52,7 +52,8 @@
       "ethnicity": "Ethnische Zugehörigkeit",
       "orientation": "Sexuelle Orientierung",
       "disability": "Beeinträchtigung",
-      "resume": "Lebenslauf hochladen"
+      "resume": "Lebenslauf hochladen",
+      "location": "Standort"
     },
     "placeholders": {
       "firstName": "Gib deinen Vornamen ein",
@@ -97,7 +98,8 @@
   },
   "skills": {
     "title": "Erzählen Sie uns von Ihren Fähigkeiten & Ihrer Expertise",
-    "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque. Orci sit semper ullamcorper eleifend faucibus et aliquam integer euismod."
+    "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque. Orci sit semper ullamcorper eleifend faucibus et aliquam integer euismod.",
+    "reviewTitle": "Ihre Fähigkeiten & Expertise"
   },
   "experience": {
     "title": "Wenn Sie relevante Berufserfahrung haben, fügen Sie diese hier hinzu.",
@@ -190,12 +192,15 @@
       "contract": "Vertrag",
       "internship": "Praktikum",
       "freelance": "Freiberuflich"
-    }
+    },
+    "reviewTitle": "Ihre Erfahrung",
+    "noExperience": "Noch keine Erfahrung hinzugefügt"
   },
   "portfolio": {
     "title": "Präsentieren Sie Ihre Arbeit",
     "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque. Orci sit semper ullamcorper eleifend faucibus et aliquam integer euismod.",
-    "addProject": "Projekt hinzufügen"
+    "addProject": "Projekt hinzufügen",
+    "reviewTitle": "Ihr Portfolio"
   },
   "mentorship": {
     "title": "Wären Sie interessiert, als Mentor zu dienen?",
@@ -236,7 +241,9 @@
         "edit": "Bearbeitungssitzung"
       },
       "meetingTopic": "Besprechungsthema:"
-    }
+    },
+    "reviewTitle": "Mentorship",
+    "noMentorship": "Noch keine Mentoring-Sitzungen hinzugefügt."
   },
   "services": {
     "title": "Wären Sie daran interessiert, Dienstleistungen anzubieten?",
@@ -278,7 +285,9 @@
       "imageHint": "Verwenden Sie eine jpeg-, jpg- oder png-Datei."
     },
     "addService": "Dienst hinzufügen",
-    "editService": "Bearbeiten Sie den Dienst"
+    "editService": "Bearbeiten Sie den Dienst",
+    "reviewTitle": "Angebote Dienstleistungen",
+    "noServices": "Keine Dienste noch hinzugefügt"
   },
   "review": {
     "title": "Überprüfen Sie Ihre Details.",

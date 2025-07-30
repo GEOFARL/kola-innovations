@@ -27,8 +27,6 @@ const ExperienceReviewCard: React.FC = () => {
             experience={exp}
             editLabel=""
             deleteLabel=""
-            onEdit={() => {}}
-            onDelete={() => {}}
           />
         ))}
       </div>

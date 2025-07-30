@@ -52,7 +52,8 @@
       "ethnicity": "Origine ethnique",
       "orientation": "Orientation sexuelle",
       "disability": "Handicap",
-      "resume": "Télécharger votre CV"
+      "resume": "Télécharger votre CV",
+      "location": "Emplacement"
     },
     "placeholders": {
       "firstName": "Entrez votre prénom",
@@ -97,7 +98,8 @@
   },
   "skills": {
     "title": "Parlez-nous de vos compétences et expertises",
-    "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque. Orci sit semper ullamcorper eleifend faucibus et aliquam integer euismod."
+    "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque. Orci sit semper ullamcorper eleifend faucibus et aliquam integer euismod.",
+    "reviewTitle": "Vos compétences et votre expertise"
   },
   "experience": {
     "title": "Si vous avez une expérience professionnelle pertinente, ajoutez-la ici.",
@@ -190,12 +192,15 @@
       "contract": "Contrat",
       "internship": "Stage",
       "freelance": "Freelance"
-    }
+    },
+    "reviewTitle": "Votre expérience",
+    "noExperience": "Aucune expérience ajoutée pour le moment."
   },
   "portfolio": {
     "title": "Mettez en valeur votre travail",
     "description": "Interdum donec laoreet malesuada a gravida vivamus tempor. Eu magnis lectus in molestie ultricies neque. Orci sit semper ullamcorper eleifend faucibus et aliquam integer euismod.",
-    "addProject": "Ajouter un projet"
+    "addProject": "Ajouter un projet",
+    "reviewTitle": "Votre Portefeuille"
   },
   "mentorship": {
     "title": "Seriez-vous intéressé à servir de mentor ?",
@@ -236,7 +241,9 @@
         "edit": "Édition de session"
       },
       "meetingTopic": "Sujet de la réunion :"
-    }
+    },
+    "reviewTitle": "Mentorat",
+    "noMentorship": "Aucune séance de mentorat ajoutée pour le moment."
   },
   "services": {
     "title": "Seriez-vous intéressé à fournir des services ?",
@@ -278,7 +285,9 @@
       "imageHint": "Utilisez un fichier jpeg, jpg, png"
     },
     "addService": "Ajouter un service",
-    "editService": "Modifier le service"
+    "editService": "Modifier le service",
+    "reviewTitle": "Services Offerts",
+    "noServices": "Aucun service ajouté pour le moment."
   },
   "review": {
     "title": "Vérifiez vos détails.",

@@ -26,22 +26,30 @@ const ServiceCard: React.FC<Props> = ({
       onEdit={onEdit}
       onDelete={onDelete}
     >
-      <div className="space-y-4">
-        <div className="flex gap-3 items-center">
-          {service.image && (
-            <Image
-              src={service.image as string}
-              alt={service.service}
-              className="w-12 h-12 rounded-full object-cover"
-              height={48}
-              width={48}
-            />
-          )}
-          <h3 className="h6">{service.service}</h3>
-        </div>
-        <p className="body-2-rg text-dark-700">{service.brief}</p>
-      </div>
+      <ServiceCardContent service={service} />
     </Card>
+  );
+};
+
+export const ServiceCardContent: React.FC<{ service: ServiceData }> = ({
+  service,
+}) => {
+  return (
+    <div className="space-y-4">
+      <div className="flex gap-3 items-center">
+        {service.image && (
+          <Image
+            src={service.image as string}
+            alt={service.service}
+            className="w-12 h-12 rounded-full object-cover"
+            height={48}
+            width={48}
+          />
+        )}
+        <h3 className="h6">{service.service}</h3>
+      </div>
+      <p className="body-2-rg text-dark-700">{service.brief}</p>
+    </div>
   );
 };
 

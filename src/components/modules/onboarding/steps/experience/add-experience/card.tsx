@@ -7,8 +7,8 @@ type Props = {
   experience: ExperienceItem;
   editLabel: string;
   deleteLabel: string;
-  onEdit: () => void;
-  onDelete: () => void;
+  onEdit?: () => void;
+  onDelete?: () => void;
 };
 const formatMonthYear = (month: string, year: string) => {
   const date = new Date(parseInt(year), parseInt(month) - 1);

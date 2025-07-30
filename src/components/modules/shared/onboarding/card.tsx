@@ -7,8 +7,8 @@ import { PropsWithChildren } from 'react';
 type Props = {
   editLabel: string;
   deleteLabel: string;
-  onEdit: () => void;
-  onDelete: () => void;
+  onEdit?: () => void;
+  onDelete?: () => void;
   className?: string;
 };
 const Card: React.FC<PropsWithChildren<Props>> = ({
@@ -27,27 +27,30 @@ const Card: React.FC<PropsWithChildren<Props>> = ({
       )}
     >
       <div className="absolute top-4 right-4 flex gap-3 items-center">
-        <Button
-          size="sm"
-          className="hidden lg:block"
-          iconOnly
-          onClick={onEdit}
-          iconCircle
-          aria-label={editLabel}
-        >
-          <EditIcon />
-        </Button>
-
-        <Button
-          size="sm"
-          className="hidden lg:block"
-          iconOnly
-          iconCircle
-          onClick={onDelete}
-          aria-label={deleteLabel}
-        >
-          <DeleteIcon />
-        </Button>
+        {onEdit && (
+          <Button
+            size="sm"
+            className="hidden lg:block"
+            iconOnly
+            onClick={onEdit}
+            iconCircle
+            aria-label={editLabel}
+          >
+            <EditIcon />
+          </Button>
+        )}
+        {onDelete && (
+          <Button
+            size="sm"
+            className="hidden lg:block"
+            iconOnly
+            iconCircle
+            onClick={onDelete}
+            aria-label={deleteLabel}
+          >
+            <DeleteIcon />
+          </Button>
+        )}
       </div>
       {children}
     </div>
