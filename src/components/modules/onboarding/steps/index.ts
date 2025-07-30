@@ -5,6 +5,7 @@ import PersonalInfoStep from './personal-info/personal-info-step';
 import PortfolioStep from './portfolio/portfolio-step';
 import ServicesStep from './services/services-step';
 import SkillsStep from './skills/skills-step';
+import ReviewStep from './review/review-step';
 
 export const stepComponents: Record<StepKey, React.FC> = {
   personalInfo: PersonalInfoStep,
@@ -13,4 +14,5 @@ export const stepComponents: Record<StepKey, React.FC> = {
   experience: ExperienceStep,
   mentorship: MentorshipStep,
   services: ServicesStep,
+  review: ReviewStep,
 };

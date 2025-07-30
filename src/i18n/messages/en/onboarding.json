@@ -29,6 +29,10 @@
     "services": {
       "title": "Services offered",
       "description": "Interdum donec laoreet malesuada a gravida vivamus tempor."
+    },
+    "review": {
+      "title": "Review",
+      "description": "Interdum donec laoreet malesuada a gravida vivamus tempor."
     }
   },
   "personalInfo": {
