@@ -51,7 +51,8 @@
       "languages": "Languages Spoken",
       "ethnicity": "Ethnicity",
       "orientation": "Sexual Orientation",
-      "resume": "Upload your Resume"
+      "resume": "Upload your Resume",
+      "location": "Location"
     },
     "placeholders": {
       "firstName": "Enter your first name",
