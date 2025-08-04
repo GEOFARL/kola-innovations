@@ -1,7 +1,7 @@
-export type StoredUser = {
+export type UserJSON = {
   id: string;
-  firstName: string;
-  lastName: string;
-  email: string;
-  phone?: string;
+  firstName: string | null;
+  lastName: string | null;
+  imageUrl: string;
+  emailAddress: string;
 };

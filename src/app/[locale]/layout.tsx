@@ -1,8 +1,9 @@
+import ClerkProviderWrapper from '@/components/providers/clerk-provider';
 import { routing } from '@/i18n/routing';
 import type { Metadata } from 'next';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
-import { notFound } from 'next/navigation';
 import { getMessages } from 'next-intl/server';
+import { notFound } from 'next/navigation';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -26,9 +27,11 @@ const RootLayout = async ({ children, params }: Props) => {
   return (
     <html lang={locale}>
       <NextIntlClientProvider locale={locale} messages={messages}>
-        <body className="min-h-screen font-[Montserrat,sans-serif] flex flex-col antialiased overflow-x-hidden">
-          {children}
-        </body>
+        <ClerkProviderWrapper>
+          <body className="min-h-screen font-[Montserrat,sans-serif] flex flex-col antialiased overflow-x-hidden">
+            {children}
+          </body>
+        </ClerkProviderWrapper>
       </NextIntlClientProvider>
     </html>
   );

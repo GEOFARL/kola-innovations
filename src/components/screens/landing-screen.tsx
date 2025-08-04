@@ -1,3 +1,4 @@
+import { UserJSON } from '@/lib/types/auth/user';
 import HeroSection from '../modules/landing/sections/hero-section';
 import MotivationSection from '../modules/landing/sections/motivation-section';
 import OpportunitiesSection from '../modules/landing/sections/opportunities-section';
@@ -7,10 +8,10 @@ import TrustedCompaniesSection from '../modules/landing/sections/trusted-compani
 import Footer from '../modules/shared/footer';
 import Header from '../modules/shared/header/header';
 
-const LandingScreen: React.FC = () => {
+const LandingScreen: React.FC<{ user: UserJSON | null }> = ({ user }) => {
   return (
     <>
-      <Header variant="landing" />
+      <Header variant="landing" user={user} />
       <HeroSection />
       <StatsSection />
       <TrustedCompaniesSection />

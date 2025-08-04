@@ -1,7 +1,6 @@
-'use client';
-
 import SearchIcon from '@/assets/icons/search.svg';
-import { useTranslations } from 'next-intl';
+import { UserJSON } from '@/lib/types/auth/user';
+import { useClerk } from '@clerk/nextjs';
 import Button from '../../../ui/button/button';
 import AuthModal from '../../auth/auth-modal';
 import HomepageLogo from '../homepage-logo';
@@ -11,9 +10,15 @@ import SignUpButton from './buttons/sign-up-button';
 import HeaderWrapper from './header-wrapper';
 import MobileSearch from './mobile-search';
 
-const LandingHeader: React.FC = () => {
-  const tActions = useTranslations('common.actions');
+type Props = {
+  user: UserJSON | null;
+};
 
+export default function LandingHeader({ user }: Props) {
+  const { signOut } = useClerk();
+  const handleLogout = async () => {
+    await signOut();
+  };
   return (
     <>
       <HeaderWrapper>
@@ -26,12 +31,21 @@ const LandingHeader: React.FC = () => {
           <Button
             className="min-w-10! min-h-10!"
             variant="link"
-            aria-label={tActions('search')}
+            aria-label="Search"
           >
             <SearchIcon />
           </Button>
-          <LoginButton />
-          <SignUpButton />
+
+          {user ? (
+            <Button variant="secondary" color="black" onClick={handleLogout}>
+              Logout {user.firstName ? `(${user.firstName})` : ''}
+            </Button>
+          ) : (
+            <>
+              <LoginButton />
+              <SignUpButton />
+            </>
+          )}
         </div>
 
         <MobileSearch />
@@ -39,6 +53,4 @@ const LandingHeader: React.FC = () => {
       <AuthModal />
     </>
   );
-};
-
-export default LandingHeader;
+}

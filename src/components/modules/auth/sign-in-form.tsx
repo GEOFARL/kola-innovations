@@ -10,20 +10,38 @@ import FormField from '@/components/ui/form-field';
 import { useAuthModalStore } from '@/lib/stores/auth/auth-modal-store';
 import { useTranslations } from 'next-intl';
 import { toast } from 'sonner';
+import { useSignIn } from '@clerk/nextjs';
 
 const SignInForm: React.FC = () => {
   const t = useTranslations('common.auth');
   const toastT = useTranslations('toast.auth');
   const tf = (key: string) => t(`fields.${key}`);
   const tp = (key: string) => t(`placeholders.${key}`);
-  const { setView } = useAuthModalStore();
+  const { setView, close } = useAuthModalStore();
+  const { isLoaded, signIn, setActive } = useSignIn();
 
   const methods = useForm<SignInFormData>({
     resolver: zodResolver(SignInSchema),
   });
 
-  const onSubmit = methods.handleSubmit((data) => {
-    toast.success(toastT('signInSuccess'));
+  const onSubmit = methods.handleSubmit(async (data) => {
+    if (!isLoaded) return;
+    try {
+      const result = await signIn.create({
+        identifier: data.email,
+        password: data.password,
+      });
+
+      if (result.status === 'complete') {
+        await setActive({ session: result.createdSessionId });
+        toast.success(toastT('signInSuccess'));
+        close();
+      } else {
+        toast.error('Sign-in requires additional steps');
+      }
+    } catch (err: any) {
+      toast.error(err.errors?.[0]?.longMessage || 'Sign-in failed');
+    }
   });
 
   return (

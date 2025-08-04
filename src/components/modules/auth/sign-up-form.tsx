@@ -10,31 +10,54 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
 import { FormProvider, useForm } from 'react-hook-form';
-import { v4 } from 'uuid';
 import AuthForm from './auth-form';
+import { useSignUp } from '@clerk/nextjs';
+import { toast } from 'sonner';
 
 const SignUpForm: React.FC = () => {
   const t = useTranslations('common.auth');
-  const toastT = useTranslations('toast.auth');
   const tf = (key: string) => t(`fields.${key}`);
   const tp = (key: string) => t(`placeholders.${key}`);
   const { setView } = useAuthModalStore();
+  const { isLoaded, signUp, setActive } = useSignUp();
   const router = useRouter();
 
   const methods = useForm<SignUpFormData>({
     resolver: zodResolver(SignUpSchema),
   });
 
-  const onSubmit = methods.handleSubmit((data) => {
-    const user = {
-      id: v4(),
-      firstName: data.firstName,
-      lastName: data.lastName,
-      email: data.email,
-      phone: data.phone,
-    };
+  const onSubmit = methods.handleSubmit(async (data) => {
+    if (!isLoaded) return;
 
-    router.push(APP_ROUTES.ONBOARDING);
+    try {
+      const result = await signUp.create({
+        emailAddress: data.email,
+        password: data.password,
+      });
+
+      if (result.status === 'complete') {
+        await setActive({ session: result.createdSessionId });
+
+        toast.success('Signed up successfully!');
+        router.push(APP_ROUTES.ONBOARDING);
+      } else if (
+        result.status === 'missing_requirements' &&
+        result.unverifiedFields?.includes('email_address')
+      ) {
+        await signUp.prepareEmailAddressVerification({
+          strategy: 'email_code',
+        });
+
+        toast.info('We sent a verification code to your email.');
+        router.push(APP_ROUTES.VERIFY_EMAIL);
+      } else {
+        toast.error('Unexpected signup flow, please try again.');
+      }
+    } catch (err: any) {
+      const message =
+        err?.errors?.[0]?.longMessage ?? err?.message ?? 'Sign-up failed';
+      toast.error(message);
+    }
   });
 
   return (

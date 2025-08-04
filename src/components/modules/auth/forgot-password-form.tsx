@@ -1,28 +1,38 @@
 'use client';
 
 import Button from '@/components/ui/button/button';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { FormProvider, useForm } from 'react-hook-form';
-import AuthForm from './auth-form';
 import FormField from '@/components/ui/form-field';
-import { useAuthModalStore } from '@/lib/stores/auth/auth-modal-store';
-import { useTranslations } from 'next-intl';
 import { ForgotPasswordSchema } from '@/lib/schemas/auth/forgot-password.schema';
+import { useAuthModalStore } from '@/lib/stores/auth/auth-modal-store';
 import { ForgotPasswordFormData } from '@/lib/types/auth/forgot-password';
+import { useSignIn } from '@clerk/nextjs';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useTranslations } from 'next-intl';
+import { FormProvider, useForm } from 'react-hook-form';
 import { toast } from 'sonner';
+import AuthForm from './auth-form';
 
 const ForgotPasswordForm: React.FC = () => {
   const t = useTranslations('common.auth');
   const toastT = useTranslations('toast.auth');
   const tp = (key: string) => t(`placeholders.${key}`);
   const { setView } = useAuthModalStore();
+  const { signIn } = useSignIn();
 
   const methods = useForm<ForgotPasswordFormData>({
     resolver: zodResolver(ForgotPasswordSchema),
   });
 
-  const onSubmit = methods.handleSubmit((data) => {
-    toast.success(toastT('forgotPassword'));
+  const onSubmit = methods.handleSubmit(async (data) => {
+    try {
+      await signIn?.create({
+        strategy: 'reset_password_email_code',
+        identifier: data.email,
+      });
+      toast.success(toastT('forgotPassword'));
+    } catch (err: any) {
+      toast.error(err.errors?.[0]?.longMessage || 'Failed to send reset email');
+    }
   });
 
   return (
